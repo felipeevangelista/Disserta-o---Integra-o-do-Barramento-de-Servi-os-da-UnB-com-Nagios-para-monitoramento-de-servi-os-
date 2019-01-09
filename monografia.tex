@@ -1,0 +1,48 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Classe do documento
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Opções:
+%  - Graduação: bacharelado|engenharia|licenciatura
+%  - Pós-graduação: [qualificacao], mestrado|doutorado, ppca|ppginf
+
+% \documentclass[engenharia]{UnB-CIC}%
+\documentclass[qualificacao,mestrado,ppca]{UnB-CIC}%
+
+\usepackage{pdfpages}% incluir PDFs, usado no apêndice
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Informações do Trabalho
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\orientador{\prof \dr Sérgio Antônio Andrade de Freitas}{CIC/UnB}%
+%\coorientador{\prof \dr José Ralha}{CIC/UnB}
+\coordenador[a]{\prof[a] \dr[a] Aletéia Patrícia Favacho de Araújo}{CIC/UnB}%
+\diamesano{24}{julho}{2018}%
+
+\membrobanca{\prof \dr[a] Edna Dias Canedo}{CIC/UnB}%
+\membrobanca{\prof \dr Gibeon Soares De Aquino Junior}{DIM/UFRN}%
+
+\autor{Felipe Evangelista}{dos Santos}%
+
+\titulo{Integração do Barramento de Serviços da UnB com Nagios para monitoramento de serviços }%
+
+\palavraschave{Protocolo SNMP, Monitoramento de Sistemas Distribuídos, SOA, web services, ESB}%
+
+\keywords{SNMP Protocol, Distributed Systems Monitoring, SOA, web services, ESB}%
+
+\newcommand{\unbcic}{\texttt{UnB-CIC}}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Texto
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}%
+    \capitulo{1_Introducao}{Introdução}%
+    \capitulo{2_Fundamentacao_Teorica}{Fundamentação Teórica}%
+    \capitulo{3_Mapeamento_Sistematico}{Mapeamento Sistemático}%
+    \capitulo{4_Proposta}{Proposta}%
+    \capitulo{5_Consideracoes_Finais}{Considerações Finais}%
+
+%     \apendice{Apendice_Fichamento}{Fichamento de Artigo Científico}%
+%     \anexo{Anexo1}{Documentação Original \unbcic\ (parcial)}%
+\end{document}%

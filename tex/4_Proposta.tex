@@ -1,0 +1,83 @@
+\label{proposta}
+
+Neste capítulo são apresentadas informações para a implementação do monitoramento de sistemas distribuídos em \textit{web services} utilizando o Protocolo SNMP. Na Seção 3.1 é a apresentada a proposta para o monitoramento de sistemas distribuídos. Na Seção 3.3 são apresentados alguns detalhes para a implementação do protocolo SNMP. Na Seção 3.4 são apresentados os desafios do gerenciamento das informações monitoradas. Na Seção 3.5 é apresentado o cronograma de execução.
+
+\section{Monitoramento de sistemas distribuídos}%
+
+O CPD da \acrlong{UnB} tem ao longo dos anos vivenciado um problema com a defasagem tecnológica, os sistemas utilizados para o gerenciamento de informações administrativas da UnB possuem complexidade alta, as manutenções tem um alto grau de dificuldade, devido a definição arquitetural implementada. Como solução para a modernização e migração dos sistemas e tecnologia o CPD adotou a implementação de uma arquitetura orientada a serviços, que vem sendo bastante utilizada principalmente para criação de serviços (\textit{web services}). A implementação dos serviços tem aumentado, devido a flexibilidade definida na arquitetura para a implementação desses serviços e a curva de aprendizagem ser alta. Com a implementação de vários serviços temos a seguinte questão: Como monitorar e acompanhar o funcionamento, ou pode-se dizer a saúde desses serviços, visto que há um grande número de serviços implementados. A proposta desse trabalho é implementar um \textit{framework} de monitoramento por meio do processo de desenvolvimento de software adotado pelo \acrshort{CPD} o \textit{\acrfull{SMSOC}}\cite{Agilar}, essa abordagem será avaliada de forma qualitativa em uma situação real, pois a plataforma \acrshort{SOA} da \acrshort{UnB} já possui vários serviços implementados, e espera-se que a solução seja capaz de auxiliar no monitoramento e acompanhamento dos sistemas distribuídos e serviços, não verificando apenas a sua disponibilidade, mas também o número de requisições, tempo de requisição, quantidade de usuários que acessaram o serviço, informações de falha, segurança e etc.            
+
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+\subsection{Web services}
+
+O CPD optou, após a definição e implementação da sua arquitetura SOA, pela implementação de \textit{web services} para solucionar e agilizar o processo de modernização de \textit{softwares} da UnB. Esses serviços possuem especificidades no fornecimento de informações referentes aos alunos e cursos de graduação da UnB,  como por exemplo, a impossibilidade de identificação de um curso de um determinado aluno, caso haja uma falha no \textit{web services} que fornece as informações do curso. Isso é um exemplo da importância do monitoramento dos \textit{web services}, para o funcionamento integral dos serviços disponibilizados.   
+
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+\subsection{Agentes de monitoramento}
+
+Para o acompanhamento e monitoramento serão implementados agentes de monitoramento para a realização da comunicação e notificação dos \textit{web services} monitorados. A proposta é implementar agentes para gerenciar e monitorar os \textit{web services}, a intenção é disponibilizar um serviço que seja capaz de trabalhar como uma especie de agente que informará caso haja alguma falha ou detecte um número elevado de requisições, por exemplo. A implementação dos agentes é necessária para proposta, pois é uma peça importante no monitoramento, serão os agentes de monitoramento os responsáveis para a coleta das informações que possibilitam o monitoramento dos \textit{web services}, em alguns trabalhos pesquisados os agentes foram tratados como peças fundamentais para a realização do monitoramento.       
+
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+\section{Protocolo SNMP}
+
+O SNMP é o protocolo utilizado para o monitoramento de dispositivos conectados em rede. O CPD para o monitoramento dos ativos de rede utiliza, por meio de ferramentas que recebem informações desse protocolo, no entanto as ferramentas e informações fornecidas para o monitoramento servem apenas para o controle da infraestrutura de rede e servidores de aplicação, não gerenciando por exemplo, o funcionamento dos sistemas, serviços e funcionalidades das aplicações. Como proposta esse trabalho tem a intensão de fornecer e subsidiar  recursos que possibilitem o monitoramento e integração com outras ferramenta de monitoramento, para o gerenciamento de sistemas distribuídos e \textit{web services}, com a implementação de serviços que tem a responsabilidade de coletar as informações no padrão do protocolo para permitir o monitoramento dos \textit{web services}, as informações desses serviços poderão ser visualizados em qualquer ferramenta que trabalhe com os dados coletados nos padrões do protocolo.           
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+\section{Informações monitoradas}
+
+Com a implementação de serviços para gerar as informações do monitoramento, necessita-se definir um padrão ou \textit{design} para a realização da coleta, armazenamento e analise dos dados do monitoramento. Esse trabalho propõe a implementação de serviços para a realização da coleta, o desenho de um modelo de dados para o armazenamento dos dados monitorados e \textit{web services} para realização de integração com qualquer ferramenta que utilize o protocolo SNMP afim de fornecer informações para uma linguagem que permita facilmente o entendimento humano. 
+
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+\subsection{Desempenho}
+
+Na literatura durante a realização da pesquisa percebeu-se a identificação de um item preocupante em relação as informações monitoradas, esse item é o desempenho, devido à quantidade de informações geradas durante o monitoramento. O trabalho tem como proposta a realização do armazenamento das informações sem problemas de desempenho, com a otimização das consultas dos serviços responsáveis pela realização e geração das informações geradas pelo monitoramento.       
+
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+\section{Cronograma de execução}
+
+Este trabalho será desenvolvido por meio de seis tarefas listadas a seguir durante os períodos 2018/2 e 2019/1 que são registrados oficialmente no calendário acadêmico da UnB, e por meio do cronograma apresentado na Tabela \ref{tab:cronograma}.
+
+	1. Escolha das abordagens que serão utilizadas por meio de características não exploradas nas soluções atuais de Implementação do protocolo SNMP para monitoramento de serviços;
+  
+  2. Desenvolvimento de novas abordagens que serão utilizadas na Implementação do protocolo SNMP para monitoramento de serviços ;
+    
+  3. Prova de conceito das abordagens desenvolvidas;
+    
+  4. Escrita de artigos científicos para a de submissão em congressos e periódicos;
+  
+  5. Escrita da dissertação de mestrado;
+  
+  6. Defesa do mestrado.
+
+\begin{table}[!htpb]
+	\centering
+	\caption{Cronograma de execução de atividades}
+	\begin{center}
+		\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|} \hline
+Tarefa&AGO&SET&OUT&NOV&DEZ&MAR&ABR&MAI&JUN&JUL\\
+			\hline
+			Tarefa 1 &X&X&X& & & & & & & \\
+			\hline
+			Tarefa 2 & & & &X&X&X& & & & \\
+			\hline
+			Tarefa 3 & & & & &X&X&X& & & \\
+			\hline
+			Tarefa 4 & & & & &X&X&X& & & \\
+			\hline
+			Tarefa 5 & & & &&X&X&X&X&X& \\
+			\hline
+			Tarefa 6 & & & & & & & & & &X \\
+			\hline
+		\end{tabular}
+		\label{tab:cronograma}
+	\end{center}
+\end{table} 
+
+
+\fontshape{n}\selectfont%
