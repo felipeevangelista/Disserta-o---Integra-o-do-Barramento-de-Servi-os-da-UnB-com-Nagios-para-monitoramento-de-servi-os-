@@ -188,7 +188,7 @@ Por decisão técnica especificamente relacionada a interoperabilidade e o baixo
 \section{ErlangMs}
 O Barramento de serviços da \acrshort{UnB} denominado Erlangms foi conceituado em uma disciplina do \acrshort{MPCA} e proposto como trabalho para solucionar alguns problemas relacionados a quantidade de sistemas heterogêneos, defasagem tecnológica das aplicaões e a falta de um padrão de comunicação entre eles no \acrshort{CPD} \cite{Agilar}. 
 
-O Erlangms dispoem de uma arquitetura \acrshort{SOA} utilizando o estilo arquitetural \acrshort{REST} e sua implementação foi feita na liguagem funcional Erlang. O barramento atualmente está implantado no \acrshort{CPD} e  funcionando com um serviço de mensageria. A realização da comunicação e troca de mensagems dos sistemas e clientes é feita por meio de serviços(\textit{web services}) utilizando o formato \acrshort{JSON}. O Erlangms tem sua arquitetura é apresentada na figura \ref{fun:fig:erlangms}
+O Erlangms dispoem de uma arquitetura \acrshort{SOA} utilizando o estilo arquitetural \acrshort{REST} e sua implementação foi feita na liguagem funcional Erlang. O barramento atualmente está implantado no \acrshort{CPD} e  funcionando com um serviço de mensageria. A realização da comunicação e troca de mensagems dos sistemas e clientes é feita por meio de serviços(\textit{web services}) utilizando o formato \acrshort{JSON}. O Erlangms tem sua arquitetura é apresentada na figura \ref{fun:fig:erlangms} .
 
 \begin{figure}[h!]
 	\begin{center}
@@ -204,24 +204,102 @@ O Erlangms dispoem de uma arquitetura \acrshort{SOA} utilizando o estilo arquite
 \begin{enumerate}
 \item Nagios
 
-O Nagios é uma ferramenta de monitoramento de rede baseada na web idealizada e desenvolvida por Ethan Galstad \cite{bin2011new}. O Nagios é projetado para a realizar o acompanhamento de ativos de rede, sistemas e serviços com a finalidade de notificar os usuários e responsáveis pelos ativos de rede, sistema e serviços que estão registrados na ferramenta como contatos emergências, em caso aconteça alguma anomalia ou problema durante o funcionamento da rede, sistemas e serviços.
+O Nagios é uma aplicação com interface \textit{web} para o monitoramento de rede baseada na web idealizada e desenvolvida por Ethan Galstad \cite{bin2011new}. O Nagios é projetado para a realizar o acompanhamento de ativos de rede, sistemas e serviços com a finalidade de notificar os usuários e responsáveis pelos ativos de rede, sistema e serviços que estão registrados na ferramenta como contatos emergências, em caso aconteça alguma anomalia ou problema durante o funcionamento da rede, sistemas e serviços.
 
 O Nagios é tratado como uma ferramenta que possui um alta complexidade em sua configuração, pois possui uma gama de recursos e funcionalidades disponíveis para a utilização, devido a grande quantidade de recurcos o Nagios é bastante utilizado ele também possui um grande número de \textit{plug-ins} disponíveis na para a realização do monitoramento podendo personalizar o monitoramnto de serviços como SMTP, POP3, HTTP, PING \cite{lcc2012nagios}. Nesse projeto o Nagios será utlizado com ferramenta de monitoramento dos sistemas e serviços fornecidos pela \acrshort{UnB} com utilização de serviço SMTP para o monitoramento, visto que, o \acrshort{CPD} já utiliza a ferramenta para o monitoramento dos ativos de rede de toda a universidade. 
 
 \begin{figure}[h!]
 	\begin{center}
-	\includegraphics[scale = 0.40]{img/Comprehensive_Monitoring_Drop2.jpg}
+	\includegraphics[scale = 0.39]{img/Comprehensive_Monitoring_Drop2.jpg}
 		\caption{Monitoramento de componentes\cite{lcc2012nagios}}
 		\label{fun:fig:nagios}
 	\end{center}
 \end{figure}
 
 \item Ganglia
+
+ O Ganglia é um \textit{software} de monitoramento escalonável com a finalidade de coletar dados para acompanhar o funcionamento de sistemas distribuídos e sistemas de alto desempenho, como \textit{clusters}. Por conta da estrutura hierárquica implementada, o \textit{software} utiliza a linguagem de marcação de texto XML para a representação dos dados. 
+ 
+ O Ganglia é baseado em um protocolo \textit{multicast} de escuta e anuncio, e necessariamente precisa ter em cada \textit{host} que será monitorado a instalação de um \textit{Gmond} \cite{vyas2014embedding}. O \textit{Gmond} é um serviço em execução em cada \textit{host} que coleta as informações de estado de um \textit{host} de forma individual e insere essas informações no canal de comunicação \textit{multicast} para enviar esse dados ao Ganglia.
+ 
+ \begin{figure}[h!]
+	\begin{center}
+	\includegraphics[scale = 0.50]{img/1024px-ScalableGridEngineGanglia2.png}
+		\caption{Monitoramento de \textit{clusters} \cite{Ganglia}}
+		\label{fun:fig:ganglia}
+	\end{center}
+\end{figure}
+ 
+ 
+ Em uma breve análise após a utilização das ferramentas de monitoramento \cite{benincosa2ganglia} cita em seu artigo os seguintes itens:
+\begin{itemize}
+
+\item O Ganglia não possui um sistema de notificação integrado enquanto que o Nagios se destaca nisso.
+\item Já o Nagios não possui agentes integrados escaláveis nos \textit{hosts} de destino (um motivo de reclamação das pessoas), enquanto que isso já faz parte do projeto original e intencional do Ganglia.
+
+\end{itemize}
+
+ Diante desse cenário a autora sugere a utilização das ferramentas em conjunto de modo que sejam utilizados em sua potencialidade, porém como \acrshort{CPD} já utiliza o Nagios e a intenção da Gestão \acrshort{CPD} e do projeto é trabalhar com o acompanhamento a notificação dos serviços caso haja alguma falha ou mau funcionamento, como o Ganglia não executa uma das principais funcionalidades do monitoramento, a ferramenta não entrará como \textit{software} a ser utilizado no projeto.
+ 
 \item Cacti
+
+O Cacti é uma ferramenta de monitoramento que coleta e analisa informações por meio de gráficos em tempo de execução, com um excelente desempenho, o monitoramento pode ser feito em redes complexas e ativos de rede. O Cacti armazena suas informações coletadas em bancos de dados, para para coleta das informações são necessários \textit{scripts}/comandos que são implementados em cada ativo e são denominados cactos, e para a apresentação dos gráficos é necessária a utilização do \textit{software}  \acrfull{RRDTool} que possui uma apresentação gráfica bastante intuitiva e de fácil utilização \cite{cacti}.
+
+O \acrshort{RRDTool} é uma ferramenta que realiza o registro de dados e gráficos de alto desempenho para dados de séries temporais, e como os cactos implementados nos \textit{hosts} são \textit{scripts} o \acrshort{RRDTool} pode ser facilmente integrado com  \textit{scripts} de \textit{shell} \cite{rrdtool}. 
+
+\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[scale = 0.50]{img/cacti_promo_main.png}
+		\caption{Monitoramento de rede \cite{cacti}}
+		\label{fun:fig:cacti}
+	\end{center}
+\end{figure}
+
+O Cacti possui plugns para integração com outras funcionalidades e ferramentas, incluído o protocolo \acrshort{SNMP}, mas não é o seu foco devido a preocupação com o desempenho na troca de informações e no monitoramento. Como o trabalho visa uniformizar o meio de comunicação entre as aplicações e definir especificamente o protocolo \acrshort{SNMP} para transmitir informações para a realização do monitoramento, esse \textit{software} não será utilizado no projeto.
+
+\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[scale = 0.50]{img/stream-pop.png}
+		\caption{Gráfico de monitoramento do RRDTool \cite{rrdtool}}
+		\label{fun:fig:rrdtool}
+	\end{center}
+\end{figure}
+
 \item Zabbix
+
+O Zabbix é uma solução tecnológica conceituada e desenvolvida para a realização de monitoramento de rede, servidores e serviço. O monitoramentos poderá ser realizado com o agrupamento desses recursos objetivando potencialização das vantagens de utilização dos ativos de TI ou diminuição os riscos da utilização desses ativos aos usuários, esse procedimento é denominado \textit{pooling} ou por mensagens de notificações e alertas por meio de \textit{trapping} \cite{contessa2010gerenciamento}. O Zabbix tem como idealizador  Alexei Vladishev, e atualmente é mantido pela Zabbix SIA \cite{zabbix}.   
+
+Como as demais aplicações e \textit{softwares} citados anteriormente o Zabbix possui funcionalidades para o monitoramento que realizam a coleta de dados por servidor ou agentes, a ferramenta tem suporte ao protocolo \acrshort{SNMP} e também interface \textit{web} para visualização de gráficos gerados por meio dos dados coletados dos \textit{hosts} ou agentes. Por definição arquitetural o Zabbix é composto por componentes com funcionalidades primordiais para o seu funcionamento são eles \cite{zabbix}: 
+
+\begin{itemize}
+\item Servidor Zabbix;
+    \begin{itemize}
+        \item é o componente central do Zabbix; realiza o monitoramento, interage com os proxies e agentes, calcula as mudanças de estado nas \textit{triggers}, envia notificações, controla o repositório central de dados.
+    \end{itemize}
+\item Agente Zabbix;
+\begin{itemize}
+        \item é o componente instalado nos servidores monitorados, usado para monitorar ativamente seus recursos e aplicações.
+    \end{itemize}
+\item Proxy Zabbix;
+\begin{itemize}
+        \item é o componente com capacidade de realizar a coleta de dados no lugar do Servidor Zabbix, distribuindo a carga de processamento.
+    \end{itemize}
+\end{itemize}
+
+O Zabbix em comparação comparação com ferramentas de monitoramento mais utilizadas atualmente está entre as melhores incluído as citadas nesse trabalho, por possuir baixo pré-requisito na instalação e configuração, excelente tempo de resposta em caso de falhas de serviços e de recurso e as notificações por e-mail e \acrshort{SMS}, porém o \textit{dashboard} para a realização do monitoramento é complexo e não intuitivo ao usuário, como pode ser visualizado a seguir na figura \ref{fun:fig:zabbix}, podendo não auxiliar em um gerenciamento adequado aos serviço e aplicações que são monitoradas, apesar de uma boa aplicação de monitoramento, o Zabbix não será utilizada com ferramenta de monitoramento para esse trabalho.    
+
+\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[scale = 0.80]{img/dashboard.png}
+		\caption{\textit{Dashboard} de monitoramento \cite{zabbix}.}
+		\label{fun:fig:zabbix}
+	\end{center}
+\end{figure}
+
 \end{enumerate}
 
-....
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -231,7 +309,7 @@ O Nagios é tratado como uma ferramenta que possui um alta complexidade em sua c
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Exometer}
+\subsection{Exometer}
 
 ....
 
