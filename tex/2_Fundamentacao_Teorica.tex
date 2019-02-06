@@ -286,7 +286,7 @@ Como as demais aplicações e \textit{softwares} citados anteriormente o Zabbix 
     \end{itemize}
 \end{itemize}
 
-O Zabbix em comparação comparação com ferramentas de monitoramento mais utilizadas atualmente está entre as melhores incluído as citadas nesse trabalho, por possuir baixo pré-requisito na instalação e configuração, excelente tempo de resposta em caso de falhas de serviços e de recurso e as notificações por e-mail e \acrshort{SMS}, porém o \textit{dashboard} para a realização do monitoramento é complexo e não intuitivo ao usuário, como pode ser visualizado a seguir na figura \ref{fun:fig:zabbix}, podendo não auxiliar em um gerenciamento adequado aos serviço e aplicações que são monitoradas, apesar de uma boa aplicação de monitoramento, o Zabbix não será utilizada com ferramenta de monitoramento para esse trabalho.    
+Em comparação com as ferramentas de monitoramento mais utilizadas atualmente, \cite{marik2014comparative} descreve em seu artigo que o Zabbix está entre as melhores aplicações, incluído as citadas nesse trabalho, por possuir pré-requisitos básicos na instalação e configuração, excelente tempo de resposta em caso de falhas de serviços e de recursos de \acrshort{TI} e as notificações por e-mail e \acrshort{SMS}, porém o \textit{dashboard} para a realização do monitoramento é complexo e não intuitivo ao usuário, como pode ser visualizado a seguir na figura \ref{fun:fig:zabbix}, podendo não auxiliar em um gerenciamento adequado aos serviço e aplicações que são monitoradas, apesar de uma boa aplicação de monitoramento, o Zabbix não será utilizada com ferramenta de monitoramento para esse trabalho.    
 
 \begin{figure}[h!]
 	\begin{center}
@@ -298,20 +298,27 @@ O Zabbix em comparação comparação com ferramentas de monitoramento mais util
 
 \end{enumerate}
 
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Agentes de monitoramento}
 
-....
+Em uma arquitetura de monitoramento de serviços ou ativos de rede que utiliza o protocolo \acrshort{SNMP}, é necessária a implementação de agentes de monitoramento para a instalação em \textit{hosts} e dispositivos que serão monitorados, esse agentes consistem em coletar dados e enviar mensagens de alerta ao gerentes de monitoramento, como  apresentado na figura \ref{fun:fig:agente}, como por exemplo, o uso de \acrshort{CPU} e a quantidade de memória de utilização de um processo ou um alerta de falha de um dispositivo ou serviço \cite{7439952}.  
+
+\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[scale = 0.80]{img/image004.jpg}
+		\caption{Esquema de comunicação entre os agentes e as estações de gerenciamento \cite{snmpagentimage}.}
+		\label{fun:fig:agente}
+	\end{center}
+\end{figure}
+
+Um agente de monitoramento pode ser definido como um componente ou aplicação de gerenciamento de rede ou serviço no dispositivo a ser gerenciado e possuem duas operações básicas \textit{GET} e \textit{SET}, o agente em execução fica responsável por exportar os dados de gerenciamento dos sistemas, serviços ou ativos de rede gerenciados com variáveis organizadas de forma hierárquica. Essa hierarquia é contemplada por metadados que são representados por \acrshort{MIBs}, e \acrshort{MIBs} por sua vez são um conjunto dos objetos gerenciados, que procuram abranger todas as informações necessárias para a gerência de rede \cite{6240708}. Nesse trabalho o agente de monitoramento utilizado é o Exometer que funciona como agente de monitoramento responsável pela coleta das informações geradas pelo Barramento de serviços Erlangms e a transmissão dessas informações ao Nagios por meio do protocolo \acrshort{SNMP}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Exometer}
 
-....
+O Exometer é um \textit{framework} capaz de executar a instrumentação e permitir a exportação de dados de maneira fácil e eficiente utilizando bibliotecas implementadas em código Erlang, normalmente os dados exportados são relacionados ao desempenho dos sistemas e serviços. Com a utilização de módulos, o Exometer pode realizar a integração com uma grande variedade de sistemas de monitoramento, nesse trabalho a integração é com a aplicação de monitoramento Nagios. O potencial do Exometer é fornecer métricas de várias formas e parâmetros, para isso dispõem de um conjunto de componentes para monitoramento pré-definidos e que podem ser estendidos de forma personalizada para lidar com diversos tipos de métricas e alguns protocolos \cite{exometer_core}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -320,6 +327,7 @@ O Zabbix em comparação comparação com ferramentas de monitoramento mais util
 ....
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \section{Instrumentação}
 
