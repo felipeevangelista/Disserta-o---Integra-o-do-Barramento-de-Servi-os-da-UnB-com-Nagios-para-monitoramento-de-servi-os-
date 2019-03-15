@@ -318,20 +318,33 @@ Um agente de monitoramento pode ser definido como um componente ou aplicação d
 
 \subsection{Exometer}
 
+\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[scale = 0.60]{img/exometer_overview.png}
+		\caption{Arquitetura do Exometer \cite{exometer_core}.}
+		\label{fun:fig:zabbix}
+	\end{center}
+\end{figure}
 O Exometer é um \textit{framework} capaz de executar a instrumentação e permitir a exportação de dados de maneira fácil e eficiente utilizando bibliotecas implementadas em código Erlang, normalmente os dados exportados são relacionados ao desempenho dos sistemas e serviços. Com a utilização de módulos, o Exometer pode realizar a integração com uma grande variedade de sistemas de monitoramento, nesse trabalho a integração é com a aplicação de monitoramento Nagios. O potencial do Exometer é fornecer métricas de várias formas e parâmetros, para isso dispõem de um conjunto de componentes para monitoramento pré-definidos e que podem ser estendidos de forma personalizada para lidar com diversos tipos de métricas e alguns protocolos \cite{exometer_core}.
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Métricas de monitoramento}
 
-....
+A métrica de \textit{software} vem representando um papel importante para o funcionamento adequado das aplicações \cite{de2016metrica}. À medida que os sistemas e serviços crescem em quantidade, tamanho, complexidade e criticidade, a necessidade de monitorá-los é cada vez mais evidente. O monitoramento representa o acompanhamento dessas aplicações de forma detalhada e clara aos responsáveis pela as aplicações \cite{5298441}. A ISO/IEC 9126-1 \cite{associaccao2003nbr} descreve e normatiza a forma para medir a qualidade de \textit{software}, de acordo com a norma \cite{associaccao2003nbr}, a métrica é o método e escala de medição definidos, a métrica pode ser direta ou indireta, a medição de uma métrica direta se dá quando não depende de medidas de outros atributos e a métrica indireta se dá quando há ou existe a necessidade de derivação de um ou mais atributos de medição.
+No que tange um ambiente computacional, as métricas ajudam a medir o \textit{software} de um forma eficaz, para isso é preciso que as métricas sejam bem definidas, justificadas e formalizadas, além disso é desejável que as métricas apresentem de forma clara o que está sendo medido, descrevam rapidamente a medição sem custeio computacional alto e que o resultado do que está sendo medido não seja mudado ou sofra interferência em seu resultado caso haja a mudança de \textit{software}, plataforma ou linguagem de programação\cite{meirelles2013monitoramento}.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \section{Instrumentação}
 
-....
+A instrumentação é a ciência que aplica e desenvolve técnicas para adequação de instrumentos para a medição e monitoração. A instrumentação é muito utilizada no ambiente industrial, principalmente no que tange a medição dos equipamentos de produção que necessitam de acompanhamento para verificação de pressão, temperatura, vazão e nível.\cite{ribeiro1999instrumentaccao}. O barramento de serviços ErlangMs dispõem em sua arquitetura uma estrutura definida de fácil implementação para a instrumentação, possui um modelo de dados em que são registrados contadores. No modelo de dados são registradas algumas informações como a data e hora do registro, o identificador do contador e o contador.  
+Segundo \cite{frota2008educaccao} a instrumentação pode ser utilizada como um componente de processamento da informação de sistemas de medição. Por isso a instrumentação pode ser considerada não apenas como ferramenta de contagem de valores para medição, poderá ser utilizada também como uma forma de aprendizagem e conceitual e científica.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -352,6 +365,6 @@ O Exometer é um \textit{framework} capaz de executar a instrumentação e permi
 
 \section{Síntese do Capítulo}
 
-....
+Este Capítulo apresentou os conceitos e as tecnologias relacionadas ao monitoramento de sistemas distribuídos, \acrshort{SOA}, \acrshort{ESB},  \acrshort{REST}, \acrshort{JSON}, ErlangMs, Ferramentas de Monitoramento, Agentes de monitoramento, Métricas de monitoramento, Instrumentação e Protocolos de monitoramento. As definições e conceitos e tecnologias estudadas foram de grande ajuda tanto para o entendimento do problema quanto para execução e implementação do trabalho. Nesse Capítulo também foram apresentados trabalhos relacionados ao tema tema desse trabalho que colaboraram e orientaram na pesquisa e fundamentação do trabalho. O Capítulo 3 apresenta a realização do mapeamento sistemático.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
