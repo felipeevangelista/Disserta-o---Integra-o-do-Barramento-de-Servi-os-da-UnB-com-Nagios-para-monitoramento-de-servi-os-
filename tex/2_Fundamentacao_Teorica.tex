@@ -286,7 +286,7 @@ Como as demais aplicações e \textit{softwares} citados anteriormente o Zabbix 
     \end{itemize}
 \end{itemize}
 
-Em comparação com as ferramentas de monitoramento mais utilizadas atualmente, \cite{marik2014comparative} descreve em seu artigo que o Zabbix está entre as melhores aplicações, incluído as citadas nesse trabalho, por possuir pré-requisitos básicos na instalação e configuração, excelente tempo de resposta em caso de falhas de serviços e de recursos de \acrshort{TI} e as notificações por e-mail e \acrshort{SMS}, porém o \textit{dashboard} para a realização do monitoramento é complexo e não intuitivo ao usuário, como pode ser visualizado a seguir na figura \ref{fun:fig:zabbix}, podendo não auxiliar em um gerenciamento adequado aos serviço e aplicações que são monitoradas, apesar de uma boa aplicação de monitoramento, o Zabbix não será utilizada com ferramenta de monitoramento para esse trabalho.    
+Em comparação com as ferramentas de monitoramento mais utilizadas atualmente, \cite{marik2014comparative} descreve em seu artigo que o Zabbix está entre as melhores aplicações, incluído as citadas nesse trabalho, por possuir pré-requisitos básicos na instalação e configuração, excelente tempo de resposta em caso de falhas de serviços e de recursos de \acrshort{TI} e as notificações por e-mail e \acrshort{SMS}, porém o \textit{dashboard} para a realização do monitoramento é complexo e não intuitivo ao usuário, como pode ser visualizado a seguir na figura \ref{fun:fig:zabbix}, podendo não auxiliar em um gerenciamento adequado aos serviços e aplicações que são monitoradas, apesar de uma boa aplicação de monitoramento, o Zabbix não será utilizado com ferramenta de monitoramento para esse trabalho.    
 
 \begin{figure}[h!]
 	\begin{center}
@@ -351,6 +351,56 @@ Segundo \cite{frota2008educaccao} a instrumentação pode ser utilizada como um 
 \section{Protocolos de Monitoramento}
 \begin{itemize}
 \item SNMP
+
+O Protocolo Simples de Gerenciamento de Rede (\textit{\acrlong{SNMP}}) é um protocolo da camada de aplicação responsável pela transmissão de dados e informações de gerenciamento e monitoramento entre dispositivos e ativos de rede. O \acrshort{SNMP} é um dos protocolos mais utlizados atualmente, devido a sua arquitetura que dispõe de uma estrutua simples capaz de realizar o monitoramento em tempo real sem comprometer a eficiência que está sendo monitorado\cite{roohi2014application}. Em seu paradigma o \acrshort{SNMP} gerencia os ativos de rede baseando-se no esquema cliente-servidor, onde os dispositivo e ativos de rede recebem um agente para que essas informações sejam coletadas e transmitidas, por conta desse paradigma e fácil implantação a popularidade do protocolo aumentou, permitindo as empresas fornecerem diversos tipos de estruturas denominadas \acrshort{MIBs}. Os \acrshort{MIBs} são objetos criados e definidos por meio de uma estrutura virtual capaz de armazenar de informações de gerenciamento\cite{roohi2014application,presuhn2002management}.
+
+O \acrshort{SNMP} é formado por três componentes \cite{nadeau2003mpls}:  
+
+    \begin{itemize}
+    \item \acrshort{SMI}
+    
+    Que é a linguagem de modelagem dos dados usado para definir \textit{syntax} dos dados de gerenciamento, como por exemplo, o Tipo de objeto "INTEGER".
+    
+    \item \acrshort{MIBs}
+    
+    Estrutura usada para formar um modelo de dados do sistema(objetos), responsável por representar o tipo, definir o comportamento e a política de acesso aos objetos.
+    
+    \item \acrshort{SNMP}
+    Que consiste em sua arquitetura, o gerente, um dispositivo a ser gerenciado e um agente, que dispões das seguintes operações:
+    
+        \begin{itemize}
+        \item GET
+        
+        Operação utilizada para recuperar o valor de uma instância específica de um objeto gerenciado.
+        
+        \item GET-NEXT
+        
+        Operação utilizada para percorrer interativamente o \acrshort{OID}.
+        
+        \item GET-BULK
+        
+        Operação utilizada para recuperar informações de um grupo de objetos.
+        \item SET
+        
+        Operação utilizada para modificar o valor de uma instancia de objeto.
+        \item TRAP
+        
+        Operação utilizada para que um agente possa reportar uma notificação de forma assíncrona aos gerentes.
+        
+        \end{itemize}
+        
+    \end{itemize}
+    
+Após a realização de uma análise, estudos e definições, obteve-se de forma empírica o respaldo para utilização do protocolo na implementação do projeto, vale também observar que o \acrshort{CPD} utiliza o protocolo para o monitoramento de seus ativos de rede, conforme a representação na figura \ref{fun:fig:snmpexecution} apresentada a seguir.
+
+\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[scale = 0.90]{img/SNMP-Execution.jpg}
+		\caption{Gerente e Agente comunicando por meio do protocolo SNMP\cite{nadeau2003mpls}}
+		\label{fun:fig:snmpexecution}
+	\end{center}
+\end{figure}
+
 \item GOSSIP
 \end{itemize}
 ....
