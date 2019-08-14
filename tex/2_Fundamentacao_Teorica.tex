@@ -349,10 +349,10 @@ Segundo \cite{frota2008educaccao} a instrumentação pode ser utilizada como um 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Protocolos de Monitoramento}
-\begin{itemize}
-\item SNMP
 
-O Protocolo Simples de Gerenciamento de Rede (\textit{\acrlong{SNMP}}) é um protocolo da camada de aplicação responsável pela transmissão de dados e informações de gerenciamento e monitoramento entre dispositivos e ativos de rede. O \acrshort{SNMP} é um dos protocolos mais utlizados atualmente, devido a sua arquitetura que dispõe de uma estrutua simples capaz de realizar o monitoramento em tempo real sem comprometer a eficiência que está sendo monitorado\cite{roohi2014application}. Em seu paradigma o \acrshort{SNMP} gerencia os ativos de rede baseando-se no esquema cliente-servidor, onde os dispositivo e ativos de rede recebem um agente para que essas informações sejam coletadas e transmitidas, por conta desse paradigma e fácil implantação a popularidade do protocolo aumentou, permitindo as empresas fornecerem diversos tipos de estruturas denominadas \acrshort{MIBs}. Os \acrshort{MIBs} são objetos criados e definidos por meio de uma estrutura virtual capaz de armazenar de informações de gerenciamento\cite{roohi2014application,presuhn2002management}.
+\subsection{\acrshort{SNMP}}
+
+O Protocolo Simples de Gerenciamento de Rede (\textit{\acrlong{SNMP}}) é um protocolo da camada de aplicação responsável pela transmissão de dados e informações de gerenciamento e monitoramento entre dispositivos e ativos de rede. O \acrshort{SNMP} é um dos protocolos mais utilizados atualmente, devido a sua arquitetura que dispõe de uma estrutura simples capaz de realizar o monitoramento em tempo real sem comprometer a eficiência que está sendo monitorado\cite{roohi2014application}. Em seu paradigma o \acrshort{SNMP} gerencia os ativos de rede baseando-se no esquema cliente-servidor, onde os dispositivo e ativos de rede recebem um agente para que essas informações sejam coletadas e transmitidas, por conta desse paradigma e fácil implantação a popularidade do protocolo aumentou, permitindo as empresas fornecerem diversos tipos de estruturas denominadas \acrshort{MIBs}. Os \acrshort{MIBs} são objetos criados e definidos por meio de uma estrutura virtual capaz de armazenar de informações de gerenciamento\cite{roohi2014application,presuhn2002management}.
 
 O \acrshort{SNMP} é formado por três componentes \cite{nadeau2003mpls}:  
 
@@ -401,9 +401,21 @@ Após a realização de uma análise, estudos e definições, obteve-se de forma
 	\end{center}
 \end{figure}
 
-\item GOSSIP
-\end{itemize}
-....
+\subsection{\acrshort{GOSIP}}
+
+O \acrshort{GOSIP} é um protocolo pertencente ao modelo \acrshort{OSI} que funciona por meio de software na camada de aplicação em dispositivos \textit{peer-to-peer}, teve seu lançamento anunciado no fim da década de 80 e inicio da década de 90, para facilitar a comunicação e transferência de dados em um modelo governamental prometendo ser a comunicação integrada de sistemas militares do futuro, houve até a formalização de um documento nos padrões \acrshort{RFC} o RFC 1169\cite{mankin1991towards}, porém \cite{harris1992tactical} descreve em seu trabalho que o protocolo proposto foi implementado com seus objetivos bem definidos, mas que não obtiveram o sucesso almejado, pois esperava-se que pela a realização fim-a-fim conseguiriam obter melhores resultados em relação a economia da largura de banda e melhor desempenho com a redundância dos dados.
+
+Apesar dos relatos citados no paragrafo anterior sobre as expectavas não alcançadas com o protocolo, há uma técnica bastante importante que foi extraída, e que é utilizada por meio dos dispositivos de modo a garantir a confiança da informação. Diante desse cenário o protocolo trabalha de forma epidêmica, disseminado facilmente as informações nos sistemas distribuídos em larga escala, cujo principal objetivo propagar rapadamente essas informações\cite{tanenbaum2007distributed}, a representação dessa propagação poderá ser visualizada na figura \ref{fun:fig:gosip}. 
+
+\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[scale = 0.90]{img/gosip.jpg}
+		\caption{Representação de propagação epidêmica \autor{Felipe Evangelista}{dos Santos}  }
+		\label{fun:fig:gosip}
+	\end{center}
+\end{figure}
+
+Nesse trabalho, o \acrshort{GOSIP} não foi utilizado no experimento, foi utilizado como fonte de pesquisa para a realização de um comparativo tecnológico entre os protocolos, que permitiu avaliar e auxiliar na escolha do \acrshort{SNMP} como protocolo ser utilizado no projeto. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
