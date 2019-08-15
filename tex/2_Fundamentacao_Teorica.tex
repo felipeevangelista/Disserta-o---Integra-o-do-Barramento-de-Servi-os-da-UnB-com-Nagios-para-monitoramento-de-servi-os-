@@ -350,7 +350,7 @@ Segundo \cite{frota2008educaccao} a instrumentação pode ser utilizada como um 
 
 \section{Protocolos de Monitoramento}
 
-\subsection{\acrshort{SNMP}}
+\subsection{SNMP}
 
 O Protocolo Simples de Gerenciamento de Rede (\textit{\acrlong{SNMP}}) é um protocolo da camada de aplicação responsável pela transmissão de dados e informações de gerenciamento e monitoramento entre dispositivos e ativos de rede. O \acrshort{SNMP} é um dos protocolos mais utilizados atualmente, devido a sua arquitetura que dispõe de uma estrutura simples capaz de realizar o monitoramento em tempo real sem comprometer a eficiência que está sendo monitorado\cite{roohi2014application}. Em seu paradigma o \acrshort{SNMP} gerencia os ativos de rede baseando-se no esquema cliente-servidor, onde os dispositivo e ativos de rede recebem um agente para que essas informações sejam coletadas e transmitidas, por conta desse paradigma e fácil implantação a popularidade do protocolo aumentou, permitindo as empresas fornecerem diversos tipos de estruturas denominadas \acrshort{MIBs}. Os \acrshort{MIBs} são objetos criados e definidos por meio de uma estrutura virtual capaz de armazenar de informações de gerenciamento\cite{roohi2014application,presuhn2002management}.
 
@@ -401,11 +401,11 @@ Após a realização de uma análise, estudos e definições, obteve-se de forma
 	\end{center}
 \end{figure}
 
-\subsection{\acrshort{GOSIP}}
+\subsection{GOSIP}
 
 O \acrshort{GOSIP} é um protocolo pertencente ao modelo \acrshort{OSI} que funciona por meio de software na camada de aplicação em dispositivos \textit{peer-to-peer}, teve seu lançamento anunciado no fim da década de 80 e inicio da década de 90, para facilitar a comunicação e transferência de dados em um modelo governamental prometendo ser a comunicação integrada de sistemas militares do futuro, houve até a formalização de um documento nos padrões \acrshort{RFC} o RFC 1169\cite{mankin1991towards}, porém \cite{harris1992tactical} descreve em seu trabalho que o protocolo proposto foi implementado com seus objetivos bem definidos, mas que não obtiveram o sucesso almejado, pois esperava-se que pela a realização fim-a-fim conseguiriam obter melhores resultados em relação a economia da largura de banda e melhor desempenho com a redundância dos dados.
 
-Apesar dos relatos citados no paragrafo anterior sobre as expectavas não alcançadas com o protocolo, há uma técnica bastante importante que foi extraída, e que é utilizada por meio dos dispositivos de modo a garantir a confiança da informação. Diante desse cenário o protocolo trabalha de forma epidêmica, disseminado facilmente as informações nos sistemas distribuídos em larga escala, cujo principal objetivo propagar rapadamente essas informações\cite{tanenbaum2007distributed}, a representação dessa propagação poderá ser visualizada na figura \ref{fun:fig:gosip}. 
+Apesar dos relatos citados no paragrafo anterior sobre as expectavas não alcançadas com o protocolo, há uma técnica bastante importante que foi extraída, e que é utilizada por meio dos dispositivos de modo a garantir que a comunicação e transmissão da informação sejam garantidas. Diante desse cenário o protocolo trabalha de forma epidêmica, disseminado facilmente as informações nos sistemas distribuídos em larga escala, cujo principal objetivo propagar rapadamente essas informações, o que permite a realização de um monitoramento \textit{peer-to-peer},onde os dispositivo se comunicam diretamente \cite{tanenbaum2007distributed}, a representação dessa propagação poderá ser visualizada na figura \ref{fun:fig:gosip}. 
 
 \begin{figure}[h!]
 	\begin{center}
@@ -421,7 +421,20 @@ Nesse trabalho, o \acrshort{GOSIP} não foi utilizado no experimento, foi utiliz
 
 \section{Trabalhos Relacionados}
 
-....
+O autor \cite{abdu1996monitoring} descreve em seu trabalho sobre a opção por investigar a necessidade para realizar o monitoramento de sistemas distribuídos e a necessidade de minimizar a degradação do desempenho do sistemas monitorados. E relatam que a configuração adotada depende da informação a ser monitorada através de diretivas monitoramento.
+
+Seguindo a preocupação com a escalabilidade do monitoramento durante o funcionamento das aplicações \cite{repantis2010scaling} cita sobre a rede Akamai, que permite o processamento de dados de mais de 60.000 servidores de borda em quase em tempo real. A disponibilidade de uma poderosa interface SQL-like para que os dados tem sido um elemento importante na forma como gerimos a nossa rede. Neste trabalho, têm-se centrado sobre as escolhas de design que permitem a consulta para escalar conforme o tamanho da rede, o volume de dados, e o número de consultas crescer. E mostram como consulta aborda esses desafios de escalabilidade, ao fornecer uma latência de dados na ordem de minutos e um tempo médio de resposta de consulta na ordem de décimos de segundo.
+
+O trabalho \cite{subramanyan2000scalable} apresenta estudos sobre o atraso na execução na tarefa de monitoramento devido ao gargalo gerado durante as operações dos agentes,e também descrevem que solução proposta e implementada utiliza o protocolo do monitoramento rede \acrshort{SNMP}, que garante uma facilidade de execução, interoperabilidade e aceitabilidade, e baseia-se nos mais recentes padrões propostas pela RFC 2592.  
+
+Phan \cite{phan2009cryptanalysis} relata em seu trabalho sobre o nível de segurança do protocolo e questiona sobre a falta de confidencialidade e privacidade, itens faltantes no SNMPv1 e, e descreve em seu trabalho  que dispõem de um experimento e recomenda a tulização do SNMPv3.
+
+Com a realização de um análise qualitativa, os autores \cite{lee2004design} buscaram apresentar o funcionamento do protocolo SNMP por meio de experimentos valendo-se de suas vantagens, entre elas seus principais componentes e utilização entre eles: 1) Da estação de gestão; 2) Agente de gestão; 3) Base de informações de gestão; e 4) protocolo de gestão. Eles descrevem o trabalho científico de forma conectada, concisa e objetiva, sobre as técnicas utilizadas para a realização do estudo. O trabalho apresenta uma abordagem orientada a objetos, utilizada para alcançar o projeto sistemático para a implementação de agentes SNMP em sistemas de monitoramento para o gerenciamento remoto.
+
+O artigo \cite{puatruct2010agent} expõe os resultados obtidos no desenvolvimento e manutenção de aplicações distribuídas e sistemas de monitoramento multiagente, com exemplos práticos, a fim de implementar e testar as abordagens teóricas. Os sistemas de monitoramento de agentes múltiplos trazem qualidade e eficiência em quase todas as áreas de atividade, na qual inclui pesquisa científica, educação, saúde ou defesa.
+Utilizando os conceitos sólidos da inteligência artificial e reunindo-os para os recursos infinitos dos sistemas distribuídos e da Internet,buscando reduzir a duração do alcance dos objetivos.
+
+Com a leitura e entendimento dos trabalhos pode-se perceber uma preocupação com a utilização do monitoramento em relação ao desempenho, mesmo quando utilizadas técnicas e tecnologias distintas, mas observa-se a importância da realização do monitoramento, visto a grande demanda de \textit{softwares} disseminados na rede mundial de computadores.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
