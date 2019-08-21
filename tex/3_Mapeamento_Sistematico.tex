@@ -1,46 +1,63 @@
 \label{mapeamento_sistematico}
 
-Este capítulo descreve a revisão sistematizada da Arquitetura Orientada a serviços, web services, monitoramento de sistemas distribuído e o Protocolo SNMP.
+Este capítulo descreve sobre o mapeamento sistemático, método utilizado para a realizar a pesquisa da literatura de uma questão definida. A pesquisa possibilita de identificar, avaliar e interpretar trabalhos científicos além de contribuir no estudo e na resposta da questão da pesquisa\cite{kitchenham2007guidelines,petticrew2008systematic,de2018mapeamento}. O objetivo deste mapeamento sistemático é verificar na literatura textos correspondentes as questões definidas neste trabalho e que possam colaborar nas respostas sobre monitoramento de sistemas distribuídos.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Questões de pesquisa}
+
+Com intensões e expectativas de se alcançar o objetivo da pesquisa, foram levantadas algumas questões de pesquisa \textbf{(QP)}, neste trabalho serão utilizadas 2 questões, com o intuito de fornecer auxílio na fundamentação da pesquisa relacionada ao monitoramento de sistemas distribuídos, as questões são descritas as seguir. As questões têm a intensão de fornecer subsídio durante a busca de informações sobre o tema, possibilitando identificar trabalhos e experiências técnicas que já foram executadas e analisadas\cite{feltrim2004abordagem}.
+
+\begin{description}
+\item[QP1)] Quais os estudos primários existentes na literatura que discutem os mecanismos de monitoramento 
+que são aplicados a sistemas distribuídos?
+\item[QP2)] Quais as categorias de monitoramento relativas aos sistemas distribuídos são mencionadas nos estudos primários?
+\end{description}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\section{Estratégia de busca}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Protocolo de pesquisa}%
+Para a identificação e busca dos trabalhos com maior relevância e aderência ao tema abordado e definido nas questões de pesquisa, foi criada uma \textit{string} de busca. De acordo com \cite{keele2007guidelines} a forma para a criação de uma \textit{string} de busca, é feita a partir da identificação sinônimos, abreviações e etc., e por meio de operadores lógicos, como por exemplo, \textit{AND} e \textit{OR}  concatenar os termos identificados, que possibilita a elaboração de uma \textit{string}. Para a realização da pesquisa levou-se em conta os padrões e tecnologias mais comuns do mercado utilizados para o monitoramento de sistemas distribuídos juntamente com as palavras chave: "Monitoring Protocol", "Distributed Systems", "Monitoring", "\acrshort{SOA}", "\textit{web services}" e "\acrshort{ESB}". As palavras chave foram escritas em inglês para uma maior abrangência de trabalhos publicados em jornais e revistas internacionais. Diante da situação obteve-se a seguinte \textit{string} de busca: \textit{(("Protocol Monitoring" AND "Monitoring Systems") OR ("Distributed Systems" OR "SOA")) AND ("ESB"OR "Web Services" OR "REST")}.
 
-O protocolo de pesquisa foi mapeado para um melhor entendimento do objetivo e organização da realização dos estudos em trabalhos acadêmicos que possuem publicação em jornais e revistas de Engenharia de Software. Nesse contexto buscou-se com a definição de critérios de seleção de Estudos cujo ano de publicação seja  preferencialmente superiores ou igual a 2000, e a seleção inicial dos trabalhos deve ser feita pela leitura do Título e do Resumo do Artigo. 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{String de busca}
-
-A \textit{string} de busca foi definida após uma análise em relação ao objetivo e pesquisa a realizada. Para elaboração dessa \textit{string} levou-se em conta os padrões e tecnologias mais comuns do mercado utilizados para o monitoramento de sistemas distribuídos, leva-se em conta para elaboração dessa criação, as palavras chave: "SNMP Protocol", "Distributed Systems", "Monitoring", "\acrshort{SOA}", "web services" e "ESB". As palavras chave foram escritas em inglês para uma maior abrangência de trabalhos publicados em jornais e revistas internacionais. Diante da situação obteve-se a seguinte \textit{string} de busca:
-
+Com a obtenção da \textit{string} de busca, foi iniciada a pesquisa dos trabalhos e artigos científicos, as pesquisas foram realizadas nas bases de dados digitais que indexam os principais trabalhos científicos do ramo da \acrlong{TI}, essa atividade proporcionou uma maior abrangência no acesso à literatura do tema pesquisado\cite{kitchenham2007guidelines}. As consultas realizadas nas bases seguiram o mesmo procedimento, onde foi incluída a \textit{string} de busca em ambas as bases. As bases consultadas para revisão da literatura foram:
 \begin{itemize}
-\item ("Protocol SNMP" OR "Monitoring Systems") AND ("Distributed Systems" OR "SOA")
+\item \acrlong{ACM} - \url{https://dl.acm.org/}
+\item \acrlong{IEEE} - \url{https://ieeexplore.ieee.org/}
+\item \acrlong{SD} - \url{https://www.sciencedirect.com/}
+\item \acrlong{Scps} - \url{https://www.scopus.com/}
+\item \acrlong{WoS} - \url{https://www.webofknowledge.com/}
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Critérios de Inclusão/Exclusão}
+Os critérios de inclusão e exclusão foram definidos para auxiliar na seleção dos trabalhos, esse critérios auxiliam na buscar por trabalhos mais aderentes ao tema proposto. 
+
+Os critérios de inclusão \textbf{(CI)} utilizados na seleção dos trabalhos foram:
+
+\begin{description}
+
+\item[CI1)] Estudo sobre monitoramento de serviços distribuídos;
+\item[CI2)] Estudo sobre Monitoramento de serviços em barramentos SOA;
+\item[CI3)] Estudo sobre monitoramento de web services pelo Protocolo SNMP.
+\end{description}
+
+Os critérios de exclusão \textbf{(CE)} utilizados na seleção dos trabalhos foram:
+
+\begin{description}
+\item[CE1)]Artigos cujo foco não seja monitoramento de serviços distribuídos ou o monitoramento por Protocolo SNMP monitoramento em barramentos SOA ou monitoramento de web services;
+\item[CE2)] Artigos incompletos ou ainda em fase de desenvolvimento que não fornecem informações suficientes;
+\item[CE3)] Artigos publicado como \textit{Short Paper};
+\item[CE4)] Mesmo Artigo publicado em locais diferentes.
+\end{description}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Fontes de busca}
-A pesquisa dos trabalhos e artigos científicos foram realizadas na base de dados digitais que indexam os principais trabalhos científicos, o que proporcionou uma maior abrangência no acesso à literatura do tema pesquisado\cite{kitchenham2007guidelines}. 
-As consulta realizada nas bases seguiram o mesmo procedimento, foi incluída a \textit{string} de busca para ambas as bases. As bases consultadas para revisão da literatura foram:
-\begin{itemize}
-\item ACM
-\item IEEE
-\item Science Direct
-\item Scopus
-\item Web of Science
-\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Extração dos Dados}
+O Trabalho de extração e seleção dos trabalhos foi realizado em quatro fases, a primeira foi a busca automática nas base de dados digitais com a execução da \textit{string} de busca, seguindo o protocolo definido para a realização da busca de trabalhos científicos do tema proposto, para realização da busca dos trabalhos. A segunda foi a procura de uma ferramenta que possibilitasse o registro e o gerenciamento dos trabalhos buscados, a terceira fase foi a seleção de forma manual para refinar a escolha dos trabalhos relacionados ao tema e a quarta foi a leitura dos itens definidos no protocolo para extração trabalhos selecionados.
 Por meio da execução da \textit{string} de busca em cada base de obteve-se vários tipos de informações sobre os dados buscados, como por exemplo, o numero expressivo de trabalhos que uma base retornou e o numero significativo que outra retornou como se apresenta na Tabela \ref{TabelaRsb}.
 
 \begin{table}[!ht]
@@ -59,37 +76,6 @@ Scopus                              & ("Protocol SNMP" OR "Monitoring Systems") 
 Web of Science                      & ("Protocol SNMP" OR "Monitoring Systems") AND ("Distributed Systems" OR "SOA") & 65                  \\ \hline
 \end{tabular}
 \end{table}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Critérios de Inclusão/Exclusão}
-Os critérios de inclusão e exclusão foram definidos para auxiliar na seleção dos trabalhos, esse critérios auxiliam na buscar por trabalhos mais aderentes ao tema proposto. 
-
-Os critérios de inclusão \textbf{(CI)} utilizados na seleção dos trabalhos foram:
-
-\begin{description}
-
-\item[CI1)] Estudo sobre monitoramento de serviços distribuídos;
-\item[CI2)] Estudo sobre Monitoramento de serviços em barramentos SOA;
-\item[CI3)] Estudo sobre monitoramento de web services pelo Protocolo SNMP.
-\end{description}
-
-Os critérios de exclusão \textbf{(CE)} utilizados na seleção dos trabalhos foram:
-
-\begin{description}
-\item[CE1)]Artigos cujo foco não seja monitoramento de serviços distribuídos ou o monitoramento por Protocolo SNMP monitoramento em barramentos SOA ou monitoramento de web services;
-\item[CE2)] Artigos incompletos ou ainda em fase de desenvolvimento que não fornecem informações suficientes;
-\item[CE3)] Artigos menores que três páginas;
-\item[CE4)] Mesmo Artigo publicado em locais diferentes.
-\end{description}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Extração dos Dados}
-O Trabalho de extração e seleção dos trabalhos foi realizado em quatro fases, a primeira foi a busca automática nas base de dados digitais com a execução da \textit{string} de busca, seguindo o protocolo definido para a realização da busca de trabalhos científicos do tema proposto, para realização da busca dos trabalhos. A segunda foi a procura de uma ferramenta que possibilitasse o registro e o gerenciamento dos trabalhos buscados, a terceira fase foi a seleção de forma manual para refinar a escolha dos trabalhos relacionados ao tema e a quarta foi a leitura dos itens definidos no protocolo para extração trabalhos selecionados.
 
 \begin{itemize}
 \item Fase 1: Nessa fase foi feita a busca dos trabalhos científicos, para as bases ACM, IEEE, Science Direct, Scopus e Web of Science foi utilizada a mesma String de busca, as bases de dados retornaram de forma automática os trabalhos relacionados com as informações registradas na string de busca.     
