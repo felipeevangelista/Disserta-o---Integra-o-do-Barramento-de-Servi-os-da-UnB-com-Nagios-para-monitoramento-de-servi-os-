@@ -17,6 +17,7 @@ que são aplicados a sistemas distribuídos?
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Estratégia de busca}
+\label{sec:stringbusca}
 
 Para a identificação e busca dos trabalhos com maior relevância e aderência ao tema abordado e definido nas questões de pesquisa, foi criada uma \textit{string} de busca. De acordo com \cite{keele2007guidelines} a forma para a criação de uma \textit{string} de busca, é feita a partir da identificação sinônimos, abreviações e etc., e por meio de operadores lógicos, como por exemplo, \textit{AND} e \textit{OR}  concatenar os termos identificados, que possibilita a elaboração de uma \textit{string}. Para a realização da pesquisa levou-se em conta os padrões e tecnologias mais comuns do mercado utilizados para o monitoramento de sistemas distribuídos juntamente com as palavras chave: "Monitoring Protocol", "Distributed Systems", "Monitoring", "\acrshort{SOA}", "\textit{web services}" e "\acrshort{ESB}". As palavras chave foram escritas em inglês para uma maior abrangência de trabalhos publicados em jornais e revistas internacionais. Diante da situação obteve-se a seguinte \textit{string} de busca: \textit{(("Protocol Monitoring" AND "Monitoring Systems") OR ("Distributed Systems" OR "SOA")) AND ("ESB"OR "Web Services" OR "REST")}.
 
@@ -32,7 +33,7 @@ Com a obtenção da \textit{string} de busca, foi iniciada a pesquisa dos trabal
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Critérios de Inclusão/Exclusão}
-Os critérios de inclusão e exclusão foram definidos para auxiliar na seleção dos trabalhos, esse critérios auxiliam na buscar por trabalhos mais aderentes ao tema proposto. 
+Os critérios de inclusão e exclusão foram definidos para auxiliar na seleção dos trabalhos, esse critérios auxiliam na buscar por trabalhos científicos de maior relevância e mais aderentes as questões de pesquisas definidas. Esse critérios foram utilizados em uma ferramenta de apoio que permitiu analisar os trabalhos parcialmente possibilitando incluir ou excluir da seleção os trabalhos a partir da leitura do titulo, resumo, introdução e conclusão dos trabalhos disponíveis, que foram obtidos durante a pesquisa nas bases de dados digitais.    
 
 Os critérios de inclusão \textbf{(CI)} utilizados na seleção dos trabalhos foram:
 
@@ -47,35 +48,35 @@ Os critérios de exclusão \textbf{(CE)} utilizados na seleção dos trabalhos f
 
 \begin{description}
 \item[CE1)]Artigos cujo foco não seja monitoramento de serviços distribuídos ou o monitoramento por Protocolo SNMP monitoramento em barramentos SOA ou monitoramento de web services;
-\item[CE2)] Artigos incompletos ou ainda em fase de desenvolvimento que não fornecem informações suficientes;
-\item[CE3)] Artigos publicado como \textit{Short Paper};
-\item[CE4)] Mesmo Artigo publicado em locais diferentes.
+\item[CE2)] Artigos publicado como \textit{Short Paper};
+\item[CE3)] Mesmo Artigo publicado em locais diferentes.
 \end{description}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Extração dos Dados}
-O Trabalho de extração e seleção dos trabalhos foi realizado em quatro fases, a primeira foi a busca automática nas base de dados digitais com a execução da \textit{string} de busca, seguindo o protocolo definido para a realização da busca de trabalhos científicos do tema proposto, para realização da busca dos trabalhos. A segunda foi a procura de uma ferramenta que possibilitasse o registro e o gerenciamento dos trabalhos buscados, a terceira fase foi a seleção de forma manual para refinar a escolha dos trabalhos relacionados ao tema e a quarta foi a leitura dos itens definidos no protocolo para extração trabalhos selecionados.
-Por meio da execução da \textit{string} de busca em cada base de obteve-se vários tipos de informações sobre os dados buscados, como por exemplo, o numero expressivo de trabalhos que uma base retornou e o numero significativo que outra retornou como se apresenta na Tabela \ref{TabelaRsb}.
+A atividade de extração e seleção dos trabalhos foi dividida e realizada em quatro fases, a primeira foi a busca automática nas base de dados digitais com a execução da \textit{string} de busca, descrita na seção \ref{sec:stringbusca}, seguindo o protocolo definido para a realização da busca de trabalhos científicos aderentes ao tema abordado, para realização da busca dos trabalhos. A segunda foi a procura de uma ferramenta que possibilitasse o registro e o gerenciamento dos trabalhos buscados, a terceira fase foi a seleção de forma manual para refinar a escolha dos trabalhos relacionados ao tema e a quarta foi a leitura dos itens definidos no protocolo para extração trabalhos selecionados.
+Por meio da execução da \textit{string} de busca em cada base de obteve-se vários tipos de informações sobre os dados buscados, como por exemplo, o numero expressivo de trabalhos que uma base retornou e o numero significativo que outra retornou como se apresenta na Tabela \ref{tabelaresultaddos}.
 
 \begin{table}[!ht]
-
 \centering
-\caption{Resultados da string de busca por base de dados digitais}
-\label{TabelaRsb}
-
-\begin{tabular}{|c|p{8cm}|c|}
+\caption{Resultados da string de busca por base de dados digital}
+\label{tabelaresultaddos}
+\begin{tabular}{|c|c|}
 \hline
-\multicolumn{1}{|c|}{Base de dados} & \multicolumn{1}{c|}{String de busca}                                           & Total de resultados \\ \hline
-ACM Digital Library                 & ("Protocol SNMP" OR "Monitoring Systems") AND ("Distributed Systems" OR "SOA") & 77                  \\ \hline
-IEEE Xplore                         & ("Protocol SNMP" OR "Monitoring Systems") AND ("Distributed Systems" OR "SOA") & 243                 \\ \hline
-Science Direct                      & ("Protocol SNMP" OR "Monitoring Systems") AND ("Distributed Systems" OR "SOA") & 2112                \\ \hline
-Scopus                              & ("Protocol SNMP" OR "Monitoring Systems") AND ("Distributed Systems" OR "SOA") & 489                 \\ \hline
-Web of Science                      & ("Protocol SNMP" OR "Monitoring Systems") AND ("Distributed Systems" OR "SOA") & 65                  \\ \hline
+\multicolumn{2}{|c|}{\textbf{Fase 1}} \\ \hline
+\textbf{\begin{tabular}[c]{@{}c@{}}Base de dados\\ digitais\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Total de trabalhos\\ retornados\end{tabular}} \\ \hline
+\acrlong{ACM}  & 77 \\ \hline
+\acrlong{IEEE}  & 243 \\ \hline
+ \acrlong{SD} & 2112 \\ \hline
+ \acrlong{Scps} & 489 \\ \hline
+ \acrlong{WoS} & 65 \\ \hline
 \end{tabular}
 \end{table}
+
+
+
+
 
 \begin{itemize}
 \item Fase 1: Nessa fase foi feita a busca dos trabalhos científicos, para as bases ACM, IEEE, Science Direct, Scopus e Web of Science foi utilizada a mesma String de busca, as bases de dados retornaram de forma automática os trabalhos relacionados com as informações registradas na string de busca.     
@@ -135,3 +136,19 @@ O trabalho \cite{wang2016improvements} apresenta algoritmos de compactação de 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{table}[!ht]
+
+%\centering
+%\caption{Resultados da string de busca por base de dados digitais}
+%\label{TabelaRsb}
+
+%\begin{tabular}{|c|p{8cm}|c|}
+%\hline
+%\multicolumn{1}{|c|}{Base de dados} & \multicolumn{1}{c|}{String de busca}                                           & Total de resultados \\ \hline
+%ACM Digital Library                 & ("Protocol SNMP" OR "Monitoring Systems") %AND ("Distributed Systems" OR "SOA") & 77                  \\ \hline
+%IEEE Xplore                         & ("Protocol SNMP" OR "Monitoring Systems") %AND ("Distributed Systems" OR "SOA") & 243                 \\ \hline
+%Science Direct                      & ("Protocol SNMP" OR "Monitoring Systems") %AND ("Distributed Systems" OR "SOA") & 2112                \\ \hline
+%Scopus                              & ("Protocol SNMP" OR "Monitoring Systems") AND ("Distributed Systems" OR "SOA") & 489                 \\ \hline
+%Web of Science                      & ("Protocol SNMP" OR "Monitoring Systems") AND ("Distributed Systems" OR "SOA") & 65                  \\ \hline
+%\end{tabular}
+%\end{table}
