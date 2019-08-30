@@ -21,7 +21,16 @@ que são aplicados a sistemas distribuídos?
 
 Para a identificação e busca dos trabalhos com maior relevância e aderência ao tema abordado e definido nas questões de pesquisa, foi criada uma \textit{string} de busca. De acordo com \cite{keele2007guidelines} a forma para a criação de uma \textit{string} de busca, é feita a partir da identificação sinônimos, abreviações e etc., e por meio de operadores lógicos, como por exemplo, \textit{AND} e \textit{OR}  concatenar os termos identificados, que possibilita a elaboração de uma \textit{string}. Para a realização da pesquisa levou-se em conta os padrões e tecnologias mais comuns do mercado utilizados para o monitoramento de sistemas distribuídos juntamente com as palavras chave: "Monitoring Protocol", "Distributed Systems", "Monitoring", "\acrshort{SOA}", "\textit{web services}" e "\acrshort{ESB}". As palavras chave foram escritas em inglês para uma maior abrangência de trabalhos publicados em jornais e revistas internacionais. Diante da situação obteve-se a seguinte \textit{string} de busca: \textit{(("Protocol Monitoring" AND "Monitoring Systems") OR ("Distributed Systems" OR "SOA")) AND ("ESB"OR "Web Services" OR "REST")}.
 
-Com a obtenção da \textit{string} de busca, foi iniciada a pesquisa dos trabalhos e artigos científicos, as pesquisas foram realizadas nas bases de dados digitais que indexam os principais trabalhos científicos do ramo da \acrlong{TI}, essa atividade proporcionou uma maior abrangência no acesso à literatura do tema pesquisado\cite{kitchenham2007guidelines}. As consultas realizadas nas bases seguiram o mesmo procedimento, onde foi incluída a \textit{string} de busca em ambas as bases. As bases consultadas para revisão da literatura foram:
+Com a obtenção da \textit{string} de busca, foi iniciada a pesquisa dos trabalhos e artigos científicos, as pesquisas foram realizadas nas bases de dados digitais que indexam os principais trabalhos científicos do ramo da \acrlong{TI}, para essa atividade foi utilizado um protocolo pesquisa para a execução do mapeamento sistemático, o protocolo foi separado por etapas, uma representação protocolo de pesquisa poderá ser visualizada na figura \ref{fig:etapasRSL}, a execução das etapas proporcionaram uma maior abrangência no acesso à literatura do tema pesquisado\cite{kitchenham2007guidelines}.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width = 16cm, height=9cm]{img/etapas_RSL_final.jpg}
+\caption{Etapas do \acrlong{MS}}
+\label{fig:etapasRSL}
+\end{figure}
+
+Para a continuidade das atividades definidas na estratégia de busca seguindo o protocolo de pesquisa definido, a realização das consultas nas bases será feita por meio da execução da \textit{string} de busca de finida. As bases selecionadas  e consultadas para revisão da literatura foram:
 \begin{itemize}
 \item \acrlong{ACM} - \url{https://dl.acm.org/}
 \item \acrlong{IEEE} - \url{https://ieeexplore.ieee.org/}
@@ -32,7 +41,8 @@ Com a obtenção da \textit{string} de busca, foi iniciada a pesquisa dos trabal
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Critérios de Inclusão/Exclusão}
+\section{Critérios de Inclusão e Exclusão}
+\label{sec:cIncExc}
 Os critérios de inclusão e exclusão foram definidos para auxiliar na seleção dos trabalhos, esse critérios auxiliam na buscar por trabalhos científicos de maior relevância e mais aderentes as questões de pesquisas definidas. Esse critérios foram utilizados em uma ferramenta de apoio que permitiu analisar os trabalhos parcialmente possibilitando incluir ou excluir da seleção os trabalhos a partir da leitura do titulo, resumo, introdução e conclusão dos trabalhos disponíveis, que foram obtidos durante a pesquisa nas bases de dados digitais.    
 
 Os critérios de inclusão \textbf{(CI)} utilizados na seleção dos trabalhos foram:
@@ -55,11 +65,10 @@ Os critérios de exclusão \textbf{(CE)} utilizados na seleção dos trabalhos f
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Extração dos Dados}
-A atividade de extração e seleção dos trabalhos foi dividida e realizada em quatro fases, a primeira fase foi a busca automática nas base de dados digitais com a execução da \textit{string} de busca, descrita na seção \ref{sec:stringbusca}, seguindo o protocolo definido para a realização da busca de trabalhos científicos aderentes ao tema abordado para realização da busca dos trabalhos. A segunda fase foi a procura de uma ferramenta que possibilitasse o registro e o gerenciamento dos trabalhos buscados, a terceira fase foi a seleção de forma manual para refinar a escolha dos trabalhos relacionados ao tema e a quarta foi a leitura dos itens definidos no protocolo para extração trabalhos selecionados.
-Por meio da execução da \textit{string} de busca em cada base de obteve-se vários tipos de informações sobre os dados buscados, como por exemplo, o numero expressivo de trabalhos que uma base retornou e o numero significativo que outra retornou como se apresenta na tabela \ref{tabelaresultaddos}.
+A atividade de extração e seleção dos trabalhos foi dividida e realizada em quatro fases, a primeira fase foi a busca automática nas base de dados digitais com a execução da \textit{string} de busca descrita na seção \ref{sec:stringbusca}, seguindo o protocolo definido para a busca de trabalhos científicos aderentes ao tema abordado. A segunda fase foi a realização de uma pesquisa com a intenção de encontrar de uma ferramenta que possibilitasse o registro e o gerenciamento dos trabalhos buscados, a terceira fase foi a seleção de forma manual para refinar a escolha dos trabalhos relacionados ao tema e a quarta foi a leitura dos trabalhos seguindo os itens definidos no protocolo para extração das informações dos trabalhos selecionados. Durante a realização da extração dos dados por meio da execução da \textit{string} de busca em cada base de obteve-se vários tipos de informações sobre os dados buscados, como por exemplo, o ano da publicação do trabalho no evento, os locais de realização dos eventos, o \acrshort{DOI} dos trabalhos de publicados, além do numero expressivo de trabalhos que uma base retornou e o numero significativo que outra retornou como se apresenta a seguir na tabela \ref{tabelaresultaddos}.
 
 \begin{itemize}
-\item Fase 1: Nessa fase foi realizada a busca dos trabalhos científicos nas bases digitais \acrlong{ACM}, \acrlong{IEEE}, \acrlong{SD}, \acrlong{Scps} e \acrlong{WoS}. Os trabalhos retornados foram obtidos por meio da utilização da \textit{string} de busca descrita na seção \ref{sec:stringbusca}, que após a filtragem em cada base, obteve-se o retorno dos trabalhos relacionados mais aderentes ao tema do projeto, que foi possível por causa da definição das palavras e textos registrados na \textit{string} de busca, totalizando o número de 2.986 trabalhos publicados.
+\item Fase 1: Nessa fase foi realizada a busca dos trabalhos científicos nas bases digitais \acrlong{ACM}, \acrlong{IEEE}, \acrlong{SD}, \acrlong{Scps} e \acrlong{WoS}. Os trabalhos retornados foram obtidos por meio da utilização da \textit{string} de busca descrita na seção \ref{sec:stringbusca}, que após da \textit{string} como meio de filtragem para a obtenção do trabalhos em cada base, obteve-se o retorno dos trabalhos relacionados com maior relevância e os mais aderentes ao tema do projeto. A busca nas bases de dados foi possível por causa da definição das palavras e textos registrados na \textit{string} de busca, ocasionando o refinamento da busca dos trabalhos totalizando o número de 2.986 trabalhos publicados, que foram retornados após a pesquisa, conforme o registro na tabela \ref{tabelaresultaddos}.
 
 \begin{table}[!ht]
 \centering
@@ -77,9 +86,9 @@ Por meio da execução da \textit{string} de busca em cada base de obteve-se vá
     \end{tabular}
 \end{table}
 
-\item Fase 2: Após a conclusão da fase 1, que foi a realização da busca dos trabalhos nas bases científicas foi detectada a necessidade de utilização de uma ferramenta que possibilitasse um melhor controle e gerenciamento dos trabalhos científicos que foram retornados das bases. A necessidade surgiu por causa do grande volume de trabalhos retornados, que durante a realização do processo de extração poderia ocasionar a perda do conhecimento ou confusão no entendimento do problemas, devido a não organização dos dados obtido pela leitura dos trabalhos. A ideia é identificar uma ferramenta capaz de auxiliar no registro de informações obtidos na extração trabalhos buscados. Depois de uma pesquisa na literatura, conversar com professores e grupos de alunos sobre ferramentas com a finalidade que compõem o processo metodológico para auxílio na extração de dados, a ferramenta selecionada para a execução do trabalho foi o StArt\cite{de2002pesquisas,zamboni2010start}.  
+\item Fase 2: Após a conclusão da fase 1, que foi a realização da busca dos trabalhos nas bases científicas foi detectada a necessidade de utilização de uma ferramenta que possibilitasse um melhor controle e gerenciamento dos trabalhos científicos que foram retornados das bases. A necessidade surgiu por causa do grande volume de trabalhos retornados, que durante a realização do processo de extração poderia ocasionar a perda do conhecimento ou confusão no entendimento do problemas, devido a não organização dos dados obtidos pela leitura dos trabalhos. A ideia é identificar uma ferramenta capaz de auxiliar no registro de informações obtidos na extração trabalhos buscados. Depois de uma pesquisa na literatura, conversar com professores e grupos de alunos sobre ferramentas com a finalidade que compõem o processo metodológico para auxílio na extração de dados, a ferramenta selecionada para a execução do trabalho foi o StArt\textsuperscript{\textregistered}\cite{de2002pesquisas,zamboni2010start}.  
 
-\item Fase 3: Após a extração dos trabalhos das bases de dados cientificas, foi feita a importação desse trabalhos em formato BibTex\cite{chomsky1969linguistica} na ferramenta Start. Na ferramenta foram executados os critérios de seleção para inclusão ou exclusão dos trabalhos para a leitura, devido a realização da busca automática na bases de dados que retornaram muitos trabalhos com palavras da string de busca em seus títulos e que não necessariamente tratavam do assunto monitoramento de serviços distribuídos.
+\item Fase 3: Após a extração dos trabalhos das bases de dados cientificas e a seleção de ferramenta de apoio para o auxílio no processo de extração dos dados, foi feita a importação desse trabalhos em formato BibTex\textsuperscript{\textregistered}\cite{chomsky1969linguistica} na ferramenta StArt\textsuperscript{\textregistered}. Na ferramenta foram executados os critérios para a seleção dos trabalhos utilizando os tópicos de inclusão e exclusão descritos na seção \ref{sec:cIncExc} dos trabalhos para a leitura, devido a realização da busca automática na bases de dados que retornaram muitos trabalhos com palavras da string de busca em seus títulos e que não necessariamente tratavam do assunto monitoramento de serviços distribuídos.
 
 \item Fase 4: Após a seleção dos trabalhos científicos foram feitas as devidas anotações e classificação de cada trabalho na ferramenta, a leitura dos artigos foi feita após a análise empírica do trabalho, como o trabalho encontra-se em andamento, foi feita uma pequena amostragem dos trabalhos selecionados, essa amostragem poderá ser visualizada na figura \ref{fig:StArt}. Após a análise e leitura dos títulos e resumos, para a classificação e seleção dos artigos que realmente interessam para a leitura do tema proposta a fim de responder as questões levantadas para chegar ao objetivo proposto, que é a fundamentação teórica para a implementação do protocolo SNMP para o monitoramento de serviços. 
 \end{itemize}
@@ -87,7 +96,7 @@ Por meio da execução da \textit{string} de busca em cada base de obteve-se vá
 \begin{figure}[!ht]
 \centering
 \includegraphics[width = 10cm, height=15cm]{img/extra__oRSLStArt.png}
-\caption{Amostragem da extração de Artigos na ferramenta StArt.}
+\caption{Amostragem da extração de Artigos na ferramenta StArt\textsuperscript{\textregistered}.}
 \label{fig:StArt}
 \end{figure}
 
