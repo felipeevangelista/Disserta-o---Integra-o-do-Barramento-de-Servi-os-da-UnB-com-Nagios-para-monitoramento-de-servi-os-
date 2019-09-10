@@ -1,27 +1,24 @@
 \label{Introducao}
 
-A implementação de sistemas seja ela pela criação, migração ou modernização tecnologica é um assunto que é bastante discutido na \acrfull{UnB}. Na
+A implementação de sistemas seja ela pela criação, migração ou modernização tecnológica é um assunto que é bastante discutido na \acrfull{UnB}. Nesses últimos anos o assunto com maior repercussão nos departamentos e comunidade acadêmica é a defasagem tecnológica dos \textit{softwares} utilizado para gestão acadêmica e administrativa da \acrshort{UnB}. Na \acrshort{UnB} os sistemas em execução são classificado como \textit{softwares} legados, por não possuir uma documentação, ser de difícil manutenção e também possuir defasagem tecnológica, mas são essenciais para organização. Quando se trata de um processo de modernização, espera-se reduzir os custos com a manutenção dos sistemas legados, criando novos \textit{web services} com a intenção de ampliar a integração entre os sistemas\cite{Agilar}.
 
+O \acrfull{CPD} da \acrshort{UnB}, órgão responsável por desenvolver, gerenciar e manter os sistemas novos e legados, atualmente vem trabalhando na implantação de uma Arquitetura Orientada a Serviços (\acrshort{SOA}), seguindo o modelo de modernização dos \textit{softwares} da \acrshort{UnB} e utilizando como processo o \textit{\acrfull{SMSOC}} para a implementação dos serviços conectando-os  através de um barramento de serviços (\acrshort{ESB}) que utiliza a arquitetura \textit{\acrfull{REST}}.
 
-Um sistema legado pode ser classificado como \textit{software} que não possui documentação, que é de difícil manutenção e também possui defasagem tecnológica, mas um ponto importante, é que normalmente é essencial para organização. Com o processo de modernização espera-se reduzir os custos com a manutenção dos sistemas legados e aumentar a integração dos fluxos de negócios entre os sistemas\cite{Agilar}.
+No entanto, a flexibilidade que a arquitetura proporciona na modernização dos sistemas legados da \acrshort{UnB}, pode dificultar o gerenciamento e monitoramento dos serviços que serão implementados, devido ao modelo negocial de cada sistema, em alguns casos poderão haver situações em que vários serviços e micros serviços serão necessários e determinantes para um único fluxo de negócio do sistema. Diante desse cenário o presente trabalho de pesquisa busca apresentar uma solução para o monitoramento dos serviço implementados, com a implantação do protocolo de monitoramento \textit{\acrfull{SNMP}} como um serviço de monitoramento com o objetivo de facilitar o monitoramento dos serviços com a utilização de um serviço que possibilite a realização da integração com ferramentas de monitoramento, que utilizam o protocolo \acrshort{SNMP} para coletar informações e transmiti-las, assim como indicar condições ou situações de falhas nos serviços em execução monitorados.
 
-O Centro de Informática (CPD) da UnB, órgão responsável por desenvolver, gerenciar e manter os sistemas novos e legados, atualmente vem trabalhando na implantação de uma arquitetura orientada a serviços (SOA), como modelo de modernização dos \textit{softwares} da UnB utilizando o processo  \textit{Software Modernization through Service Oriented Computing} (SMSOC) para a implementação dos serviços conectando-os  através de um barramento de serviços (ESB) que utiliza a arquitetura \textit{Representational State Transfer} (REST).
-
-No entanto, a facilidade que a arquitetura proporciona na modernização dos sistemas legados da UnB, pode dificultar o gerenciamento e monitoramento dos serviços que serão implementados, devido ao modelo negocial de cada sistema, em alguns casos poderão haver situações em que vários serviços e micros serviços serão necessários ao negócio do sistema. Diante desse cenário o presente trabalho de pesquisa busca apresentar uma solução para o monitoramento dos serviço implementados, com a implementação do Protocolo de monitoramento \textit{Simple Network Management Protocol} (SNMP) como um serviço de monitoramento com o objetivo de facilitar o monitoramento dos serviços com a utilização do serviço implementado para integrar com ferramentas de monitoramento, que utilizam o protocolo SNMP para coletar informações, além de validar e verificar detectar condições de falhas nos serviços em execução.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Justificativa}
 
-Com o aumento da implementação e disponibilização de serviços na UnB, foi identificada a necessidade de um efetivo monitoramento dos serviços, através da coleta de dados ou informações extraídas das requisições. Para gerenciar o monitoramento são necessária ferramentas para um controle mais fácil e objetivo, atualmente o CPD utiliza ferramentas de mercado com esse propósito, essas ferramentas ou  plataformas utilizadas para acompanhamento e monitoramento da infraestrutura de redes da UnB, já a parte de sistemas e serviços não são monitoradas de forma precisa ou que possa trazer informações com certa relevância, pois não há uma comunicação ou integração dos sistemas e serviço de forma apropriada, o que implica em um déficit no acompanhamento e monitoramento nos sistemas e serviços. Além disso, também não há um acompanhamento especifico voltado para o monitoramento do ambiente em que as aplicações e serviços estão hospedados, ou seja, percebe-se que o gerenciamento de importantes funcionalidades são falhos e que precisam ser melhorados.
+Com o aumento da implementação e disponibilização de serviços na \acrshort{UnB}, foi identificada a necessidade de um efetivo monitoramento dos serviços, através da coleta de dados ou informações extraídas das requisições. Para gerenciar o monitoramento são necessárias ferramentas para um controle mais fácil e objetivo, atualmente o \acrshort{CPD} utiliza ferramentas de mercado com esse propósito, essas ferramentas ou  plataformas são utilizadas para acompanhamento e monitoramento da infraestrutura de redes da \acrshort{UnB}, já a parte de sistemas e serviços não são monitoradas de forma precisa ou que possa trazer informações com certa relevância, pois não há uma comunicação ou integração dos sistemas e serviço de forma apropriada, o que implica em um deficit no acompanhamento e monitoramento nos sistemas e serviços, além disso, também não há um acompanhamento especifico voltado para o monitoramento do ambiente em que as aplicações e serviços estão hospedados, ou seja, percebe-se que o gerenciamento de importantes funcionalidades são falhos e que precisam ser melhorados.
 
-Dessa forma, com esse trabalho, espera-se prover meios para realizar a integração das ferramentas utilizadas pelo CPD para o monitoramento, utilizado o protocolo SNMP para facilitar e tornar o gerenciamento dos serviços mais abrangente contribuindo com um bom funcionamento e acompanhamento dos \textit{softwares} da UnB. Além disso pretende-se também que a implementação do protocolo SNMP para monitoramento de serviços possa trazer grandes benefícios como o gerenciamento de falhas, requisições, desempenho e quantidade de acessos em um determinado momento. A partir da implementação, criar e especificar processos, métodos, assim como, realizar estudos e utilizar métricas para estatísticas após a coleta da informações advindas dos serviços implementados para esse propósito. 
+Dessa forma, com esse trabalho, espera-se prover meios para realizar a integração das ferramentas utilizadas pelo \acrshort{CPD} para o monitoramento, utilizando o protocolo \acrshort{SNMP} para integrar e tornar o gerenciamento dos serviços mais abrangente contribuindo com um bom funcionamento e acompanhamento dos \textit{softwares} da \acrshort{UnB}. Pretende-se também que a implantação do protocolo \acrshort{SNMP} para monitoramento de serviços possa trazer grandes benefícios como fornecer métricas sobre gerenciamento de falhas, requisições, desempenho e quantidade de acessos em um determinado momento. A partir da implantação ou implementação quando necessário, criar e especificar processos, métodos, assim como, realizar estudos e utilizar métricas para estatísticas após a coleta das informações advindas dos serviços implementados e disponibilizados para esse propósito. 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Objetivo Geral}
 
-O objetivo geral do trabalho é propor um \textit{framework} que utilize o protocolo SNMP para o monitoramento de serviços e sistemas distribuídos da UnB. Para isso serão realizadas  pesquisas e projetos desenvolvidos e utilizados para monitoramentos de serviços, técnicas e ferramentas de apoio, visando à melhoria do gerenciamento dos serviços.
+O objetivo geral do trabalho é propor o monitoramento dos sistemas e serviços da \acrshort{UnB} por meio da integração com ferramentas de monitoramento gerenciadas e mantidas pelo \acrshort{CPD} utilizando o protocolo \acrshort{SNMP} para a comunicação. 
 
 \subsection{Objetivos Específicos}
 
@@ -29,45 +26,29 @@ Os objetivos específicos são:
 
 \begin{itemize}
 	 
-\item Definir um processo para a realização da implementação do protocolo SNMP para monitoramento de serviços baseando-se nas  abordagens mais relevantes estudadas na literatura;
+\item Realizar um mapeamento sistemático para identificar o monitoramento
+de sistemas distribuídos;
 
-\item Utilizar ferramentas de apoio para a implementação do protocolo SNMP para monitoramento de serviços;
+\item Avaliar as ferramentas de monitoramento existentes e mantidas pelo \acrshort{CPD};
 
-\item implementar o protocolo SNMP para monitoramento de serviços seguindo o RFC\cite{Schoffstall}, documento que especifica os padrões que serão implementados e utilizados em toda a internet ;
+\item Avaliar ferramentas de apoio para a implantação do protocolo \acrshort{SNMP} para integração do monitoramento de serviços;
 
-\item Realizar um estudo de caso aplicando o método desenvolvido para promover adequações e melhorias no gerenciamento de monitoramento dos serviços da UnB; 
+\item implantar o protocolo \acrshort{SNMP} para monitoramento de serviços seguindo o RFC - 1157\cite{Schoffstall}, documento que especifica os padrões que serão implementados e utilizados em toda a internet;
 
-\item Testar, homologar e Implantar a solução proposta para a utilização de monitoramento dos serviços da UnB. 
+\item Realizar um estudo de caso aplicando o método desenvolvido para promover adequações e melhorias no gerenciamento de monitoramento dos serviços da \acrshort{UnB}; 
+
+\item Avaliar e analisar os resultados da solução que foi proposta para a realização da integração das ferramentas de monitoramento dos serviços da \acrshort{UnB}. 
 
 \end{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Resultados Esperados}
 
-O resultado esperado com a execução deste trabalho é a implementação de um \textit{framework} que utilize o protocolo SNMP para o monitoramento de serviços e sistemas distribuídos, e que essa solução após uma avaliação técnica possa ser implantada. Espera-se que o \textit{framework} seja capaz de realizar o monitoramento de sistemas distribuídos em uma arquitetura SOA que sustente a modernização dos sistemas legados da UnB e auxilie no monitoramento e gerenciamento dos novos serviços implementados de forma a garantir o funcionamento dos sistemas e serviços da UnB.
+O resultado esperado com a execução deste trabalho é a implantação da integração da ferramenta de monitoramento utlizada pelo \acrshort{CPD} com o provedor de serviços denominado Erlangms\cite{Agilar}, utilizada como meio de comunicação para a realização da integração por meio do protocolo \acrshort{SNMP} que comtempla o monitoramento de serviços e sistemas distribuídos, e que essa solução após uma avaliação técnica possa ser implantada. Espera-se que o trabalho proposto seja capaz de realizar o monitoramento de sistemas distribuídos em uma arquitetura \acrshort{SOA} que sustente a modernização dos sistemas legados da \acrshort{UnB} e auxilie no monitoramento e gerenciamento dos novos serviços implementados de forma a garantir o funcionamento da integração entre os sistemas e serviços da \acrshort{UnB}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\section{Metodologia}
-
-%O presente trabalho utiliza-se de uma  revisão sistemática para tratar o tema o monitoramento de serviços distribuídos. Este trabalho analisa a utilização de ferramentas de monitoramento de serviços distribuídos com estrutura de base para organizar e formar uma base de conhecimento do tema em questão. Por ser uma das referencias mais citadas em trabalhos sobre RSL, foi utilizado o como referência  para elaboração do trabalho o guia de revisão sistemática da literatura criado por Kitchenham e Charles\cite{kitchenham2007guidelines}.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\subsection{Questões de pesquisa}
-
-%Com intensões e expectativas de se alcançar o objetivo da pesquisa, foram levantadas as seguintes questões de pesquisa \textbf{(QP)}, uma questão principal e outra questão secundária com a intenção de fornecer auxílio na fundamentação da pesquisa, são elas: 
-
-%\begin{description}
-%		\item[QP1)] Análise ou estudo de mecanismos de monitoramento aplicados a sistemas distribuídos?
-%\item[QP2)] Quais as categorias de monitoramento de sistemas distribuídos que são utilizados nos trabalhos acadêmicos?
-%\end{description}
-
-%As perguntas ou questões têm a intensão de dar subsídio para que durante a busca de informações sobre o tema, seja possível encontrar trabalhos e experiências técnicas que já foram executado e analisados\cite{feltrim2004abordagem}.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Estrutura do trabalho}
 
-Este trabalho está organizado em 4 capítulos, além deste. No Capítulo \ref{fundamentacao_teorica} é apresentada uma fundamentação teórica que abrange temas de contexto importante para o entendimento e execução do trabalho. No Capítulo \ref{mapeamento_sistematico} é apresentada um mapeamento sistemático, utilizado na realização de pesquisa para identificação dos principais trabalhos sobre o tema. No Capítulo \ref{monitoramento_servicos} são apresentadas as informações do trabalho para implementação do monitoramento de serviços por meio do protocolo \acrshort{SNMP}. O Capítulo \ref{conclusao} são apresentadas as conclusões, quais os indícios e expectativas geradas pelo do trabalho, as contribuições e a possibilidade da realização de trabalhos futuros.
+Este trabalho está organizado em 4 capítulos, além deste. No Capítulo \ref{fundamentacao_teorica} é apresentada uma fundamentação teórica que abrange temas de contexto importante para o entendimento e execução do trabalho. No Capítulo \ref{mapeamento_sistematico} é apresentado um mapeamento sistemático, utilizado na realização de pesquisa para identificação dos principais trabalhos sobre o tema. No Capítulo \ref{monitoramento_servicos} são apresentadas as informações do trabalho para implantação do monitoramento de serviços por meio do protocolo \acrshort{SNMP}. No Capítulo \ref{conclusao} são apresentadas as conclusões, e quais os indícios e expectativas geradas pelo do trabalho, as contribuições e a possibilidade da realização de trabalhos futuros.
