@@ -1,14 +1,16 @@
 \label{monitoramento_servicos}
 
-Neste capítulo são apresentadas informações para a implementação do monitoramento de sistemas distribuídos em \textit{web services} utilizando o Protocolo SNMP. Na Seção 3.1 é a apresentada a proposta para o monitoramento de sistemas distribuídos. Na Seção 3.3 são apresentados alguns detalhes para a implementação do protocolo SNMP. Na Seção 3.4 são apresentados os desafios do gerenciamento das informações monitoradas. Na Seção 3.5 é apresentado o cronograma de execução.
+Neste capítulo são apresentadas informações decorrentes da realização do monitoramento do barramento de serviços utilizando o Protocolo \acrshort{SNMP}. Na Seção \ref{recursos_monitoramento} é a apresentada a proposta para o monitoramento de sistemas distribuídos. Na Seção \ref{integracao_snmp} são apresentados alguns detalhes para a implementação do protocolo SNMP. Na Seção 3.4 são apresentados os desafios do gerenciamento das informações monitoradas. Na Seção 3.5 é apresentado o cronograma de execução.
 
-\section{Monitoramento de sistemas distribuídos}%
+\section{Monitoramento dos recursos do barramento de serviços}%
+\label{recursos_monitoramento}
 
 O CPD da \acrlong{UnB} tem ao longo dos anos vivenciado um problema com a defasagem tecnológica, os sistemas utilizados para o gerenciamento de informações administrativas da UnB possuem complexidade alta, as manutenções tem um alto grau de dificuldade, devido a definição arquitetural implementada. Como solução para a modernização e migração dos sistemas e tecnologia o CPD adotou a implementação de uma arquitetura orientada a serviços, que vem sendo bastante utilizada principalmente para criação de serviços (\textit{web services}). A implementação dos serviços tem aumentado, devido a flexibilidade definida na arquitetura para a implementação desses serviços e a curva de aprendizagem ser alta. Com a implementação de vários serviços temos a seguinte questão: Como monitorar e acompanhar o funcionamento, ou pode-se dizer a saúde desses serviços, visto que há um grande número de serviços implementados. A proposta desse trabalho é implementar um \textit{framework} de monitoramento por meio do processo de desenvolvimento de software adotado pelo \acrshort{CPD} o \textit{\acrfull{SMSOC}}\cite{Agilar}, essa abordagem será avaliada de forma qualitativa em uma situação real, pois a plataforma \acrshort{SOA} da \acrshort{UnB} já possui vários serviços implementados, e espera-se que a solução seja capaz de auxiliar no monitoramento e acompanhamento dos sistemas distribuídos e serviços, não verificando apenas a sua disponibilidade, mas também o número de requisições, tempo de requisição, quantidade de usuários que acessaram o serviço, informações de falha, segurança e etc.            
 
 %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 \subsection{Web services}
+
 
 O CPD optou, após a definição e implementação da sua arquitetura SOA, pela implementação de \textit{web services} para solucionar e agilizar o processo de modernização de \textit{softwares} da UnB. Esses serviços possuem especificidades no fornecimento de informações referentes aos alunos e cursos de graduação da UnB,  como por exemplo, a impossibilidade de identificação de um curso de um determinado aluno, caso haja uma falha no \textit{web services} que fornece as informações do curso. Isso é um exemplo da importância do monitoramento dos \textit{web services}, para o funcionamento integral dos serviços disponibilizados.   
 
@@ -21,7 +23,7 @@ Para o acompanhamento e monitoramento serão implementados agentes de monitorame
 %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 \section{Protocolo SNMP}
-
+\label{integracao_snmp}
 O SNMP é o protocolo utilizado para o monitoramento de dispositivos conectados em rede. O CPD para o monitoramento dos ativos de rede utiliza, por meio de ferramentas que recebem informações desse protocolo, no entanto as ferramentas e informações fornecidas para o monitoramento servem apenas para o controle da infraestrutura de rede e servidores de aplicação, não gerenciando por exemplo, o funcionamento dos sistemas, serviços e funcionalidades das aplicações. Como proposta esse trabalho tem a intensão de fornecer e subsidiar  recursos que possibilitem o monitoramento e integração com outras ferramenta de monitoramento, para o gerenciamento de sistemas distribuídos e \textit{web services}, com a implementação de serviços que tem a responsabilidade de coletar as informações no padrão do protocolo para permitir o monitoramento dos \textit{web services}, as informações desses serviços poderão ser visualizados em qualquer ferramenta que trabalhe com os dados coletados nos padrões do protocolo.           
 %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
