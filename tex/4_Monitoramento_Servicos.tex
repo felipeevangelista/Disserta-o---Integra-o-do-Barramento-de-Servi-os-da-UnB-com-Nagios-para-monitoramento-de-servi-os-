@@ -1,13 +1,21 @@
 \label{monitoramento_servicos}
 
-Neste capítulo são apresentadas informações decorrentes da realização do monitoramento do barramento de serviços utilizando o Protocolo \acrshort{SNMP}. Na Seção \ref{recursos_monitoramento} é a apresentada a proposta para o monitoramento de sistemas distribuídos. Na Seção \ref{integracao_snmp} são apresentados alguns detalhes para a implementação do protocolo SNMP. Na Seção 3.4 são apresentados os desafios do gerenciamento das informações monitoradas. Na Seção 3.5 é apresentado o cronograma de execução.
+Neste capítulo são apresentadas informações decorrentes da realização do monitoramento do barramento de serviços utilizando o Protocolo \acrshort{SNMP}. Na Seção \ref{recursos_monitoramento} é a apresentado o monitoramento dos recursos do barramento de serviços. Na Seção \ref{integracao_snmp} são apresentados alguns detalhes para a implantação do protocolo \acrshort{SNMP}. Na Seção \ref{metricas_monitoramento} são apresentadas as métricas adotadas para a realização do monitoramento do barramento. Na Seção ('\ ref') é apresentado o ......
 
 \section{Monitoramento dos recursos do barramento de serviços}%
 \label{recursos_monitoramento}
 
-O CPD da \acrlong{UnB} tem ao longo dos anos vivenciado um problema com a defasagem tecnológica, os sistemas utilizados para o gerenciamento de informações administrativas da UnB possuem complexidade alta, as manutenções tem um alto grau de dificuldade, devido a definição arquitetural implementada. Como solução para a modernização e migração dos sistemas e tecnologia o CPD adotou a implementação de uma arquitetura orientada a serviços, que vem sendo bastante utilizada principalmente para criação de serviços (\textit{web services}). A implementação dos serviços tem aumentado, devido a flexibilidade definida na arquitetura para a implementação desses serviços e a curva de aprendizagem ser alta. Com a implementação de vários serviços temos a seguinte questão: Como monitorar e acompanhar o funcionamento, ou pode-se dizer a saúde desses serviços, visto que há um grande número de serviços implementados. A proposta desse trabalho é implementar um \textit{framework} de monitoramento por meio do processo de desenvolvimento de software adotado pelo \acrshort{CPD} o \textit{\acrfull{SMSOC}}\cite{Agilar}, essa abordagem será avaliada de forma qualitativa em uma situação real, pois a plataforma \acrshort{SOA} da \acrshort{UnB} já possui vários serviços implementados, e espera-se que a solução seja capaz de auxiliar no monitoramento e acompanhamento dos sistemas distribuídos e serviços, não verificando apenas a sua disponibilidade, mas também o número de requisições, tempo de requisição, quantidade de usuários que acessaram o serviço, informações de falha, segurança e etc.            
+O \acrshort{CPD} da \acrshort{UnB} adotou como solução para a modernização, migração dos sistemas e tecnologia a implementação de uma arquitetura orientada a serviços, que vem sendo bastante utilizada principalmente para criação de serviços (\textit{web services}). A implementação dos serviços tem aumentado, devido a flexibilidade definida na arquitetura e o aumento da demanda para a realização de integração de sistemas, além da curva de aprendizagem ser alta. Com a implementação e disponibilização de  vários serviços, monitorar e acompanhar o funcionamento, tem se tornado uma tarefa que tem demandado um grande esforço das equipes de 
+desenvolvimento do \acrshort{CPD}. O monitoramento do barramento de serviços da \acrshort{UnB} é realizado de três formas conhecidas, uma por meio do \textit{Log} de arquivos gerado pelo próprio barramento, onde as informações de registros do \textit{Log} são coletadas e apresentadas em um \textit{dashboard}\cite{filgueirasmonitoramento}, outra por meio de serviços (\textit{web services}) providos pelo barramento, além da nativa que é disponibilizada pela empresa que mantem e gerencia a linguagem Erlang, esse monitoramento é realizado pelo denominado \textit{Observer} que dispõe de elementos gráficos para observar as características dos sistemas desenvolvidos em Erlang \cite{ericssonAB2002-2019}. Este trabalho inclui uma nova forma de monitoramento para o barramento de serviços, esse monitoramento difere dos demais pelo modo de atuação onde, o foco é monitorar o funcionamento dos recuros que o barramento de serviços provém, desde o recurso responsável pelo registro das informações de \textit{Log} passando pelo os recursos que executam os processos de autenticação e autorização até o recurso responsável pelo recebimento e transmissão de requisições.
 
-%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Web services}
 
@@ -28,7 +36,8 @@ O SNMP é o protocolo utilizado para o monitoramento de dispositivos conectados 
 %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
-\section{Informações monitoradas}
+\section{Métricas de monitamento}
+\label{metricas_monitoramento}
 
 Com a implementação de serviços para gerar as informações do monitoramento, necessita-se definir um padrão ou \textit{design} para a realização da coleta, armazenamento e analise dos dados do monitoramento. Esse trabalho propõe a implementação de serviços para a realização da coleta, o desenho de um modelo de dados para o armazenamento dos dados monitorados e \textit{web services} para realização de integração com qualquer ferramenta que utilize o protocolo SNMP afim de fornecer informações para uma linguagem que permita facilmente o entendimento humano. 
 
@@ -41,7 +50,7 @@ Na literatura durante a realização da pesquisa percebeu-se a identificação d
 %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
-\section{Cronograma de execução}
+\section{Instrumenção de código}
 
 Este trabalho será desenvolvido por meio de seis tarefas listadas a seguir durante os períodos 2018/2 e 2019/1 que são registrados oficialmente no calendário acadêmico da UnB, e por meio do cronograma apresentado na Tabela \ref{tab:cronograma}.
 
