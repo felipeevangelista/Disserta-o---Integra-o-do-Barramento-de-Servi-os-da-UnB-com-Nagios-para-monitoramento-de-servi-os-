@@ -48,9 +48,25 @@ A execução do monitoramento é inciada com a integração das aplicações, ou
 
 
 
-\subsection{Agente de monitoramento}
+\subsection{A execução do agente de monitoramento}
 
-Para o acompanhamento e monitoramento serão implementados agentes de monitoramento para a realização da comunicação e notificação dos \textit{web services} monitorados. A proposta é implementar agentes para gerenciar e monitorar os \textit{web services}, a intenção é disponibilizar um serviço que seja capaz de trabalhar como uma especie de agente que informará caso haja alguma falha ou detecte um número elevado de requisições, por exemplo. A implementação dos agentes é necessária para proposta, pois é uma peça importante no monitoramento, serão os agentes de monitoramento os responsáveis para a coleta das informações que possibilitam o monitoramento dos \textit{web services}, em alguns trabalhos pesquisados os agentes foram tratados como peças fundamentais para a realização do monitoramento.       
+Para a realização da integração do barramento de serviços e a ferramenta de monitoramento por meio do protocolo \acrshort{SNMP} é utilizado um agente de monitoramento que gerencia a comunicação e transmissão dos dados que são monitorados. O projeto dispõem  da utilização de um agente para a coleta e transmissão desses dados, o agente é originário da aplicação Exometer que é um pacote que permite a instrumentação de aplicações desenvolvidas na linguagem de codificação Erlang, possibilitando que alguns dados do sistema sejam exportados para um grande e variado número de ferramentas de monitoramento disponíveis no mercado\cite{exometer_core}, nesse projeto diante de um dos itens do objetivo específico descrito na seção \ref{objetivos_especificos} optou-se por utilizar o modulo que permite e realizar a transmissão dos dados por meio do protocolo \acrshort{SNMP}. O Exometer cumpre os requisitos definidos na \acrshort{RFC} 1157 que descreve sobre os procedimentos arquiteturais de implementação e implantação do protocolo \acrshort{SNMP}, os pontos fortes do Exometer são, a criação das \acrshort{MIBs} que são geradas dinamicamente em tempo de execução, para a criação das \acrshort{MIBs} que são utilizadas no monitoramento necessita-se de uma estrutura base, essa estrutura poderá ser visualizada na figura \ref{fun:fig:MIBSNMP} e considerada também com um ponto importante é a fácil configuração do Gerente e Agente \acrshort{SNMP}, onde simplesmente você pode registrar em um dos arquivos de configuração o servidor(aplicação de monitoramento) que receberá as informações do monitoramento por meio de \textit{TRAPs} enviados pelo agente \acrshort{SNMP}, as configurações desse arquivo poderá ser visualizada na figura \ref{fun:fig:enderecoAgenteSNMP}. O Exometer foi a aplicação que permitiu a integração das aplicações de um modo prático, visto que a estrutura de um arquivo MIB normalmente já vem configurada com informações especificas e estáticas o que impossibilitaria ou reduziria bastante o escopo de serviços que poderiam ser utilizados para realizar o monitoramento de serviços do barramento. 
+
+\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[scale = 0.50]{img/MIBSNMP.png}
+	\caption{Estrutura base, arquivo MIB do Exometer.}
+	\label{fun:fig:MIBSNMP}
+	\end{center}
+\end{figure}
+
+\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[scale = 0.50]{img/enderecoEnvioAgente.png}
+	\caption{Configuração do servido de destino, para o envio de \textit{TRAPs}.}
+	\label{fun:fig:enderecoAgenteSNMP}
+	\end{center}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
