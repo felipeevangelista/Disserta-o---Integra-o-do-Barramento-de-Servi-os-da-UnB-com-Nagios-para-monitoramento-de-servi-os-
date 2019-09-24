@@ -202,11 +202,11 @@ O Erlangms dispoem de uma arquitetura \acrshort{SOA} utilizando o estilo arquite
 \section{Ferramentas de Monitoramento}
 
 \begin{enumerate}
-\item Nagios
+\item Nagios\textsuperscript{\textregistered}
 
-O Nagios é uma aplicação com interface \textit{web} para o monitoramento de rede baseada na web idealizada e desenvolvida por Ethan Galstad \cite{bin2011new}. O Nagios é projetado para a realizar o acompanhamento de ativos de rede, sistemas e serviços com a finalidade de notificar os usuários e responsáveis pelos ativos de rede, sistema e serviços que estão registrados na ferramenta como contatos emergências, em caso aconteça alguma anomalia ou problema durante o funcionamento da rede, sistemas e serviços.
+O Nagios\textsuperscript{\textregistered} é uma aplicação com interface \textit{web} para o monitoramento de rede baseada na web idealizada e desenvolvida por Ethan Galstad \cite{bin2011new}. O Nagios\textsuperscript{\textregistered} é projetado para a realizar o acompanhamento de ativos de rede, sistemas e serviços com a finalidade de notificar os usuários e responsáveis pelos ativos de rede, sistema e serviços que estão registrados na ferramenta como contatos emergências, em caso aconteça alguma anomalia ou problema durante o funcionamento da rede, sistemas e serviços.
 
-O Nagios é tratado como uma ferramenta que possui um alta complexidade em sua configuração, pois possui uma gama de recursos e funcionalidades disponíveis para a utilização, devido a grande quantidade de recursos o Nagios é bastante utilizado ele também possui um grande número de \textit{plug-ins} disponíveis na para a realização do monitoramento podendo personalizar o monitoramento de serviços como SMTP, POP3, HTTP, PING \cite{lcc2012nagios}. Nesse projeto o Nagios será utilizado com ferramenta de monitoramento dos sistemas e serviços fornecidos pela \acrshort{UnB} com utilização de serviço SMTP para o monitoramento, visto que, o \acrshort{CPD} já utiliza a ferramenta para o monitoramento dos ativos de rede de toda a universidade. 
+O Nagios\textsuperscript{\textregistered} é tratado como uma ferramenta que possui um alta complexidade em sua configuração, pois possui uma gama de recursos e funcionalidades disponíveis para a utilização, devido a grande quantidade de recursos o Nagios\textsuperscript{\textregistered} é bastante utilizado ele também possui um grande número de \textit{plug-ins} disponíveis na para a realização do monitoramento podendo personalizar o monitoramento de serviços como SMTP, POP3, HTTP, PING \cite{lcc2012nagios}. Nesse projeto o Nagios\textsuperscript{\textregistered} será utilizado com ferramenta de monitoramento dos sistemas e serviços fornecidos pela \acrshort{UnB} com utilização de serviço SMTP para o monitoramento, visto que, o \acrshort{CPD} já utiliza a ferramenta para o monitoramento dos ativos de rede de toda a universidade. 
 
 \begin{figure}[h!]
 	\begin{center}
@@ -234,12 +234,12 @@ O Nagios é tratado como uma ferramenta que possui um alta complexidade em sua c
  Em uma breve análise após a utilização das ferramentas de monitoramento \cite{benincosa2ganglia} cita em seu artigo os seguintes itens:
 \begin{itemize}
 
-\item O Ganglia não possui um sistema de notificação integrado enquanto que o Nagios se destaca nisso.
-\item Já o Nagios não possui agentes integrados escaláveis nos \textit{hosts} de destino (um motivo de reclamação das pessoas), enquanto que isso já faz parte do projeto original e intencional do Ganglia.
+\item O Ganglia não possui um sistema de notificação integrado enquanto que o Nagios\textsuperscript{\textregistered} se destaca nisso.
+\item Já o Nagios\textsuperscript{\textregistered} não possui agentes integrados escaláveis nos \textit{hosts} de destino (um motivo de reclamação das pessoas), enquanto que isso já faz parte do projeto original e intencional do Ganglia.
 
 \end{itemize}
 
- Diante desse cenário a autora sugere a utilização das ferramentas em conjunto de modo que sejam utilizados em sua potencialidade, porém como \acrshort{CPD} já utiliza o Nagios e a intenção da Gestão \acrshort{CPD} e do projeto é trabalhar com o acompanhamento a notificação dos serviços caso haja alguma falha ou mau funcionamento, como o Ganglia não executa uma das principais funcionalidades do monitoramento, a ferramenta não entrará como \textit{software} a ser utilizado no projeto.
+ Diante desse cenário a autora sugere a utilização das ferramentas em conjunto de modo que sejam utilizados em sua potencialidade, porém como \acrshort{CPD} já utiliza o Nagios\textsuperscript{\textregistered} e a intenção da Gestão \acrshort{CPD} e do projeto é trabalhar com o acompanhamento a notificação dos serviços caso haja alguma falha ou mau funcionamento, como o Ganglia não executa uma das principais funcionalidades do monitoramento, a ferramenta não entrará como \textit{software} a ser utilizado no projeto.
  
 \item Cacti
 
@@ -312,7 +312,7 @@ Em uma arquitetura de monitoramento de serviços ou ativos de rede que utiliza o
 	\end{center}
 \end{figure}
 
-Um agente de monitoramento pode ser definido como um componente ou aplicação de gerenciamento de rede ou serviço no dispositivo a ser gerenciado e possuem duas operações básicas \textit{GET} e \textit{SET}, o agente em execução fica responsável por exportar os dados de gerenciamento dos sistemas, serviços ou ativos de rede gerenciados com variáveis organizadas de forma hierárquica. Essa hierarquia é contemplada por metadados que são representados por \acrshort{MIBs}, e \acrshort{MIBs} por sua vez são um conjunto dos objetos gerenciados, que procuram abranger todas as informações necessárias para a gerência de rede \cite{6240708}. Nesse trabalho o agente de monitoramento utilizado é o Exometer que funciona como agente de monitoramento responsável pela coleta das informações geradas pelo Barramento de serviços Erlangms e a transmissão dessas informações ao Nagios por meio do protocolo \acrshort{SNMP}. 
+Um agente de monitoramento pode ser definido como um componente ou aplicação de gerenciamento de rede ou serviço no dispositivo a ser gerenciado e possuem duas operações básicas \textit{GET} e \textit{SET}, o agente em execução fica responsável por exportar os dados de gerenciamento dos sistemas, serviços ou ativos de rede gerenciados com variáveis organizadas de forma hierárquica. Essa hierarquia é contemplada por metadados que são representados por \acrshort{MIBs}, e \acrshort{MIBs} por sua vez são um conjunto dos objetos gerenciados, que procuram abranger todas as informações necessárias para a gerência de rede \cite{6240708}. Nesse trabalho o agente de monitoramento utilizado é o Exometer que funciona como agente de monitoramento responsável pela coleta das informações geradas pelo Barramento de serviços Erlangms e a transmissão dessas informações ao Nagios\textsuperscript{\textregistered} por meio do protocolo \acrshort{SNMP}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -325,7 +325,7 @@ Um agente de monitoramento pode ser definido como um componente ou aplicação d
 		\label{fun:fig:zabbix}
 	\end{center}
 \end{figure}
-O Exometer é um \textit{framework} capaz de executar a instrumentação e permitir a exportação de dados de maneira fácil e eficiente utilizando bibliotecas implementadas em código Erlang, normalmente os dados exportados são relacionados ao desempenho dos sistemas e serviços. Com a utilização de módulos, o Exometer pode realizar a integração com uma grande variedade de sistemas de monitoramento, nesse trabalho a integração é com a aplicação de monitoramento Nagios. O potencial do Exometer é fornecer métricas de várias formas e parâmetros, para isso dispõem de um conjunto de componentes para monitoramento pré-definidos e que podem ser estendidos de forma personalizada para lidar com diversos tipos de métricas e alguns protocolos \cite{exometer_core}.
+O Exometer é um \textit{framework} capaz de executar a instrumentação e permitir a exportação de dados de maneira fácil e eficiente utilizando bibliotecas implementadas em código Erlang, normalmente os dados exportados são relacionados ao desempenho dos sistemas e serviços. Com a utilização de módulos, o Exometer pode realizar a integração com uma grande variedade de sistemas de monitoramento, nesse trabalho a integração é com a aplicação de monitoramento Nagios\textsuperscript{\textregistered}. O potencial do Exometer é fornecer métricas de várias formas e parâmetros, para isso dispõem de um conjunto de componentes para monitoramento pré-definidos e que podem ser estendidos de forma personalizada para lidar com diversos tipos de métricas e alguns protocolos \cite{exometer_core}.
 
 
 

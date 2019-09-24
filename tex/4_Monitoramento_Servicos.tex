@@ -11,7 +11,7 @@ desenvolvimento do \acrshort{CPD}. O monitoramento do barramento de serviços da
 \begin{figure}[h!]
 	\begin{center}
 	\includegraphics[scale = 0.70]{img/dashboard.jpg}
-		\caption{\textit{Dashborad} de monitoramento \cite{filgueirasmonitoramento}}
+		\caption{\textit{Dashborad} de monitoramento \cite{filgueirasmonitoramento}.}
 		\label{fun:fig:dashboardS}
 	\end{center}
 \end{figure}
@@ -21,7 +21,7 @@ Este trabalho inclui uma nova forma de monitoramento para o barramento de servi�
 \begin{figure}[h!]
 	\begin{center}
 	\includegraphics[scale = 0.90]{img/monitoramentoEMS.jpg}
-		\caption{Serviço de consulta de utilização dos recursos de memória do Erlangms}
+		\caption{Serviço de consulta de utilização dos recursos de memória do Erlangms.}
 		\label{fun:fig:memoriaEMS}
 	\end{center}
 \end{figure}
@@ -70,13 +70,21 @@ Para a realização da integração do barramento de serviços e a ferramenta de
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Protocolo SNMP}
+\section{O funcionamento do protocolo \acrshort{SNMP}}
 \label{integracao_snmp}
-O SNMP é o protocolo utilizado para o monitoramento de dispositivos conectados em rede. O CPD para o monitoramento dos ativos de rede utiliza, por meio de ferramentas que recebem informações desse protocolo, no entanto as ferramentas e informações fornecidas para o monitoramento servem apenas para o controle da infraestrutura de rede e servidores de aplicação, não gerenciando por exemplo, o funcionamento dos sistemas, serviços e funcionalidades das aplicações. Como proposta esse trabalho tem a intensão de fornecer e subsidiar  recursos que possibilitem o monitoramento e integração com outras ferramenta de monitoramento, para o gerenciamento de sistemas distribuídos e \textit{web services}, com a implementação de serviços que tem a responsabilidade de coletar as informações no padrão do protocolo para permitir o monitoramento dos \textit{web services}, as informações desses serviços poderão ser visualizados em qualquer ferramenta que trabalhe com os dados coletados nos padrões do protocolo.           
-%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+O \acrshort{SNMP} é o protocolo utilizado para o monitoramento de dispositivos conectados em rede. O \acrshort{CPD} da \acrshort{UnB} para o monitoramento dos ativos de rede utiliza-o por meio de ferramentas que recebem informações desse protocolo, no entanto as ferramentas e informações fornecidas para o monitoramento servem apenas para o controle da infraestrutura de rede e servidores de aplicação, não gerenciando por exemplo, o funcionamento dos sistemas, serviços e também pode se dizer a ausência de verificação da saúde das aplicações. Este trabalho implementa e implanta soluções capazes de fornecer e subsidiar recursos que possibilitem o monitoramento e a integração com a ferramenta de monitoramento do \acrshort{CPD} da \acrshort{UnB} que vem durante alguns anos adotando o Nagios\textsuperscript{\textregistered} com a ferramenta de monitoramento dos seus ativos de rede, o \acrshort{SNMP} tem como característica a singularidade na comunicação o que possibilita a escolha de outras ferramentas, serviços ou aplicações que conversem em \acrshort{SNMP}. 
 
+O funcionamento do monitoramento por meio do protocolo \acrshort{SNMP} neste trabalho é realizado pelo envio de \textit{TRAPS} a partir da coleta de informações geradas pelo barramento de serviços e enviadas pelo agente, para que o agente funcione é necessária a configuração de um gerente, o gerente funciona como a representação do cliente monitorado e o agente funciona como responsável por enviar as informações desse cliente, na figura tal...(agente) é apresentada a configuração do agente na aplicação e na figura tal...(gerente) é exposta a configuração do gerente. O \textit{TRAP} é um tipo de alerta ou evento que pode ser transmitido pelo protocolo, na figura tal...(trap) é apresentada a informações de um \textit{TRAP} \acrshort{SNMP} com a verbosidade \textit{debug}. Durante a coletada das informações em tempo de execução e o envio de \textit{TRAPS} pelo agente para a ferramenta do monitoramento é necessária a instalação e configuração para de alguns \textit{plugins}, visto que o Nagios\textsuperscript{\textregistered} trabalha de forma em que é possível a realização do monitoramento ativo e passivo, como informado anteriormente este trabalho aplica o monitoramento passivo, diante desse cenário os \textit{plugins} instalados e configurados são eles:
+\begin{itemize}
+\item \acrfull{SNMPTT} que é um \textit{plugin} que funciona com um tradutor de \textit{TRAP} \acrshort{SNMP} com diversas opções de saída para a utilização no Nagios Core\textsuperscript{\textregistered} e o Net-SNMP\cite{nagiosCoreSNMPTT}.
+\item SNMPTRAPD que é uma aplicação que funciona com o recebimento dos \textit{TRAP} que foram traduzidos pelo \acrshort{SNMPTT} \cite{net_snmptrapd}.
+\end{itemize}
 
-\section{Métricas de monitamento}
+Com a instalação e configuração realizada do \acrshort{SNMPTT} e SNMPTRAPD foi possível realizar a interceptação das informações enviadas pelo agente \acrshort{SNMP}, cada item com sua especifidade com por exemplo, no \acrshort{SNMPTT} é necessária a configuração das variáveis dos \acrshort{OID}'s  criadas e definidas nas \acrshort{MIBs} do agente, já na configuração SNMPTRAPD é necessário definir quais os \acrshort{OID}'s serão enviados à ferramenta de monitoramento e quais o tipo de informação serão enviadas, poderão ser enviadas informações dos tipos  "Ok", "\textit{Warning}" ,"\textit{Critical}" dependendo do \acrshort{OID} e da definição que pode ser facilmente configurada.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Métricas de monitoramento}
 \label{metricas_monitoramento}
 
 Com a implementação de serviços para gerar as informações do monitoramento, necessita-se definir um padrão ou \textit{design} para a realização da coleta, armazenamento e analise dos dados do monitoramento. Esse trabalho propõe a implementação de serviços para a realização da coleta, o desenho de um modelo de dados para o armazenamento dos dados monitorados e \textit{web services} para realização de integração com qualquer ferramenta que utilize o protocolo SNMP afim de fornecer informações para uma linguagem que permita facilmente o entendimento humano. 
