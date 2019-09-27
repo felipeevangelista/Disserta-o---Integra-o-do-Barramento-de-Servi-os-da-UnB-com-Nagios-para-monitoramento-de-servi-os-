@@ -21,7 +21,7 @@ Este capítulo descreve a revisão conceitual sobre as tecnologias relacionadas 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Monitoramento de sistemas distribuídos}%
+\section{Monitoramento de Sistemas Distribuídos}%
 
 O monitoramento é forma utilizada para acompanhar ou observar o andamento de um fluxo ou processo, na área de tecnologia da informação é responsável por verificar e coletar informações sobre funcionamento de ativos de rede ou serviços, com propósito de apresentar informações mais resumidas e favoráveis em painéis ou sistemas para a realização de monitoramento\cite{de2014indicadores}. O monitoramento é necessário para uma série de fins, incluindo a verificação de status, solução de problemas, ajustes de desempenho e depuração\cite{hollingsworth2003instrumentation}. 
 
@@ -39,7 +39,7 @@ Sistemas distribuídos podem ser interpretados como aplicações distintas que p
 
 A Arquitetura Orientada a Serviços pode ser descrita com um estilo arquitetural capaz de realizar a comunicação entre aplicações heterogêneas por meio de mensagens\cite{fraser2007service}. É comum que essas aplicações possuam estruturas e linguagens completamente distintas, pois as aplicações envolvidas, normalmente independem umas das outras e precisam que essa comunicação aconteça, mas para que haja a comunicação interoperável entre as aplicações é previsto na arquitetura \acrshort{SOA} que a as funcionalidade possam ser disponibilizadas por meio de serviços(\textit{web services}) em componentes distribuídos, que ao mesmo tempo que possam fornece-los possam também consumi-los\cite{sward2011service,bianco2011architecting}.
 
-Com o aumento da utilização da arquitetura percebeu-se a necessidade de discussões e definições afim abraçar os conceitos da arquitetura \acrshort{SOA}, com as discussões decidiu-se não apenas criar conceitos, mas também orientações  afim  de guiar as organizações de maneira consistente e sustentável, de modo a agregar valor ao negócio, com maior agilidade e efetividade de custos, em alinhamento com a dinâmica das necessidades de negócio, e foi a apartir desse movimento que surgiu o Manifesto \acrshort{SOA} \cite{erl2009soa} priorizando os seguintes itens:
+Com o aumento da utilização da arquitetura percebeu-se a necessidade de discussões e definições afim abraçar os conceitos da arquitetura \acrshort{SOA}, com as discussões decidiu-se não apenas criar conceitos, mas também orientações  afim  de guiar as organizações de maneira consistente e sustentável, de modo a agregar valor ao negócio, com maior agilidade e efetividade de custos, em alinhamento com a dinâmica das necessidades de negócio, e foi a partir desse movimento que surgiu o Manifesto \acrshort{SOA} \cite{erl2009soa} priorizando os seguintes itens:
 
 \begin{itemize}
 
@@ -69,7 +69,7 @@ Para realização da comunicação entre as aplicações ou serviços em compone
 
 \item Registro de serviços;
 
-\item Server Orchestration; 
+\item \textit{Server Orchestration}; 
 
 \item \acrfull{SOAP}.
 
@@ -79,7 +79,7 @@ Para realização da comunicação entre as aplicações ou serviços em compone
 
 \end{itemize}
 
-Com a utilização desses componentes \cite{bass2003software} trata como principal benefício de uma arquitetura \acrshort{SOA} a interoperabilidade, pois permite que aplicações, dispositivos, sistemas e serviços hetorogeneos possam realizar a comunicação entre si, fornecendo e consumindo informações  de forma itegrada. 
+Com a utilização desses componentes \cite{bass2003software} trata como principal benefício de uma arquitetura \acrshort{SOA} a interoperabilidade, pois permite que aplicações, dispositivos, sistemas e serviços heterogêneos possam realizar a comunicação entre si, fornecendo e consumindo informações  de forma integrada. 
 
 O \acrshort{CPD} para implementação e implantação da arquitetura \acrshort{SOA} na modernização dos seus sistemas, escolheu como componente o \acrshort{ESB} e como plataforma o barramento ErlangMS\cite{Agilar},que atua como intermediador prestando serviço de mensageria.
 
@@ -179,16 +179,16 @@ Em \acrshort{REST} as principais operações por meio do protocolo \acrshort{HTT
 
 \section{JSON}
 
-\acrfull{JSON} é um formato baseado em texto, de fácil leitura e intepretação para humanos, para a leitura de máquinas o \acrshort{JSON} é baseado em um subconjunto da linguagem de programação \textit{JavaScript}, e por possuir um um padrão, seu funcionamento independe de uma tecnologia ou linguagem de programação, focando principalmento na troca de dados e mensagens \cite{bray2017javascript}.
+\acrfull{JSON} é um formato baseado em texto, de fácil leitura e interpretação para humanos, para a leitura de máquinas o \acrshort{JSON} é baseado em um subconjunto da linguagem de programação \textit{JavaScript}, e por possuir um um padrão, seu funcionamento independe de uma tecnologia ou linguagem de programação, focando princialmente na troca de dados e mensagens \cite{bray2017javascript}.
 
 Por decisão técnica especificamente relacionada a interoperabilidade e o baixo acoplamento o barramento utilizado pelo \acrshort{CPD} o Erlangms, utiliza o \acrshort{JSON} por conta do  baixo\textit{overhead} gerado na troca de mensagens em relação as trocas de mensagens feitas com a utilização protocolo \acrshort{SOAP} com a linguagem \acrshort{WSDL}, e apontando também o nível baixa da curva de aprendizagem para a utilização do \acrshort{JSON}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{ErlangMs}
-O Barramento de serviços da \acrshort{UnB} denominado Erlangms foi conceituado em uma disciplina do \acrshort{MPCA} e proposto como trabalho para solucionar alguns problemas relacionados a quantidade de sistemas heterogêneos, defasagem tecnológica das aplicaões e a falta de um padrão de comunicação entre eles no \acrshort{CPD} \cite{Agilar}. 
+O Barramento de serviços da \acrshort{UnB} denominado Erlangms foi conceituado em uma disciplina do \acrshort{MPCA} e proposto como trabalho para solucionar alguns problemas relacionados a quantidade de sistemas heterogêneos, defasagem tecnológica das aplicações e a falta de um padrão de comunicação entre eles no \acrshort{CPD} \cite{Agilar}. 
 
-O Erlangms dispoem de uma arquitetura \acrshort{SOA} utilizando o estilo arquitetural \acrshort{REST} e sua implementação foi feita na liguagem funcional Erlang. O barramento atualmente está implantado no \acrshort{CPD} e  funcionando com um serviço de mensageria. A realização da comunicação e troca de mensagems dos sistemas e clientes é feita por meio de serviços(\textit{web services}) utilizando o formato \acrshort{JSON}. O Erlangms tem sua arquitetura é apresentada na figura \ref{fun:fig:erlangms} .
+O Erlangms dispõem de uma arquitetura \acrshort{SOA} utilizando o estilo arquitetural \acrshort{REST} e sua implementação foi feita na linguagem funcional Erlang. O barramento atualmente está implantado no \acrshort{CPD} e  funcionando com um serviço de mensageria. A realização da comunicação e troca de mensagens dos sistemas e clientes é feita por meio de serviços(\textit{web services}) utilizando o formato \acrshort{JSON}. O Erlangms tem sua arquitetura é apresentada na figura \ref{fun:fig:erlangms} .
 
 \begin{figure}[h!]
 	\begin{center}
@@ -300,7 +300,7 @@ Em comparação com as ferramentas de monitoramento mais utilizadas atualmente, 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Agentes de monitoramento}
+\section{Agentes de Monitoramento}
 
 Em uma arquitetura de monitoramento de serviços ou ativos de rede que utiliza o protocolo \acrshort{SNMP}, é necessária a implementação de agentes de monitoramento para a instalação em \textit{hosts} e dispositivos que serão monitorados, esse agentes consistem em coletar dados e enviar mensagens de alerta ao gerentes de monitoramento, como  apresentado na figura \ref{fun:fig:agente}, como por exemplo, o uso de \acrshort{CPU} e a quantidade de memória de utilização de um processo ou um alerta de falha de um dispositivo ou serviço \cite{7439952}.  
 
@@ -332,7 +332,7 @@ O Exometer é um \textit{framework} capaz de executar a instrumentação e permi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Métricas de monitoramento}
+\section{Métricas de Monitoramento}
 
 A métrica de \textit{software} vem representando um papel importante para o funcionamento adequado das aplicações \cite{de2016metrica}. À medida que os sistemas e serviços crescem em quantidade, tamanho, complexidade e criticidade, a necessidade de monitorá-los é cada vez mais evidente. O monitoramento representa o acompanhamento dessas aplicações de forma detalhada e clara aos responsáveis pela as aplicações \cite{5298441}. A ISO/IEC 9126-1 \cite{associaccao2003nbr} descreve e normatiza a forma para medir a qualidade de \textit{software}, de acordo com a norma \cite{associaccao2003nbr}, a métrica é o método e escala de medição definidos, a métrica pode ser direta ou indireta, a medição de uma métrica direta se dá quando não depende de medidas de outros atributos e a métrica indireta se dá quando há ou existe a necessidade de derivação de um ou mais atributos de medição.
 No que tange um ambiente computacional, as métricas ajudam a medir o \textit{software} de um forma eficaz, para isso é preciso que as métricas sejam bem definidas, justificadas e formalizadas, além disso é desejável que as métricas apresentem de forma clara o que está sendo medido, descrevam rapidamente a medição sem custeio computacional alto e que o resultado do que está sendo medido não seja mudado ou sofra interferência em seu resultado caso haja a mudança de \textit{software}, plataforma ou linguagem de programação\cite{meirelles2013monitoramento}.
