@@ -169,7 +169,7 @@ Com a elaboração da integração entre o barramento de serviços e o Nagios\te
 
 Como o monitoramento é realizado em modo passivo é preciso informar na configuração da ferramenta de monitoramento quais as informações serão recebidas, ou seja, mesmo o agente \acrshort{SNMP} do barramento de serviços criando os \acrshort{OID}s dinamicamente, é necessário que estes \acrshort{OID}s estejam também registrados na ferramenta de monitoramento, nesse momento  não foi possível a realização da implementação de uma solução para automatizar a configuração dinâmica dos \acrshort{OID}s na ferramenta de monitoramento, mas em um outro momento oportuno essa automatização poderá ser implementada.
 
-Com a restrição imposta pela ferramenta de monitoramento, foi necessário a realização de um estudo no código fonte do barramento de serviços Erlangms, afim de obter informações sobre o que monitorar, a análise do barramento de serviços foi feita com alguns passos que permitiram o entendimento do funcionamento dos recursos do barramento de serviços, assim como a realização do mapeamento dos principais recursos, módulos e funções. O primeiro passo realizado foi a elaboração do \textit{design} dos recursos do barramento de serviços, esse \textit{design} pode ser visualizada na figura \ref{fun:fig:ResourcesEMS}. No segundo passo foi possível identificar e escrever sobre cada recurso do barramento de serviços. A descrição dos recursos poderão ser visualizadas a seguir, são elas:
+Com a restrição imposta pela ferramenta de monitoramento, foi necessário a realização de um estudo no código fonte do barramento de serviços Erlangms, afim de obter informações sobre o que monitorar, a análise do barramento de serviços foi feita com alguns passos que permitiram o entendimento do funcionamento dos recursos do barramento de serviços, assim como a realização do mapeamento dos principais recursos, módulos e funções. O primeiro passo realizado foi a elaboração do \textit{design} dos recursos do barramento de serviços, este \textit{design} pode ser visualizado na figura \ref{fun:fig:ResourcesEMS}. No segundo passo foi possível identificar e escrever sobre cada recurso do barramento de serviços, a descrição dos recursos poderão ser visualizadas a seguir, são eles:
 
 \begin{itemize}
     \item \textit{\textbf{Loaders:}}
@@ -181,9 +181,9 @@ Com a restrição imposta pela ferramenta de monitoramento, foi necessário a re
     \item \textit{\textbf{ODBC:}}
     Responsável pela realização da comunicação entre os serviços do barramento com SGBDs de mercado, atualmente o barramento por meio de seus serviços realiza consultas no Postgres\textsuperscript{\textregistered} e no SQL Server\textsuperscript{\textregistered}.
     \item \textit{\textbf{Oauth2:}}
-    Responsável pela autorização de acesso aos serviços fornecidos pelo barramento
+    Responsável pela autenticação e autorização de acesso aos serviços fornecidos pelo barramento
     \item \textit{\textbf{Dispatcher:}}
-    Responsável pelo encaminhamento e organização das chamadas/requisições aos serviços que serão executados pelo barramento.
+    Responsável pelo encaminhamento e organização das chamadas/requisições aos serviços que são executados pelo barramento.
     \item \textit{\textbf{Daemons:}}
     Responsável por gerenciar os arquivos(pid) do barramento para a execução dos serviços de forma única e confiável, sem a interrupção de seu funcionamento. 
     \item \textit{\textbf{Catalog:}}
@@ -218,10 +218,17 @@ O registro do \textit{Dispatcher} também foi incluído como  1 das 5 métricas 
 
 Por fim, o levantamento da métrica para obtenção dos registros de informações do LDAP foi definida para que se pudesse acompanhar o funcionamento deste recurso, pois barramento de serviços realiza em seu funcionamento a autenticação de aplicações de terceiros implantadas no CPD da UnB e que utilizam o protocolo LDAP para a realização dessa autenticação, dessa forma espera-se garantir o funcionamento adequado do barramento de serviços por meio das métricas que foram levantadas, o barramento de serviços vem aumentando a disponibilização de serviços, dessa forma vale salientar sobre a importância desse acompanhamento, visto que, com o aumento dos recursos disponibilizado pelo barramento de serviços é muito grande a chance de algum falhar ou ficar indisponível e que não seja percebido ou não seja tratado imediatamente.  
 
+Após a execução da análise das métricas levantadas foi necessário a realização da seleção e escolha das métricas a serem implantadas para e efetivação da integração entre o barramento de serviços e a ferramenta de monitoramento por meio do agente \acrshort{SNMP}. A seleção e escolha foram necessárias para que se pudesse experimentar o funcionamento da integração, pois antes da realização do monitoramento completo do barramento de serviços optou-se por implementar algumas funções que pudessem coletar informações das métricas levantadas. Das 5 métricas levantadas 3 foram escolhidas e implementadas, são elas: 
 
+\begin{itemize}
+    \item Registros do \textit{LOG} do barramento de serviços
+    \item Registros de informações de Acesso (OAuth2)
+    \item Registros do \textit{Dispatcher}
+\end{itemize}
+
+A escolha destas 3 métricas foi definida devido a importância do acompanhamento dos módulos mais utilizados no barramento de serviços, os registros do \textit{LOG} do barramento de serviços estão preparados para exportar e apresentar uma gama de informações podendo não facilitar a identificação de um falha ou indisponibilidade dos serviços, por isso a configuração para o registro das informações dos registros de \textit{LOG} na ferramenta de monitoramento foi escolhido. O motivo para escolha do registro das informações de autenticação e autorização promovidas por meio do protocolo OAuth2, foi pela quantidade crescente de disponibilização de serviços e recursos que devido a esse crescimento dificultou o acompanhamento da autenticação, por esse motivo buscou-se obter uma situação real de funcionamento do procedimento de autenticação e autorização, assim como a identificação de ataques, como por exemplo o ataque de negação de negação de serviços por meio do monitoramento. O funcionamento do \textit{Dispatcher} é essencial para o barramento de serviços, por ele passa todos os serviços executados pelo barramento de serviços, o \textit{Dispatcher} controla e gerencia o recebimento e envio de requisições que são executadas pelo barramento de serviços, por esse motivo acompanhar o seu funcionamento é muito importante, ainda mais com a possibilidade de emissão de notificações por meio de seu funcionamento normal e quando houver falha ou indisponibilidade, vale enfatizar que a seleção e escolhas das métricas foram realizadas por conta do modelo para realização de monitoramento que ferramenta de monitoramento selecionada propõe.   
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 \section{Instrumentação de Código}
 
