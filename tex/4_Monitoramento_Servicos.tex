@@ -1,6 +1,6 @@
 \label{monitoramento_servicos}
 
-Neste capítulo são apresentadas informações decorrentes da realização do monitoramento do barramento de serviços utilizando o Protocolo \acrshort{SNMP}. Na Seção \ref{recursos_monitoramento} é a apresentado o monitoramento dos recursos do barramento de serviços. Na Seção \ref{integracao_snmp} são apresentados alguns detalhes para a implantação do protocolo \acrshort{SNMP}. Na Seção \ref{metricas_monitoramento} são apresentadas as métricas adotadas para a realização do monitoramento do barramento. Na Seção ('\ ref') é apresentado o ......
+Neste capítulo são apresentadas informações decorrentes da realização do monitoramento do barramento de serviços utilizando o Protocolo \acrshort{SNMP}. Na Seção \ref{recursos_monitoramento} é a apresentado o monitoramento dos recursos do barramento de serviços. Na Seção \ref{integracao_snmp} são discutidos alguns detalhes sobre o funcionamento do protocolo \acrshort{SNMP}. Na Seção \ref{metricas_monitoramento} são expostas as definições para escolhas das métricas adotadas para a realização do monitoramento do barramento de serviços. Na Seção \ref{instrumentacaoErlangms} são esclarecidos alguns argumentos sobre a instrumentação do para a coleta dos dados para a realização do monitoramento.
 
 \section{Monitoramento dos Recursos do Barramento de Serviços}%
 \label{recursos_monitoramento}
@@ -112,10 +112,11 @@ END
 	\label{fun:fig:enderecoAgenteSNMP}
 \end{figure}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Funcionamento do Protocolo SNMP}
 \label{integracao_snmp}
+
 O \acrshort{SNMP} é o protocolo utilizado para o monitoramento de dispositivos conectados em rede. O \acrshort{CPD} da \acrshort{UnB} para o monitoramento dos ativos de rede utiliza-o por meio de ferramentas que recebem informações desse protocolo, no entanto as ferramentas e informações fornecidas para o monitoramento servem apenas para o controle da infraestrutura de rede e servidores de aplicação, não gerenciando por exemplo, o funcionamento dos sistemas, serviços e também pode se dizer a ausência de verificação da saúde das aplicações. Este trabalho implementa e implanta soluções capazes de fornecer e subsidiar recursos que possibilitem o monitoramento e a integração com a ferramenta de monitoramento do \acrshort{CPD} da \acrshort{UnB} que vem durante alguns anos adotando o Nagios\textsuperscript{\textregistered} com a ferramenta de monitoramento dos seus ativos de rede, o \acrshort{SNMP} tem como característica a singularidade na comunicação o que possibilita a escolha de outras ferramentas, serviços ou aplicações que conversem em \acrshort{SNMP}. 
 
 O funcionamento do monitoramento por meio do protocolo \acrshort{SNMP} neste trabalho é realizado pelo envio de \textit{TRAPS} a partir da coleta de informações geradas pelo barramento de serviços e enviadas pelo agente, para que o agente funcione é necessária a configuração de um gerente, o gerente funciona como a representação do cliente monitorado e o agente funciona como responsável por enviar as informações desse cliente, na figura \ref{fun:fig:agenteConfig} é apresentada a configuração do agente na aplicação e na figura \ref{fun:fig:gerenteConfig} é exposta a configuração do gerente. 
@@ -160,7 +161,7 @@ O \textit{TRAP} é um tipo de alerta ou evento que pode ser transmitido pelo pro
 
 Com a instalação e configuração realizada do \acrshort{SNMPTT} e SNMPTRAPD foi possível realizar a interceptação das informações enviadas pelo agente \acrshort{SNMP}, cada item com sua especifidade com por exemplo, no \acrshort{SNMPTT} é necessária a configuração das variáveis dos \acrshort{OID}s  criadas e definidas nas \acrshort{MIBs} do agente, já na configuração SNMPTRAPD é necessário definir quais os \acrshort{OID}s serão enviados à ferramenta de monitoramento e quais o tipo de informação serão enviadas, poderão ser enviadas informações dos tipos  \textit{"Ok"}, \textit{"Warning"} ,\textit{"Critical"} \ dependendo do \acrshort{OID} e da definição que pode ser facilmente configurada. Desse modo é realizada a integração das ferramentas para a execução do monitoramento, por meio do protocolo \acrshort{SNMP} a comunicação entre o barramento de serviços e o Nagios\textsuperscript{\textregistered} é praticada.  
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Definição das métricas de monitoramento}
 \label{metricas_monitoramento}
@@ -228,54 +229,98 @@ Após a execução da análise das métricas levantadas foi necessário a realiz
 
 A escolha destas 3 métricas foi definida devido a importância do acompanhamento dos módulos mais utilizados no barramento de serviços, os registros do \textit{LOG} do barramento de serviços estão preparados para exportar e apresentar uma gama de informações podendo não facilitar a identificação de um falha ou indisponibilidade dos serviços, por isso a configuração para o registro das informações dos registros de \textit{LOG} na ferramenta de monitoramento foi escolhido. O motivo para escolha do registro das informações de autenticação e autorização promovidas por meio do protocolo OAuth2, foi pela quantidade crescente de disponibilização de serviços e recursos que devido a esse crescimento dificultou o acompanhamento da autenticação, por esse motivo buscou-se obter uma situação real de funcionamento do procedimento de autenticação e autorização, assim como a identificação de ataques, como por exemplo o ataque de negação de negação de serviços por meio do monitoramento. O funcionamento do \textit{Dispatcher} é essencial para o barramento de serviços, por ele passa todos os serviços executados pelo barramento de serviços, o \textit{Dispatcher} controla e gerencia o recebimento e envio de requisições que são executadas pelo barramento de serviços, por esse motivo acompanhar o seu funcionamento é muito importante, ainda mais com a possibilidade de emissão de notificações por meio de seu funcionamento normal e quando houver falha ou indisponibilidade, vale enfatizar que a seleção e escolhas das métricas foram realizadas por conta do modelo para realização de monitoramento que ferramenta de monitoramento selecionada propõe.   
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Instrumentação de Código}
+\label{instrumentacaoErlangms}
 
-Este trabalho será desenvolvido por meio de seis tarefas listadas a seguir durante os períodos 2018/2 e 2019/1 que são registrados oficialmente no calendário acadêmico da UnB, e por meio do cronograma apresentado na Tabela \ref{tab:cronograma}.
+Como descrito na seção \ref{instrumentacao} o barramento de serviços dispõe de recursos que possibilitam a implementação da instrumentação em seu código. O barramento de serviços possui  um modelo de dados implementado, essa modelo é representado por uma tabela dispões de 2 colunas, 1 que identifica, ou seja, a chave e a outra com o valor do tipo inteiro referente a chave da mesma linha, alguns exemplos de chaves(identificadores) para a criação das métricas, poderão ser visualizados na figura \ref{fun:fig:chavesContadores}. Para armazenar esse registros o barramento de serviços possui uma outra tabela que possibilita o registro dos contadores com identificação, hora e data, serviço e url, para fins de histórico, o barramento de serviços possui um serviço que retorna o histórico das estatísticas armazenadas, o resultado deste serviço poderá ser visualizado na figura \ref{fun:fig:webserviceStats}. 
 
-	1. Escolha das abordagens que serão utilizadas por meio de características não exploradas nas soluções atuais de Implementação do protocolo SNMP para monitoramento de serviços;
-  
-  2. Desenvolvimento de novas abordagens que serão utilizadas na Implementação do protocolo SNMP para monitoramento de serviços ;
-    
-  3. Prova de conceito das abordagens desenvolvidas;
-    
-  4. Escrita de artigos científicos para a de submissão em congressos e periódicos;
-  
-  5. Escrita da dissertação de mestrado;
-  
-  6. Defesa do mestrado.
+\begin{figure}[h!]
+    \begin{minted}
+    [frame=lines,framesep=5mm,baselinestretch=1.0,linenos]{erlang}
+    ems_auth_user_public_success
+    ems_auth_user_oauth2_denied
+    ems_auth_user_basic_success
+    ems_auth_user_oauth2_success
+    ems_auth_user_public_success
+    ems_oauth2_grant_type_password
+    ems_oauth2_client_credentials_denied
+    ems_oauth2_grant_type_token
+    \end{minted}
+    \caption{Exemplode identificadores das métricas no Erlangms.}
+    \label{fun:fig:chavesContadores}
+\end{figure}
 
-\begin{table}[!htpb]
-	\centering
-	\caption{Cronograma de execução de atividades}
+Para a realização dos registros dos contadores o barramento de serviços dispõe de funções que podem ser facilmente distribuídas pelo código fonte, especificamente em funções dos módulos do barramento de serviços, onde por meio da chave criada é possível incrementar o decrementar valores dos contadores cridos no barramento, o código da função pode ser visualizado na figura \ref{fun:fig:funcaoCounters}.   
+
+\begin{figure}[h!]
+    \begin{minted}
+    [frame=lines,framesep=5mm,baselinestretch=1.5,linenos]{erlang}
+init_counter(Name, Value) ->
+    {atomic, ok}=mnesia:transaction(fun()->
+                 mnesia:write(#counter{key=Name, value=Value})end),
+    ok.
+inc_counter(Name)->mnesia:dirty_update_counter(counter, Name, 1).
+dec_counter(Name)->mnesia:dirty_update_counter(counter, Name, -1).
+current_counter(Name)->mnesia:dirty_update_counter(counter, Name, 0).
+counter(Name, Inc)->mnesia:dirty_update_counter(counter, Name, Inc).
+    \end{minted}
+    \caption{Funções dos contadores para a Instrumentação, no Erlangms.}
+    \label{fun:fig:funcaoCounters}
+\end{figure}
+
+\begin{figure}[h!]
 	\begin{center}
-		\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|c|} \hline
-Tarefa&ABR&MAI&JUN&JUL&AGO&SET&OUT&NOV&DEZ\\
-			\hline
-			Tarefa 1 &X&X&X& & & & & & \\
-			\hline
-			Tarefa 2 & & & &X&X&X& & & \\
-			\hline
-			Tarefa 3 & & & & &X&X&X& & \\
-			\hline
-			Tarefa 4 & & & & &X&X&X& & \\
-			\hline
-			Tarefa 5 & & & &&X&X&X&X&X \\
-			\hline
-			Tarefa 6 & & & & & & & & X& \\
-			\hline
-		\end{tabular}
-		\label{tab:cronograma}
+	\includegraphics[scale = 0.59]{img/webserviceStats.png}
+	\caption{Serviço que recupera informações históricas dos contadores do Erlangms.}
+	\label{fun:fig:webserviceStats}
 	\end{center}
-\end{table} 
+\end{figure}
 
+A partir da criação dos contadores, o incremento e o decremento de seus valores é possível realização a criação das métricas. A criação das métricas é feita com utilização da aplicação Exometer, onde é possível criar métricas, definir o tipo de valor da métrica, atualizar o valor da métrica, excluir as métricas criadas, recuperar as métricas criadas e reportar métricas, no caso do \textit{report} este será feito por meio do módulo \acrshort{SNMP}. A métricas criadas na aplicação podem ser facilmente manipuladas e reportadas, graças aos métodos criados com objetivos específicos, os principais métodos utilizados nesso projeto são:
+\begin{itemize}
+    \item Criar métricas
+    \item Excluir métricas
+    \item Definir os valores de métricas
+    \item Recuperar os valores de métricas
+    \item Criar \textit{report} de uma métrica em SNMP
+\end{itemize}
 
-\fontshape{n}\selectfont%
+A implementação desses métodos poderão ser visualizadas na figura \ref{fun:fig:metodosExometer}, a utilização desses métodos é bem simples e permite a realização da instrumentação de maneira fácil, o que proporciona exequibilidade na personalização das informações a serem enviadas para o monitoramento, sem comprometer a eficiência do funcionamento das aplicações. 
+
+\begin{figure}[h!]
+    \begin{minted}
+    [frame=lines,framesep=5mm,baselinestretch=1.0,linenos]{erlang}
+    % Cria uma Métrica.
+    exometer:new( Name , Type ). 
+    
+    % Deleta uma Métrica.
+    exometer:delete( Name ). 
+    
+    % Atualiza o valor de uma Métrica.
+    exometer:update( Name , Value ). 
+    
+    % Recupera o valor de uma Métrica.
+    exometer:get_value( Name ). 
+    
+    % Cria um report de uma métrica em SNMP.
+    exometer_report:add_reporter( exometer_report_snmp, [] ). 
+    \end{minted}
+    \caption{Os métodos do Exometer utilizados no Erlangms.}
+    \label{fun:fig:metodosExometer}
+\end{figure}
 
 
 \subsection{Desempenho}
 
-Na literatura durante a realização da pesquisa percebeu-se a identificação de um item preocupante em relação as informações monitoradas, esse item é o desempenho, devido à quantidade de informações geradas durante o monitoramento. O trabalho tem como proposta a realização do armazenamento das informações sem problemas de desempenho, com a otimização das consultas dos serviços responsáveis pela realização e geração das informações geradas pelo monitoramento.   
+Durante a realização da fundamentação teórica e do mapeamento sistemático, percebeu-se um grande número de trabalhos comentando, descrevendo e identificando o desempenho como um item preocupante e que deveria ser analisado em relação as informações geradas para o monitoramento, a transmissão dos dados de monitoramento e o funcionamento do monitoramento.  Esse item também foi analisado no projeto de modo a garantir que as informações criadas e transmitidas não comprometessem e nem onerassem a integração entre o barramento de serviços e a ferramenta de monitoramento, observando a grande quantidade de informações que podem ser geradas durante o funcionamento do barramento de serviços. 
+
+A preocupação com  o desempenho foi minimizada após a conclusão  da implementação da instrumentação dos dados estatísticos para o monitoramento, que utilizaram um modelo de dados simples, com poucos atributos que permite após a criação da variável do contador, executar facilmente a  modificação dos valores, com isso as métricas são definidas,  criadas e utilizadas. Para que não tenha perda no desempenho, neste projeto foram implementadas funções que permitem a atualização dos contadores e a atualização das métricas ao mesmo tempo, onde primeiro executa a atualização do contador e em seguida a atualização da métrica.      
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Síntese do Capítulo}
+\label{sintese4}
+
+Este capítulo apresentou o funcionamento do Monitoramento dos recursos do barramento de serviços, demonstrando a execução do monitoramento por meio da integração entre o barramento de serviços e a ferramenta de monitoramento com a utilização protocolo de monitoramento \acrshort{SNMP}, assim como a execução do agente \acrshort{SNMP} e o funcionamento do protocolo \acrshort{SNMP} no projeto. Também foram apresentadas, definidas e escolhidas a métricas mais adequadas ao funcionamento das ferramentas e a integração das aplicações para a realização do monitoramento, por fim tem-se a exposição da solução da a coleta de dados para o monitoramento por meio da instrumentação sem comprometer o desempenho durante funcionamento das aplicações e realização do monitoramento. 
