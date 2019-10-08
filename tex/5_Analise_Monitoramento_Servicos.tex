@@ -1,0 +1,24 @@
+\label{analise_monitoramento_servicos}
+
+Com a realização da implementação, implantação e integração das aplicações para a execução do monitoramento, percebeu-se a necessidade de divulgação da análise e resultados do trabalho executado. Este Capítulo apresenta a análise realizada após a execução do monitoramento do barramento de serviços por meio da ferramenta de monitoramento com a utilização do protocolo \acrshort{SNMP}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Análise das Aplicações}
+\label{analise}
+Com o propósito de avaliar a execução do trabalho foram analisados alguns requisitos das plataformas utilizadas para a realização do monitoramento do barramento de serviços por meio de uma ferramenta de monitoramento. Inicialmente os requisitos dos recursos computacionais das aplicações foram avaliados, tanto o requisito do barramento de serviços quanto o da ferramenta de monitoramento. O agente de monitoramento utiliza os mesmos recuros computacionais do \textit{software} onde ele foi implantado, nesse caso agente de monitoramento é representado pelo \textit{software} Exometer e está implantado no barramento de serviços Erlangms, os requisitos de instalação do barramento de serviços poderão ser visualizados em \cite{erlangms_gitHub}. A ferramenta de monitoramento também dispões de requisitos básicos para o seu funcionamento, os requisitos do Nagios Core\textsuperscript{\textregistered} na versão 4 poderão ser visualizados em \cite{nagios_core_configuration}, em ambos os caso os requisitos computacionais não impediram a execução do projeto e consequentemente foram obtidos sem gerar grandes esforços.
+
+Dispondo da configuração das aplicações foi necessário realizar a avaliação do funcionamento do monitoramento por meio do conjunto de protocolos TCP/IP, onde sabe-se que o protocolo \acrshort{SNMP} é um protocolo da \textit{Internet}, por sua vez o protocolo \acrshort{SNMP} para garantir a transmissão dos dados de monitoramento utiliza por padrão o protocolo UDP, especificamente nas portas 161 e 162, na porta 161 estão associadas a todas as mensagens enviadas ao protocolo \acrshort{SNMP} e a porta 162 é utilizada para realização das interceptações de todas as mensagens que transmitirem \textit{TRAPS}, lembrando que de acordo com as especificações da RFC 1157, essas mensagens não serão aceitas caso o tamanho exceda 484 octetos\cite{Schoffstall}.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Resultados}
+\label{resultados}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Síntese do Capítulo}
+\label{sintese5}

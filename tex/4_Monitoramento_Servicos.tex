@@ -153,7 +153,7 @@ O \textit{TRAP} é um tipo de alerta ou evento que pode ser transmitido pelo pro
 
 \begin{figure}[h!]
 	\begin{center}
-	\includegraphics[scale = 0.70]{img/debugTrap.png}
+	\includegraphics[scale = 0.75]{img/debugTrap.png}
 	\caption{Informações do \textit{TRAP}.}
 	\label{fun:fig:debugTrap}
 	\end{center}
@@ -163,7 +163,7 @@ Com a instalação e configuração realizada do \acrshort{SNMPTT} e SNMPTRAPD f
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Definição das métricas de monitoramento}
+\section{Definição das Métricas de Monitoramento}
 \label{metricas_monitoramento}
 
 Com a elaboração da integração entre o barramento de serviços e o Nagios\textsuperscript{\textregistered} foi feita a pesquisa na literatura especifica relacionada ao tema métricas de monitoramento para auxiliar a definição do que dever ser monitorado. Após a realização da pesquisa e durante a execução da configuração da ferramenta de monitoramento percebeu-se a necessidade de seguir a estrutura de configuração determinada na ferramenta de monitoramento, ao assumir essa estrutura foi possível detectar que o monitoramento deveria ser executado de um novo modo, implicando na mudança da estratégia de definição para a execução do monitoramento dos recursos do barramento de serviços. 
@@ -248,7 +248,7 @@ Como descrito na seção \ref{instrumentacao} o barramento de serviços dispõe 
     ems_oauth2_client_credentials_denied
     ems_oauth2_grant_type_token
     \end{minted}
-    \caption{Exemplode identificadores das métricas no Erlangms.}
+    \caption{Exemplo de identificadores das métricas no Erlangms.}
     \label{fun:fig:chavesContadores}
 \end{figure}
 
@@ -272,7 +272,7 @@ counter(Name, Inc)->mnesia:dirty_update_counter(counter, Name, Inc).
 
 \begin{figure}[h!]
 	\begin{center}
-	\includegraphics[scale = 0.59]{img/webserviceStats.png}
+	\includegraphics[scale = 0.70]{img/webserviceStats.png}
 	\caption{Serviço que recupera informações históricas dos contadores do Erlangms.}
 	\label{fun:fig:webserviceStats}
 	\end{center}
