@@ -61,7 +61,7 @@ O Exometer foi a aplicação que permitiu a integração das aplicações de um 
     \begin{minted}
     [frame=lines,framesep=5mm,
     baselinestretch=1.5,
-    fontsize=\footnotesize,linenos]{python}
+    fontsize=\footnotesize]{python}
     EXOMETER-METRICS-MIB DEFINITIONS ::= BEGIN
 IMPORTS
     MODULE-IDENTITY, OBJECT-TYPE, NOTIFICATION-TYPE, Counter32, Counter64, 
@@ -95,7 +95,7 @@ END
     \begin{minted}
     [frame=lines,framesep=5mm,
     baselinestretch=1.5,
-    fontsize=\footnotesize,linenos]{python}
+    fontsize=\footnotesize]{python}
    {"exometerManager",
    transportDomainUdpIpv4, 
    [127,0,0,1], 
@@ -123,7 +123,7 @@ O funcionamento do monitoramento por meio do protocolo \acrshort{SNMP} neste tra
 
 \begin{figure}[h!]
     \begin{minted}
-    [frame=lines,framesep=5mm,baselinestretch=1.5,linenos]{python}
+    [frame=lines,framesep=5mm,baselinestretch=1.5]{python}
     {intAgentUDPPort, 4000}.
     {intAgentIpAddress, [127,0,0,1]}.
     {snmpEngineID, "exometer_engine"}.
@@ -135,7 +135,7 @@ O funcionamento do monitoramento por meio do protocolo \acrshort{SNMP} neste tra
 
 \begin{figure}[h!]
     \begin{minted}
-    [frame=lines,framesep=5mm,baselinestretch=1.5,linenos]{python}
+    [frame=lines,framesep=5mm,baselinestretch=1.5]{python}
     {port, 5000}.
     {address, [127,0,0,1]}.
     {engine_id, "manager's_engine"}.
@@ -238,7 +238,7 @@ Como descrito na seção \ref{instrumentacao} o barramento de serviços dispõe 
 
 \begin{figure}[h!]
     \begin{minted}
-    [frame=lines,framesep=5mm,baselinestretch=1.0,linenos]{erlang}
+    [frame=lines,framesep=5mm,baselinestretch=1.0]{erlang}
     ems_auth_user_public_success
     ems_auth_user_oauth2_denied
     ems_auth_user_basic_success
@@ -256,7 +256,7 @@ Para a realização dos registros dos contadores o barramento de serviços disp�
 
 \begin{figure}[h!]
     \begin{minted}
-    [frame=lines,framesep=5mm,baselinestretch=1.5,linenos]{erlang}
+    [frame=lines,framesep=5mm,baselinestretch=1.5]{erlang}
 init_counter(Name, Value) ->
     {atomic, ok}=mnesia:transaction(fun()->
                  mnesia:write(#counter{key=Name, value=Value})end),
@@ -291,7 +291,7 @@ A implementação desses métodos poderão ser visualizadas na figura \ref{fun:f
 
 \begin{figure}[h!]
     \begin{minted}
-    [frame=lines,framesep=5mm,baselinestretch=1.0,linenos]{erlang}
+    [frame=lines,framesep=5mm,baselinestretch=1.0]{erlang}
     % Cria uma Métrica.
     exometer:new( Name , Type ). 
     

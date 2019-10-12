@@ -6,7 +6,7 @@ Com a realização da implementação, implantação e integração das aplicaç
 
 \section{Análise das Aplicações}
 \label{analise}
-Com o propósito de avaliar a execução do trabalho foram analisados alguns requisitos das plataformas utilizadas para a realização do monitoramento do barramento de serviços por meio de uma ferramenta de monitoramento. Inicialmente os requisitos dos recursos computacionais das aplicações foram avaliados, tanto o requisito do barramento de serviços quanto o da ferramenta de monitoramento. O agente de monitoramento utiliza os mesmos recuros computacionais do \textit{software} onde ele foi implantado, nesse caso agente de monitoramento é representado pelo \textit{software} Exometer e está implantado no barramento de serviços Erlangms, os requisitos de instalação do barramento de serviços poderão ser visualizados em \cite{erlangms_gitHub}, assim como os requisitos de configuração do Exometer poderão ser vizualizados em \cite{exometer_gitHub} . A ferramenta de monitoramento também dispões de requisitos básicos para o seu funcionamento, os requisitos do Nagios Core\textsuperscript{\textregistered} na versão 4 poderão ser visualizados em \cite{nagios_core_configuration}, em ambos os caso os requisitos computacionais não impediram a execução do projeto e consequentemente foram executados sem gerar grandes esforços.
+Com o propósito de avaliar a execução do trabalho foram analisados alguns requisitos das plataformas utilizadas para a realização do monitoramento do barramento de serviços por meio de uma ferramenta de monitoramento. Inicialmente os requisitos dos recursos computacionais das aplicações foram avaliados, tanto o requisito do barramento de serviços quanto o da ferramenta de monitoramento. O agente de monitoramento utiliza os mesmos recuros computacionais do \textit{software} onde ele foi implantado, nesse caso agente de monitoramento é representado pelo \textit{software} Exometer e está implantado no barramento de serviços Erlangms, os requisitos de instalação do barramento de serviços poderão ser visualizados em \cite{erlangms_gitHub}, assim como os requisitos de configuração do Exometer poderão ser visualizados em \cite{exometer_gitHub} . A ferramenta de monitoramento também dispões de requisitos básicos para o seu funcionamento, os requisitos do Nagios Core\textsuperscript{\textregistered} na versão 4 poderão ser visualizados em \cite{nagios_core_configuration}, em ambos os caso os requisitos computacionais não impediram a execução do projeto e consequentemente foram executados sem gerar grandes esforços.
 
 Dispondo da configuração das aplicações foi necessário realizar a avaliação do funcionamento do monitoramento por meio do conjunto de protocolos TCP/IP, onde sabe-se que o protocolo \acrshort{SNMP} é um protocolo da \textit{Internet}, que por sua vez o protocolo \acrshort{SNMP} para garantir a transmissão dos dados de monitoramento utiliza por padrão o protocolo UDP especificamente nas portas 161 e 162, na porta 161 estão associadas a todas as mensagens enviadas ao protocolo \acrshort{SNMP} e a porta 162 é utilizada para realização das interceptações de todas as mensagens que transmitirem \textit{TRAPs}, lembrando que de acordo com as especificações da RFC 1157, essas mensagens não serão aceitas caso o tamanho exceda 484 octetos\cite{Schoffstall}. 
 
@@ -24,11 +24,13 @@ Por fim, mediante a realização da avaliação e utilização das ferramentas p
 \section{Resultados}
 \label{resultados}
 
-A partir da realização do experimento que possibilitou a integração das aplicações para a execução do monitoramento dos recursos do barramento, esse trabalho demonstra atender a expectativa gerada pela utilização do protocolo \acrshort{SNMP} para elaborar a comunicação com a ferramenta de monitoramento, inicialmente um dos pontos que foi muito importante para contemplar o monitoramento e se demonstrou com resultado satisfatório, foi a criação dinâmica do arquivo MIB, o arquivo MIB com a estrutura inicial poderá ser visualizado na figura \ref{fun:fig:mib-original} e o arquivo MIB com os \acrshort{OID}s criados durante a execução do barramento de serviços poderá ser visualizado na figura \ref{fun:fig:mib-metricas}.
+A partir da realização do experimento que possibilitou a integração das aplicações para a execução do monitoramento dos recursos do barramento, esse trabalho demonstra atender a expectativa gerada pela utilização do protocolo \acrshort{SNMP} para elaborar a comunicação com a ferramenta de monitoramento, inicialmente um dos pontos que foi muito importante para contemplar o monitoramento e se demonstrou como resultado satisfatório, foi a criação dinâmica do arquivo MIB, o arquivo MIB com a estrutura inicial poderá ser visualizado na figura \ref{fun:fig:mib-original} e o arquivo MIB com os \acrshort{OID}s criados durante a execução do barramento de serviços poderá ser visualizado na figura \ref{fun:fig:mib-metricas}. O dinamismo para a criação e atualização desse arquivo possibilita a coleta de qualquer informação ou registro mapeado que é gerado a partir da instrumentação do barramento de serviços, criando objetos identificadores para o envio de \textit{TRAPs}, isso porque as aplicações mais utilizadas no mercado já possuem arquivos MIB definidos estaticamente já apontando o que deve ser monitorado, vale ressaltar que tanto na criação quanto na atualização do arquivo criado o Erlangms não demonstrou ter perda no desempenho do se funcionamento.
+
+Outro ponto importante foi a identificação da estrutura para a realização da comunicação via integração, que exige a utilização de \textit{plugins}, fornecido pela ferramenta de monitoramento, para organização e identificação das aplicações e informações a serem monitoradas. As aplicações em \acrshort{SNMP} possuem uma gama de componentes que auxiliam na utilização do monitoramento por meio do protocolo \acrshort{SNMP}, nesse trabalho o componente executado foi o SNMPTT, no SNMPTT exite um módulo denominado SNMPTTCONVERTMIB que tem como finalidade converter(traduzir) o arquivo MIB em arquivo de configuração para identificação e interceptação de \textit{TRAPs}, para que esses possam ser interpretados pelo \textit{plugin} SNMPTRAPD, assim como disponibilizado à ferramenta de monitoramento. Nesse trabalho não foi implementada uma solução para automatizar o processo conversão, pois como as métricas que seriam monitoradas foram definidas anteriormente, o SNMPTTCONVERTMIB foi utilizado apenas para a conversão do arquivo. Diante desse cenário podemos confirmar que o componentes \acrshort{SNMP} disponíveis fornecem o suporte necessário para a realização da integração das aplicações por meio do protocolo \acrshort{SNMP} além de garantir o funcionamento do protocolo de acordo com as recomendações descritas na \acrshort{RFC} 1157. A representação do arquivo MIB convertido com os \acrshort{OID}s e parâmetros de execução, para o envio das informações coletadas para a ferramenta de monitoramento poderão ser visualizados na figura \ref{fun:fig:mibcompiler}.     
 
 \begin{figure}[H]
     \begin{minted}
-    [frame=lines,framesep=2mm,baselinestretch=1.0,linenos]{python}
+    [frame=lines,framesep=2mm,baselinestretch=1.0]{python}
     EXOMETER-METRICS-MIB DEFINITIONS ::= BEGIN
 
 IMPORTS
@@ -43,8 +45,7 @@ exometerMetricsMIB MODULE-IDENTITY
 	ORGANIZATION "Feuerlabs"
 	CONTACT-INFO "TODO" 
 	DESCRIPTION 
-		"This MIB module is used for exposing dynamic
-		exometer metrics."
+	"This MIB module is used for exposing dynamic exometer metrics."
 	REVISION  "201401190525Z"
 	DESCRIPTION 
 		"The initial version"
@@ -62,11 +63,10 @@ END
     \label{fun:fig:mib-original}
 \end{figure} 
 
-\begin{frame}{}
-    
 
-\begin{minted}
-    [frame=lines,framesep=2mm,baselinestretch=1.0,linenos]{python}
+\begin{figure}[H]
+    \begin{minted}
+    [frame=lines,framesep=2mm,baselinestretch=1.0]{python}
    EXOMETER-METRICS-MIB DEFINITIONS ::= BEGIN
 
 IMPORTS
@@ -81,8 +81,7 @@ exometerMetricsMIB MODULE-IDENTITY
 	ORGANIZATION "Feuerlabs"
 	CONTACT-INFO "TODO" 
 	DESCRIPTION 
-		"This MIB module is used for exposing dynamic
-		exometer metrics."
+	"This MIB module is used for exposing dynamic exometer metrics."
 	REVISION  "201401190525Z"
 	DESCRIPTION 
 		"The initial version"
@@ -109,7 +108,12 @@ datapointEmsLoggerWriteErrorMsSinceReset OBJECT-TYPE
     DESCRIPTION ""
     ::= { exometerMetrics 3 }
 -- METRIC datapointEmsLoggerWriteErrorMsSinceReset END
+    \end{minted}
+\end{figure}
 
+\begin{figure}[H]
+    \begin{minted}
+[frame=lines,framesep=2mm,baselinestretch=1.0]{python}
 -- METRIC datapointEmsLoggerWriteInfoValue START
 datapointEmsLoggerWriteInfoValue OBJECT-TYPE
     SYNTAX Counter32
@@ -145,7 +149,12 @@ datapointEmsLoggerWriteWarnMsSinceReset OBJECT-TYPE
     DESCRIPTION ""
     ::= { exometerMetrics 7 }
 -- METRIC datapointEmsLoggerWriteWarnMsSinceReset END
+    \end{minted}
+\end{figure}
 
+\begin{figure}[H]
+    \begin{minted}
+[frame=lines,framesep=2mm,baselinestretch=1.0]{python}
 -- OBJECT-GROUP allObjects START
 allObjects OBJECT-GROUP
     OBJECTS {
@@ -190,7 +199,12 @@ reportEmsLoggerWriteWarnValue NOTIFICATION-TYPE
     DESCRIPTION ""
     ::= { exometerMetrics 11 }
 -- INFORM reportEmsLoggerWriteWarnValue END
+    \end{minted}
+\end{figure}
 
+\begin{figure}
+    \begin{minted}
+    [frame=lines,framesep=2mm,baselinestretch=1.0]{python}
 -- NOTIFICATION-GROUP allNotifications START
 allNotifications NOTIFICATION-GROUP
     NOTIFICATIONS {
@@ -206,17 +220,155 @@ allNotifications NOTIFICATION-GROUP
 -- CONTENT END
 
 END
+    \end{minted}
+    \caption{O arquivo MIB com os OIDs.}    
+    \label{fun:fig:mib-metricas}
+\end{figure} 
+
+\begin{figure}[H]
+    \begin{minted}
+    [frame=lines,framesep=2mm,baselinestretch=0.6]{java}
+MIB: EXOMETER-METRICS-MIB (file:./EXOMETER-METRICS-MIB.mib) converted
+on Fri Jul  5 05:29:47 2019 using snmpttconvertmib v1.4
+
+EVENT reportEmsLoggerWriteErrorValue .1.3.6.1.3.7.8 "Status Events" Normal
+FORMAT $*
+EXEC /usr/local/nagios/libexec/eventhandlers/submit_check_result 127.0.0.1
+LOG-ERROR 2 "$*"
+SDESC
+
+Variables:
+  1: datapointEmsLoggerWriteErrorValue
+     Syntax="COUNTER"
+EDESC
+
+EVENT reportEmsLoggerWriteInfoValue .1.3.6.1.3.7.10 "Status Events" Normal
+FORMAT $*
+EXEC /usr/local/nagios/libexec/eventhandlers/submit_check_result 127.0.0.1
+LOG-INFO 0 "$*"
+SDESC
+
+Variables:
+  1: datapointEmsLoggerWriteInfoValue
+     Syntax="COUNTER"
+EDESC
+
+EVENT reportEmsLoggerWriteWarnValue .1.3.6.1.3.7.11 "Status Events" Normal
+FORMAT $*
+EXEC /usr/local/nagios/libexec/eventhandlers/submit_check_result 127.0.0.1
+LOG-WARN 1 "$*"
+SDESC
+
+Variables:
+  1: datapointEmsLoggerWriteWarnValue
+     Syntax="COUNTER"
+EDESC
+    
+    \end{minted}
+    \caption{Arquivo MIB convertido pelo \textit{plugin} SNMPTTCONVERTMIB.}
+    \label{fun:fig:mibcompiler}
+\end{figure}
+
+Por fim o uso da ferramenta de monitoramento possibilitou idealizar e implantar uma forma de monitoramento para o barramento de serviços, pois como já informado nesse trabalho a estrutura para a transmissão do dados a ser monitorado possui regras definida, não implicando na evolução ou impedindo o monitoramento, mas restringindo a forma de como o monitoramento deve ser feito a partir da utilização do protocolo \acrshort{SNMP}. A ferramenta de monitoramento por sua vez, restringe que para realizar o monitoramento os \textit{hosts} e serviços devam estar configurados em seus arquivos. A realização dessa configuração foi executada de forma prática e sem complexidade, mas por conta dessa estrutura de registro e configuração  no momento não foi possível realizar a implementação e implantação do monitoramento de métricas que não foram definidas anteriormente e nem as que não foram compiladas e mapeadas nos arquivos de configuração, a estrutura de registros de configuração de \textit{hosts} e serviços, que nessa situação são o Erlangms e a execução dos registros de \textit{Log}, poderão ser visualizados na figura \ref{fun:fig:objectNagiosServices}.
+
+\begin{figure}[H]
+    \begin{minted}
+    [frame=lines,framesep=2mm,baselinestretch=0.6]{java}
+define service{
+        use                             local-service,graphed-service
+        host_name                       localhost
+        service_description             HTTP
+        check_command                   check_http
+        notifications_enabled           0
+        }
+
+define service{
+        name                    emsmetricerror
+        use                     generic-service
+        register                0
+        service_description     LOG-ERROR
+        is_volatile             1
+        check_command           check-host-alive
+        max_check_attempts      1
+        normal_check_interval   1
+        retry_check_interval    1
+        passive_checks_enabled  1
+        check_period            none
+        notification_interval   31536000
+        contact_groups          admins
+}
+
+define service{
+   host_name               emsbus
+   use                     emsmetricerror
+   contact_groups          admins
+}
+
+define service{
+        name                    emsmetricinfo
+        use                     generic-service
+        register                0
+        service_description     LOG-INFO
+        is_volatile             1
+        check_command           check-host-alive
+        max_check_attempts      1
 \end{minted}
-\begin{center}
-\caption{Figura \ref{fun:fig:mib-metricas}: O arquivo MIB com os
-OIDs.}    
-\end{center}
-\label{fun:fig:mib-metricas}
-\end{frame}  
+\end{figure}
+\begin{figure}[H]
+\begin{minted}
+    [frame=lines,framesep=2mm,baselinestretch=0.6]{java}        
+        normal_check_interval   1
+        retry_check_interval    1
+        passive_checks_enabled  1
+        check_period            none
+        notification_interval   31536000
+        contact_groups          admins
+}
 
+define service{
+   host_name               emsbus
+   use                     emsmetricinfo
+   contact_groups          admins
+}
 
+define service{
+        name                    emsmetricwarn
+        use                     generic-service
+        register                0
+        service_description     LOG-WARN
+        is_volatile             1
+        check_command           check-host-alive
+        max_check_attempts      1
+        normal_check_interval   1
+        retry_check_interval    1
+        passive_checks_enabled  1
+        check_period            none
+        notification_interval   31536000
+        contact_groups          admins
+}
+
+define service{
+   host_name               emsbus
+   use                     emsmetricwarn
+   contact_groups          admins
+}
+    \end{minted}
+    \caption{Registro dos \textit{hosts} e serviços no arquivo de configuração do Nagios\textsuperscript{\textregistered}. }
+    \label{fun:fig:objectNagiosServices}
+\end{figure}
+
+Com a finalização do processo de integração e da configuração da ferramenta de monitoramento pode-se comprovar por meio do experimento realizado nesse trabalho, a integração das aplicações para a realização do monitoramento dos recursos do barramento de serviços, com inicio na coleta de informações geradas por meio da instrumentação do Erlangms, passando pelo Exometer onde foram criadas as métricas com atualização de valores, assim com o \textit{report} em \acrshort{SNMP} e transmitidas por meio de \textit{TRAPs} pelo agente de monitoramento. Esses \textit{TRAPs} são interceptados pelos plugins da ferramenta de monitoramento e disponibilizado para apresentação em um \textit{dashboard} de serviços da ferramenta de monitoramento, o Nagios\textsuperscript{\textregistered}, o \textit{dashboard} com a métricas coletadas das informações do recurso de registro de \textit{Log} do Erlangms poderá ser visualizado na figura \ref{fun:fig:nagiosDashbordEmsbus}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.57]{img/nagiosConfigurado.png}
+    \caption{\textit{Dashboard} do Nagios\textsuperscript{\textregistered} com as métricas do registro de \textit{Log}.}
+    \label{fun:fig:nagiosDashbordEmsbus}
+\end{figure}
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Síntese do Capítulo}
 \label{sintese5}
+
+Este capítulo apresentou a avaliação da aplicações integrantes da execução do monitoramento dos recursos do barramento, a partir dessa avaliação foi possível responder com fundamentação obtida dos resultados que que a solução esta adequada ao ambiente computacional do \acrshort{CPD} da \acrshort{UnB}, permitindo a possibilidade de implantação após validação pelo colaboradores desse Centro e disponibilização da próxima versão disponível,para uso exclusivo do barramento de serviços Erlangms.
