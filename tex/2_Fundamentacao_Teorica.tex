@@ -24,7 +24,7 @@ Este capítulo apresenta uma breve revisão de conceitual que é essencial para 
 
 \section{Monitoramento}
 
-O monitoramento é forma utilizada para acompanhar ou observar o andamento de um fluxo ou processo, na área de tecnologia da informação é responsável por verificar e coletar informações sobre funcionamento de ativos de rede ou serviços, com propósito de apresentar informações mais resumidas e favoráveis em painéis ou sistemas para a realização de monitoramento\cite{de2014indicadores}. O monitoramento é necessário para uma série de fins, incluindo a verificação de status, solução de problemas, ajustes de desempenho e depuração\cite{hollingsworth2003instrumentation}. 
+O monitoramento é forma utilizada para acompanhar ou observar o andamento de um fluxo ou processo, segundo Martino Jannuzzi \cite{de2014indicadores}, na área de tecnologia da informação é responsável por verificar e coletar informações sobre funcionamento de ativos de rede ou serviços, com propósito de apresentar informações mais resumidas e favoráveis em painéis ou sistemas para a realização de monitoramento. De acordo com Hollingsworth \cite{hollingsworth2003instrumentation} o monitoramento é necessário para uma série de fins, incluindo a verificação de status, solução de problemas, ajustes de desempenho e depuração. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -32,11 +32,11 @@ O monitoramento é forma utilizada para acompanhar ou observar o andamento de um
 
 Em tecnologia da informação de monitorar ativos de rede e serviços, é acompanhar , seja pelo mau funcionamento de um ativo de rede, serviço ou por uma indisponibilidade(queda de energia ou internet). Como mencionado anteriormente o ato de acompanhar o funcionamento desses recursos propõem ao gestores desse processos encontrar uma forma mais visível e gerenciável para solucionar problemas, alertar sobre possíveis falhas ou até determinar uma situação para o retorno automático desses serviços. 
 
-%O CPD, atualmente possui um serviço que executa o monitoramento em tempo de execução, porém a forma utilizada para o monitoramento foi a leitura do arquivo de \textit{log}, pois havia um grande preocupação com \textit{trade-off} gerado. A fim de obter melhor custo de monitoramento x desempenho tomou-se a decisão pela coleta das informações de monitoramento por meio dos \textit{logs} gerados pelo ErlangMS \cite{filgueirasmonitoramento}.    
+%O CPD, atualmente possui um serviço que executa o monitoramento em tempo de execução, porém a forma utilizada para o monitoramento foi a leitura do arquivo de \textit{log}, pois havia um grande preocupação com \textit{trade-off} gerado. A fim de obter melhor custo de monitoramento x desempenho tomou-se a decisão pela coleta das informações de monitoramento por meio dos \textit{logs} gerados pelo Erlangms \cite{filgueirasmonitoramento}.    
 
-O monitoramento implantado no \acrshort{CPD} para acompanhamento dos sistemas e serviços(\textit{web services}), desenvolvidos pela unidade de desenvolvimento \textit{software} utilizando o Barramentos de serviços ErlangMS, não possui um acompanhamento especifico no funcionamento dos seus serviços, visto que há casos e relatos de usuários que acessam os sistemas, realizam a autenticação, clicam nos menus, mas nada aparece como resultado das pesquisas e funcionalidades dos sistemas. Por dispor de uma arquitetura orientada a serviços a camada de apresentação funciona normalmente, mas os recursos(\textit{web services}) encontram-se indisponíveis.
+O monitoramento implantado no \acrshort{CPD} para acompanhamento dos sistemas e serviços(\textit{web services}), desenvolvidos pela unidade de desenvolvimento \textit{software} que utiliza o barramentos de serviços Erlangms, não possui um acompanhamento especifico no funcionamento dos seus serviços, visto que há casos e relatos de usuários que acessam os sistemas, realizam a autenticação, clicam nos menus, mas nada aparece como resultado das pesquisas e funcionalidades dos sistemas. Por dispor de uma arquitetura orientada a serviços a camada de apresentação funciona normalmente, mas os recursos(\textit{web services}) encontram-se indisponíveis.
 
-Sistemas distribuídos podem ser interpretados como aplicações distintas que possuem um \textit{middleware} que realize algum tipo de conexão entre as aplicações \cite{penteado2012jmonitor}. Esses sistemas ou aplicações podem funcionar com seus serviços de forma independente, ou dependente de outros serviços de aplicações distintas, o funcionamento desses serviços são essenciais, principalmente os que são dependentes, por esse motivo a implantação do monitoramento de sistemas distribuídos é utilizada para um melhor acompanhamento e gerenciamento das aplicações e serviços para verificar o funcionamento e disponibilidade.   
+Sistemas distribuídos podem ser interpretados como aplicações distintas que possuem um \textit{middleware} que realize algum tipo de conexão entre as aplicações como descrevem os autores Penteado e Treveleim \cite{penteado2012jmonitor} em seu trabalho. Esses sistemas ou aplicações podem funcionar com seus serviços de forma independente, ou dependente de outros serviços de aplicações distintas, o funcionamento desses serviços são essenciais, principalmente os que são dependentes, por esse motivo a implantação do monitoramento de sistemas distribuídos é utilizada para um melhor acompanhamento e gerenciamento das aplicações e serviços para verificar o funcionamento e disponibilidade.   
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -46,9 +46,9 @@ Sistemas distribuídos podem ser interpretados como aplicações distintas que p
 
 \subsubsection{SNMP}
 
-O Protocolo Simples de Gerenciamento de Rede (\textit{\acrlong{SNMP}}) é um protocolo da camada de aplicação responsável pela transmissão de dados e informações de gerenciamento e monitoramento entre dispositivos e ativos de rede. O \acrshort{SNMP} é um dos protocolos mais utilizados atualmente, devido a sua arquitetura que dispõe de uma estrutura simples capaz de realizar o monitoramento em tempo real sem comprometer a eficiência que está sendo monitorado\cite{roohi2014application}. Em seu paradigma o \acrshort{SNMP} gerencia os ativos de rede baseando-se no esquema cliente-servidor, onde os dispositivo e ativos de rede recebem um agente para que essas informações sejam coletadas e transmitidas, por conta desse paradigma e fácil implantação a popularidade do protocolo aumentou, permitindo as empresas fornecerem diversos tipos de estruturas denominadas \acrshort{MIBs}. Os \acrshort{MIBs} são objetos criados e definidos por meio de uma estrutura virtual capaz de armazenar de informações de gerenciamento\cite{roohi2014application,presuhn2002management}.
+O Protocolo Simples de Gerenciamento de Rede (\textit{\acrlong{SNMP}}) é um protocolo da camada de aplicação responsável pela transmissão de dados e informações de gerenciamento e monitoramento entre dispositivos e ativos de rede. De acordo com Roohi \textit{et al.} \cite{roohi2014application}, o \acrshort{SNMP} é um dos protocolos mais utilizados atualmente, devido a sua arquitetura que dispõe de uma estrutura simples capaz de realizar o monitoramento em tempo real sem comprometer a eficiência que está sendo monitorado. Nesse sentido os autores Presuhn e Mankin \cite{roohi2014application,presuhn2002management} descrevem  em seu trabalho, como o \acrshort{SNMP} gerencia os ativos de rede baseando-se no esquema cliente-servidor, onde os dispositivo e ativos de rede recebem um agente para que essas informações sejam coletadas e transmitidas, por conta desse paradigma e fácil implantação a popularidade do protocolo aumentou, permitindo as empresas fornecerem diversos tipos de estruturas denominadas \acrshort{MIBs}. Os \acrshort{MIBs} são objetos criados e definidos por meio de uma estrutura virtual capaz de armazenar de informações de gerenciamento.
 
-O \acrshort{SNMP} é formado por três componentes \cite{nadeau2003mpls}:  
+O autor Nadeau\cite{nadeau2003mpls} cita três componentes que formam o \acrshort{SNMP}:  
 
     \begin{itemize}
     \item \acrshort{SMI}
@@ -99,9 +99,9 @@ Após a realização de uma análise, estudos e definições, obteve-se de forma
 
 \subsubsection{GOSIP}
 
-O \acrshort{GOSIP} é um protocolo pertencente ao modelo \acrshort{OSI} que funciona por meio de software na camada de aplicação em dispositivos \textit{peer-to-peer}, teve seu lançamento anunciado no fim da década de 80 e inicio da década de 90, para facilitar a comunicação e transferência de dados em um modelo governamental prometendo ser a comunicação integrada de sistemas militares do futuro, houve até a formalização de um documento nos padrões \acrshort{RFC} o RFC 1169\cite{mankin1991towards}, porém \cite{harris1992tactical} descreve em seu trabalho que o protocolo proposto foi implementado com seus objetivos bem definidos, mas que não obtiveram o sucesso almejado, pois esperava-se que pela a realização fim-a-fim conseguiriam obter melhores resultados em relação a economia da largura de banda e melhor desempenho com a redundância dos dados.
+O \acrshort{GOSIP} é um protocolo pertencente ao modelo \acrshort{OSI} que funciona por meio de software na camada de aplicação em dispositivos \textit{peer-to-peer}, teve seu lançamento anunciado no fim da década de 80 e inicio da década de 90, para facilitar a comunicação e transferência de dados em um modelo governamental prometendo ser a comunicação integrada de sistemas militares do futuro, houve até a formalização de um documento nos padrões \acrshort{RFC} o RFC 1169 como descreve o autor Mankin\cite{mankin1991towards}, porém Harris\cite{harris1992tactical} descreve em seu trabalho que o protocolo proposto foi implementado com seus objetivos bem definidos, mas que não obtiveram o sucesso almejado, pois esperava-se que pela a realização fim-a-fim conseguiriam obter melhores resultados em relação a economia da largura de banda e melhor desempenho com a redundância dos dados.
 
-Apesar dos relatos citados no paragrafo anterior sobre as expectavas não alcançadas com o protocolo, há uma técnica bastante importante que foi extraída, e que é utilizada por meio dos dispositivos de modo a garantir que a comunicação e transmissão da informação sejam garantidas. Diante desse cenário o protocolo trabalha de forma epidêmica, disseminado facilmente as informações nos sistemas distribuídos em larga escala, cujo principal objetivo propagar rapadamente essas informações, o que permite a realização de um monitoramento \textit{peer-to-peer},onde os dispositivo se comunicam diretamente \cite{tanenbaum2007distributed}, a representação dessa propagação poderá ser visualizada na figura \ref{fun:fig:gosip}. 
+Apesar dos relatos citados no paragrafo anterior sobre as expectavas não alcançadas com o protocolo, há uma técnica bastante importante que foi extraída, e que é utilizada por meio dos dispositivos de modo a garantir que a comunicação e transmissão da informação sejam garantidas. Diante desse cenário o protocolo trabalha de forma epidêmica, disseminado facilmente as informações nos sistemas distribuídos em larga escala, cujo principal objetivo propagar rapadamente essas informações, o que permite a realização de um monitoramento \textit{peer-to-peer},onde os dispositivo se comunicam diretamente com afirma Tanenbaum \cite{tanenbaum2007distributed}, a representação dessa propagação poderá ser visualizada na figura \ref{fun:fig:gosip}. 
 
 \begin{figure}[h!]
 	\begin{center}
@@ -111,17 +111,21 @@ Apesar dos relatos citados no paragrafo anterior sobre as expectavas não alcan�
 	\end{center}
 \end{figure}
 
-Nesse trabalho, o \acrshort{GOSIP} não foi utilizado no experimento, foi utilizado como fonte de pesquisa para a realização de um comparativo tecnológico entre os protocolos, que permitiu avaliar e auxiliar na escolha do \acrshort{SNMP} como protocolo ser utilizado no projeto. 
+\subsubsection{Escolha do Protocolo}
+
+Neste trabalho, o \acrshort{GOSIP} não foi utilizado no experimento, foi utilizado como fonte de pesquisa para a realização de um comparativo conceitual e  tecnológico entre os protocolos, que permitiu avaliar e auxiliar na escolha do \acrshort{SNMP} como protocolo ser utilizado no projeto. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Ferramentas de Monitoramento}
 
+Na monitoração de ativos de rede ou \textit{softwares} alcançar um nível satisfatório de coberturas das aplicações é um desafio, no mercado existem diversas ferramentas relacionadas à monitoramento. Com o aumento da disponibilidade de serviços tanto de redes como \textit{software}, é quase inviável acompanhar o funcionamento sem um ferramenta com especificidade para o monitoramento, o que subsidia necessariamente a escolha de um solução tecnológica. Nessa seção serão aprestadas as ferramentas de monitoramento de mercado seus prós e contras.
+
 \subsubsection{Nagios\textsuperscript{\textregistered}}
 
 O Nagios\textsuperscript{\textregistered} é uma aplicação com interface \textit{web} para o monitoramento de rede baseada na web idealizada e desenvolvida por Ethan Galstad \cite{bin2011new}. O Nagios\textsuperscript{\textregistered} é projetado para a realizar o acompanhamento de ativos de rede, sistemas e serviços com a finalidade de notificar os usuários e responsáveis pelos ativos de rede, sistema e serviços que estão registrados na ferramenta como contatos emergências, em caso aconteça alguma anomalia ou problema durante o funcionamento da rede, sistemas e serviços.
 
-O Nagios\textsuperscript{\textregistered} é tratado como uma ferramenta que possui um alta complexidade em sua configuração, pois possui uma gama de recursos e funcionalidades disponíveis para a utilização, devido a grande quantidade de recursos o Nagios\textsuperscript{\textregistered} é bastante utilizado ele também possui um grande número de \textit{plug-ins} disponíveis na para a realização do monitoramento podendo personalizar o monitoramento de serviços como SMTP, POP3, HTTP, PING \cite{lcc2012nagios}. Nesse projeto o Nagios\textsuperscript{\textregistered} será utilizado com ferramenta de monitoramento dos sistemas e serviços fornecidos pela \acrshort{UnB} com utilização de serviço SMTP para o monitoramento, visto que, o \acrshort{CPD} já utiliza a ferramenta para o monitoramento dos ativos de rede de toda a universidade. 
+O Nagios\textsuperscript{\textregistered} é uma ferramenta que possui um alta complexidade em sua configuração, pois possui uma gama de recursos e funcionalidades disponíveis para a utilização, devido a grande quantidade de recursos o Nagios\textsuperscript{\textregistered} é bastante utilizado ele também possui um grande número de \textit{plug-ins} disponíveis na para a realização do monitoramento podendo personalizar o monitoramento de serviços como SMTP, POP3, HTTP, PING \cite{lcc2012nagios}. Nesse projeto o Nagios\textsuperscript{\textregistered} será utilizado com ferramenta de monitoramento dos sistemas e serviços fornecidos pela \acrshort{UnB} com utilização de serviço SMTP para o monitoramento, visto que, o \acrshort{CPD} já utiliza a ferramenta para o monitoramento dos ativos de rede de toda a universidade. 
 
 \begin{figure}[h!]
 	\begin{center}
@@ -130,13 +134,14 @@ O Nagios\textsuperscript{\textregistered} é tratado como uma ferramenta que pos
 		\label{fun:fig:nagios}
 	\end{center}
 \end{figure}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Ganglia}
 
  O Ganglia é um \textit{software} de monitoramento escalonável com a finalidade de coletar dados para acompanhar o funcionamento de sistemas distribuídos e sistemas de alto desempenho, como \textit{clusters}. Por conta da estrutura hierárquica implementada, o \textit{software} utiliza a linguagem de marcação de texto XML para a representação dos dados. 
  
- O Ganglia é baseado em um protocolo \textit{multicast} de escuta e anuncio, e necessariamente precisa ter em cada \textit{host} que será monitorado a instalação de um \textit{Gmond} \cite{vyas2014embedding}. O \textit{Gmond} é um serviço em execução em cada \textit{host} que coleta as informações de estado de um \textit{host} de forma individual e insere essas informações no canal de comunicação \textit{multicast} para enviar esse dados ao Ganglia.
+ O os autores Vyas \textit{et al.} \cite{vyas2014embedding} relatam em seu trabalho que o Ganglia é baseado em um protocolo \textit{multicast} de escuta e anuncio, e necessariamente precisa ter em cada \textit{host} que será monitorado a instalação de um \textit{Gmond}. O \textit{Gmond} é um serviço em execução em cada \textit{host} que coleta as informações de estado de um \textit{host} de forma individual e insere essas informações no canal de comunicação \textit{multicast} para enviar esse dados ao Ganglia.
  
  \begin{figure}[h!]
 	\begin{center}
@@ -147,7 +152,7 @@ O Nagios\textsuperscript{\textregistered} é tratado como uma ferramenta que pos
 \end{figure}
  
  
- Em uma breve análise após a utilização das ferramentas de monitoramento \cite{benincosa2ganglia} cita em seu artigo os seguintes itens:
+ Em uma breve análise após a utilização das ferramentas de monitoramento Benincosa \cite{benincosa2ganglia} cita em seu artigo os seguintes itens:
 \begin{itemize}
 
 \item O Ganglia não possui um sistema de notificação integrado enquanto que o Nagios\textsuperscript{\textregistered} se destaca nisso.
@@ -155,7 +160,7 @@ O Nagios\textsuperscript{\textregistered} é tratado como uma ferramenta que pos
 
 \end{itemize}
 
- Diante desse cenário a autora sugere a utilização das ferramentas em conjunto de modo que sejam utilizados em sua potencialidade, porém como \acrshort{CPD} já utiliza o Nagios\textsuperscript{\textregistered} e a intenção da Gestão \acrshort{CPD} e do projeto é trabalhar com o acompanhamento a notificação dos serviços caso haja alguma falha ou mau funcionamento, como o Ganglia não executa uma das principais funcionalidades do monitoramento, a ferramenta não entrará como \textit{software} a ser utilizado no projeto.
+ Diante desse cenário a Benincosa \cite{benincosa2ganglia} sugere a utilização das ferramentas em conjunto de modo que sejam utilizados em sua potencialidade, porém como \acrshort{CPD} já utiliza o Nagios\textsuperscript{\textregistered} e a intenção da Gestão \acrshort{CPD} e do projeto é trabalhar com o acompanhamento a notificação dos serviços caso haja alguma falha ou mau funcionamento, como o Ganglia não executa uma das principais funcionalidades do monitoramento, a ferramenta não entrará como \textit{software} a ser utilizado no projeto.
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -163,7 +168,7 @@ O Nagios\textsuperscript{\textregistered} é tratado como uma ferramenta que pos
 
 O Cacti é uma ferramenta de monitoramento que coleta e analisa informações por meio de gráficos em tempo de execução, com um excelente desempenho, o monitoramento pode ser feito em redes complexas e ativos de rede. O Cacti armazena suas informações coletadas em bancos de dados, para para coleta das informações são necessários \textit{scripts}/comandos que são implementados em cada ativo e são denominados cactos, e para a apresentação dos gráficos é necessária a utilização do \textit{software}  \acrfull{RRDTool} que possui uma apresentação gráfica bastante intuitiva e de fácil utilização \cite{cacti}.
 
-O \acrshort{RRDTool} é uma ferramenta que realiza o registro de dados e gráficos de alto desempenho para dados de séries temporais, e como os cactos implementados nos \textit{hosts} são \textit{scripts} o \acrshort{RRDTool} pode ser facilmente integrado com  \textit{scripts} de \textit{shell} \cite{rrdtool}. 
+Segundo Oetiker\cite{rrdtool} o \acrshort{RRDTool} é uma ferramenta que realiza o registro de dados e gráficos de alto desempenho para dados de séries temporais, e como os cactos implementados nos \textit{hosts} são \textit{scripts} o \acrshort{RRDTool} pode ser facilmente integrado com  \textit{scripts} de \textit{shell}. 
 
 \begin{figure}[h!]
 	\begin{center}
@@ -187,7 +192,7 @@ O Cacti possui \textit{plugins} para integração com outras funcionalidades e f
 
 \subsubsection{Zabbix}
 
-O Zabbix é uma solução tecnológica conceituada e desenvolvida para a realização de monitoramento de rede, servidores e serviço. O monitoramentos poderá ser realizado com o agrupamento desses recursos objetivando potencialização das vantagens de utilização dos ativos de TI ou diminuição os riscos da utilização desses ativos aos usuários, esse procedimento é denominado \textit{pooling} ou por mensagens de notificações e alertas por meio de \textit{trapping} \cite{contessa2010gerenciamento}. O Zabbix tem como idealizador  Alexei Vladishev, e atualmente é mantido pela Zabbix SIA \cite{zabbix}.   
+O Zabbix é uma solução tecnológica conceituada e desenvolvida para a realização de monitoramento de rede, servidores e serviço. O monitoramentos poderá ser realizado com o agrupamento desses recursos objetivando potencialização das vantagens de utilização dos ativos de TI ou diminuição os riscos da utilização desses ativos aos usuários, esse procedimento é denominado \textit{pooling} ou por mensagens de notificações e alertas por meio de \textit{trapping}, como afirmam os autores Contessa e Fraga\cite{contessa2010gerenciamento}. O Zabbix tem como idealizador  Alexei Vladishev, e atualmente é mantido pela Zabbix SIA \cite{zabbix}.   
 
 Como as demais aplicações e \textit{softwares} citados anteriormente o Zabbix possui funcionalidades para o monitoramento que realizam a coleta de dados por servidor ou agentes, a ferramenta tem suporte ao protocolo \acrshort{SNMP} e também interface \textit{web} para visualização de gráficos gerados por meio dos dados coletados dos \textit{hosts} ou agentes. Por definição arquitetural o Zabbix é composto por componentes com funcionalidades primordiais para o seu funcionamento são eles \cite{zabbix}: 
 
@@ -206,7 +211,7 @@ Como as demais aplicações e \textit{softwares} citados anteriormente o Zabbix 
     \end{itemize}
 \end{itemize}
 
-Em comparação com as ferramentas de monitoramento mais utilizadas atualmente, \cite{marik2014comparative} descreve em seu artigo que o Zabbix está entre as melhores aplicações, incluído as citadas nesse trabalho, por possuir pré-requisitos básicos na instalação e configuração, excelente tempo de resposta em caso de falhas de serviços e de recursos de \acrshort{TI} e as notificações por e-mail e \acrshort{SMS}, porém o \textit{dashboard} para a realização do monitoramento é complexo e não intuitivo ao usuário, como pode ser visualizado a seguir na figura \ref{fun:fig:zabbix}, podendo não auxiliar em um gerenciamento adequado aos serviços e aplicações que são monitoradas, apesar de uma boa aplicação de monitoramento, o Zabbix não será utilizado com ferramenta de monitoramento para esse trabalho.    
+Em comparação com as ferramentas de monitoramento mais utilizadas atualmente, os autores Marik e Ondrej \cite{marik2014comparative} descrevem em seu artigo que o Zabbix está entre as melhores aplicações, incluído as citadas nesse trabalho, por possuir pré-requisitos básicos na instalação e configuração, excelente tempo de resposta em caso de falhas de serviços e de recursos de \acrshort{TI} e as notificações por e-mail e \acrshort{SMS}, porém o \textit{dashboard} para a realização do monitoramento é complexo e não intuitivo ao usuário, como pode ser visualizado a seguir na figura \ref{fun:fig:zabbix}, podendo não auxiliar em um gerenciamento adequado aos serviços e aplicações que são monitoradas, apesar de uma boa aplicação de monitoramento, o Zabbix não será utilizado com ferramenta de monitoramento para esse trabalho.    
 
 \begin{figure}[h!]
 	\begin{center}
@@ -220,7 +225,7 @@ Em comparação com as ferramentas de monitoramento mais utilizadas atualmente, 
 
 \subsection{Agente de Monitoramento}
 
-Em uma arquitetura de monitoramento de serviços ou ativos de rede que utiliza o protocolo \acrshort{SNMP}, é necessária a implementação de agentes de monitoramento para a instalação em \textit{hosts} e dispositivos que serão monitorados, esse agentes consistem em coletar dados e enviar mensagens de alerta ao gerentes de monitoramento, como  apresentado na figura \ref{fun:fig:agente}, como por exemplo, o uso de \acrshort{CPU} e a quantidade de memória de utilização de um processo ou um alerta de falha de um dispositivo ou serviço \cite{7439952}.  
+Em uma arquitetura de monitoramento de serviços ou ativos de rede que utilize protocolos para a comunicação e transferência de dados, é necessária a implementação de agentes de monitoramento para a instalação em \textit{hosts} e dispositivos que serão monitorados, esse agentes consistem em coletar dados e enviar mensagens de alerta ao gerentes de monitoramento, como  apresentado na figura \ref{fun:fig:agente}, como por exemplo, o uso de \acrshort{CPU} e a quantidade de memória de utilização de um processo ou um alerta de falha de um dispositivo ou serviço, como descrevem esm seu trabalho os autores Grover e Naik \cite{7439952}.  
 
 \begin{figure}[h!]
 	\begin{center}
@@ -230,7 +235,7 @@ Em uma arquitetura de monitoramento de serviços ou ativos de rede que utiliza o
 	\end{center}
 \end{figure}
 
-Um agente de monitoramento pode ser definido como um componente ou aplicação de gerenciamento de rede ou serviço no dispositivo a ser gerenciado e possuem duas operações básicas \textit{GET} e \textit{SET}, o agente em execução fica responsável por exportar os dados de gerenciamento dos sistemas, serviços ou ativos de rede gerenciados com variáveis organizadas de forma hierárquica. Essa hierarquia é contemplada por metadados que são representados por \acrshort{MIBs}, e \acrshort{MIBs} por sua vez são um conjunto dos objetos gerenciados, que procuram abranger todas as informações necessárias para a gerência de rede \cite{6240708}. Nesse trabalho o agente de monitoramento utilizado é o Exometer que funciona como agente de monitoramento responsável pela coleta das informações geradas pelo Barramento de serviços Erlangms e a transmissão dessas informações ao Nagios\textsuperscript{\textregistered} por meio do protocolo \acrshort{SNMP}. 
+ Segundo Kazaz \textit{et al.}  \cite{6240708} um agente de monitoramento pode ser definido como um componente ou aplicação de gerenciamento de rede ou serviço no dispositivo a ser gerenciado e possuem duas operações básicas \textit{GET} e \textit{SET}, o agente em execução fica responsável por exportar os dados de gerenciamento dos sistemas, serviços ou ativos de rede gerenciados com variáveis organizadas de forma hierárquica. Essa hierarquia é contemplada por metadados que são representados por \acrshort{MIBs}, e \acrshort{MIBs} por sua vez são um conjunto dos objetos gerenciados, que procuram abranger todas as informações necessárias para a gerência de rede. Nesse trabalho o agente de monitoramento utilizado é o Exometer que funciona como agente de monitoramento responsável pela coleta das informações geradas pelo Barramento de serviços Erlangms e a transmissão dessas informações ao Nagios\textsuperscript{\textregistered} por meio do protocolo \acrshort{SNMP}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -243,29 +248,33 @@ Um agente de monitoramento pode ser definido como um componente ou aplicação d
 		\label{fun:fig:zabbix}
 	\end{center}
 \end{figure}
-O Exometer é um \textit{framework} capaz de executar a instrumentação e permitir a exportação de dados de maneira fácil e eficiente utilizando bibliotecas implementadas em código Erlang, normalmente os dados exportados são relacionados ao desempenho dos sistemas e serviços. Com a utilização de módulos, o Exometer pode realizar a integração com uma grande variedade de sistemas de monitoramento, nesse trabalho a integração é com a aplicação de monitoramento Nagios\textsuperscript{\textregistered}. O potencial do Exometer é fornecer métricas de várias formas e parâmetros, para isso dispõem de um conjunto de componentes para monitoramento pré-definidos e que podem ser estendidos de forma personalizada para lidar com diversos tipos de métricas e alguns protocolos \cite{exometer_core}.
+O Exometer é um \textit{framework} capaz de executar a instrumentação e permitir a exportação de dados de maneira fácil e eficiente utilizando bibliotecas implementadas em código Erlang, normalmente os dados exportados são relacionados ao desempenho dos sistemas e serviços. Com a utilização de módulos, o Exometer pode realizar a integração com uma grande variedade de sistemas de monitoramento, nesse trabalho a integração é com a aplicação de monitoramento Nagios\textsuperscript{\textregistered}. De acordo com Wiger \cite{exometer_core}, o potencial do Exometer é fornecer métricas de várias formas e parâmetros, para isso dispõem de um conjunto de componentes para monitoramento pré-definidos e que podem ser estendidos de forma personalizada para lidar com diversos tipos de métricas e alguns protocolos.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Instrumentação}
 \label{instrumentacao}
-A instrumentação é a ciência que aplica e desenvolve técnicas para adequação de instrumentos para a medição e monitoração. A instrumentação é muito utilizada no ambiente industrial, principalmente no que tange a medição dos equipamentos de produção que necessitam de acompanhamento para verificação de pressão, temperatura, vazão e nível.\cite{ribeiro1999instrumentaccao}. O barramento de serviços ErlangMs dispõem em sua arquitetura uma estrutura definida de fácil implementação para a instrumentação, possui um modelo de dados em que são registrados contadores. No modelo de dados são registradas algumas informações como a data e hora do registro, o identificador do contador e o contador.  
-Segundo \cite{frota2008educaccao} a instrumentação pode ser utilizada como um componente de processamento da informação de sistemas de medição. Por isso a instrumentação pode ser considerada não apenas como ferramenta de contagem de valores para medição, poderá ser utilizada também como uma forma de aprendizagem e conceitual e científica.  
+Segundo Ribeiro \cite{ribeiro1999instrumentaccao} a instrumentação é uma das técnicas que utiliza instrumentos para a medição e monitoração. A instrumentação é muito utilizada no ambiente industrial, principalmente no que tange a medição dos equipamentos de produção que necessitam de acompanhamento para verificação de pressão, temperatura, vazão e nível. Os Os instrumentos podem estar associados e
+aplicados à alguns equipamentos, como por exemplo, forno, refrigerador,
+aquecedor, condicionador de ar e compressor. A operação da instrumentação funciona para que possam ser observados os instrumentos para a medição, alarme, monitoração. De acordo com Robinson \cite{robinson2002monitoring}, a instrumentação pode permitir que as informações criadas por meio da execução de instrumentos(código-fonte de \textit{software}) possam ser interferir no funcionamemto das aplicações.
+
+O barramento de serviços Erlangms dispõem em sua arquitetura uma estrutura definida de fácil implementação para a instrumentação, possui um modelo de dados em que são registrados contadores. No modelo de dados são registradas algumas informações como a data e hora do registro, o identificador do contador e a descrição do contador.  
+Segundo os autores Frota e Finkelstein \cite{frota2008educaccao} a instrumentação pode ser utilizada como um componente de processamento da informação de sistemas de medição. Por isso a instrumentação pode ser considerada não apenas como ferramenta de contagem de valores para medição, poderá ser utilizada também como uma forma de aprendizagem e conceitual e científica.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Métricas de Monitoramento}
 
-A métrica de \textit{software} vem representando um papel importante para o funcionamento adequado das aplicações \cite{de2016metrica}. À medida que os sistemas e serviços crescem em quantidade, tamanho, complexidade e criticidade, a necessidade de monitorá-los é cada vez mais evidente. O monitoramento representa o acompanhamento dessas aplicações de forma detalhada e clara aos responsáveis pela as aplicações \cite{5298441}. A ISO/IEC 9126-1 \cite{associaccao2003nbr} descreve e normatiza a forma para medir a qualidade de \textit{software}, de acordo com a norma \cite{associaccao2003nbr}, a métrica é o método e escala de medição definidos, a métrica pode ser direta ou indireta, a medição de uma métrica direta se dá quando não depende de medidas de outros atributos e a métrica indireta se dá quando há ou existe a necessidade de derivação de um ou mais atributos de medição.
-No que tange um ambiente computacional, as métricas ajudam a medir o \textit{software} de um forma eficaz, para isso é preciso que as métricas sejam bem definidas, justificadas e formalizadas, além disso é desejável que as métricas apresentem de forma clara o que está sendo medido, descrevam rapidamente a medição sem custeio computacional alto e que o resultado do que está sendo medido não seja mudado ou sofra interferência em seu resultado caso haja a mudança de \textit{software}, plataforma ou linguagem de programação\cite{meirelles2013monitoramento}.
+A métrica de \textit{software} é uma das opções que possibilita acompanhar o funcionamento das aplicações por meio de dados e registros, como afirmam os autores Castro e Hernandes \cite{de2016metrica}. À medida que os sistemas e serviços crescem em quantidade, tamanho, complexidade e criticidade, a necessidade de monitorá-los é cada vez mais evidente. Nesse seguimento os autores Munawar, Jiang, Reidemeister e Ward  \cite{5298441}, descrevem que o monitoramento representa o acompanhamento dessas aplicações de forma detalhada e clara aos responsáveis pela as aplicações. A ISO/IEC 9126-1 \cite{associaccao2003nbr} descreve e normatiza a forma para medir a qualidade de \textit{software}, de acordo com a norma \cite{associaccao2003nbr}, a métrica é o método e escala de medição definidos, a métrica pode ser direta ou indireta, a medição de uma métrica direta se dá quando não depende de medidas de outros atributos e a métrica indireta se dá quando há ou existe a necessidade de derivação de um ou mais atributos de medição.
+No que tange um ambiente computacional, as métricas ajudam a medir o \textit{software} de um forma eficaz, para isso é preciso que as métricas sejam bem definidas, justificadas e formalizadas, além disso é desejável que as métricas apresentem de forma clara o que está sendo medido, descrevam rapidamente a medição sem custeio computacional alto e que o resultado do que está sendo medido não seja mudado ou sofra interferência em seu resultado caso haja a mudança de \textit{software}, plataforma ou linguagem de programação, conforme Meirelles \cite{meirelles2013monitoramento} relata em sua tese.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Arquitetura Orientada a Serviços - SOA}
 
-A Arquitetura Orientada a Serviços pode ser descrita com um estilo arquitetural capaz de realizar a comunicação entre aplicações heterogêneas por meio de mensagens\cite{fraser2007service}. É comum que essas aplicações possuam estruturas e linguagens completamente distintas, pois as aplicações envolvidas, normalmente independem umas das outras e precisam que essa comunicação aconteça, mas para que haja a comunicação interoperável entre as aplicações é previsto na arquitetura \acrshort{SOA} que a as funcionalidade possam ser disponibilizadas por meio de serviços(\textit{web services}) em componentes distribuídos, que ao mesmo tempo que possam fornece-los possam também consumi-los\cite{sward2011service,bianco2011architecting}.
+A Arquitetura Orientada a Serviços é um estilo arquitetural que permite realizar a comunicação entre aplicações heterogêneas por meio de mensagens, como afirmam os autores Fraser, Rankine e Woodcock\cite{fraser2007service}. Na implementação e disponibilização de \textit{softwares}, comum que essas aplicações possuam estruturas e linguagens completamente distintas, pois essas aplicações independem umas das outras, mas e precisam que a comunicação entre elas aconteça. Para que haja a comunicação interoperável entre as aplicações é previsto na arquitetura \acrshort{SOA} que serviços(\textit{web services}) possam ser utilizados como componentes distribuídos, que ao mesmo tempo que possam fornecer informações, mas possam também consumi-las, conforme descrição dos trabalho dos autores Sward,  Boleng e Bianco \textit{et al.}: \cite{sward2011service,bianco2011architecting}.
 
-Com o aumento da utilização da arquitetura percebeu-se a necessidade de discussões e definições afim abraçar os conceitos da arquitetura \acrshort{SOA}, com as discussões decidiu-se não apenas criar conceitos, mas também orientações  afim  de guiar as organizações de maneira consistente e sustentável, de modo a agregar valor ao negócio, com maior agilidade e efetividade de custos, em alinhamento com a dinâmica das necessidades de negócio, e foi a partir desse movimento que surgiu o Manifesto \acrshort{SOA} \cite{erl2009soa} priorizando os seguintes itens:
+O Manifesto \acrshort{SOA} apresenta uma proposta de definição da conceituação para área. A partir do manifesto as discussões não cravam apenas conceitos, criavam orientações para guiar as organizações de maneira consistente e sustentável, de modo a agregar valor ao negócio, com maior agilidade e efetividade de custos, em alinhamento com a dinâmica das necessidades de negócio,priorizando os seguintes itens, como afirmam os autores Erl \textit{et al.} \cite{erl2009soa}.
 
 \begin{itemize}
 
@@ -283,7 +292,7 @@ Com o aumento da utilização da arquitetura percebeu-se a necessidade de discus
 
 \end{itemize}
 
-Para realização da comunicação entre as aplicações ou serviços em componentes distribuídos no estilo arquitetural \acrshort{SOA}, \cite{clements2002documenting} descreve em seu trabalho que a comunicação poderá ser executada por meio de um intermediador ou na falta dele poderá ser realizada ponto-a-ponto, entre os intermediadores o estilo arquitetural \acrshort{SOA} dispõe dos seguintes tipos de componentes que compõem uma arquitetura orientada a serviços, são eles \cite{bass2003software}:
+Para realização da comunicação entre as aplicações ou serviços em componentes distribuídos no estilo arquitetural \acrshort{SOA}, os autores Clements \textit{et al.}  \cite{clements2002documenting} descrevem em seu trabalho que a comunicação poderá ser executada por meio de um intermediador ou na falta dele poderá ser realizada ponto-a-ponto, entre os intermediadores o estilo arquitetural \acrshort{SOA} os autores Bass \textit{et al.} \cite{bass2003software} citam que a arquitetura dispõe dos seguintes tipos de componentes que compõem uma arquitetura orientada a serviços, são eles :
 
 \begin{itemize}
 
@@ -305,94 +314,94 @@ Para realização da comunicação entre as aplicações ou serviços em compone
 
 \end{itemize}
 
-Com a utilização desses componentes \cite{bass2003software} trata como principal benefício de uma arquitetura \acrshort{SOA} a interoperabilidade, pois permite que aplicações, dispositivos, sistemas e serviços heterogêneos possam realizar a comunicação entre si, fornecendo e consumindo informações  de forma integrada. 
+Com a utilização desses componentes, os autores Bass \textit{et al.}  \cite{bass2003software} tratam como principal benefício de uma arquitetura \acrshort{SOA} a interoperabilidade, pois permite que aplicações, dispositivos, sistemas e serviços heterogêneos possam realizar a comunicação entre si, fornecendo e consumindo informações  de forma integrada. 
 
-O \acrshort{CPD} para implementação e implantação da arquitetura \acrshort{SOA} na modernização dos seus sistemas, escolheu como componente o \acrshort{ESB} e como plataforma o barramento ErlangMS\cite{Agilar},que atua como intermediador prestando serviço de mensageria.
+O \acrshort{CPD} para implementação e implantação da arquitetura \acrshort{SOA} na modernização dos seus sistemas, escolheu como componente o \acrshort{ESB} e como plataforma o barramento Erlangms\cite{Agilar},que atua como intermediador prestando serviço de mensageria.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{\textit{Enterprise Service Bus} - ESB}
 
-Um componente \acrshort{ESB} é responsável por fornecer serviço de infraestrutura e mediar a comunicação por meio de serviços entre aplicações consumidoras e fornecedoras de serviços, fazendo de forma uniforme a transmissão das mensagens por meio de um protocolo ou tecnologia, utilizando conectores do tipo \textit{Call-return}, onde os mais comuns e também mais utilizados no mercado são o \acrshort{SOAP} e o \acrshort{REST}  	 \cite{clements2002documenting}.
+Um componente \acrshort{ESB} é fornece o serviço de infraestrutura e intermedia a comunicação por meio de serviços entre aplicações consumidoras e fornecedoras de serviços, fazendo de forma uniforme a transmissão das mensagens por meio de um protocolo ou tecnologia, utilizando conectores do tipo \textit{Call-return}, onde os mais comuns e também mais utilizados no mercado são o \acrshort{SOAP} e o \acrshort{REST}, como descrevem  os autores Clements \textit{et al.} \cite{clements2002documenting}.
 
-Para a implementação de um \acrshort{ESB} no estilo \acrshort{SOA} devem ser seguidos alguns itens primordiais para o funcionamento, mas primeiro a organização ou instituição deverá avaliar as tecnologias utilizadas em seus sistemas ou serviços, visto que, a complexidade de uma arquitetura \acrshort{SOA} é alta, e dependendo da situação não é necessário a implementação ou implantação de um \acrshort{ESB} quando por exemplo, uma organização que  possui em sua arquitetura de sistemas a mesma linguagem, plataforma e tecnologia, podendo fazer a comunicação ou troca de mensagens ponto-a-ponto\cite{bianco2011architecting}. No caso em que existe a necessidade da implementação ou implantação de um \acrshort{ESB}, a padronização e táticas descritas em \cite{bianco2011architecting} que devem ser seguidas, e de acordo com \cite{erl2009soa} possuem as seguintes características, são elas:
-
-\begin{itemize}
-
-\item Roteamento Intermediário: Um serviço de roteamento genérico intercepta mensagens e com base no encaminhamento a lógica que determina para onde as mensagens devem ser enviadas.
+Para a implementação de um \acrshort{ESB} no estilo \acrshort{SOA} a organização ou instituição deverá avaliar as tecnologias utilizadas em seus sistemas ou serviços, visto que, a complexidade de uma arquitetura \acrshort{SOA} é alta, segundo os autores Bianco \textit{et al.} \cite{bianco2011architecting}, dependendo da situação não é necessário a implementação ou implantação de um \acrshort{ESB} quando por exemplo, uma organização que  possui em sua arquitetura de sistemas a mesma linguagem, plataforma e tecnologia, podendo fazer a comunicação ou troca de mensagens ponto-a-ponto. Nesse seguimento os autores Bianco \textit{et al.} \cite{bianco2011architecting} descrevem sobre o caso em que existe a necessidade da implementação ou implantação de um \acrshort{ESB}, a padronização e táticas descritas no trabalhos dos autores Bianco \textit{et al.}  \cite{bianco2011architecting} e que devem ser seguidas, e de acordo com manifesto \acrshort{SOA}\cite{erl2009soa} e possuem as seguintes características:
 
 \begin{itemize}
 
-\item Balanceamento de carga: Possuir um \textit{Failover} para um \textit{backup} no caso de o serviço de destino 	primário não estar disponível.
+\item Roteamento Intermediário - Um serviço de roteamento genérico intercepta mensagens e com base no encaminhamento a lógica que determina para onde as mensagens devem ser enviadas.
 
-\item{Seleção da versão do Serviço: Verificar se os pedidos são enviados para versões compatíveis de um serviço para     suportar compatibilidade com versões anteriores durante os períodos de transição}.
+\begin{itemize}
 
-\item Serviço de seleção com base em dados da mensagem: Verificar se pedidos de clientes são enviados para um componente de processamento mais rápido.
+\item Balanceamento de carga - Possuir um \textit{Failover} para um \textit{backup} no caso de o serviço de destino 	primário não estar disponível.
 
-\item Regras de controle de acesso: Analisar um pedido de um usuário não autenticado é encaminhado para um início de sessão página.
+\item{Seleção da versão do Serviço - Verificar se os pedidos são enviados para versões compatíveis de um serviço para     suportar compatibilidade com versões anteriores durante os períodos de transição}.
 
-\item Tratamento de exceções: Apresentar uma mensagem de erro de resposta que é redirecionada para um serviço responsável para manipulação de exceção centralizada.
+\item Serviço de seleção com base em dados da mensagem - Verificar se pedidos de clientes são enviados para um componente de processamento mais rápido.
+
+\item Regras de controle de acesso - Analisar um pedido de um usuário não autenticado é encaminhado para um início de sessão página.
+
+\item Tratamento de exceções - Apresentar uma mensagem de erro de resposta que é redirecionada para um serviço responsável para manipulação de exceção centralizada.
 
 \end{itemize}
 
-\item O \textit{Service Broker}: Integrar componentes que foram desenvolvidos em diferentes linguagem por diferentes organizações.
+\item O \textit{Service Broker} - Integrar componentes que foram desenvolvidos em diferentes linguagem por diferentes organizações.
 
 \begin{itemize}
 
-\item Modelo de Transformação de Dados: Os dados enviados do consumidor de serviços numa dada estrutura transforma-se em uma estrutura diferente, que está prevista para o prestador de serviços.
+\item Modelo de Transformação de Dados - Os dados enviados do consumidor de serviços numa dada estrutura transforma-se em uma estrutura diferente, que está prevista para o prestador de serviços.
 
-\item Conversão de Formato de dados: Usar sempre consumidor de serviço e o fornecedor precisa de trocar dados representados em diferentes formatos como por exemplo, \acrshort{XML}, \acrshort{CSV}, \acrshort{JSON}.
+\item Conversão de Formato de dados - Usar sempre consumidor de serviço e o fornecedor precisa de trocar dados representados em diferentes formatos como por exemplo, \acrshort{XML}, \acrshort{CSV}, \acrshort{JSON}.
 
-\item Protocolo \textit{Bridging}: O consumidor de serviço envia uma solicitação usando um protocolo e o \textit{Service Broker} intercepta o pedido e o converte para um pedido ao fornecedor do serviço usando um protocolo diferente.
-
-\end{itemize}
-
-\item Mensagens \textit{Asynchronous}: Alguns \acrshort{ESB}s fornecem capacidade suficiente para que o sistema de mensagens permita que os pedidos e respostas de um serviço possam ser trocados através de canais de mensagens.
-
-\item Interceptor: Alguns \acrshort{ESB}s oferecem a capacidade de configurar interceptores, que são elementos de software que são ativados para todas as solicitações e respostas.
+\item Protocolo \textit{Bridging} - O consumidor de serviço envia uma solicitação usando um protocolo e o \textit{Service Broker} intercepta o pedido e o converte para um pedido ao fornecedor do serviço usando um protocolo diferente.
 
 \end{itemize}
 
-O \acrshort{ESB} a ser implementado deve possuir vantagens e benefícios que uma arquitetura \acrshort{SOA} pode fornecer, para alcança-los \cite{bianco2011architecting} cita os seguintes itens(Atributos de Qualidade), como representação de um \acrshort{ESB} padronizado e operável, o atendimento à esses itens são de suma importância, são eles:
+\item Mensagens \textit{Asynchronous} - Alguns \acrshort{ESB}s fornecem capacidade suficiente para que o sistema de mensagens permita que os pedidos e respostas de um serviço possam ser trocados através de canais de mensagens.
+
+\item Interceptor - Alguns \acrshort{ESB}s oferecem a capacidade de configurar interceptores, que são elementos de software que são ativados para todas as solicitações e respostas.
+
+\end{itemize}
+
+Segundo os autores Bianco \textit{et al.} \cite{bianco2011architecting} o \acrshort{ESB} deve ter as vantagens e benefícios que uma arquitetura \acrshort{SOA} pode fornecer,  e para alcança-los cita os seguintes itens(Atributos de Qualidade), como representação de um \acrshort{ESB} padão e operável. O atendimento à esses itens são de suma importância:
 
 \begin{itemize}
 
-\item Interoperabilidade: O \acrshort{ESB} permite que sistemas diferentes possam interoperar, por meio de protocolos de comunicação e tecnologias de implementação. 
+\item Interoperabilidade - O \acrshort{ESB} permite que sistemas diferentes possam interoperar, por meio de protocolos de comunicação e tecnologias de implementação. 
 
-\item Modificabilidade: A capacidade de executar a transformação do modelo de dados que permite a implantação de novas versões de um serviço sem interromper consumidores de serviços existentes. 
+\item Modificabilidade - A capacidade de executar a transformação do modelo de dados que permite a implantação de novas versões de um serviço sem interromper consumidores de serviços existentes. 
 
-\item Confiabilidade: Quando o receptor de uma solicitação de serviço ou resposta falhou, e o ESB cria ou gera uma fila para que mensagem seja executa quando o serviço estiver disponível novamente. 
+\item Confiabilidade - Quando o receptor de uma solicitação de serviço ou resposta falhou, e o ESB cria ou gera uma fila para que mensagem seja executa quando o serviço estiver disponível novamente. 
 
-\item Segurança: O \acrshort{ESB} pode incluir a funcionalidade de controle de acesso. Pode aplicar a autenticação e regras de autorização em trocas de mensagens de serviço.
+\item Segurança - O \acrshort{ESB} pode incluir a funcionalidade de controle de acesso. Pode aplicar a autenticação e regras de autorização em trocas de mensagens de serviço.
 
 \end{itemize}
 
-Como desafio o \acrshort{ESB} deve responder a altura seus \textit{trade-offs},  principalmente em uma arquitetura complexa como essa, entre os desafios que deverão ser suportados, para um bom funcionamento da plataforma, \cite{bianco2011architecting} cita a:
+O \acrshort{ESB} deve responder a altura seus \textit{trade-offs},  principalmente em uma arquitetura complexa como essa, entre os desafios que deverão ser suportados, para um bom funcionamento da plataforma, os autores Bianco \textit{et al.} \cite{bianco2011architecting} citam:
 
 \begin{itemize}
 
-\item Manutenibilidade: Ter cuidado e atenção ao especificar demais a codificação do ESB, ao ponto de restringir comunicação com outras tecnologias. 
+\item Manutenibilidade - Ter cuidado e atenção ao especificar demais a codificação do ESB, ao ponto de restringir comunicação com outras tecnologias. 
  	
-\item Performance: Não permitir a perda comprometedora no desempenho do \acrshort{ESB} por conta das logicas de roteamento ou interpretação dos dados durante a comunicação.
+\item Performance - Não permitir a perda comprometedora no desempenho do \acrshort{ESB} por conta das logicas de roteamento ou interpretação dos dados durante a comunicação.
 
-\item Segurança: verificar a configuração a fim de evitar acessos não autorizados ao \acrshort{ESB}.
+\item Segurança - verificar a configuração a fim de evitar acessos não autorizados ao \acrshort{ESB}.
 
-\item Disponibilidade: O \acrshort{ESB} pode ser um ponto único de falha no sistema.
+\item Disponibilidade - O \acrshort{ESB} pode ser um ponto único de falha no sistema.
 
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{ErlangMs}
-O Barramento de serviços da \acrshort{UnB} denominado Erlangms foi conceituado em uma disciplina do \acrshort{MPCA} e proposto como trabalho para solucionar alguns problemas relacionados a quantidade de sistemas heterogêneos, defasagem tecnológica das aplicações e a falta de um padrão de comunicação entre eles no \acrshort{CPD} \cite{Agilar}. 
+\subsection{Erlangms}
+O Barramento de serviços da \acrshort{UnB} denominado Erlangms foi conceituado em uma disciplina do \acrshort{MPCA} e proposto como trabalho para solucionar alguns problemas relacionados a quantidade de sistemas heterogêneos, defasagem tecnológica das aplicações e a falta de um padrão de comunicação entre eles no \acrshort{CPD}, como Agilar \cite{Agilar} descreve em seu trabalho. 
 
-O Erlangms dispõem de uma arquitetura \acrshort{SOA} utilizando o estilo arquitetural \acrshort{REST} e sua implementação foi feita na linguagem funcional Erlang. O barramento atualmente está implantado no \acrshort{CPD} e  funcionando com um serviço de mensageria. A realização da comunicação e troca de mensagens dos sistemas e clientes é feita por meio de serviços(\textit{web services}) utilizando o formato \acrshort{JSON}. O Erlangms tem sua arquitetura é apresentada na figura \ref{fun:fig:erlangms} .
+O Erlangms dispõem de uma arquitetura \acrshort{SOA} com o estilo arquitetural \acrshort{REST} e sua implementação foi feita na linguagem funcional Erlang. O barramento atualmente está implantado no \acrshort{CPD} e  funcionando com um serviço de mensageria. A realização da comunicação e troca de mensagens dos sistemas e clientes é feita por meio de serviços(\textit{web services}) utilizando o formato \acrshort{JSON}. O modelo arquitetural do Erlangms é apresentado na figura \ref{fun:fig:Erlangms} .
 
 \begin{figure}[h!]
 	\begin{center}
 	\includegraphics[scale = 1.20]{img/Arquitetura_ErlangMS.png}
 		\caption{Arquitetura do trabalho Erlangms descrita por\cite{Agilar}}
-		\label{fun:fig:erlangms}
+		\label{fun:fig:Erlangms}
 	\end{center}
 \end{figure}
 
@@ -400,19 +409,19 @@ O Erlangms dispõem de uma arquitetura \acrshort{SOA} utilizando o estilo arquit
 
 \subsection{\textit{Representational State Transfer} - REST}
 
-A Transferência de Estado Representacional - \acrshort{REST} pode ser definida como um estilo arquitetural hibrido derivado de vários dos estilos arquiteturais baseados em rede e que define um conjunto de restrições e propriedades baseados no protocolo de comunicação \acrshort{HTTP}, com a intenção de fornecer a interoperabilidade entre sistemas, serviços e aplicações distribuídas conectadas a rede mundial de computadores - \acrshort{WWW} para a realização de troca de informações \cite{fielding2000architectural}. Os \textit{web services} compatíveis com \acrshort{REST} permitem que os sistemas solicitantes acessem e manipulem representações textuais de recursos da \textit{Web} utilizando um conjunto uniforme e predefinido de operações sem estado. O estilo arquitetural proposto por Roy Fielding que inspirou a criação do documento de arquitetura definido pelo \acrshort{TAG} - \acrshort{W3C},  quanto muitos outros arquitetos de \textit{softaware}, que o veem como um modelo norteador para construir e padronizar serviços da Web \cite{booth2013web}. O \acrshort{REST} fornece semântica para uniformizar sua interface, principalmente no que tange a  operações para criar, recuperar, atualizar e excluir dados, e  também a possibilidade da utilização de padrões de tecnologia como \acrshort{XML} e o \acrshort{JSON}. 
+A Transferência de Estado Representacional - \acrshort{REST} pode ser definida como um estilo arquitetural hibrido derivado de vários dos estilos arquiteturais baseados em rede e que define um conjunto de restrições e propriedades baseados no protocolo de comunicação \acrshort{HTTP}, com a intenção de fornecer a interoperabilidade entre sistemas, serviços e aplicações distribuídas conectadas a rede mundial de computadores - \acrshort{WWW} para a realização de troca de informações, conforme descrevem os autores Fielding e Taylor \cite{fielding2000architectural}. Os \textit{web services} compatíveis com \acrshort{REST} permitem que os sistemas solicitantes acessem e manipulem representações textuais de recursos da \textit{Web} utilizando um conjunto uniforme e predefinido de operações sem estado. De acordo com os autores Booth \textit{et al.} \cite{booth2013web} o estilo arquitetural proposto por Fielding e Taylor, que inspirou a criação do documento de arquitetura definido pelo \acrshort{TAG} - \acrshort{W3C},  quanto muitos outros arquitetos de \textit{softaware}, que o veem como um modelo norteador para construir e padronizar serviços da Web. O \acrshort{REST} fornece semântica para uniformizar sua interface, principalmente no que tange a  operações para criar, recuperar, atualizar e excluir dados, e  também a possibilidade da utilização de padrões de tecnologia como \acrshort{XML} e o \acrshort{JSON}. 
 
 Em \acrshort{REST} as principais operações por meio do protocolo \acrshort{HTTP} são:
 
 \begin{itemize}
 
-\item POST: Cria uma nova entidade ou recurso. 
+\item POST - Cria uma nova entidade ou recurso. 
 
-\item GET: Recupera a informação de um recurso.
+\item GET - Recupera a informação de um recurso.
 
-\item PUT: Atualiza os dados de um recurso informado.
+\item PUT - Atualiza os dados de um recurso informado.
 
-\item DELETE: Exclui os dados de um recurso informado.
+\item DELETE - Exclui os dados de um recurso informado.
 
 \end{itemize}
 
@@ -420,7 +429,7 @@ Em \acrshort{REST} as principais operações por meio do protocolo \acrshort{HTT
 
 \subsection{\textit{JavaScript Object Notation} - JSON}
 
-\acrfull{JSON} é um formato baseado em texto, de fácil leitura e interpretação para humanos, para a leitura de máquinas o \acrshort{JSON} é baseado em um subconjunto da linguagem de programação \textit{JavaScript}, e por possuir um um padrão, seu funcionamento independe de uma tecnologia ou linguagem de programação, focando princialmente na troca de dados e mensagens \cite{bray2017javascript}.
+Segundo Bray \cite{bray2017javascript}, \acrfull{JSON} é um formato baseado em texto, de fácil leitura e interpretação para humanos, para a leitura de máquinas o \acrshort{JSON} é baseado em um subconjunto da linguagem de programação \textit{JavaScript}, e por possuir um um padrão, seu funcionamento independe de uma tecnologia ou linguagem de programação, focando princialmente na troca de dados e mensagens.
 
 Por decisão técnica especificamente relacionada a interoperabilidade e o baixo acoplamento o barramento utilizado pelo \acrshort{CPD} o Erlangms, utiliza o \acrshort{JSON} por conta do  baixo\textit{overhead} gerado na troca de mensagens em relação as trocas de mensagens feitas com a utilização protocolo \acrshort{SOAP} com a linguagem \acrshort{WSDL}, e apontando também o nível baixa da curva de aprendizagem para a utilização do \acrshort{JSON}.
 
@@ -447,6 +456,6 @@ Com a leitura e entendimento dos trabalhos pode-se perceber uma preocupação co
 
 \section{Síntese do Capítulo}
 
-Este capítulo apresentou os conceitos e as tecnologias relacionadas ao monitoramento de sistemas distribuídos, \acrshort{SOA}, \acrshort{ESB},  \acrshort{REST}, \acrshort{JSON}, ErlangMs, Ferramentas de Monitoramento, Agentes de monitoramento, Métricas de monitoramento, Instrumentação e Protocolos de monitoramento. As definições e conceitos e tecnologias estudadas foram de grande ajuda tanto para o entendimento do problema quanto para execução e implementação do trabalho. Nesse Capítulo também foram apresentados trabalhos relacionados ao tema tema desse trabalho que colaboraram e orientaram na pesquisa e fundamentação do trabalho. O Capítulo 3 apresenta a realização do mapeamento sistemático.
+Este capítulo apresentou os conceitos relacionados ao tema monitoramento de sistemas distribuídos, \acrshort{SOA}, \acrshort{ESB},  \acrshort{REST}, \acrshort{JSON}, Erlangms, Ferramentas de Monitoramento, Agentes de monitoramento, Métricas de monitoramento, Instrumentação e Protocolos de monitoramento. As definições de conceitos e tecnologias estudadas foram de grande ajuda tanto para o entendimento do problema quanto para execução e implementação do trabalho.Também foram apresentados trabalhos relacionados ao tema tema desse trabalho que colaboraram e orientaram na pesquisa e fundamentação do trabalho. O Capítulo 3 apresenta a realização do mapeamento sistemático.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
