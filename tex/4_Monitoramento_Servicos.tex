@@ -1,6 +1,43 @@
 \label{monitoramento_servicos}
 
-Neste capítulo são apresentadas informações decorrentes da realização do monitoramento do barramento de serviços utilizando o Protocolo \acrshort{SNMP}. Na Seção \ref{recursos_monitoramento} é a apresentado o monitoramento dos recursos do barramento de serviços. Na Seção \ref{integracao_snmp} são discutidos alguns detalhes sobre o funcionamento do protocolo \acrshort{SNMP}. Na Seção \ref{metricas_monitoramento} são expostas as definições para escolhas das métricas adotadas para a realização do monitoramento do barramento de serviços. Na Seção \ref{instrumentacaoErlangms} são esclarecidos alguns argumentos sobre a instrumentação do para a coleta dos dados para a realização do monitoramento.
+Neste capítulo são apresentadas informações decorrentes da arquitetura de monitoramento de serviços e da realização do monitoramento do barramento de serviços por meio do protocolo \acrshort{SNMP}. Na Seção \ref{arquitetura_monitoramento} é apresentado o conceito da arquitetura de monitoramento de serviços. Na Seção \ref{recursos_monitoramento} é descrito o monitoramento dos recursos do barramento de serviços. Na Seção \ref{integracao_snmp} são discutidos detalhes do funcionamento do protocolo \acrshort{SNMP}. Na Seção \ref{metricas_monitoramento} são expostas as definições e escolhas das métricas adotadas para a realização do monitoramento do barramento de serviços. Na Seção \ref{instrumentacaoErlangms} são descritos argumentos para instrumentação do para a coleta dos dados para a realização do monitoramento.
+
+\section{Arquitetura de Monitoramento de Serviços}%
+\label{arquitetura_monitoramento}
+
+A arquitetura de \textit{software} é um conceito ou modelo de organização de uma estrutura, essa estrutura pode ser um módulo ou componentes de \textit{software}. De acordo Shaw e Garlan \cite{garlan1993introduction}, um estilo arquitetônico, pode definir um grupo sistemas com organização estrutural. Estilo arquitetônico determina componentes e conectores que são utilizados, com conjuntos de restrições, essas restrições podem ser topológicas. Nesse seguimento Clements \textit{et al.} \cite{clements2002documenting} descreve, a arquitetura de \textit{software} de um sistema é o conjunto de estruturas necessárias para entender o \textit{software}, que inclui elementos, relações entre eles e suas propriedades.
+
+A arquitetura para o monitoramento de serviços tem como objetivo estabelecer a integração entre o barramento de serviços e ferramentas de monitoramento por meio de um agente de monitoramento. Para isso foi selecionada uma visão arquitetural da categoria \textit{Runtine}, que apresentam os componentes e suas interações em tempo de execução. Segundo Clements \textit{et al.} \cite{clements2002documenting}, uma visão é uma representação de uma estrutura, e afirma uma visualização é uma representação de um conjunto de elementos do sistema e a relação entre eles. Nesse seguimento foram definidos os seguintes componentes:
+
+\begin{itemize}
+    \item Barramento de serviços - Provedor de informações e dados, a partir do seu funcionamento; 
+    \item Ferramenta de monitoramento - Coletor de informações e dados para realizar o monitoramento e provedor de informações sobre o funcionamento de serviços e aplicações; 
+    \item Agente de monitoramento - Coletor de informações e dados de monitoramento e transmissor de de informações e dados de monitoramento para a ferramenta de monitoramento.
+\end{itemize}
+
+Com a definição da arquitetura de monitoramento de serviço e a organização de seus componentes espera-se obter níveis baixos de dependência entre as soluções. Os componentes implementados podem ser conectados em outras aplicações. Na arquitetura definida deste trabalho o meio de comunicação entre os componentes é feito por meio de um protocolo de comunicação, possibilitando assim a mudança de barramento de serviços ou da ferramenta de monitoramento, sem prejuízo à arquitetura e ao funcionamento da monitoramento de serviços. O modelo conceitual da arquitetura pode ser visualizado na figura \ref{fun:fig:arquitetura_conceitual_monitoramento}
+
+\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[scale = 0.55]{img/Arquitetura_Proposta_Monitoramento.png}
+		\caption{Arquitetura conceitual para o monitoramento de serviços.}
+		\label{fun:fig:arquitetura_conceitual_monitoramento}
+	\end{center}
+\end{figure}
+
+Como parte da arquitetura o barramento de serviços é o componente responsável por gerar dados e informações a partir do seu funcionamento, a partir dessas informações que monitoramento é realizado, outro componente definido na arquitetura é a ferramenta de monitoramento, a ferramenta de monitoramento é responsável por apresentar informações do funcionamento dos serviços monitorados a partir das informações geradas pelo barramento de serviços. Por fim, o componente agente de monitoramento é encarregado de coletar e transmitir as informações geradas pelo barramento de serviços para a ferramenta de monitoramento.  
+
+Neste trabalho os componentes da arquitetura na visão de \textit{runtime} possuem as seguintes descrições:
+
+\subsubsection{Barramento de serviços}
+O barramento de serviços é representado pelo Erlangms que dispõem de uma arquitetura SOA com o estilo arquitetural REST, sua implementação foi feita na linguagem funcional Erlang. O Erlangms é o \acrshort{ESB} utilizado pelo \acrshort{CPD} da \acrshort{UnB} para implementação e modernização de \textit{softwares}.
+
+\subsubsection{Ferramenta de monitoramento}
+A ferramenta de monitoramento é representado pelo Nagios\textsuperscript{\textregistered foi projetado para realizar o monitoramento de ativos de rede, sistemas e serviços, notifica os responsáveis pelos ativos de rede, sistema e serviços que estão registrados como contatos emergenciais. A ferramenta é utilizada pelo \acrshort{CPD} da \acrshort{UnB} para o acompanhamento da  disponibilidade de seus serviços.
+
+\subsubsection{Agente de monitoramento}
+O agente de monitoramento é representado pelo Exometer que é um \textit{framework} que executa instrumentação e permiti a exportação de dados, foi implementado em Erlang. Neste trabalhos foi utilizado o módulo SNMP da ferramenta para realizar a integração do barramento de serviços e a ferramenta de monitoramento.
+
 
 \section{Monitoramento dos Recursos do Barramento de Serviços}%
 \label{recursos_monitoramento}
