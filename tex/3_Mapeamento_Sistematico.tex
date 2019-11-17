@@ -12,7 +12,7 @@ Para alcançar o objetivo da pesquisa, foram levantadas algumas questões de pes
 \begin{description}
 \item[QP1)] Quais os estudos primários existentes na literatura que discutem os mecanismos de monitoramento 
 que são aplicados a sistemas distribuídos?
-\item[QP2)] Quais são as principais preocupações relativas ao monitoramento de sistemas distribuídos são mencionadas nos estudos primários?
+\item[QP2)] Quais são as principais características relativas ao monitoramento de sistemas distribuídos são mencionadas nos estudos primários?
 \end{description}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -157,7 +157,7 @@ Agentes de monitoramento podem ser um dispositivo ou um software, esses podem se
 
 Em \cite{deGeus} é descrita a definição de um modelo computacional configurável para o gerenciamento e monitoramento de redes, servidores, armazenamento, aplicações e serviços com a utilização do protocolo SNMP para realização de coleta de informações para que sejam criadas métricas onde se possa obter resultados satisfatórios dos serviços disponibilizados. No  trabalho \cite{daSilva} são explicadas informações do protocolo SNMP, como o seu funcionamento, sua utilização , Agente(processo), os tipos de Agente, o Gerente que é uma aplicação, em execução em uma estação de gerenciamento, as operações do protocolo, como por exemplo, \textit{GetRequest, 	GetNextRequest,  GetResponse,  SetRequest  e Trap} e também sobre as ferramentas de monitoramento que são compatíveis com o protocolo, inclusive em \cite{Fraga} é destacado que o protocolo SNMP tem sido o principal protocolo utilizado para gestão e monitoramento de redes. Entretanto, em \cite{deMello} são descritos e identificados alguns pontos fracos do protocolo \acrshort{SNMP}. Apesar  de  seu  nome,  \textit{"Simple  Network  Management  Protocol"},  o  SNMP  é  um protocolo  relativamente  complexo  para  implementar.  Também,  o  SNMP  não  é  um protocolo muito eficiente. Nos trabalhos \cite{phan2009cryptanalysis,subramanyan2000scalable} também são relatados alguns pontos fracos como a vulnerabilidade presente no SNMPv1 , desempenho e falta de escalabilidade.
 
-\subsubsection{QP2) Quais são as principais preocupações relativas ao monitoramento de sistemas distribuídos são mencionadas nos estudos primários?}
+\subsubsection{QP2) Quais são as principais características relativas ao monitoramento de sistemas distribuídos são mencionadas nos estudos primários?}
 
 \subsubsection{Armazenamento das Informações Monitoradas}
 
@@ -166,6 +166,10 @@ O Monitoramento dos sistemas distribuídos quando implementados geram informaç�
 \subsubsection{Desempenho}
 
 O trabalho \cite{wang2016improvements} apresenta algoritmos de compactação de dados, para a realização de transferência dos dados de modo otimizado, devido a grande quantidade de informações geradas durante o monitoramento dos sistemas distribuídos. Nesse trabalho foram realizados vários testes, incluído conversão de formatos, como por exemplo, arquivos XML. Em \cite{kotsopoulos2008soa} é descrito o motivo da não utilização do protocolo SNMP, por conta de algumas limitações, como por exemplo, a escalabilidade e eficiência. 
+
+\subsubsection{Escalabilidade}
+
+A escalabilidade de sistemas distribuídos está entre as principais características técnicas de funcionamento, busca disponibilizar o acesso às aplicações mesmo com o aumento gradativo de usuários. O trabalho \cite{1015543} descreve, que o sistema de computação distribuída deve ser dimensionado para o uso de um grande número de recursos de computação. O escalonamento para 1000, 10000 e até 100000 são recursos relevantes. No entanto, os sistemas devem escalar para cima e para baixo com bom desempenho e esforço razoável em uma variedade de escalas de sistema. Nesse seguimento o trabalho \cite{4359423} cita a preocupação com o aumento da carga de utilização de sistemas por um numero elevado de usuários e descreve, À medida que o número de usuários aumenta, o sistema tem impacto negativo no desempenho, principalmente no tempo de resposta. A capacidade de um sistema pode ser aprimorada de maneira direta para oferecer suporte a mais usuários sem sofrer degradação perceptível no desempenho do tempo de resposta. 
 
 \section{Síntese do Capítulo}
 
