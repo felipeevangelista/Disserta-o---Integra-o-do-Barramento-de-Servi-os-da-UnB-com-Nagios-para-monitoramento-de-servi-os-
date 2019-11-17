@@ -152,7 +152,7 @@ O Nagios\textsuperscript{\textregistered} é uma ferramenta que possui um alta c
 \end{figure}
  
  
- Em uma breve análise após a utilização das ferramentas de monitoramento Benincosa \cite{benincosa2ganglia} cita em seu artigo os seguintes itens:
+ Em uma breve análise após a utilização das ferramentas de monitoramento, Benincosa \cite{benincosa2ganglia} cita em seu artigo os seguintes itens:
 \begin{itemize}
 
 \item O Ganglia não possui um sistema de notificação integrado enquanto que o Nagios\textsuperscript{\textregistered} se destaca nisso.
@@ -160,7 +160,7 @@ O Nagios\textsuperscript{\textregistered} é uma ferramenta que possui um alta c
 
 \end{itemize}
 
- Diante desse cenário a Benincosa \cite{benincosa2ganglia} sugere a utilização das ferramentas em conjunto de modo que sejam utilizados em sua potencialidade, porém como \acrshort{CPD} já utiliza o Nagios\textsuperscript{\textregistered} e a intenção da Gestão \acrshort{CPD} e do projeto é trabalhar com o acompanhamento a notificação dos serviços caso haja alguma falha ou mau funcionamento, como o Ganglia não executa uma das principais funcionalidades do monitoramento, a ferramenta não entrará como \textit{software} a ser utilizado no projeto.
+ Diante desse cenário o autor Benincosa \cite{benincosa2ganglia} sugere a utilização das ferramentas em conjunto de modo que sejam utilizados em sua potencialidade, porém como \acrshort{CPD} já utiliza o Nagios\textsuperscript{\textregistered} e a intenção da Gestão \acrshort{CPD} e do projeto é trabalhar com o acompanhamento a notificação dos serviços caso haja alguma falha ou mau funcionamento, como o Ganglia não executa uma das principais funcionalidades do monitoramento, a ferramenta não entrará como \textit{software} a ser utilizado no projeto.
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -225,7 +225,7 @@ Em comparação com as ferramentas de monitoramento mais utilizadas atualmente, 
 
 \subsection{Agente de Monitoramento}
 
-Em uma arquitetura de monitoramento de serviços ou ativos de rede que utilize protocolos para a comunicação e transferência de dados, é necessária a implementação de agentes de monitoramento para a instalação em \textit{hosts} e dispositivos que serão monitorados, esse agentes consistem em coletar dados e enviar mensagens de alerta ao gerentes de monitoramento, como  apresentado na figura \ref{fun:fig:agente}, como por exemplo, o uso de \acrshort{CPU} e a quantidade de memória de utilização de um processo ou um alerta de falha de um dispositivo ou serviço, como descrevem esm seu trabalho os autores Grover e Naik \cite{7439952}.  
+Em uma arquitetura de monitoramento de serviços ou ativos de rede que utilize protocolos para a comunicação e transferência de dados, é necessária a implementação de agentes de monitoramento para a instalação em \textit{hosts} e dispositivos que serão monitorados, esse agentes consistem em coletar dados e enviar mensagens de alerta ao gerentes de monitoramento, como  apresentado na figura \ref{fun:fig:agente}, como por exemplo, o uso de \acrshort{CPU} e a quantidade de memória de utilização de um processo ou um alerta de falha de um dispositivo ou serviço, como descrevem em seu trabalho os autores Grover e Naik \cite{7439952}.  
 
 \begin{figure}[h!]
 	\begin{center}
@@ -256,7 +256,7 @@ O Exometer é um \textit{framework} capaz de executar a instrumentação e permi
 \label{instrumentacao}
 Segundo Ribeiro \cite{ribeiro1999instrumentaccao} a instrumentação é uma das técnicas que utiliza instrumentos para a medição e monitoração. A instrumentação é muito utilizada no ambiente industrial, principalmente no que tange a medição dos equipamentos de produção que necessitam de acompanhamento para verificação de pressão, temperatura, vazão e nível. Os Os instrumentos podem estar associados e
 aplicados à alguns equipamentos, como por exemplo, forno, refrigerador,
-aquecedor, condicionador de ar e compressor. A operação da instrumentação funciona para que possam ser observados os instrumentos para a medição, alarme, monitoração. De acordo com Robinson \cite{robinson2002monitoring}, a instrumentação pode permitir que as informações criadas por meio da execução de instrumentos(código-fonte de \textit{software}) possam ser interferir no funcionamemto das aplicações.
+aquecedor, condicionador de ar e compressor. A operação da instrumentação funciona para que possam ser observados os instrumentos para a medição, alarme, monitoração. De acordo com Robinson \cite{robinson2002monitoring}, a instrumentação pode permitir que as informações criadas por meio da execução de instrumentos(código-fonte de \textit{software}) possam ser interferir no funcionamento das aplicações.
 
 O barramento de serviços Erlangms dispõem em sua arquitetura uma estrutura definida de fácil implementação para a instrumentação, possui um modelo de dados em que são registrados contadores. No modelo de dados são registradas algumas informações como a data e hora do registro, o identificador do contador e a descrição do contador.  
 Segundo os autores Frota e Finkelstein \cite{frota2008educaccao} a instrumentação pode ser utilizada como um componente de processamento da informação de sistemas de medição. Por isso a instrumentação pode ser considerada não apenas como ferramenta de contagem de valores para medição, poderá ser utilizada também como uma forma de aprendizagem e conceitual e científica.  
@@ -322,7 +322,7 @@ O \acrshort{CPD} para implementação e implantação da arquitetura \acrshort{S
 
 \subsection{\textit{Enterprise Service Bus} - ESB}
 
-Um componente \acrshort{ESB} é fornece o serviço de infraestrutura e intermedia a comunicação por meio de serviços entre aplicações consumidoras e fornecedoras de serviços, fazendo de forma uniforme a transmissão das mensagens por meio de um protocolo ou tecnologia, utilizando conectores do tipo \textit{Call-return}, onde os mais comuns e também mais utilizados no mercado são o \acrshort{SOAP} e o \acrshort{REST}, como descrevem  os autores Clements \textit{et al.} \cite{clements2002documenting}.
+Um componente \acrshort{ESB} é fornece o serviço de infraestrutura e intermedeia a comunicação por meio de serviços entre aplicações consumidoras e fornecedoras de serviços, fazendo de forma uniforme a transmissão das mensagens por meio de um protocolo ou tecnologia, utilizando conectores do tipo \textit{Call-return}, onde os mais comuns e também mais utilizados no mercado são o \acrshort{SOAP} e o \acrshort{REST}, como descrevem  os autores Clements \textit{et al.} \cite{clements2002documenting}.
 
 Para a implementação de um \acrshort{ESB} no estilo \acrshort{SOA} a organização ou instituição deverá avaliar as tecnologias utilizadas em seus sistemas ou serviços, visto que, a complexidade de uma arquitetura \acrshort{SOA} é alta, segundo os autores Bianco \textit{et al.} \cite{bianco2011architecting}, dependendo da situação não é necessário a implementação ou implantação de um \acrshort{ESB} quando por exemplo, uma organização que  possui em sua arquitetura de sistemas a mesma linguagem, plataforma e tecnologia, podendo fazer a comunicação ou troca de mensagens ponto-a-ponto. Nesse seguimento os autores Bianco \textit{et al.} \cite{bianco2011architecting} descrevem sobre o caso em que existe a necessidade da implementação ou implantação de um \acrshort{ESB}, a padronização e táticas descritas no trabalhos dos autores Bianco \textit{et al.}  \cite{bianco2011architecting} e que devem ser seguidas, e de acordo com manifesto \acrshort{SOA}\cite{erl2009soa} e possuem as seguintes características:
 
@@ -362,7 +362,7 @@ Para a implementação de um \acrshort{ESB} no estilo \acrshort{SOA} a organiza�
 
 \end{itemize}
 
-Segundo os autores Bianco \textit{et al.} \cite{bianco2011architecting} o \acrshort{ESB} deve ter as vantagens e benefícios que uma arquitetura \acrshort{SOA} pode fornecer,  e para alcança-los cita os seguintes itens(Atributos de Qualidade), como representação de um \acrshort{ESB} padão e operável. O atendimento à esses itens são de suma importância:
+Segundo os autores Bianco \textit{et al.} \cite{bianco2011architecting} o \acrshort{ESB} deve ter as vantagens e benefícios que uma arquitetura \acrshort{SOA} pode fornecer,  e para alcança-los cita os seguintes itens(Atributos de Qualidade), como representação de um \acrshort{ESB} padrão e operável. O atendimento à esses itens são de suma importância:
 
 \begin{itemize}
 
@@ -380,7 +380,7 @@ O \acrshort{ESB} deve responder a altura seus \textit{trade-offs},  principalmen
 
 \begin{itemize}
 
-\item Manutenibilidade - Ter cuidado e atenção ao especificar demais a codificação do ESB, ao ponto de restringir comunicação com outras tecnologias. 
+\item Manutenibilidade - Ter cuidado e atenção ao especificar demais a codificação do \acrshort{ESB}, ao ponto de restringir comunicação com outras tecnologias. 
  	
 \item Performance - Não permitir a perda comprometedora no desempenho do \acrshort{ESB} por conta das logicas de roteamento ou interpretação dos dados durante a comunicação.
 
@@ -409,7 +409,7 @@ O Erlangms dispõem de uma arquitetura \acrshort{SOA} com o estilo arquitetural 
 
 \subsection{\textit{Representational State Transfer} - REST}
 
-A Transferência de Estado Representacional - \acrshort{REST} pode ser definida como um estilo arquitetural hibrido derivado de vários dos estilos arquiteturais baseados em rede e que define um conjunto de restrições e propriedades baseados no protocolo de comunicação \acrshort{HTTP}, com a intenção de fornecer a interoperabilidade entre sistemas, serviços e aplicações distribuídas conectadas a rede mundial de computadores - \acrshort{WWW} para a realização de troca de informações, conforme descrevem os autores Fielding e Taylor \cite{fielding2000architectural}. Os \textit{web services} compatíveis com \acrshort{REST} permitem que os sistemas solicitantes acessem e manipulem representações textuais de recursos da \textit{Web} utilizando um conjunto uniforme e predefinido de operações sem estado. De acordo com os autores Booth \textit{et al.} \cite{booth2013web} o estilo arquitetural proposto por Fielding e Taylor, que inspirou a criação do documento de arquitetura definido pelo \acrshort{TAG} - \acrshort{W3C},  quanto muitos outros arquitetos de \textit{softaware}, que o veem como um modelo norteador para construir e padronizar serviços da Web. O \acrshort{REST} fornece semântica para uniformizar sua interface, principalmente no que tange a  operações para criar, recuperar, atualizar e excluir dados, e  também a possibilidade da utilização de padrões de tecnologia como \acrshort{XML} e o \acrshort{JSON}. 
+A Transferência de Estado Representacional - \acrshort{REST} pode ser definida como um estilo arquitetural hibrido derivado de vários dos estilos arquiteturais baseados em rede e que define um conjunto de restrições e propriedades baseados no protocolo de comunicação \acrshort{HTTP}, com a intenção de fornecer a interoperabilidade entre sistemas, serviços e aplicações distribuídas conectadas a rede mundial de computadores - \acrshort{WWW} para a realização de troca de informações, conforme descrevem os autores Fielding e Taylor \cite{fielding2000architectural}. Os \textit{web services} compatíveis com \acrshort{REST} permitem que os sistemas solicitantes acessem e manipulem representações textuais de recursos da \textit{Web} utilizando um conjunto uniforme e predefinido de operações sem estado. De acordo com os autores Booth \textit{et al.} \cite{booth2013web} o estilo arquitetural proposto por Fielding e Taylor, que inspirou a criação do documento de arquitetura definido pelo \acrshort{TAG} - \acrshort{W3C},  quanto muitos outros arquitetos de \textit{software}, que o veem como um modelo norteador para construir e padronizar serviços da Web. O \acrshort{REST} fornece semântica para uniformizar sua interface, principalmente no que tange a  operações para criar, recuperar, atualizar e excluir dados, e  também a possibilidade da utilização de padrões de tecnologia como \acrshort{XML} e o \acrshort{JSON}. 
 
 Em \acrshort{REST} as principais operações por meio do protocolo \acrshort{HTTP} são:
 
@@ -443,7 +443,7 @@ Seguindo a preocupação com a escalabilidade do monitoramento durante o funcion
 
 O trabalho de Subramanyan \textit{et al.} \cite{subramanyan2000scalable} apresenta estudos sobre o atraso na execução na tarefa de monitoramento devido ao gargalo gerado durante as operações dos agentes,e também descrevem que solução proposta e implementada utiliza o protocolo do monitoramento rede \acrshort{SNMP}, que garante uma facilidade de execução, interoperabilidade e aceitabilidade, e baseia-se nos mais recentes padrões propostas pela RFC 2592.  
 
-Phan \cite{phan2009cryptanalysis} relata em seu trabalho sobre o nível de segurança do protocolo e questiona sobre a falta de confidencialidade e privacidade, itens faltantes no SNMPv1 e, e descreve em seu trabalho  que dispõem de um experimento e recomenda a tulização do SNMPv3.
+Phan \cite{phan2009cryptanalysis} relata em seu trabalho sobre o nível de segurança do protocolo e questiona sobre a falta de confidencialidade e privacidade, itens faltantes no SNMPv1 e, e descreve em seu trabalho  que dispõem de um experimento e recomenda a utilização do SNMPv3.
 
 Com a realização de um análise qualitativa, os autores Lee, Shyan e Lo Hsu \cite{lee2004design} buscaram apresentar o funcionamento do protocolo SNMP por meio de experimentos valendo-se de suas vantagens, entre elas seus principais componentes e utilização entre eles: 1) Da estação de gestão; 2) Agente de gestão; 3) Base de informações de gestão; e 4) protocolo de gestão. Eles descrevem o trabalho científico de forma conectada, concisa e objetiva, sobre as técnicas utilizadas para a realização do estudo. O trabalho apresenta uma abordagem orientada a objetos, utilizada para alcançar o projeto sistemático para a implementação de agentes SNMP em sistemas de monitoramento para o gerenciamento remoto.
 
