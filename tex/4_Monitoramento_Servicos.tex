@@ -10,16 +10,16 @@ A arquitetura de \textit{software} é um conceito ou modelo de organização de 
 A arquitetura para o monitoramento de serviços tem como objetivo estabelecer a integração entre o barramento de serviços e ferramentas de monitoramento por meio de um agente de monitoramento. Para isso foi selecionada uma visão arquitetural da categoria \textit{Runtine}, que apresentam os componentes e suas interações em tempo de execução. Segundo Clements \textit{et al.} \cite{clements2002documenting}, uma visão é uma representação de uma estrutura, e afirma uma visualização é uma representação de um conjunto de elementos do sistema e a relação entre eles. Nesse seguimento foram definidos os seguintes componentes:
 
 \begin{itemize}
-    \item \textbf{Barramento de serviços} - Provedor de informações e dados, a partir do seu funcionamento, contempla os componentes \textbf{\textit{\acrshort{ESB}}}, \textbf{\textit{Back-end}} e \textbf{\textit{Front-end}}; 
+    \item \textbf{Barramento de serviços} - Provedor de informações e dados, a partir do seu funcionamento, contempla o componente \textbf{\textit{\acrshort{ESB}}}; 
     \item \textbf{Ferramenta de monitoramento} - Coletor de informações e dados para realizar o monitoramento e provedor de informações sobre o funcionamento de serviços e aplicações; 
     \item \textbf{Agente de monitoramento} - Coletor de informações e dados de monitoramento, armazena informações e dados de monitoramento e coletados pelo agente de monitoramento. Transmite informações e dados de monitoramento para a ferramenta de monitoramento, abrange o componente \textbf{Banco de Dados}
 \end{itemize}
 
 Com a definição da arquitetura de monitoramento de serviço e a organização de seus componentes espera-se obter níveis baixos de dependência entre as soluções. Os componentes implementados podem ser conectados em outras aplicações. Na arquitetura definida deste trabalho o meio de comunicação entre os componentes é feito por meio de integração, que possibilita manter um nível baixo de dependência das aplicações e a mudança de barramento de serviços ou da ferramenta de monitoramento, sem prejuízo à arquitetura e ao funcionamento da monitoramento de serviços. O modelo conceitual da arquitetura pode ser visualizado na figura \ref{fun:fig:arquitetura_conceitual_monitoramento}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
-	\includegraphics[scale = 0.55]{img/Arquitetura_Proposta_Monitoramento.png}
+	\includegraphics[scale = 0.90]{img/Arquitetura_Proposta_Monitoramento.png}
 		\caption{Arquitetura conceitual para o monitoramento de serviços.}
 		\label{fun:fig:arquitetura_conceitual_monitoramento}
 	\end{center}
@@ -29,13 +29,13 @@ Como parte da arquitetura o barramento de serviços é o componente responsável
 
 Neste trabalho os componentes da arquitetura na visão de \textit{runtime}\cite{clements2002documenting} possuem as seguintes descrições:
 
-\subsubsection{Barramento de serviços}
+\subsubsection{Barramento de Serviços}
 O barramento de serviços é representado pelo Erlangms que dispõem de uma arquitetura SOA com o estilo arquitetural REST, sua implementação foi feita na linguagem funcional Erlang. O Erlangms é o \acrshort{ESB} utilizado pelo \acrshort{CPD} da \acrshort{UnB} para implementação e modernização de \textit{softwares} na \acrshort{UnB}. O barramento de serviços é utilizado para a integração de várias aplicações heterogêneas por meio de serviços.
 
-\subsubsection{Ferramenta de monitoramento}
+\subsubsection{Ferramenta de Monitoramento}
 A ferramenta de monitoramento é representado pelo Nagios\textsuperscript{\textregistered} foi projetado para realizar o monitoramento de ativos de rede, sistemas e serviços, notifica os responsáveis pelos ativos de rede, sistema e serviços que estão registrados como contatos emergenciais. A ferramenta é utilizada pelo \acrshort{CPD} da \acrshort{UnB} para o acompanhamento da  disponibilidade de seus serviços.
 
-\subsubsection{Agente de monitoramento}
+\subsubsection{Agente de Monitoramento}
 O agente de monitoramento é representado pelo Exometer que é um \textit{framework} que executa instrumentação e permiti a exportação de dados, foi implementado em Erlang. Neste trabalho foi utilizado o módulo SNMP da ferramenta para realizar a integração do barramento de serviços e a ferramenta de monitoramento. Com o agente de monitoramento é possivel criar métricas e grupo de dados para o monitoramento.
 
 \subsubsection{Comunicação}
@@ -47,10 +47,17 @@ Com o conceito arquitetural definido, está fortemente alinhado com o ambiente c
 \section{Monitoramento dos Recursos do Barramento de Serviços}%
 \label{recursos_monitoramento}
 
-O \acrshort{CPD} da \acrshort{UnB} adotou como solução para a modernização, migração dos sistemas e tecnologia a implementação de uma arquitetura orientada a serviços, que vem sendo bastante utilizada principalmente para criação de serviços (\textit{web services}). A implementação dos serviços tem aumentado, devido a flexibilidade definida na arquitetura e o aumento da demanda para a realização de integração de sistemas, além da curva de aprendizagem ser alta. Com a implementação e disponibilização de  vários serviços, monitorar e acompanhar o funcionamento, tem se tornado uma tarefa que tem demandado um grande esforço das equipes de 
-desenvolvimento do \acrshort{CPD}. O monitoramento do barramento de serviços da \acrshort{UnB} é realizado de três formas conhecidas, uma por meio do \textit{Log} de arquivos gerado pelo próprio barramento, onde as informações de registros do \textit{Log} são coletadas e apresentadas em um \textit{dashboard}, que pode ser visualizado na figura \ref{fun:fig:dashboardS} \cite{filgueirasmonitoramento}, outra por meio de serviços (\textit{web services}) providos pelo barramento conforme a figura \ref{fun:fig:memoriaEMS}, além da nativa que é disponibilizada pela empresa que mantém e gerencia a linguagem Erlang, esse monitoramento é realizado pelo denominado \textit{Observer} que dispõe de elementos gráficos como apresentado na figura \ref{fun:fig:observer} que possibilita observar as características dos sistemas desenvolvidos em Erlang \cite{ericssonAB2002-2019}. 
+O \acrshort{CPD} da \acrshort{UnB} adotou como solução para a modernização, migração dos sistemas e tecnologia a implementação de uma arquitetura orientada a serviços, que vem sendo bastante utilizada principalmente para criação de serviços (\textit{web services}). A implementação dos serviços tem aumentado, devido a flexibilidade definida na arquitetura e o aumento da demanda para a realização de integração de sistemas, além da curva de aprendizagem ser alta. A partir da implementação e disponibilização de  vários serviços, monitorar e acompanhar o funcionamento, tem se tornado uma tarefa que tem demandado um grande esforço das equipes de desenvolvimento do \acrshort{CPD}. 
 
-\begin{figure}[h!]
+No \acrshort{CPD}, o monitoramento do barramento de serviços da \acrshort{UnB} é realizado de três formas conhecidas, uma por meio do \textit{Log} de arquivos gerado pelo barramento, outra por meio de serviços (\textit{web services}) providos pelo barramento, além da nativa que é disponibilizada pela empresa que mantém e gerencia a linguagem Erlang.
+
+\subsubsection{Monitoramento do Barramento de Serviços por \textit{Log} de Arquivos}
+
+As informações de registros do \textit{Log} geradas pelo barramentos de serviços, são coletadas e armazenadas. A abordagem utilizada para o acompanhamento do funcionamento do barramento de serviços possibilitou o monitoramento sem a necessidade de modificação no código-fonte do barramento de serviços, observado que um dos motivos pelo acompanhamento por meio do \textit{Log}, é realizar o monitoramento em tempo real sem a perda de desempenho  do barramento de serviços durante o funcionamento. 
+
+As informações armazenadas originárias do arquivo de \textit{Log} são transmitidas e suas métricas apresentadas em um \textit{dashboard}, esse \textit{dashboard} foi desenvolvido para o acompanhamento do funcionamento do barramento de serviços graficamente, como por exemplo o quantitativo de erros por serviço, o \textit{dashboard} com os gráficos de apresentação pode ser visualizado na figura \ref{fun:fig:dashboardS} \cite{filgueirasmonitoramento}.
+
+\begin{figure}[H]
 	\begin{center}
 	\includegraphics[scale = 0.70]{img/dashboard.jpg}
 		\caption{\textit{Dashborad} de monitoramento \cite{filgueirasmonitoramento}.}
@@ -58,9 +65,11 @@ desenvolvimento do \acrshort{CPD}. O monitoramento do barramento de serviços da
 	\end{center}
 \end{figure}
 
-Este trabalho inclui uma nova forma de monitoramento para o barramento de serviços, esse monitoramento difere dos demais pelo modo de atuação, onde o foco é monitorar o funcionamento dos recuros que o barramento de serviços provém, desde o recurso responsável pelo registro das informações de \textit{LOG} passando pelo os recursos que executam os processos de autenticação e autorização até o recurso responsável pelo recebimento e transmissão de requisições. Devido a escolha e definição desse novo modo de monitorar os recursos do barramento foi incluída também a necessidade da realização do monitoramento de serviços na mesma plataforma que os sistemas e ativos de rede da \acrshort{UnB} são monitorados, tentando garantir o monitoramento dos serviços, sistemas e ativos de rede em uma única plataforma que permitisse apresentar o funcionamento dessas aplicações ou em casos eventuais notificar sobre possíveis falhas ou problemas. Diante desse cenário optou-se por definir um meio de comunicação onde a ferramenta de monitoramento, mantida e gerenciada pelo \acrshort{CPD} da \acrshort{UnB} pudesse receber as informações para a realização do monitoramento do barramento de serviços, por meio de um protocolo, neste trabalho o protocolo utilizado para a realização da comunicação e permitir a integração das ferramentas foi o protocolo \acrshort{SNMP}. A escolha do protocolo para a realização do monitoramento busca um meio para tentar garantir a implantação e integração das aplicações com baixo acoplamento, onde a importância é a preservar a uniformidade na comunicação das aplicações por meio de um protocolo, principalmente quando houver alguma mudança de ferramenta de monitoramento, no mercado as principais ferramentas de monitoramento se comunicam e permitem a transmissão de dados e informações por meio do protocolo \acrshort{SNMP}, ou seja independente de ferramenta o serviços de monitoramento seria facilmente plugado e configurado em ferramentas de monitoramento que utilização o protocolo \acrshort{SNMP} como meio de comunicação.      
+\subsubsection{Monitoramento do Barramento de Serviços por Serviços (\textit{Web Services})}
+O barramento de serviços possui em seu código-fonte a implementação de serviços que possibilitam o acompanhamento dos recursos computacionais em que o barramento de serviços está funcionando. Esses serviços não dispõem de elementos gráficos...    
+... outra por meio de serviços (\textit{web services}) providos pelo barramento conforme a figura \ref{fun:fig:memoriaEMS}, 
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 	\includegraphics[scale = 0.90]{img/monitoramentoEMS.jpg}
 		\caption{Serviço de consulta de utilização dos recursos de memória do Erlangms.}
@@ -68,7 +77,11 @@ Este trabalho inclui uma nova forma de monitoramento para o barramento de servi�
 	\end{center}
 \end{figure}
 
-\begin{figure}[h!]
+\subsubsection{Monitoramento do Barramento de Serviços por \textit{Software} Nativo (Erlang)}
+O barramento de serviços foi desenvolvido na linguagem Erlang, essa linguagem dispõe de componentes de monitoramento que permite o acompanhamento do sistema operacional. O monitoramento pode apresentar informações sobre a utilização de memória durante o funcionamento e o número de processos em execução. Esse monitoramento é realizado pelo denominado \textit{Observer} que dispõe de elementos gráficos que possibilita observar as características dos sistemas desenvolvidos em Erlang \cite{ericssonAB2002-2019} em execução, assim como o funcionamento do sistemas operacional em que as plicações Erlang estão instaladas. O \textit{Observer} tem como empecilho a perda de desempenho em seu funcionamento, pois disponibiliza muitos dados referentes aos seus processos de execução. A interface gráfica do \textit{Observer} pode ser vzualizado na figura \ref{fun:fig:observer}. 
+
+
+\begin{figure}[H]
 	\begin{center}
 	\includegraphics[scale = 0.70]{img/observerGo.jpg}
 		\caption{Interface gráfica do \textit{Observer}.}
@@ -76,11 +89,19 @@ Este trabalho inclui uma nova forma de monitoramento para o barramento de servi�
 	\end{center}
 \end{figure}
 
+
+
+Este trabalho inclui uma nova forma de monitoramento para o barramento de serviços, esse monitoramento difere dos demais pelo modo de atuação, onde o foco é monitorar o funcionamento dos recuros que o barramento de serviços provém, desde o recurso responsável pelo registro das informações de \textit{LOG} passando pelo os recursos que executam os processos de autenticação e autorização até o recurso responsável pelo recebimento e transmissão de requisições. Devido a escolha e definição desse novo modo de monitorar os recursos do barramento foi incluída também a necessidade da realização do monitoramento de serviços na mesma plataforma que os sistemas e ativos de rede da \acrshort{UnB} são monitorados, tentando garantir o monitoramento dos serviços, sistemas e ativos de rede em uma única plataforma que permitisse apresentar o funcionamento dessas aplicações ou em casos eventuais notificar sobre possíveis falhas ou problemas. Diante desse cenário optou-se por definir um meio de comunicação onde a ferramenta de monitoramento, mantida e gerenciada pelo \acrshort{CPD} da \acrshort{UnB} pudesse receber as informações para a realização do monitoramento do barramento de serviços, por meio de um protocolo, neste trabalho o protocolo utilizado para a realização da comunicação e permitir a integração das ferramentas foi o protocolo \acrshort{SNMP}. A escolha do protocolo para a realização do monitoramento busca um meio para tentar garantir a implantação e integração das aplicações com baixo acoplamento, onde a importância é a preservar a uniformidade na comunicação das aplicações por meio de um protocolo, principalmente quando houver alguma mudança de ferramenta de monitoramento, no mercado as principais ferramentas de monitoramento se comunicam e permitem a transmissão de dados e informações por meio do protocolo \acrshort{SNMP}, ou seja independente de ferramenta o serviços de monitoramento seria facilmente plugado e configurado em ferramentas de monitoramento que utilização o protocolo \acrshort{SNMP} como meio de comunicação.      
+
+
+
+
+
 \subsection{Execução do Monitoramento}
 
 A execução do monitoramento é inciada com a integração das aplicações, ou seja quando o barramento de serviços está em funcionamento, o agente de monitoramento está ativo, assim como a ferramenta de monitoramento está ligada e configurada em modo passivo para receber as informações que são transmitidas de modo a permitir a realização do monitoramento. Para representar a execução do monitoramento foi criado um \textit{design} que pode ser visualizado na figura \ref{fun:fig:arqtProjeto}. O monitoramento é realizado por meio de dados gerados por serviços provenientes do barramento de serviços, esse dados possuem identificação e valores incrementais de contagem. Em seu funcionamento o barramento de serviços pode incrementar ou decrementar informações de contagem dependendo do serviço utilizado, normalmente o valor é incrementado, quando o valor a ser monitorado é coletado, o mesmo é enviado ao agente de monitoramento, o agente de monitoramento tem a responsabilidade de realizar o envio dessa informação, realizando a comunicação com a ferramenta de monitoramento por meio do protocolo \acrshort{SNMP}, a informação transmitida poderá ser visualizada de modo personalizado e configurado na ferramenta de monitoramento, que dependendo da configuração poderá apresentar itens de serviços cadastrados com os status, \textit{"Ok"} \ para serviços que estejam funcionado normalmente, \textit{"Warning"} \  para serviços que estejam apresentando algo incomum em seu funcionamento e \textit{"Critical"} \ para serviços que estejam apresentando anormalidade ou realmente estejam indisponíveis.	 
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 	\includegraphics[scale = 0.45]{img/arqtProjeto.jpeg}
 	\caption{\textit{Design} da integração das ferramentas para o monitoramento.}
