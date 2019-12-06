@@ -104,9 +104,9 @@ Para realizar o monitoramento foi necessária a definição de uma abordagem que
 \end{itemize}
 
 \subsubsection{Gerar Dados por meio de Instrumentação}
-Como passo inicial é necessário gerar dados referentes à realização do monitoramento, para isso foi utilizada uma abordagem que possibilitou a implementação no código-fonte do barramento de serviços. A abordagem inclui a criação de uma estrutura de dados e a definição de contadores numéricos, esse contadores tem a implementação simples que buscam não impactar de forma onerosa o funcionamento do barramento de serviços.
+O primeiro passo para realização do monitoramento foi gerar dados para o monitoramento, para isso foi utilizada uma abordagem que possibilitou a implementação no código-fonte do barramento de serviços. A abordagem inclui a criação de uma estrutura de dados e a definição de contadores numéricos, esse contadores tem a implementação simples que buscam não impactar de forma onerosa o funcionamento do barramento de serviços.
 
-Os contadores funcionam a partir da execução de forma incremental a partir do momento em que os recursos do barramento de serviços é executado. A abordagem implementada  e utilizada para a realização do monitoramento possibilitou 
+Os contadores funcionam a partir da inclusão dos métodos no código-fonte e contabilizam as informações de forma incremental, a partir do momento que os recursos do barramento de serviços são executados. A abordagem implementada e utilizada para a realização do monitoramento possibilitou o entendimento do funcionamento do barramento de serviços, e permitiu um acompanhamento completo, visto que soluções utilizadas pelo \acrshort{CPD}, acompanham o funcionamento do sistema operacional em que o barramento de serviços esta instalado ou o acompanhamento das informações de erros e regras de negócio de serviços e aplicações.      
 
 \subsubsection{Coletar e Armazenar os Dados oriundos da Instrumentação}
 
