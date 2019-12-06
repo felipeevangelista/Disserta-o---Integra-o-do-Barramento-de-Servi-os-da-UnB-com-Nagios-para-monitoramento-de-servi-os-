@@ -66,8 +66,9 @@ As informações armazenadas originárias do arquivo de \textit{Log} são transm
 \end{figure}
 
 \subsubsection{Monitoramento do Barramento de Serviços por Serviços (\textit{Web Services})}
-O barramento de serviços possui em seu código-fonte a implementação de serviços que possibilitam o acompanhamento dos recursos computacionais em que o barramento de serviços está funcionando. Esses serviços não dispõem de elementos gráficos...    
-... outra por meio de serviços (\textit{web services}) providos pelo barramento conforme a figura \ref{fun:fig:memoriaEMS}, 
+O barramento de serviços possui em seu código-fonte a implementação de serviços que utilizam módulos Erlang que possibilitam o acompanhamento dos recursos computacionais em que o barramento de serviços está funcionando. 
+
+Esses serviços não dispõem de elementos gráficos, fornecem informações a partir da requisição de um serviços, para a execução desse serviço basta apenas utilizar a \acrshort{URL} do serviço específico e uma ferramenta de testes de \acrshort{API}, que possibilita a obtenção das informações requisitadas. As informações retornadas a partir do serviço por meio de uma requisição pode ser visualizada na figura \ref{fun:fig:memoriaEMS}.
 
 \begin{figure}[H]
 	\begin{center}
@@ -78,8 +79,11 @@ O barramento de serviços possui em seu código-fonte a implementação de servi
 \end{figure}
 
 \subsubsection{Monitoramento do Barramento de Serviços por \textit{Software} Nativo (Erlang)}
-O barramento de serviços foi desenvolvido na linguagem Erlang, essa linguagem dispõe de componentes de monitoramento que permite o acompanhamento do sistema operacional. O monitoramento pode apresentar informações sobre a utilização de memória durante o funcionamento e o número de processos em execução. Esse monitoramento é realizado pelo denominado \textit{Observer} que dispõe de elementos gráficos que possibilita observar as características dos sistemas desenvolvidos em Erlang \cite{ericssonAB2002-2019} em execução, assim como o funcionamento do sistemas operacional em que as plicações Erlang estão instaladas. O \textit{Observer} tem como empecilho a perda de desempenho em seu funcionamento, pois disponibiliza muitos dados referentes aos seus processos de execução. A interface gráfica do \textit{Observer} pode ser vzualizado na figura \ref{fun:fig:observer}. 
+O barramento de serviços foi desenvolvido na linguagem Erlang, essa linguagem dispõe de componentes de monitoramento que permite o acompanhamento do sistema operacional. O monitoramento pode apresentar informações sobre a utilização de memória durante o funcionamento e o número de processos em execução. 
 
+O monitoramento é realizado pelo denominado \textit{Observer} que dispõe de elementos gráficos que possibilita observar as características dos sistemas desenvolvidos em Erlang \cite{ericssonAB2002-2019} em execução, assim como o funcionamento do sistemas operacional em que as plicações Erlang estão instaladas. 
+
+O \textit{Observer} tem como empecilho a perda de desempenho em seu funcionamento, pois disponibiliza muitos dados referentes aos seus processos de execução. A interface gráfica do \textit{Observer} pode ser visualizado na figura \ref{fun:fig:observer}. 
 
 \begin{figure}[H]
 	\begin{center}
@@ -89,9 +93,27 @@ O barramento de serviços foi desenvolvido na linguagem Erlang, essa linguagem d
 	\end{center}
 \end{figure}
 
+Este trabalho inclui uma nova forma de monitoramento para o barramento de serviços, esse monitoramento difere dos demais pelo modo de atuação, onde o foco é monitorar o funcionamento dos recuros que o barramento de serviços provém, desde o recurso responsável pelo registro das informações de \textit{LOG} passando pelo os recursos que executam os processos de autenticação e autorização até o recurso responsável pelo recebimento e transmissão de requisições. 
+
+Para realizar o monitoramento foi necessária a definição de uma abordagem que permitisse o acompanhamento do funcionamento dos recursos do barramento de serviços. Nessa abordagem foi definida que as informações seriam geradas por meio do funcionamento do barramento de serviços com os seguintes passos:
+
+\begin{itemize}
+    \item Gerar dados por meio de instrumentação;
+    \item Coletar e armazenar os dados oriundos da instrumentação; e
+    \item Transmitir os dados para o a realização do monitoramento. 
+\end{itemize}
+
+\subsubsection{Gerar Dados por meio de Instrumentação}
+Como passo inicial é necessário gerar dados referentes à realização do monitoramento, para isso foi utilizada uma abordagem que possibilitou a implementação no código-fonte do barramento de serviços. A abordagem inclui a criação de uma estrutura de dados e a definição de contadores numéricos, esse contadores tem a implementação simples que buscam não impactar de forma onerosa o funcionamento do barramento de serviços.
+
+Os contadores funcionam a partir da execução de forma incremental a partir do momento em que os recursos do barramento de serviços é executado. A abordagem implementada  e utilizada para a realização do monitoramento possibilitou 
+
+\subsubsection{Coletar e Armazenar os Dados oriundos da Instrumentação}
+
+\subsubsection{Transmitir os Dados para o a realização do Monitoramento}
 
 
-Este trabalho inclui uma nova forma de monitoramento para o barramento de serviços, esse monitoramento difere dos demais pelo modo de atuação, onde o foco é monitorar o funcionamento dos recuros que o barramento de serviços provém, desde o recurso responsável pelo registro das informações de \textit{LOG} passando pelo os recursos que executam os processos de autenticação e autorização até o recurso responsável pelo recebimento e transmissão de requisições. Devido a escolha e definição desse novo modo de monitorar os recursos do barramento foi incluída também a necessidade da realização do monitoramento de serviços na mesma plataforma que os sistemas e ativos de rede da \acrshort{UnB} são monitorados, tentando garantir o monitoramento dos serviços, sistemas e ativos de rede em uma única plataforma que permitisse apresentar o funcionamento dessas aplicações ou em casos eventuais notificar sobre possíveis falhas ou problemas. Diante desse cenário optou-se por definir um meio de comunicação onde a ferramenta de monitoramento, mantida e gerenciada pelo \acrshort{CPD} da \acrshort{UnB} pudesse receber as informações para a realização do monitoramento do barramento de serviços, por meio de um protocolo, neste trabalho o protocolo utilizado para a realização da comunicação e permitir a integração das ferramentas foi o protocolo \acrshort{SNMP}. A escolha do protocolo para a realização do monitoramento busca um meio para tentar garantir a implantação e integração das aplicações com baixo acoplamento, onde a importância é a preservar a uniformidade na comunicação das aplicações por meio de um protocolo, principalmente quando houver alguma mudança de ferramenta de monitoramento, no mercado as principais ferramentas de monitoramento se comunicam e permitem a transmissão de dados e informações por meio do protocolo \acrshort{SNMP}, ou seja independente de ferramenta o serviços de monitoramento seria facilmente plugado e configurado em ferramentas de monitoramento que utilização o protocolo \acrshort{SNMP} como meio de comunicação.      
+Devido a escolha e definição desse novo modo de monitorar os recursos do barramento foi incluída também a necessidade da realização do monitoramento de serviços na mesma plataforma que os sistemas e ativos de rede da \acrshort{UnB} são monitorados, tentando garantir o monitoramento dos serviços, sistemas e ativos de rede em uma única plataforma que permitisse apresentar o funcionamento dessas aplicações ou em casos eventuais notificar sobre possíveis falhas ou problemas. Diante desse cenário optou-se por definir um meio de comunicação onde a ferramenta de monitoramento, mantida e gerenciada pelo \acrshort{CPD} da \acrshort{UnB} pudesse receber as informações para a realização do monitoramento do barramento de serviços, por meio de um protocolo, neste trabalho o protocolo utilizado para a realização da comunicação e permitir a integração das ferramentas foi o protocolo \acrshort{SNMP}. A escolha do protocolo para a realização do monitoramento busca um meio para tentar garantir a implantação e integração das aplicações com baixo acoplamento, onde a importância é a preservar a uniformidade na comunicação das aplicações por meio de um protocolo, principalmente quando houver alguma mudança de ferramenta de monitoramento, no mercado as principais ferramentas de monitoramento se comunicam e permitem a transmissão de dados e informações por meio do protocolo \acrshort{SNMP}, ou seja independente de ferramenta o serviços de monitoramento seria facilmente plugado e configurado em ferramentas de monitoramento que utilização o protocolo \acrshort{SNMP} como meio de comunicação.      
 
 
 
@@ -290,14 +312,20 @@ Após a execução da análise das métricas levantadas foi necessário a realiz
     \item Registros do \textit{Dispatcher}
 \end{itemize}
 
-A escolha destas 3 métricas foi definida devido a importância do acompanhamento dos módulos mais utilizados no barramento de serviços, os registros do \textit{LOG} do barramento de serviços estão preparados para exportar e apresentar uma gama de informações podendo não facilitar a identificação de um falha ou indisponibilidade dos serviços, por isso a configuração para o registro das informações dos registros de \textit{LOG} na ferramenta de monitoramento foi escolhido. O motivo para escolha do registro das informações de autenticação e autorização promovidas por meio do protocolo OAuth2, foi pela quantidade crescente de disponibilização de serviços e recursos que devido a esse crescimento dificultou o acompanhamento da autenticação, por esse motivo buscou-se obter uma situação real de funcionamento do procedimento de autenticação e autorização, assim como a identificação de ataques, como por exemplo o ataque de negação de negação de serviços por meio do monitoramento. O funcionamento do \textit{Dispatcher} é essencial para o barramento de serviços, por ele passa todos os serviços executados pelo barramento de serviços, o \textit{Dispatcher} controla e gerencia o recebimento e envio de requisições que são executadas pelo barramento de serviços, por esse motivo acompanhar o seu funcionamento é muito importante, ainda mais com a possibilidade de emissão de notificações por meio de seu funcionamento normal e quando houver falha ou indisponibilidade, vale enfatizar que a seleção e escolhas das métricas foram realizadas por conta do modelo para realização de monitoramento que ferramenta de monitoramento selecionada propõe.   
+A escolha destas 3 métricas foi definida devido a importância do acompanhamento dos módulos mais utilizados no barramento de serviços, os registros do \textit{LOG} do barramento de serviços estão preparados para exportar e apresentar uma gama de informações podendo não facilitar a identificação de um falha ou indisponibilidade dos serviços, por isso a configuração para o registro das informações dos registros de \textit{LOG} na ferramenta de monitoramento foi escolhido. 
+
+O motivo para escolha do registro das informações de autenticação e autorização promovidas por meio do protocolo OAuth2, foi pela quantidade crescente de disponibilização de serviços e recursos que devido a esse crescimento dificultou o acompanhamento da autenticação, por esse motivo buscou-se obter uma situação real de funcionamento do procedimento de autenticação e autorização, assim como a identificação de ataques, como por exemplo o ataque de negação de negação de serviços por meio do monitoramento. 
+
+O funcionamento do \textit{Dispatcher} é essencial para o barramento de serviços, por ele passa todos os serviços executados pelo barramento de serviços, o \textit{Dispatcher} controla e gerencia o recebimento e envio de requisições que são executadas pelo barramento de serviços, por esse motivo acompanhar o seu funcionamento é muito importante, ainda mais com a possibilidade de emissão de notificações por meio de seu funcionamento normal e quando houver falha ou indisponibilidade, vale enfatizar que a seleção e escolhas das métricas foram realizadas por conta do modelo para realização de monitoramento que ferramenta de monitoramento selecionada propõe.   
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Instrumentação de Código}
 \label{instrumentacaoErlangms}
 
-Como descrito na seção \ref{instrumentacao} o barramento de serviços dispõe de recursos que possibilitam a implementação da instrumentação em seu código. O barramento de serviços possui  um modelo de dados implementado, essa modelo é representado por uma tabela dispões de 2 colunas, 1 que identifica, ou seja, a chave e a outra com o valor do tipo inteiro referente a chave da mesma linha, alguns exemplos de chaves(identificadores) para a criação das métricas, poderão ser visualizados na figura \ref{fun:fig:chavesContadores}. Para armazenar esse registros o barramento de serviços possui uma outra tabela que possibilita o registro dos contadores com identificação, hora e data, serviço e url, para fins de histórico, o barramento de serviços possui um serviço que retorna o histórico das estatísticas armazenadas, o resultado deste serviço poderá ser visualizado na figura \ref{fun:fig:webserviceStats}. 
+Como descrito na seção \ref{instrumentacao} o barramento de serviços dispõe de recursos que possibilitam a implementação da instrumentação em seu código. O barramento de serviços possui  um modelo de dados implementado, essa modelo é representado por uma tabela dispões de 2 colunas, 1 que identifica, ou seja, a chave e a outra com o valor do tipo inteiro referente a chave da mesma linha, alguns exemplos de chaves(identificadores) para a criação das métricas, poderão ser visualizados na figura \ref{fun:fig:chavesContadores}. 
+
+Para armazenar esse registros o barramento de serviços possui uma outra tabela que possibilita o registro dos contadores com identificação, hora e data, serviço e \acrshort{URL}, para fins de histórico, o barramento de serviços possui um serviço que retorna o histórico das estatísticas armazenadas, o resultado deste serviço poderá ser visualizado na figura \ref{fun:fig:webserviceStats}. 
 
 \begin{figure}[h!]
     \begin{minted}
