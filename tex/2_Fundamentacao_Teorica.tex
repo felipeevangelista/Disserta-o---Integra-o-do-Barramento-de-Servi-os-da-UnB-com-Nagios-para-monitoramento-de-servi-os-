@@ -30,7 +30,7 @@ O monitoramento é forma utilizada para acompanhar ou observar o andamento de um
 
 \subsection{Monitoramento de Sistemas Distribuídos}
 
-Em tecnologia da informação de monitorar ativos de rede e serviços, é acompanhar , seja pelo mau funcionamento de um ativo de rede, serviço ou por uma indisponibilidade(queda de energia ou internet). Como mencionado anteriormente o ato de acompanhar o funcionamento desses recursos propõem ao gestores desse processos encontrar uma forma mais visível e gerenciável para solucionar problemas, alertar sobre possíveis falhas ou até determinar uma situação para o retorno automático desses serviços. 
+Em tecnologia da informação de monitorar ativos de rede e serviços, é acompanhar, seja pelo mau funcionamento de um ativo de rede, serviço ou por uma indisponibilidade(queda de energia ou internet). Como mencionado anteriormente o ato de acompanhar o funcionamento desses recursos propõem aos gestores desses processos encontrar uma forma mais visível e gerenciável para solucionar problemas, alertar sobre possíveis falhas ou até determinar uma situação para o retorno automático desses serviços. 
 
 %O CPD, atualmente possui um serviço que executa o monitoramento em tempo de execução, porém a forma utilizada para o monitoramento foi a leitura do arquivo de \textit{log}, pois havia um grande preocupação com \textit{trade-off} gerado. A fim de obter melhor custo de monitoramento x desempenho tomou-se a decisão pela coleta das informações de monitoramento por meio dos \textit{logs} gerados pelo Erlangms \cite{filgueirasmonitoramento}.    
 
@@ -60,6 +60,7 @@ O autor Nadeau\cite{nadeau2003mpls} cita três componentes que formam o \acrshor
     Estrutura usada para formar um modelo de dados do sistema(objetos), responsável por representar o tipo, definir o comportamento e a política de acesso aos objetos.
     
     \item \acrshort{SNMP}
+    
     Que consiste em sua arquitetura, o gerente, um dispositivo a ser gerenciado e um agente, que dispões das seguintes operações:
     
         \begin{itemize}
@@ -87,9 +88,9 @@ O autor Nadeau\cite{nadeau2003mpls} cita três componentes que formam o \acrshor
     
 Após a realização de uma análise, estudos e definições, obteve-se de forma empírica o respaldo para utilização do protocolo na implementação do projeto, vale também observar que o \acrshort{CPD} utiliza o protocolo para o monitoramento de seus ativos de rede, conforme a representação na figura \ref{fun:fig:snmpexecution} apresentada a seguir.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
-	\includegraphics[scale = 0.90]{img/SNMP-Execution.jpg}
+	\includegraphics[scale = 0.70]{img/SNMP-Execution.jpg}
 		\caption{Gerente e Agente comunicando por meio do protocolo SNMP\cite{nadeau2003mpls}}
 		\label{fun:fig:snmpexecution}
 	\end{center}
@@ -99,13 +100,13 @@ Após a realização de uma análise, estudos e definições, obteve-se de forma
 
 \subsubsection{GOSIP}
 
-O \acrshort{GOSIP} é um protocolo pertencente ao modelo \acrshort{OSI} que funciona por meio de software na camada de aplicação em dispositivos \textit{peer-to-peer}, teve seu lançamento anunciado no fim da década de 80 e inicio da década de 90, para facilitar a comunicação e transferência de dados em um modelo governamental prometendo ser a comunicação integrada de sistemas militares do futuro, houve até a formalização de um documento nos padrões \acrshort{RFC} o RFC 1169 como descreve o autor Mankin\cite{mankin1991towards}, porém Harris\cite{harris1992tactical} descreve em seu trabalho que o protocolo proposto foi implementado com seus objetivos bem definidos, mas que não obtiveram o sucesso almejado, pois esperava-se que pela a realização fim-a-fim conseguiriam obter melhores resultados em relação a economia da largura de banda e melhor desempenho com a redundância dos dados.
+O \acrshort{GOSIP} é um protocolo pertencente ao modelo \acrshort{OSI} que funciona por meio de software na camada de aplicação em dispositivos \textit{peer-to-peer}, teve seu lançamento anunciado no fim da década de 80 e inicio da década de 90, para facilitar a comunicação e transferência de dados em um modelo governamental prometendo ser a comunicação integrada de sistemas militares do futuro, houve até a formalização de um documento nos padrões \acrshort{RFC} o RFC 1169, como descreve o autor Mankin\cite{mankin1991towards}, porém Harris\cite{harris1992tactical} descreve em seu trabalho que o protocolo proposto foi implementado com seus objetivos bem definidos, mas que não obtiveram o sucesso almejado, pois esperava-se que pela a realização fim-a-fim conseguiriam obter melhores resultados em relação a economia da largura de banda e melhor desempenho com a redundância dos dados.
 
-Apesar dos relatos citados no paragrafo anterior sobre as expectavas não alcançadas com o protocolo, há uma técnica bastante importante que foi extraída, e que é utilizada por meio dos dispositivos de modo a garantir que a comunicação e transmissão da informação sejam garantidas. Diante desse cenário o protocolo trabalha de forma epidêmica, disseminado facilmente as informações nos sistemas distribuídos em larga escala, cujo principal objetivo propagar rapadamente essas informações, o que permite a realização de um monitoramento \textit{peer-to-peer},onde os dispositivo se comunicam diretamente com afirma Tanenbaum \cite{tanenbaum2007distributed}, a representação dessa propagação poderá ser visualizada na figura \ref{fun:fig:gosip}. 
+Apesar dos relatos citados no paragrafo anterior sobre as expectavas não alcançadas com o protocolo, há uma técnica bastante importante que foi extraída, e que é utilizada por meio dos dispositivos de modo a garantir que a comunicação e transmissão da informação sejam garantidas. Diante desse cenário o protocolo trabalha de forma epidêmica, disseminado facilmente as informações nos sistemas distribuídos em larga escala, cujo principal objetivo propagar rapidamente essas informações, o que permite a realização de um monitoramento \textit{peer-to-peer},onde os dispositivo se comunicam diretamente como afirma Tanenbaum \cite{tanenbaum2007distributed}, a representação dessa propagação poderá ser visualizada na figura \ref{fun:fig:gosip}. 
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
-	\includegraphics[scale = 0.90]{img/gosip.jpg}
+	\includegraphics[scale = 0.70]{img/gosip.jpg}
 		\caption{Representação de propagação epidêmica \autor{Felipe Evangelista}{dos Santos}  }
 		\label{fun:fig:gosip}
 	\end{center}
@@ -127,7 +128,7 @@ O Nagios\textsuperscript{\textregistered} é uma aplicação com interface \text
 
 O Nagios\textsuperscript{\textregistered} é uma ferramenta que possui um alta complexidade em sua configuração, pois possui uma gama de recursos e funcionalidades disponíveis para a utilização, devido a grande quantidade de recursos o Nagios\textsuperscript{\textregistered} é bastante utilizado ele também possui um grande número de \textit{plug-ins} disponíveis na para a realização do monitoramento podendo personalizar o monitoramento de serviços como SMTP, POP3, HTTP, PING \cite{lcc2012nagios}. Nesse projeto o Nagios\textsuperscript{\textregistered} será utilizado com ferramenta de monitoramento dos sistemas e serviços fornecidos pela \acrshort{UnB} com utilização de serviço SMTP para o monitoramento, visto que, o \acrshort{CPD} já utiliza a ferramenta para o monitoramento dos ativos de rede de toda a universidade. 
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 	\includegraphics[scale = 0.39]{img/Comprehensive_Monitoring_Drop2.jpg}
 		\caption{Monitoramento de componentes\cite{lcc2012nagios}}
@@ -143,7 +144,7 @@ O Nagios\textsuperscript{\textregistered} é uma ferramenta que possui um alta c
  
  O os autores Vyas \textit{et al.} \cite{vyas2014embedding} relatam em seu trabalho que o Ganglia é baseado em um protocolo \textit{multicast} de escuta e anuncio, e necessariamente precisa ter em cada \textit{host} que será monitorado a instalação de um \textit{Gmond}. O \textit{Gmond} é um serviço em execução em cada \textit{host} que coleta as informações de estado de um \textit{host} de forma individual e insere essas informações no canal de comunicação \textit{multicast} para enviar esse dados ao Ganglia.
  
- \begin{figure}[h!]
+ \begin{figure}[H]
 	\begin{center}
 	\includegraphics[scale = 0.50]{img/1024px-ScalableGridEngineGanglia2.png}
 		\caption{Monitoramento de \textit{clusters} \cite{Ganglia}}
@@ -170,7 +171,7 @@ O Cacti é uma ferramenta de monitoramento que coleta e analisa informações po
 
 Segundo Oetiker\cite{rrdtool} o \acrshort{RRDTool} é uma ferramenta que realiza o registro de dados e gráficos de alto desempenho para dados de séries temporais, e como os cactos implementados nos \textit{hosts} são \textit{scripts} o \acrshort{RRDTool} pode ser facilmente integrado com  \textit{scripts} de \textit{shell}. 
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 	\includegraphics[scale = 0.50]{img/cacti_promo_main.png}
 		\caption{Monitoramento de rede \cite{cacti}}
@@ -178,9 +179,9 @@ Segundo Oetiker\cite{rrdtool} o \acrshort{RRDTool} é uma ferramenta que realiza
 	\end{center}
 \end{figure}
 
-O Cacti possui \textit{plugins} para integração com outras funcionalidades e ferramentas, incluído o protocolo \acrshort{SNMP}, mas não é o seu foco devido a preocupação com o desempenho na troca de informações e no monitoramento. Como o trabalho visa uniformizar o meio de comunicação entre as aplicações e definir especificamente o protocolo \acrshort{SNMP} para transmitir informações para a realização do monitoramento, esse \textit{software} não será utilizado no projeto.
+O Cacti possui \textit{plugins} para integração com outras funcionalidades e ferramentas, incluído o protocolo \acrshort{SNMP}, mas não é o seu foco devido a preocupação com o desempenho na troca de informações e no monitoramento. Como o trabalho visa uniformizar o meio de comunicação entre as aplicações e definir especificamente um protocolo de comunicação para transmitir informações para a realização do monitoramento, esse \textit{software} não será utilizado no projeto.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 	\includegraphics[scale = 0.50]{img/stream-pop.png}
 		\caption{Gráfico de monitoramento do RRDTool \cite{rrdtool}}
@@ -213,7 +214,7 @@ Como as demais aplicações e \textit{softwares} citados anteriormente o Zabbix 
 
 Em comparação com as ferramentas de monitoramento mais utilizadas atualmente, os autores Marik e Ondrej \cite{marik2014comparative} descrevem em seu artigo que o Zabbix está entre as melhores aplicações, incluído as citadas nesse trabalho, por possuir pré-requisitos básicos na instalação e configuração, excelente tempo de resposta em caso de falhas de serviços e de recursos de \acrshort{TI} e as notificações por e-mail e \acrshort{SMS}, porém o \textit{dashboard} para a realização do monitoramento é complexo e não intuitivo ao usuário, como pode ser visualizado a seguir na figura \ref{fun:fig:zabbix}, podendo não auxiliar em um gerenciamento adequado aos serviços e aplicações que são monitoradas, apesar de uma boa aplicação de monitoramento, o Zabbix não será utilizado com ferramenta de monitoramento para esse trabalho.    
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 	\includegraphics[scale = 0.80]{img/dashboard.png}
 		\caption{\textit{Dashboard} de monitoramento \cite{zabbix}.}
@@ -227,7 +228,7 @@ Em comparação com as ferramentas de monitoramento mais utilizadas atualmente, 
 
 Em uma arquitetura de monitoramento de serviços ou ativos de rede que utilize protocolos para a comunicação e transferência de dados, é necessária a implementação de agentes de monitoramento para a instalação em \textit{hosts} e dispositivos que serão monitorados, esse agentes consistem em coletar dados e enviar mensagens de alerta ao gerentes de monitoramento, como  apresentado na figura \ref{fun:fig:agente}, como por exemplo, o uso de \acrshort{CPU} e a quantidade de memória de utilização de um processo ou um alerta de falha de um dispositivo ou serviço, como descrevem em seu trabalho os autores Grover e Naik \cite{7439952}.  
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 	\includegraphics[scale = 0.80]{img/image004.jpg}
 		\caption{Esquema de comunicação entre os agentes e as estações de gerenciamento \cite{snmpagentimage}.}
@@ -241,7 +242,7 @@ Em uma arquitetura de monitoramento de serviços ou ativos de rede que utilize p
 
 \subsubsection{Exometer}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
 	\includegraphics[scale = 0.60]{img/exometer_overview.png}
 		\caption{Arquitetura do Exometer \cite{exometer_core}.}
@@ -254,12 +255,12 @@ O Exometer é um \textit{framework} capaz de executar a instrumentação e permi
 
 \subsection{Instrumentação}
 \label{instrumentacao}
-Segundo Ribeiro \cite{ribeiro1999instrumentaccao} a instrumentação é uma das técnicas que utiliza instrumentos para a medição e monitoração. A instrumentação é muito utilizada no ambiente industrial, principalmente no que tange a medição dos equipamentos de produção que necessitam de acompanhamento para verificação de pressão, temperatura, vazão e nível. Os Os instrumentos podem estar associados e
+Segundo Ribeiro \cite{ribeiro1999instrumentaccao} a instrumentação é uma das técnicas que utiliza instrumentos para a medição e monitoração. A instrumentação é muito utilizada no ambiente industrial, principalmente no que tange a medição dos equipamentos de produção que necessitam de acompanhamento para verificação de pressão, temperatura, vazão e nível. Os instrumentos podem estar associados e
 aplicados à alguns equipamentos, como por exemplo, forno, refrigerador,
-aquecedor, condicionador de ar e compressor. A operação da instrumentação funciona para que possam ser observados os instrumentos para a medição, alarme, monitoração. De acordo com Robinson \cite{robinson2002monitoring}, a instrumentação pode permitir que as informações criadas por meio da execução de instrumentos(código-fonte de \textit{software}) possam ser interferir no funcionamento das aplicações.
+aquecedor, condicionador de ar e compressor. A operação da instrumentação funciona para que possam ser observados os instrumentos para a medição, alarme e monitoração. De acordo com Robinson \cite{robinson2002monitoring}, a instrumentação pode permitir que as informações criadas por meio da execução de instrumentos(código-fonte de \textit{software}) possam ser interferir no funcionamento das aplicações.
 
 O barramento de serviços Erlangms dispõem em sua arquitetura uma estrutura definida de fácil implementação para a instrumentação, possui um modelo de dados em que são registrados contadores. No modelo de dados são registradas algumas informações como a data e hora do registro, o identificador do contador e a descrição do contador.  
-Segundo os autores Frota e Finkelstein \cite{frota2008educaccao} a instrumentação pode ser utilizada como um componente de processamento da informação de sistemas de medição. Por isso a instrumentação pode ser considerada não apenas como ferramenta de contagem de valores para medição, poderá ser utilizada também como uma forma de aprendizagem e conceitual e científica.  
+Segundo os autores Frota e Finkelstein \cite{frota2008educaccao} a instrumentação pode ser utilizada como um componente de processamento da informação de sistemas de medição. Por isso a instrumentação pode ser considerada não apenas como ferramenta de contagem de valores para medição, e poderá ser utilizada também como uma forma de aprendizagem conceitual e científica.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -292,7 +293,7 @@ O Manifesto \acrshort{SOA} apresenta uma proposta de definição da conceituaç�
 
 \end{itemize}
 
-Para realização da comunicação entre as aplicações ou serviços em componentes distribuídos no estilo arquitetural \acrshort{SOA}, os autores Clements \textit{et al.}  \cite{clements2002documenting} descrevem em seu trabalho que a comunicação poderá ser executada por meio de um intermediador ou na falta dele poderá ser realizada ponto-a-ponto, entre os intermediadores o estilo arquitetural \acrshort{SOA} os autores Bass \textit{et al.} \cite{bass2003software} citam que a arquitetura dispõe dos seguintes tipos de componentes que compõem uma arquitetura orientada a serviços, são eles :
+Para realização da comunicação entre as aplicações ou serviços em componentes distribuídos no estilo arquitetural \acrshort{SOA}, os autores Clements \textit{et al.}  \cite{clements2002documenting} descrevem em seu trabalho que a comunicação poderá ser executada por meio de um intermediador ou na falta dele poderá ser realizada ponto-a-ponto. Entre os intermediadores do estilo arquitetural \acrshort{SOA}, os autores Bass \textit{et al.} \cite{bass2003software} citam que a arquitetura dispõe dos seguintes tipos de componentes que compõem uma arquitetura orientada a serviços, são eles :
 
 \begin{itemize}
 
@@ -397,9 +398,9 @@ O Barramento de serviços da \acrshort{UnB} denominado Erlangms foi conceituado 
 
 O Erlangms dispõem de uma arquitetura \acrshort{SOA} com o estilo arquitetural \acrshort{REST} e sua implementação foi feita na linguagem funcional Erlang. O barramento atualmente está implantado no \acrshort{CPD} e  funcionando com um serviço de mensageria. A realização da comunicação e troca de mensagens dos sistemas e clientes é feita por meio de serviços(\textit{web services}) utilizando o formato \acrshort{JSON}. O modelo arquitetural do Erlangms é apresentado na figura \ref{fun:fig:Erlangms} .
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\begin{center}
-	\includegraphics[scale = 1.20]{img/Arquitetura_ErlangMS.png}
+	\includegraphics[scale = 1.30]{img/Arquitetura_ErlangMS.png}
 		\caption{Arquitetura do trabalho Erlangms descrita por\cite{Agilar}}
 		\label{fun:fig:Erlangms}
 	\end{center}
