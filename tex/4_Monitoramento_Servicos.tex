@@ -1,13 +1,13 @@
 \label{monitoramento_servicos}
 
-Neste capítulo são apresentadas informações decorrentes da arquitetura de monitoramento de serviços e da realização do monitoramento do barramento de serviços por meio do protocolo \acrshort{SNMP}. Na Seção \ref{arquitetura_monitoramento} é apresentado o conceito da arquitetura de monitoramento de serviços. Na Seção \ref{recursos_monitoramento} é descrito o monitoramento dos recursos do barramento de serviços. Na Seção \ref{integracao_snmp} são discutidos detalhes do funcionamento do protocolo \acrshort{SNMP}. Na Seção \ref{metricas_monitoramento} são expostas as definições e escolhas das métricas adotadas para a realização do monitoramento do barramento de serviços. Na Seção \ref{instrumentacaoErlangms} são descritos argumentos para instrumentação do para a coleta dos dados para a realização do monitoramento.
+Este capítulo apresenta o modelo de monitoramento para o \acrshort{CPD} denominado Ems-Monitor. Ems-Monitor realiza o monitoramento do barramento de serviços por meio do protocolo \acrshort{SNMP}. Na Seção \ref{arquitetura_monitoramento} é apresentado o conceito da arquitetura do Ems-Monitor. Na Seção \ref{recursos_monitoramento} é descrito o monitoramento dos recursos do barramento de serviços. Na Seção \ref{integracao_snmp} são discutidos detalhes do funcionamento do protocolo \acrshort{SNMP}. Na Seção \ref{metricas_monitoramento} são expostas as definições e escolhas das métricas adotadas para a utilização Ems-Monitor. Na Seção \ref{instrumentacaoErlangms} são descritos argumentos para instrumentação para a coleta dos dados para a realização do monitoramento.
 
-\section{Arquitetura de Monitoramento de Serviços}%
+\section{Arquitetura do Ems-Monitor}%
 \label{arquitetura_monitoramento}
 
 A arquitetura de \textit{software} é um conceito ou modelo de organização de uma estrutura, essa estrutura pode ser um módulo ou componentes de \textit{software}. De acordo Shaw e Garlan \cite{garlan1993introduction}, um estilo arquitetônico, pode definir um grupo sistemas com organização estrutural. Estilo arquitetônico determina componentes e conectores que são utilizados, com conjuntos de restrições, essas restrições podem ser topológicas. Nesse seguimento Clements \textit{et al.} \cite{clements2002documenting} descreve, a arquitetura de \textit{software} de um sistema é o conjunto de estruturas necessárias para entender o \textit{software}, que inclui elementos, relações entre eles e suas propriedades.
 
-A arquitetura para o monitoramento de serviços tem como objetivo estabelecer a integração entre o barramento de serviços e ferramentas de monitoramento por meio de um agente de monitoramento. Para isso foi selecionada uma visão arquitetural da categoria \textit{Runtine}, que apresentam os componentes e suas interações em tempo de execução. Segundo Clements \textit{et al.} \cite{clements2002documenting}, uma visão é uma representação de uma estrutura, e afirma uma visualização é uma representação de um conjunto de elementos do sistema e a relação entre eles. Nesse seguimento foram definidos os seguintes componentes:
+A arquitetura para do Ems-Monitor tem como objetivo estabelecer a integração entre o barramento de serviços e ferramentas de monitoramento por meio de um agente de monitoramento. Para isso foi selecionada uma visão arquitetural da categoria \textit{Runtine}, que apresentam os componentes e suas interações em tempo de execução. Segundo Clements \textit{et al.} \cite{clements2002documenting}, uma visão é uma representação de uma estrutura, e afirma uma visualização é uma representação de um conjunto de elementos do sistema e a relação entre eles. Nesse seguimento foram definidos os seguintes componentes:
 
 \begin{itemize}
     \item \textbf{Barramento de serviços} - Provedor de informações e dados, a partir do seu funcionamento, contempla o componente \textbf{\textit{\acrshort{ESB}}}; 
@@ -15,12 +15,12 @@ A arquitetura para o monitoramento de serviços tem como objetivo estabelecer a 
     \item \textbf{Agente de monitoramento} - Coletor de informações e dados de monitoramento, armazena informações e dados de monitoramento e coletados pelo agente de monitoramento. Transmite informações e dados de monitoramento para a ferramenta de monitoramento, abrange o componente \textbf{Banco de Dados}
 \end{itemize}
 
-Com a definição da arquitetura de monitoramento de serviço e a organização de seus componentes espera-se obter níveis baixos de dependência entre as soluções. Os componentes implementados podem ser conectados em outras aplicações. Na arquitetura definida deste trabalho o meio de comunicação entre os componentes é feito por meio de integração, que possibilita manter um nível baixo de dependência das aplicações e a mudança de barramento de serviços ou da ferramenta de monitoramento, sem prejuízo à arquitetura e ao funcionamento da monitoramento de serviços. O modelo conceitual da arquitetura pode ser visualizado na figura \ref{fun:fig:arquitetura_conceitual_monitoramento}
+Com a definição da arquitetura do Ems-Monitor e a organização de seus componentes espera-se obter níveis baixos de dependência entre as soluções. Os componentes implementados podem ser conectados em outras aplicações. Na arquitetura definida deste trabalho o meio de comunicação entre os componentes é feito por meio de integração, que possibilita manter um nível baixo de dependência das aplicações e a mudança de barramento de serviços ou da ferramenta de monitoramento, sem prejuízo à arquitetura e ao funcionamento do Ems-Monitor. O modelo conceitual da arquitetura pode ser visualizado na figura \ref{fun:fig:arquitetura_conceitual_monitoramento}
 
 \begin{figure}[H]
 	\begin{center}
 	\includegraphics[scale = 0.90]{img/Arquitetura_Proposta_Monitoramento.png}
-		\caption{Arquitetura conceitual para o monitoramento de serviços.}
+		\caption{Arquitetura conceitual do Ems-Monitor.}
 		\label{fun:fig:arquitetura_conceitual_monitoramento}
 	\end{center}
 \end{figure}
@@ -40,9 +40,9 @@ O agente de monitoramento é representado pelo Exometer que é um \textit{framew
 
 \subsubsection{Comunicação}
 
-A mensagens trocadas entre os componentes barramento de serviços e ferramenta de monitoramento com intermediação do Agente de monitoramento é feita por meio do protocolo \acrshort{SNMP}. O protocolo é utilizado na camada de Aplicação do modelo OSI \cite{tanenbaum2003redes}, é responsável pela transmissão de dados e informações de gerenciamento e monitoramento entre dispositivos e ativos de rede. Cabe ressaltar a importância da definição de um protocolo para a comunicação, a escolha de um modelo de comunicação, possibilita a manutenção adequada, a seleção de outras ferramentas que trabalhem com o protocolo e a baixa dependência de aplicações.     
+A mensagens trocadas entre os componentes do barramento de serviços e ferramenta de monitoramento com intermediação do Agente de monitoramento é feita por meio do protocolo \acrshort{SNMP}. O protocolo é utilizado na camada de Aplicação do modelo OSI \cite{tanenbaum2003redes}, é responsável pela transmissão de dados e informações de gerenciamento e monitoramento entre dispositivos e ativos de rede. Cabe ressaltar a importância da definição de um protocolo para a comunicação, a escolha de um modelo de comunicação, possibilita a manutenção adequada, a seleção de outras ferramentas que trabalhem com o protocolo e a baixa dependência de aplicações.     
 
-Com o conceito arquitetural definido, está fortemente alinhado com o ambiente computacional da \acrshort{UnB}, este trabalho emprega ênfase na integração dos componentes para a realização do monitoramento.   
+Com o conceito arquitetural do Ems-Monitor definido, está fortemente alinhado com o ambiente computacional da \acrshort{UnB}, este trabalho emprega ênfase na integração dos componentes para a realização do monitoramento.   
 
 \section{Monitoramento dos Recursos do Barramento de Serviços}%
 \label{recursos_monitoramento}
@@ -93,9 +93,9 @@ O \textit{Observer} tem como empecilho a perda de desempenho em seu funcionament
 	\end{center}
 \end{figure}
 
-Este trabalho inclui uma nova forma de monitoramento para o barramento de serviços, esse monitoramento difere dos demais pelo modo de atuação, onde o foco é monitorar o funcionamento dos recuros que o barramento de serviços provém, desde o recurso responsável pelo registro das informações de \textit{LOG} passando pelo os recursos que executam os processos de autenticação e autorização até o recurso responsável pelo recebimento e transmissão de requisições. 
+Este trabalho inclui o Ems-Monitor como uma nova forma para monitorar o barramento de serviços, esse monitoramento difere dos demais pelo modo de atuação, onde o foco é monitorar o funcionamento dos recuros que o barramento de serviços provém, desde o recurso responsável pelo registro das informações de \textit{LOG} passando pelo os recursos que executam os processos de autenticação e autorização até o recurso responsável pelo recebimento e transmissão de requisições. 
 
-Para realizar o monitoramento foi necessária a definição de uma abordagem que permitisse o acompanhamento do funcionamento dos recursos do barramento de serviços. Nessa abordagem foi definida que as informações seriam geradas por meio do funcionamento do barramento de serviços com os seguintes passos:
+Para realizar o Ems-Monitor foi necessária a definição de uma abordagem que permitisse o acompanhamento do funcionamento dos recursos do barramento de serviços. Nessa abordagem foi definida que as informações seriam geradas por meio do funcionamento do Erlangms com os seguintes passos:
 
 \begin{itemize}
     \item Gerar dados por meio de instrumentação;
@@ -104,23 +104,23 @@ Para realizar o monitoramento foi necessária a definição de uma abordagem que
 \end{itemize}
 
 \subsubsection{Gerar Dados por meio de Instrumentação}
-O primeiro passo para realização do monitoramento foi gerar dados para o monitoramento, para isso foi utilizada uma abordagem que possibilitou a implementação no código-fonte do barramento de serviços. A abordagem inclui a criação de uma estrutura de dados e a definição de contadores numéricos, esse contadores tem a implementação simples que buscam não impactar de forma onerosa o funcionamento do barramento de serviços.
+O primeiro passo para monitoração foi gerar, para isso foi utilizada uma abordagem que possibilitou a implementação no código-fonte do barramento de serviços. A abordagem inclui a criação de uma estrutura de dados e a definição de contadores numéricos, esse contadores possuem implementação simples e buscam não impactar de forma onerosa o funcionamento do Erlangms.
 
-Os contadores funcionam a partir da inclusão dos métodos no código-fonte e contabilizam as informações de forma incremental, a partir do momento que os recursos do barramento de serviços são executados. A abordagem implementada e utilizada para a realização do monitoramento possibilitou o entendimento do funcionamento do barramento de serviços, e permitiu um acompanhamento completo, visto que soluções utilizadas pelo \acrshort{CPD}, acompanham o funcionamento do sistema operacional em que o barramento de serviços esta instalado ou o acompanhamento das informações de erros e regras de negócio de serviços e aplicações.      
+Os contadores funcionam a partir da inclusão dos métodos no código-fonte e contabilizam as informações de forma incremental, a partir do momento que os recursos do barramento de serviços são executados. A abordagem utilizada pelo Ems-Monitor possibilitou o entendimento do funcionamento do barramento de serviços, e permitiu um acompanhamento completo, visto que soluções utilizadas pelo \acrshort{CPD}, acompanham o funcionamento do sistema operacional em que o Erlangms esta instalado ou o acompanhamento das informações de erros e regras de negócio de serviços e aplicações.      
 
 \subsubsection{Coletar e Armazenar os Dados oriundos da Instrumentação}
-O segundo passo foi implantar a funcionalidade que possibilitasse coletar e armazenar as informações geradas durante a execução do barramento do serviços. Para a realização da coleta foi necessária a inclusão de funcionalidades no código-fonte do barramento de serviços, essas funcionalidades funcionam de forma incremental a partir do funcionamento do barramento de serviços, a cada instrução executada um valor numérico é adicionado à informação de monitoramento. 
+O segundo passo foi implantar a funcionalidade que possibilitasse coletar e armazenar as informações geradas durante a execução do barramento do serviços. Para a realização da coleta foi necessária a inclusão de funcionalidades no código-fonte do Erlangms, essas funcionalidades funcionam de forma incremental a partir do funcionamento do barramento de serviços, a cada instrução executada um valor numérico é adicionado à informação de monitoramento. 
 
-As informações coletadas são armazenadas e gerenciadas pelo agente de monitoramento que é componente responsável por gerenciar a informação referente ao monitoramento. O Agente de monitoramento possui algumas funções exclusivas, uma dessas funções é preparar a informação para a transmissão, vale lembrar que armazenar esses dados garante a integridade da informação do monitoramento.
+As informações coletadas são armazenadas e gerenciadas pelo Ems-Monitor, que é responsável por gerenciar a informação referente ao monitoramento. O Ems-Monitor possui algumas funções exclusivas, uma dessas funções é preparar a informação para a transmissão, vale lembrar que armazenar esses dados garante a integridade da informação do monitoramento.
 
 \subsubsection{Transmitir os Dados para o a realização do Monitoramento}
-Por fim, um outro passo é a transmissão dos dados de monitoramento, a transmissão dos dados é realizada após a coleta e armazenamento, o agente de monitoramento tem como responsabilidade transmitir as informações de monitoramento. Nesse trabalho a transmissão dos dados é encaminhada à uma ferramenta de monitoramento onde é possível visualizar graficamente as informações ou a emissão de notificação caso haja alguma definição para a realização do monitoramento.
+Por fim, um outro passo é a transmissão dos dados de monitoramento, a transmissão dos dados é realizada após a coleta e armazenamento, o Ems-Monitor tem como responsabilidade transmitir as informações do monitoramento. Nesse trabalho a transmissão dos dados é encaminhada à uma ferramenta de monitoramento onde é possível visualizar graficamente as informações ou a emissão de notificação caso haja alguma definição para a realização do monitoramento.
 
 Para transmitir os dados de monitoramento foi utilizada uma abordagem que permitiu a realização da transmissão de forma padronizada por meio de um protocolo de comunicação. A utilização de um protocolo possibilitou a realização da transmissão dos dados de monitoramento, assim como a integração com ferramentas de monitoramento que utilizam o protocolo \acrshort{SNMP} como meio de comunicação.  
 
 \vspace{10mm}
 \noindent
-A partir a definição da estrutura de monitoramento foi realizada a geração de dados, a coleta, o armazenamento e a transmissão dos dados para monitorar os recursos do barramento. O \acrshort{CPD} possui e utiliza abordagens de monitoramento para os sistemas e ativos de rede da \acrshort{UnB}. As aplicações e ativos de rede já são monitorados em um plataforma de monitoramento mantida e gerida pelo \acrshort{CPD}, nesse trabalho foi implementada e implantada uma solução que possibilitasse a realização de integração por meio de um protocolo de comunicação para o monitoramento dos serviços, sistemas e ativos de rede na mesma plataforma mantida pelo \acrshort{CPD}, e que permitisse apresentar o funcionamento dessas aplicações ou em casos eventuais notificar sobre possíveis falhas ou problemas. 
+A partir a definição da estrutura de monitoramento foi realizada a geração de dados, a coleta, o armazenamento e a transmissão dos dados para monitorar os recursos do barramento. O \acrshort{CPD} possui e utiliza abordagens de monitoramento para os sistemas e ativos de rede da \acrshort{UnB}. As aplicações e ativos de rede já são monitorados em um plataforma de monitoramento mantida e gerida pelo \acrshort{CPD}, nesse trabalho Ems-Monitor foi utilizado como solução para a realização da integração por meio de um protocolo de comunicação para o monitoramento dos serviços, sistemas e ativos de rede na mesma plataforma mantida pelo \acrshort{CPD}, e que permitisse apresentar o funcionamento dessas aplicações ou em casos eventuais notificar sobre possíveis falhas ou problemas. 
 
 Diante desse cenário optou-se por definir um meio de comunicação onde a ferramenta de monitoramento, mantida e gerenciada pelo \acrshort{CPD} da \acrshort{UnB} pudesse receber as informações para a realização do monitoramento do barramento de serviços, por meio de um protocolo, neste trabalho o protocolo utilizado para a realização da comunicação e permitir a integração das ferramentas foi o protocolo \acrshort{SNMP}. 
 
@@ -177,7 +177,7 @@ counter(Name, Inc)->mnesia:dirty_update_counter(counter, Name, Inc).
 
 
 
-A partir da criação dos contadores, o incremento e o decremento de seus valores é possível realização a criação das métricas. A criação das métricas é feita com utilização da aplicação Exometer, onde é possível criar métricas, definir o tipo de valor da métrica, atualizar o valor da métrica, excluir as métricas criadas, recuperar as métricas criadas e reportar métricas, no caso do \textit{report} este será feito por meio do módulo \acrshort{SNMP}. A métricas criadas na aplicação podem ser facilmente manipuladas e reportadas, graças aos métodos criados com objetivos específicos, os principais métodos utilizados nesso projeto são:
+A partir da criação dos contadores, o incremento e o decremento de seus valores é possível realização a criação das métricas. A criação das métricas é feita com utilização da aplicação Exometer, onde é possível criar métricas, definir o tipo de valor da métrica, atualizar o valor da métrica, excluir as métricas criadas, recuperar as métricas criadas e reportar métricas, no caso do \textit{report} este será feito por meio do módulo \acrshort{SNMP}. A métricas criadas na aplicação podem ser facilmente manipuladas e reportadas, graças aos métodos criados com objetivos específicos, os principais métodos utilizados nesse projeto são:
 \begin{itemize}
     \item Criar métricas
     \item Excluir métricas
@@ -186,7 +186,7 @@ A partir da criação dos contadores, o incremento e o decremento de seus valore
     \item Criar \textit{report} de uma métrica em SNMP
 \end{itemize}
 
-A implementação desses métodos poderão ser visualizadas na figura \ref{fun:fig:metodosExometer}, a utilização desses métodos é bem simples e permite a realização da instrumentação de maneira fácil, o que proporciona exequibilidade na personalização das informações a serem enviadas para o monitoramento, sem comprometer a eficiência do funcionamento das aplicações. 
+A implementação desses métodos poderão ser visualizados na figura \ref{fun:fig:metodosExometer}, a utilização desses métodos é bem simples e permite a realização da instrumentação de maneira fácil, o que proporciona exequibilidade na personalização das informações a serem enviadas para o monitoramento, sem comprometer a eficiência do funcionamento das aplicações. 
 
 \begin{figure}[H]
     \begin{minted}
@@ -219,12 +219,9 @@ A preocupação com  o desempenho foi minimizada após a conclusão  da implemen
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\subsection{Execução do Ems-Monitor}
 
-
-
-\subsection{Execução do Monitoramento}
-
-A execução do monitoramento é inciada com a integração das aplicações, ou seja quando o barramento de serviços está em funcionamento, o agente de monitoramento está ativo, assim como a ferramenta de monitoramento está ligada e configurada em modo passivo para receber as informações que são transmitidas de modo a permitir a realização do monitoramento. Para representar a execução do monitoramento foi criado um \textit{design} que pode ser visualizado na figura \ref{fun:fig:arqtProjeto}. 
+A execução do Ems-Monitor é inciada com a integração das aplicações, ou seja quando o barramento de serviços está em funcionamento, o agente de monitoramento está ativo, assim como a ferramenta de monitoramento está ligada e configurada em modo passivo para receber as informações que são transmitidas de modo a permitir a realização do monitoramento. Para representar a execução do monitoramento foi criado um \textit{design} que pode ser visualizado na figura \ref{fun:fig:arqtProjeto}. 
 
 \begin{figure}[H]
 	\begin{center}
@@ -237,19 +234,16 @@ A execução do monitoramento é inciada com a integração das aplicações, ou
 
 O monitoramento é realizado por meio de dados gerados por serviços provenientes do barramento de serviços, esse dados possuem identificação e valores incrementais de contagem. 
 
-Em seu funcionamento o barramento de serviços pode incrementar ou decrementar informações de contagem dependendo do serviço utilizado, normalmente o valor é incrementado, quando o valor a ser monitorado é coletado, o mesmo é enviado ao agente de monitoramento, o agente de monitoramento tem a responsabilidade de realizar o envio dessa informação, realizando a comunicação com a ferramenta de monitoramento por meio do protocolo \acrshort{SNMP}. 
+Em seu funcionamento o Erlangms pode incrementar ou decrementar informações de contagem dependendo do serviço utilizado, normalmente o valor é incrementado, quando o valor a ser monitorado é coletado, o mesmo é enviado ao agente de monitoramento, o agente de monitoramento tem a responsabilidade de realizar o envio dessa informação, realizando a comunicação com a ferramenta de monitoramento por meio do protocolo \acrshort{SNMP}. 
 
 A informação transmitida poderá ser visualizada de modo personalizado e configurado na ferramenta de monitoramento, que dependendo da configuração poderá apresentar itens de serviços cadastrados com os status, \textit{"Ok"} \ para serviços que estejam funcionado normalmente, \textit{"Warning"} \  para serviços que estejam apresentando algo incomum em seu funcionamento e \textit{"Critical"} \ para serviços que estejam apresentando anormalidade ou realmente estejam indisponíveis.	 
-
-
-
 
 
 \subsection{Execução do Agente de Monitoramento}
 
 Para a realização da integração do barramento de serviços e a ferramenta de monitoramento por meio do protocolo \acrshort{SNMP} é utilizado um agente de monitoramento que gerencia a comunicação e transmissão dos dados que são monitorados. 
 
-O projeto dispõem  da utilização de um agente para a coleta e transmissão desses dados, o agente é originário da aplicação Exometer que é um pacote que permite a instrumentação de aplicações desenvolvidas na linguagem de codificação Erlang, possibilitando que alguns dados do sistema sejam exportados para um grande e variado número de ferramentas de monitoramento disponíveis no mercado\cite{exometer_core}, nesse projeto diante de um dos itens do objetivo específico descrito na seção \ref{objetivos} optou-se por utilizar o modulo que permite e realizar a transmissão dos dados por meio do protocolo \acrshort{SNMP}. 
+O Ems-Monitor dispõem da utilização de um agente para a coleta e transmissão desses dados, o agente é originário da aplicação Exometer que é um pacote que permite a instrumentação de aplicações desenvolvidas na linguagem de codificação Erlang, possibilitando que alguns dados do sistema sejam exportados para um grande e variado número de ferramentas de monitoramento disponíveis no mercado\cite{exometer_core}, nesse projeto diante de um dos itens do objetivo específico descrito na seção \ref{objetivos} optou-se por utilizar o modulo que permite e realizar a transmissão dos dados por meio do protocolo \acrshort{SNMP}. 
 
 O Exometer cumpre os requisitos definidos na \acrshort{RFC} 1157 que descreve sobre os procedimentos arquiteturais de implementação e implantação do protocolo \acrshort{SNMP}. 
 
@@ -320,7 +314,7 @@ END
 \section{Funcionamento do Protocolo SNMP}
 \label{integracao_snmp}
 
-O \acrshort{SNMP} é o protocolo utilizado para o monitoramento de dispositivos conectados em rede. O \acrshort{CPD} da \acrshort{UnB} para o monitoramento dos ativos de rede utiliza-o por meio de ferramentas que recebem informações desse protocolo, no entanto as ferramentas e informações fornecidas para o monitoramento servem apenas para o controle da infraestrutura de rede e servidores de aplicação, não gerenciando por exemplo, o funcionamento dos sistemas, serviços e também pode se dizer a ausência de verificação da saúde das aplicações. Este trabalho implementa e implanta soluções capazes de fornecer e subsidiar recursos que possibilitem o monitoramento e a integração com a ferramenta de monitoramento do \acrshort{CPD} da \acrshort{UnB} que vem durante alguns anos adotando o Nagios\textsuperscript{\textregistered} com a ferramenta de monitoramento dos seus ativos de rede, o \acrshort{SNMP} tem como característica a singularidade na comunicação o que possibilita a escolha de outras ferramentas, serviços ou aplicações que conversem em \acrshort{SNMP}. 
+O \acrshort{SNMP} é o protocolo utilizado para o monitoramento de dispositivos conectados em rede. O \acrshort{CPD} da \acrshort{UnB} para o monitoramento dos ativos de rede utiliza-o por meio de ferramentas que recebem informações desse protocolo, no entanto as ferramentas e informações fornecidas para o monitoramento servem apenas para o controle da infraestrutura de rede e servidores de aplicação, não gerenciando por exemplo, o funcionamento dos sistemas, serviços e também pode se dizer a ausência de verificação da saúde das aplicações. Este trabalho implementa e implanta soluções capazes de fornecer e subsidiar recursos que possibilitem a monitoração e a integração com a ferramenta de monitoramento do \acrshort{CPD} da \acrshort{UnB} que vem durante alguns anos adotando o Nagios\textsuperscript{\textregistered} como a ferramenta de monitoramento dos seus ativos de rede, o \acrshort{SNMP} tem como característica a singularidade na comunicação o que possibilita a escolha de outras ferramentas, serviços ou aplicações que conversem em \acrshort{SNMP}. 
 
 O funcionamento do monitoramento por meio do protocolo \acrshort{SNMP} neste trabalho é realizado pelo envio de \textit{TRAPS} a partir da coleta de informações geradas pelo barramento de serviços e enviadas pelo agente, para que o agente funcione é necessária a configuração de um gerente, o gerente funciona como a representação do cliente monitorado e o agente funciona como responsável por enviar as informações desse cliente, na figura \ref{fun:fig:agenteConfig} é apresentada a configuração do agente na aplicação e na figura \ref{fun:fig:gerenteConfig} é exposta a configuração do gerente. 
 
@@ -371,7 +365,7 @@ Com a instalação e configuração realizada do \acrshort{SNMPTT} e SNMPTRAPD f
 
 Com a elaboração da integração entre o barramento de serviços e o Nagios\textsuperscript{\textregistered} foi feita a pesquisa na literatura especifica relacionada ao tema métricas de monitoramento para auxiliar a definição do que dever ser monitorado. Após a realização da pesquisa e durante a execução da configuração da ferramenta de monitoramento percebeu-se a necessidade de seguir a estrutura de configuração determinada na ferramenta de monitoramento, ao assumir essa estrutura foi possível detectar que o monitoramento deveria ser executado de um novo modo, implicando na mudança da estratégia de definição para a execução do monitoramento dos recursos do barramento de serviços. 
 
-Como o monitoramento é realizado em modo passivo é preciso informar na configuração da ferramenta de monitoramento quais as informações serão recebidas, ou seja, mesmo o agente \acrshort{SNMP} do barramento de serviços criando os \acrshort{OID}s dinamicamente, é necessário que estes \acrshort{OID}s estejam também registrados na ferramenta de monitoramento, nesse momento  não foi possível a realização da implementação de uma solução para automatizar a configuração dinâmica dos \acrshort{OID}s na ferramenta de monitoramento, mas em um outro momento oportuno essa automatização poderá ser implementada.
+Como o monitoramento executado pelo Ems-Monitor é realizado em modo passivo é preciso informar na configuração da ferramenta de monitoramento quais as informações serão recebidas, ou seja, mesmo o agente \acrshort{SNMP} do barramento de serviços criando os \acrshort{OID}s dinamicamente, é necessário que estes \acrshort{OID}s estejam também registrados na ferramenta de monitoramento, nesse momento  não foi possível a realização da implementação de uma solução para automatizar a configuração dinâmica dos \acrshort{OID}s na ferramenta de monitoramento, mas em um outro momento oportuno essa automatização poderá ser implementada.
 
 Com a restrição imposta pela ferramenta de monitoramento, foi necessário a realização de um estudo no código fonte do barramento de serviços Erlangms, afim de obter informações sobre o que monitorar, a análise do barramento de serviços foi feita com alguns passos que permitiram o entendimento do funcionamento dos recursos do barramento de serviços, assim como a realização do mapeamento dos principais recursos, módulos e funções. O primeiro passo realizado foi a elaboração do \textit{design} dos recursos do barramento de serviços, este \textit{design} pode ser visualizado na figura \ref{fun:fig:ResourcesEMS}. No segundo passo foi possível identificar e escrever sobre cada recurso do barramento de serviços, a descrição dos recursos poderão ser visualizadas a seguir, são eles:
 
@@ -441,4 +435,4 @@ O funcionamento do \textit{Dispatcher} é essencial para o barramento de serviç
 \section{Síntese do Capítulo}
 \label{sintese4}
 
-Este capítulo apresentou o funcionamento do Monitoramento dos recursos do barramento de serviços, demonstrando a execução do monitoramento por meio da integração entre o barramento de serviços e a ferramenta de monitoramento com a utilização protocolo de monitoramento \acrshort{SNMP}, assim como a execução do agente \acrshort{SNMP} e o funcionamento do protocolo \acrshort{SNMP} no projeto. Também foram apresentadas, definidas e escolhidas a métricas mais adequadas ao funcionamento das ferramentas e a integração das aplicações para a realização do monitoramento, por fim tem-se a exposição da solução da a coleta de dados para o monitoramento por meio da instrumentação sem comprometer o desempenho durante funcionamento das aplicações e realização do monitoramento. 
+Este capítulo apresentou o funcionamento do Ems-Monitor, demonstrando a execução do monitoramento por meio da integração entre o barramento de serviços e a ferramenta de monitoramento com a utilização protocolo de monitoramento \acrshort{SNMP}, assim como a execução do agente \acrshort{SNMP} e o funcionamento do protocolo \acrshort{SNMP} no projeto. Também foram apresentadas, definidas e escolhidas a métricas mais adequadas ao funcionamento das ferramentas e a integração das aplicações para a realização do monitoramento, por fim tem-se a exposição da solução da a coleta de dados para o monitoramento por meio da instrumentação sem comprometer o desempenho durante funcionamento das aplicações e realização do monitoramento. 
