@@ -60,7 +60,7 @@ As informações armazenadas originárias do arquivo de \textit{Log} são transm
 \begin{figure}[H]
 	\begin{center}
 	\includegraphics[scale = 0.70]{img/dashboard.jpg}
-		\caption{\textit{Dashborad} de monitoramento \cite{filgueirasmonitoramento}.}
+		\caption{\textit{Dashboard} de monitoramento \cite{filgueirasmonitoramento}.}
 		\label{fun:fig:dashboardS}
 	\end{center}
 \end{figure}
@@ -73,7 +73,7 @@ Esses serviços não dispõem de elementos gráficos, fornecem informações a p
 \begin{figure}[H]
 	\begin{center}
 	\includegraphics[scale = 0.90]{img/monitoramentoEMS.jpg}
-		\caption{Serviço de consulta de utilização dos recursos de memória do Erlangms.}
+		\caption{Serviço de consulta da utilização dos recursos de memória do Erlangms.}
 		\label{fun:fig:memoriaEMS}
 	\end{center}
 \end{figure}
@@ -171,7 +171,7 @@ dec_counter(Name)->mnesia:dirty_update_counter(counter, Name, -1).
 current_counter(Name)->mnesia:dirty_update_counter(counter, Name, 0).
 counter(Name, Inc)->mnesia:dirty_update_counter(counter, Name, Inc).
     \end{minted}
-    \caption{Funções dos contadores para a Instrumentação, no Erlangms.}
+    \caption{Funções dos contadores para instrumentação no Erlangms.}
     \label{fun:fig:funcaoCounters}
 \end{figure}
 
