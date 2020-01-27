@@ -2,25 +2,23 @@
 
 O \acrshort{CPD} vem trabalhando nos últimos anos na modernização dos \textit{softwares} por ele gerenciados, desde os sistemas que eram hospedados nos \textit{mainframes}, que precisaram ser migrados para outras plataformas por causa da virada do milênio (\textit{bug} do milênio) até os sistemas desenvolvidos em tecnologias mais atuais. 
 
-A partir da experiencia adquirida ao longo dos anos, com erros e acertos em definições arquiteturais, finalmente por meio de pesquisas e fundamentação teórica, decidiu-se pela implementação e utilização de uma arquitetura \acrshort{SOA} que é leve, flexível, coesa e com baixo acoplamento, possui seus desafios e \textit{tradeoffs}, mas que devido a sua padronização é muito bem aceita no mercado, instituições e empresas de desenvolvimento de \textit{software} e proporcionando um desenvolvimento mais ágil dos serviços, por parte dos desenvolvedores. No \acrshort{CPD} proporcionou o desenvolvimento de vários serviços e sistemas consumidores desses serviços, impactando em uma maior utilização e solicitação de implementação de novos serviços.      
+A partir da experiencia adquirida ao longo dos anos, com erros e acertos em definições arquiteturais, finalmente por meio de pesquisas e fundamentação teórica, decidiu-se pela implementação e utilização de uma arquitetura \acrshort{SOA} que é leve, flexível, coesa e com baixo acoplamento, que possui seus desafios e \textit{tradeoffs}, mas que devido à sua padronização é muito bem aceita no mercado, instituições e empresas de desenvolvimento de \textit{software} e proporcionando um desenvolvimento mais ágil dos serviços, por parte dos desenvolvedores. No \acrshort{CPD} proporcionou o desenvolvimento de vários serviços e sistemas consumidores desses serviços, impactando em uma maior utilização e solicitação de implementação de novos serviços.      
 
-Este trabalho proporcionou o estudo, análise e pesquisa de um conjunto de soluções tecnológicas que possibilitaram implementação e implantação de ferramentas que auxiliassem na realização do monitoramento dos recursos do barramento de serviços por meio da integração com uma ferramenta de monitoramento via o protocolo \acrshort{SNMP}, seguindo  abordagens citadas no capítulo \ref{fundamentacao_teorica}, que foi possível após a realização do mapeamento sistemático apresentado no capítulo \ref{mapeamento_sistematico} subsidiando a utilização da solução para a realização do monitoramento.  
+Este trabalho proporcionou o estudo, análise e pesquisa de um conjunto de soluções tecnológicas que possibilitaram a prática de ferramentas que auxiliassem na realização do monitoramento dos recursos do barramento de serviços por meio da integração com uma ferramenta de monitoramento via o protocolo \acrshort{SNMP}, seguindo  abordagens citadas no capítulo \ref{fundamentacao_teorica}, que foi possível após a realização do mapeamento sistemático apresentado no capítulo \ref{mapeamento_sistematico} subsidiando a utilização da solução para realização do monitoramento.  
 
-A realização deste trabalho facilitou a utilização de novas definições de métricas para a execução do monitoramento, visto que o modo para gerar as informações oriundas da instrumentação do barramento de serviços necessitavam de adequações para o recebimento ou interceptação das informações pela ferramenta de monitoramento. Essa solução foi desenvolvida para utilização inicialmente no \acrshort{CPD} da \acrshort{UnB}, mas poderá ser utilizado em outras instituições que fizerem o uso do Erlangms. 
+A realização deste trabalho facilitou a utilização de novas definições de métricas para execução do monitoramento, visto que o modo para gerar as informações oriundas da instrumentação do barramento de serviços necessitavam de adequações para recebimento ou interceptação das informações pela ferramenta de monitoramento. Essa solução foi desenvolvida para utilização inicialmente no \acrshort{CPD} da \acrshort{UnB}, mas poderá ser utilizado em outras instituições que fizerem o uso do Erlangms. 
 
-O trabalho tem a intenção de suprir uma necessidade em relação a gestão, acompanhamento e monitoramento dos serviços disponibilizados pelo barramento de serviços, que nos dias atuais já englobam um grande conjunto de serviços (\textit{web services}) que compõem os sistemas estruturantes da \acrshort{UnB}.
+O trabalho tem a intenção de suprir uma necessidade em relação à gestão, acompanhamento e monitoramento dos serviços disponibilizados pelo barramento de serviços, que nos dias atuais já englobam um grande conjunto de serviços (\textit{web services}) que compõem os sistemas estruturantes da \acrshort{UnB}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Contribuições}
 
-A intenção deste trabalho é contribuir com a apoio as soluções de monitoramento executados pelo \acrshort{CPD} da \acrshort{UnB} e elenca com essencial a realização da integração das aplicações Erlangms, Exometer e Nagios\textsuperscript{\textregistered} para a realização do monitoramento por meio do protocolo \acrshort{SNMP}, com a implementação de um módulo capaz de coletar, armazenar e transmitir informações para a execução do monitoramento.
+A intenção deste trabalho é contribuir com o apoio às soluções de monitoramento executados pelo \acrshort{CPD} da \acrshort{UnB} e elenca essencialmente a realização da integração das aplicações Erlangms, Exometer e Nagios\textsuperscript{\textregistered} para realização do monitoramento por meio do protocolo \acrshort{SNMP}, com implementação de um módulo capaz de coletar, armazenar e transmitir informações para execução do monitoramento.
 
-A realização do mapeamento sistemático foi mais um ponto identificado como contribuição para a orientação da seleção e utilização das ferramentas, principais soluções e desafios para a realização do monitoramento dos recursos do barramento de serviços por meio do protocolo \acrshort{SNMP}.
+A realização do mapeamento sistemático foi mais um ponto identificado como contribuição para orientação da seleção e utilização das ferramentas, as principais soluções e desafios para realização do monitoramento dos recursos do Erlangms por meio do protocolo \acrshort{SNMP}.
 
-Por fim, a implementação do módulo \acrshort{SNMP} no barramento de serviços Erlangms, proporciona a continuidade na evolução do trabalho \cite{Agilar} e possibilita o barramento de serviços utilizar qualquer ferramenta de monitoramento que funcione e utilizar como meio de comunicação o protocolo \acrshort{SNMP}.
-
-
+Por fim, a implementação do módulo \acrshort{SNMP} no Erlangms, proporciona a continuidade na evolução do trabalho \cite{Agilar} e possibilita o barramento de serviços utilizar qualquer ferramenta de monitoramento que funcione, e utilizar como meio de comunicação o protocolo \acrshort{SNMP}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -29,9 +27,9 @@ Por fim, a implementação do módulo \acrshort{SNMP} no barramento de serviços
 A partir da execução desse trabalho e visando proporcionar a continuidade, pretende-se:
 
 \begin{enumerate}
-    \item Implementar uma solução de possibilite o mapeamento do serviço monitorados por meio de grafos que facilitem na identificação de falhas ou indisponibilidade de serviço;
-    \item Realizar Testes de desempenho na solução, a fim de avaliar o funcionamento das aplicações por meio da integração realizada via protocolo \acrshort{SNMP};
-    \item Implementar uma solução que possibilite por meio o monitoramento identificar a indisponibilidade e que após identificação esse serviço possa ser restabelecido automaticamente;
+    \item Implementar uma solução que possibilite o mapeamento dos serviços monitorados por meio de grafos que facilitem na identificação de falhas ou indisponibilidade de serviços;
+    \item Realizar testes de desempenho na solução, a fim de avaliar o funcionamento das aplicações por meio da integração realizada via protocolo \acrshort{SNMP};
+    \item Implementar uma solução que possibilite através do monitoramento identificar a indisponibilidade, e após a identificação esse serviço possa ser restabelecido automaticamente;
     \item Definir um novo grupo de métricas que possibilite realizar o estudo semântico a fim de entender o comportamento do barramento de serviços durante o funcionamento, visando melhorar, ajustar e acompanhar os serviços disponibilizados e executados pelo Erlangms.
 \end{enumerate}
 
