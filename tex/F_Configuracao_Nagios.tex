@@ -1,0 +1,80 @@
+\label{objectNagiosServices}
+
+\begin{minted}
+    [frame=lines,framesep=2mm,baselinestretch=0.6]{java}
+define service{
+        use                             local-service,graphed-service
+        host_name                       localhost
+        service_description             HTTP
+        check_command                   check_http
+        notifications_enabled           0
+        }
+
+define service{
+        name                    emsmetricerror
+        use                     generic-service
+        register                0
+        service_description     LOG-ERROR
+        is_volatile             1
+        check_command           check-host-alive
+        max_check_attempts      1
+        normal_check_interval   1
+        retry_check_interval    1
+        passive_checks_enabled  1
+        check_period            none
+        notification_interval   31536000
+        contact_groups          admins
+}
+
+define service{
+   host_name               emsbus
+   use                     emsmetricerror
+   contact_groups          admins
+}
+
+define service{
+        name                    emsmetricinfo
+        use                     generic-service
+        register                0
+        service_description     LOG-INFO
+        is_volatile             1
+        check_command           check-host-alive
+        max_check_attempts      1
+        normal_check_interval   1
+        retry_check_interval    1
+        passive_checks_enabled  1
+        check_period            none
+        notification_interval   31536000
+        contact_groups          admins
+}
+
+define service{
+   host_name               emsbus
+   use                     emsmetricinfo
+   contact_groups          admins
+}
+
+define service{
+        name                    emsmetricwarn
+        use                     generic-service
+        register                0
+        service_description     LOG-WARN
+        is_volatile             1
+        check_command           check-host-alive
+        max_check_attempts      1
+        normal_check_interval   1
+        retry_check_interval    1
+        passive_checks_enabled  1
+        check_period            none
+        notification_interval   31536000
+        contact_groups          admins
+}
+
+define service{
+   host_name               emsbus
+   use                     emsmetricwarn
+   contact_groups          admins
+}
+
+\end{minted}
+    

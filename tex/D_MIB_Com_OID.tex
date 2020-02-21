@@ -1,0 +1,144 @@
+\label{mib_com_oid}
+
+\begin{minted}
+    [frame=lines,framesep=2mm,baselinestretch=1.0]{python}
+   EXOMETER-METRICS-MIB DEFINITIONS ::= BEGIN
+
+IMPORTS
+    MODULE-IDENTITY, OBJECT-TYPE, NOTIFICATION-TYPE,
+    Counter32, Counter64, Gauge32, Integer32, 
+    snmpModules, experimental FROM SNMPv2-SMI
+    MODULE-COMPLIANCE, OBJECT-GROUP, NOTIFICATION-GROUP 
+    FROM SNMPv2-CONF;
+
+exometerMetricsMIB MODULE-IDENTITY
+	LAST-UPDATED "201401190525Z"
+	ORGANIZATION "Feuerlabs"
+	CONTACT-INFO "TODO" 
+	DESCRIPTION 
+	"This MIB module is used for exposing dynamic exometer metrics."
+	REVISION  "201401190525Z"
+	DESCRIPTION 
+		"The initial version"
+	::= { snmpModules 1 }
+
+exometerMetrics OBJECT IDENTIFIER ::= { experimental 7 }
+
+-- CONTENT START
+
+-- METRIC datapointEmsLoggerWriteErrorValue START
+datapointEmsLoggerWriteErrorValue OBJECT-TYPE
+    SYNTAX Counter32
+    MAX-ACCESS read-only
+    STATUS current
+    DESCRIPTION ""
+    ::= { exometerMetrics 1 }
+-- METRIC datapointEmsLoggerWriteErrorValue END
+
+-- METRIC datapointEmsLoggerWriteErrorMsSinceReset START
+datapointEmsLoggerWriteErrorMsSinceReset OBJECT-TYPE
+    SYNTAX Counter32
+    MAX-ACCESS read-only
+    STATUS current
+    DESCRIPTION ""
+    ::= { exometerMetrics 3 }
+-- METRIC datapointEmsLoggerWriteErrorMsSinceReset END
+
+-- METRIC datapointEmsLoggerWriteInfoValue START
+datapointEmsLoggerWriteInfoValue OBJECT-TYPE
+    SYNTAX Counter32
+    MAX-ACCESS read-only
+    STATUS current
+    DESCRIPTION ""
+    ::= { exometerMetrics 4 }
+-- METRIC datapointEmsLoggerWriteInfoValue END
+
+-- METRIC datapointEmsLoggerWriteInfoMsSinceReset START
+datapointEmsLoggerWriteInfoMsSinceReset OBJECT-TYPE
+    SYNTAX Counter32
+    MAX-ACCESS read-only
+    STATUS current
+    DESCRIPTION ""
+    ::= { exometerMetrics 5 }
+-- METRIC datapointEmsLoggerWriteInfoMsSinceReset END
+
+-- METRIC datapointEmsLoggerWriteWarnValue START
+datapointEmsLoggerWriteWarnValue OBJECT-TYPE
+    SYNTAX Counter32
+    MAX-ACCESS read-only
+    STATUS current
+    DESCRIPTION ""
+    ::= { exometerMetrics 6 }
+-- METRIC datapointEmsLoggerWriteWarnValue END
+
+-- METRIC datapointEmsLoggerWriteWarnMsSinceReset START
+datapointEmsLoggerWriteWarnMsSinceReset OBJECT-TYPE
+    SYNTAX Counter32
+    MAX-ACCESS read-only
+    STATUS current
+    DESCRIPTION ""
+    ::= { exometerMetrics 7 }
+-- METRIC datapointEmsLoggerWriteWarnMsSinceReset END
+
+-- OBJECT-GROUP allObjects START
+allObjects OBJECT-GROUP
+    OBJECTS {
+        datapointEmsLoggerWriteErrorMsSinceReset,
+        datapointEmsLoggerWriteErrorValue,
+        datapointEmsLoggerWriteInfoMsSinceReset,
+        datapointEmsLoggerWriteInfoValue,
+        datapointEmsLoggerWriteWarnMsSinceReset,
+        datapointEmsLoggerWriteWarnValue
+    }
+    STATUS current
+    DESCRIPTION ""
+    ::= { exometerMetrics 2 }
+-- OBJECT-GROUP allObjects END
+
+-- INFORM reportEmsLoggerWriteErrorValue START
+reportEmsLoggerWriteErrorValue NOTIFICATION-TYPE
+    OBJECTS {
+        datapointEmsLoggerWriteErrorValue
+    }
+    STATUS current
+    DESCRIPTION ""
+    ::= { exometerMetrics 8 }
+-- INFORM reportEmsLoggerWriteErrorValue END
+
+-- INFORM reportEmsLoggerWriteInfoValue START
+reportEmsLoggerWriteInfoValue NOTIFICATION-TYPE
+    OBJECTS {
+        datapointEmsLoggerWriteInfoValue
+    }
+    STATUS current
+    DESCRIPTION ""
+    ::= { exometerMetrics 10 }
+-- INFORM reportEmsLoggerWriteInfoValue END
+
+-- INFORM reportEmsLoggerWriteWarnValue START
+reportEmsLoggerWriteWarnValue NOTIFICATION-TYPE
+    OBJECTS {
+        datapointEmsLoggerWriteWarnValue
+    }
+    STATUS current
+    DESCRIPTION ""
+    ::= { exometerMetrics 11 }
+-- INFORM reportEmsLoggerWriteWarnValue END
+
+-- NOTIFICATION-GROUP allNotifications START
+allNotifications NOTIFICATION-GROUP
+    NOTIFICATIONS {
+        reportEmsLoggerWriteErrorValue,
+        reportEmsLoggerWriteInfoValue,
+        reportEmsLoggerWriteWarnValue
+    }
+    STATUS current
+    DESCRIPTION ""
+    ::= { exometerMetrics 9 }
+-- NOTIFICATION-GROUP allNotifications END
+
+-- CONTENT END
+
+END
+
+\end{minted}
