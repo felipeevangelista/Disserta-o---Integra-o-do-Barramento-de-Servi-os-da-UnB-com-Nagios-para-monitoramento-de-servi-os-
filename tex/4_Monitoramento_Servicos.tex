@@ -19,7 +19,7 @@ Com a definição da arquitetura do Ems-Monitor e a organização de seus compon
 
 \begin{figure}[H]
 	\begin{center}
-	\includegraphics[scale = 0.90]{img/Arquitetura_Proposta_Monitoramento.png}
+	\includegraphics[scale = 0.90]{img/Arquitetura_Proposta_para_Monitoramento.jpeg}
 		\caption{Arquitetura conceitual do Ems-Monitor.}
 		\label{fun:fig:arquitetura_conceitual_monitoramento}
 	\end{center}
@@ -55,15 +55,9 @@ No \acrshort{CPD}, o monitoramento do barramento de serviços da \acrshort{UnB} 
 
 As informações de registros do \textit{Log} geradas pelo barramentos de serviços, são coletadas e armazenadas. A abordagem utilizada para acompanhamento do funcionamento do barramento de serviços possibilitou o monitoramento, sem a necessidade de modificação no código-fonte do barramento de serviços, observado que um dos motivos pelo acompanhamento por meio do \textit{Log}, é realizar o monitoramento em tempo real sem a perda de desempenho  do barramento de serviços durante o funcionamento. 
 
-As informações armazenadas originárias do arquivo de \textit{Log} são transmitidas e suas métricas apresentadas em um \textit{dashboard}, esse \textit{dashboard} foi desenvolvido para acompanhamento do funcionamento do barramento de serviços graficamente, como por exemplo o quantitativo de erros por serviço, o \textit{dashboard} com os gráficos de apresentação pode ser visualizado na figura \ref{fun:fig:dashboardS} \cite{filgueirasmonitoramento}.
+De acordo com Filgueiras\cite{filgueirasmonitoramento}  as informações armazenadas originárias do arquivo de \textit{Log} do Erlangms, são armazenadas pelo conjunto de ferramentas ElasticStack, composto pelo Beats, Logstash e Elasticsearch. Esse conjunto possibilita pesquisar,transmitir e visualizar os dados em tempo real\cite{filgueirasmonitoramento}. Suas métricas apresentadas em um \textit{dashboard}, esse \textit{dashboard} foi desenvolvido para acompanhamento do funcionamento do barramento de serviços graficamente, como por exemplo o quantitativo de erros por serviço.
 
-\begin{figure}[H]
-	\begin{center}
-	\includegraphics[scale = 0.70]{img/dashboard.jpg}
-		\caption{\textit{Dashboard} de monitoramento \cite{filgueirasmonitoramento}.}
-		\label{fun:fig:dashboardS}
-	\end{center}
-\end{figure}
+
 
 \subsubsection{Monitoramento do Barramento de Serviços por Serviços (\textit{Web Services})}
 O barramento de serviços possui em seu código-fonte a implementação de serviços, que utilizam módulos Erlang que possibilitam o acompanhamento dos recursos computacionais em que o barramento de serviços está funcionando. 
