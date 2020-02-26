@@ -45,6 +45,19 @@ Com a finalização do processo de integração e da configuração da ferrament
     \caption{\textit{Dashboard} do Nagios\textsuperscript{\textregistered} com as métricas do registro de \textit{Log}.}
     \label{fun:fig:nagiosDashbordEmsbus}
 \end{figure}
+
+\subsubsection{Ems-Monitor}
+
+Neste trabalho, foi realizada uma análise com a ferramenta de monitoramento Observer. Pode-se observar que o Erlangms funciona sem a utilização do módulo monitoramento, com dez porcento de utilização do \textit{Scheduler}, cinquenta \textbf{MB} de utilização de Memória e com picos de quatrocentos \textbf{B} de utilização de IO. Essa verificação é realizada em tempo real, e pode ser observada na figura \ref{fun:fig:Observer_ErlangMS_sem_SNMP}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.33]{img/Observer_ErlangMS_sem_SNMP.png}
+    \caption{Análise executada em tempo real pela ferramenta Observer.}
+    \label{fun:fig:Observer_ErlangMS_sem_SNMP}
+\end{figure}
+
+
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
