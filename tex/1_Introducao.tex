@@ -2,7 +2,7 @@
 
 A implementação de sistemas, seja ela pela criação, migração ou modernização tecnológica é um plano utilizado pelas organizações para gerenciar os \textit{softwares} que automatizam seus processos \cite{Agilar}. Quando se trata de um processo de modernização, espera-se reduzir os custos financeiros de mão de obra, com a manutenção dos sistemas em execução que possuem complexidade alta, defasagem tecnológica e a falta de documentação de apoio, com a criação de novos sistemas e serviços. Algumas organizações procuram manter ativos os \textit{softwares} com essas características, com o funcionamento normal e a inclusão de módulos e serviços que possibilitam a integração e comunicação entre serviços e sistemas \cite{Agilar}.
 
-O \acrlong{CPD} da \acrlong{UnB}, órgão responsável por desenvolver, gerenciar e manter os sistemas novos e legados, trabalha na implantação de uma arquitetura \acrlong{SOA}, e a utiliza para implementação dos serviços que realizam a comunicação por meio de um barramento de serviços. No entanto, a flexibilidade que a arquitetura \acrshort{SOA} proporciona para modernização dos sistemas novos e legados da \acrshort{UnB}, dificulta o gerenciamento e o monitoramento dos serviços que são implementados \cite{Agilar}. A razão é a quantidade de serviços criados e o modelo negocial de cada sistema, sendo que em alguns casos há situações em que vários serviços e microsserviços são necessários e determinantes para um único fluxo de negócio do sistema.
+O \acrlong{CPD} da \acrlong{UnB}, órgão responsável por desenvolver, gerenciar e manter os sistemas novos e legados, trabalha na implantação de uma arquitetura \textit{\acrlong{SOA}}, e a utiliza para implementação dos serviços que realizam a comunicação por meio de um barramento de serviços. No entanto, a flexibilidade que a arquitetura \acrshort{SOA} proporciona para modernização dos sistemas novos e legados da \acrshort{UnB}, dificulta o gerenciamento e o monitoramento dos serviços que são implementados \cite{Agilar}. A razão é a quantidade de serviços criados e o modelo negocial de cada sistema, sendo que em alguns casos há situações em que vários serviços e microsserviços são necessários e determinantes para um único fluxo de negócio do sistema.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -17,7 +17,7 @@ Os sistemas e serviços mantidos pelo \acrshort{CPD}, não são monitoradas nem 
 
 A necessidade de modernizar os \textit{softwares} da \acrshort{UnB} é eminente. A implementação de serviços e microsserviços para contemplar os sistemas novos, legados e adquiridos recebem prioridades para criação. A integração dessas aplicações é construída com diversos tipos de serviços, alguns desses serviços funcionam a partir das informações de outros serviços, a indisponibilidade de um serviço pode impactar em outros serviços, ou até mesmo no sistema como um todo, dessa maneira acompanhar seu funcionamento é essencial.      
 
-É necessário, a criação de meios tecnológicos para realizar a integração das ferramentas de monitoramento utilizadas pelo \acrshort{CPD}, com o barramento de serviços por meio da utilização de um protocolo que possibilite a comunicação entre as ferramentas, contribuindo com o acompanhamento abrangente dos serviços e \textit{softwares} da \acrshort{UnB}. Pretende-se com a implantação desse protocolo integrar o monitoramento de serviços. A partir da implantação ou implementação, especificar processos e métodos que possibilite a extração das informações coletadas.
+É necessário, a criação de meios tecnológicos para realizar o monitoramento via ferramentas de monitoramento utilizadas pelo \acrshort{CPD}, com o barramento de serviços por meio de integração que possibilite a comunicação entre as ferramentas, contribuindo com o acompanhamento abrangente dos serviços e \textit{softwares} da \acrshort{UnB}. Pretende-se com a integração o monitorar serviços. A partir da implantação ou implementação, especificar processos e métodos que possibilite a extração das informações coletadas.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -25,16 +25,14 @@ A necessidade de modernizar os \textit{softwares} da \acrshort{UnB} é eminente.
 \section{Objetivos}
 \label{objetivos}
 
-O objetivo deste trabalho é propor um modelo para o monitoramento dos sistemas e serviços da \acrfull{UnB} com uma solução tecnológica que permita realizar a comunicação por meio de integração com ferramentas de monitoramento utilizadas, gerenciadas e mantidas pelo \acrfull{CPD}.
+O objetivo deste trabalho é propor um modelo para o monitoramento dos sistemas e serviços da \acrshort{UnB} com uma solução tecnológica que permita realizar a comunicação por meio de integração com ferramentas de monitoramento utilizadas, gerenciadas e mantidas pelo \acrfull{CPD}.
 
 Para alcançar este objetivo, foram determinados os seguintes objetivos específicos:
 
 \begin{itemize}
 	 
-\item Realizar um mapeamento sistemático para identificar o monitoramento
+\item Realizar uma revisão da literatura para identificar trabalhos sobre monitoramento
 de sistemas distribuídos;
-
-\item Avaliar as ferramentas de monitoramento existentes e mantidas pelo \acrshort{CPD};
 
 \item Propor uma arquitetura de integração para monitoramento dos sistemas e serviços da \acrshort{UnB};
 
@@ -47,7 +45,16 @@ de sistemas distribuídos;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Metodologia}
 
-O trabalho utiliza o mapeamento sistemático para tratar-se do monitoramento de serviços e sistemas distribuídos. Este trabalho analisa a comunicação por meio da integração de ferramentas de monitoramento de serviços e sistemas distribuídos para realizar o monitoramento, para organizar e formar base de conhecimento sobre monitoramento. Por ser uma das referências mais citadas em trabalhos sobre mapeamento sistemático, foi utilizado o trabalho Kitchenham e Charles[3].
+A metodologia de pesquisa utilizada neste trabalho será a revisão da literatura em conjunto
+com um estudo de caso exploratório. A revisão da literatura objetiva reconhecer a unidade e a diversidade interpretativa existente no eixo temático em que se insere o problema
+em estudo, para ampliar, ramificar a análise interpretativa, bem como para compor
+as abstrações e sínteses que qualquer pesquisa requer colaborando para a coerência nas
+argumentações do pesquisador \cite{petticrew2008systematic}. Ao final da revisão da literatura, espera-se obter um conjunto de indicadores que serão utilizados na aplicação do modelo proposto.
+
+O estudo de caso exploratório tem como finalidade proporcionar mais informações
+sobre o assunto a ser investigado, possibilitando sua definição e seu delineamento, isto é,
+facilitar a delimitação do tema da pesquisa; orientar a fixação dos objetivos e a formulação
+das hipóteses ou descobrir um novo tipo de enfoque para o assunto \cite{de2018mapeamento}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
