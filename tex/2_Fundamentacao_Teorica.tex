@@ -103,8 +103,8 @@ Apesar dos relatos citados no parágrafo anterior sobre as expectativas não alc
 
 \begin{figure}[H]
 	\begin{center}
-	\includegraphics[scale = 0.70]{img/gosip.jpg}
-		\caption{Representação de propagação epidêmica \autor{Felipe Evangelista}{dos Santos}  }
+	\includegraphics[scale = 0.70]{img/gosip_referecia.jpg}
+		\caption{Representação de propagação epidêmica \cite{manoj2014comparative}}
 		\label{fun:fig:gosip}
 	\end{center}
 \end{figure}
@@ -233,7 +233,7 @@ Em uma arquitetura de monitoramento de serviços ou ativos de rede, que utilize 
 	\end{center}
 \end{figure}
 
- Segundo Kazaz \textit{et al.}  \cite{6240708} um agente de monitoramento pode ser definido como um componente ou aplicação de gerenciamento de rede ou serviço no dispositivo a ser gerenciado e possuem duas operações básicas \textit{GET} e \textit{SET}, o agente em execução fica responsável por exportar os dados de gerenciamento dos sistemas, serviços ou ativos de rede gerenciados com variáveis organizadas de forma hierárquica. Essa hierarquia é contemplada por metadados que são representados por \acrshort{MIBs}, que são um conjunto de objetos gerenciados, que procuram abranger todas informações necessárias para gerência de rede. Neste trabalho o agente de monitoramento utilizado é o Exometer que funciona como agente de monitoramento responsável pela coleta das informações geradas pelo Barramento de serviços Erlangms, e a transmissão dessas informações ao Nagios\textsuperscript{\textregistered} por meio do protocolo \acrshort{SNMP}. 
+ Segundo Kazaz \textit{et al.} \cite{6240708}, um agente de monitoramento pode ser definido como um componente ou aplicação de gerenciamento de rede ou serviço no dispositivo a ser gerenciado e possuem duas operações básicas \textit{GET} e \textit{SET}, o agente em execução fica responsável por exportar os dados de gerenciamento dos sistemas, serviços ou ativos de rede gerenciados com variáveis organizadas de forma hierárquica. Essa hierarquia é contemplada por metadados que são representados por \acrshort{MIBs}, que são um conjunto de objetos gerenciados, que procuram abranger todas informações necessárias para gerência de rede. Neste trabalho o agente de monitoramento utilizado é o Exometer que funciona como agente de monitoramento responsável pela coleta das informações geradas pelo Barramento de serviços Erlangms, e a transmissão dessas informações ao Nagios\textsuperscript{\textregistered} por meio do protocolo \acrshort{SNMP}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -252,12 +252,12 @@ O Exometer é um \textit{framework} capaz de executar a instrumentação, e perm
 
 \subsection{Instrumentação}
 \label{instrumentacao}
-Segundo Ribeiro \cite{ribeiro1999instrumentaccao} a instrumentação é uma das técnicas que utiliza instrumentos para a medição e monitoração. A instrumentação é muito utilizada no ambiente industrial, principalmente no que tange a medição dos equipamentos de produção que necessitam de acompanhamento para verificação de pressão, temperatura, vazão e nível. Os instrumentos podem estar associados e
+Segundo Ribeiro \cite{ribeiro1999instrumentaccao}, a instrumentação é uma das técnicas que utiliza instrumentos para a medição e monitoração. A instrumentação é muito utilizada no ambiente industrial, principalmente no que tange a medição dos equipamentos de produção que necessitam de acompanhamento para verificação de pressão, temperatura, vazão e nível. Os instrumentos podem estar associados e
 aplicados à alguns equipamentos, como por exemplo, forno, refrigerador,
 aquecedor, condicionador de ar e compressor. A operação da instrumentação funciona para que possam ser observados os instrumentos para a medição, alarme e monitoração. De acordo com Robinson \cite{robinson2002monitoring}, a instrumentação pode permitir que as informações criadas por meio da execução de instrumentos(código-fonte de \textit{software}) possam ser interferidas no funcionamento das aplicações.
 
 O barramento de serviços Erlangms dispõe em sua arquitetura uma estrutura facilitada para sua instrumentação, e ainda possui um modelo de dados em que são registrados contadores. No modelo de dados são registradas algumas informações como; a data e hora do registro, o identificador do contador e a descrição do contador.  
-Segundo os autores Frota e Finkelstein \cite{frota2008educaccao} a instrumentação pode ser utilizada como um componente de processamento da informação de sistemas de medição. Por isso a instrumentação pode ser considerada não apenas como ferramenta de contagem de valores para medição, e poderá ser utilizada também como uma forma de aprendizagem conceitual e científica.  
+Segundo os autores Frota e Finkelstein \cite{frota2008educaccao}, a instrumentação pode ser utilizada como um componente de processamento da informação de sistemas de medição. Por isso a instrumentação pode ser considerada não apenas como ferramenta de contagem de valores para medição, e poderá ser utilizada também como uma forma de aprendizagem conceitual e científica.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -265,7 +265,7 @@ Segundo os autores Frota e Finkelstein \cite{frota2008educaccao} a instrumentaç
 
 A métrica de \textit{software} é uma das opções que possibilita acompanhar o funcionamento das aplicações por meio de dados e registros, como afirmam os autores Castro e Hernandes \cite{de2016metrica}. À medida que os sistemas e serviços crescem em quantidade, tamanho, complexidade e criticidade, a necessidade de monitorá-los é cada vez mais evidente. 
 
-Nesse seguimento os autores Munawar, Jiang, Reidemeister e Ward  \cite{5298441}, descrevem que o monitoramento representa o acompanhamento dessas aplicações de forma detalhada e clara aos responsáveis pelas aplicações. A ISO/IEC 9126-1 \cite{associaccao2003nbr} descreve e normatiza a forma para medir a qualidade de \textit{software}, de acordo com a norma \cite{associaccao2003nbr}, a métrica é o método e escala de medição definidos, a métrica pode ser direta ou indireta, a medição de uma métrica direta se dá quando não depende de medidas de outros atributos e a métrica indireta se dá quando há ou existe a necessidade de derivação de um ou mais atributos de medição.
+Nesse seguimento os autores Munawar \textit{et al.} \cite{5298441}, descrevem que o monitoramento representa o acompanhamento dessas aplicações de forma detalhada e clara aos responsáveis pelas aplicações. A ISO/IEC 9126-1 \cite{associaccao2003nbr} descreve e normatiza a forma para medir a qualidade de \textit{software}, de acordo com a norma \cite{associaccao2003nbr}, a métrica é o método e escala de medição definidos, a métrica pode ser direta ou indireta, a medição de uma métrica direta se dá quando não depende de medidas de outros atributos e a métrica indireta se dá quando há ou existe a necessidade de derivação de um ou mais atributos de medição.
 
 No que tange um ambiente computacional, as métricas ajudam a medir o \textit{software} de uma forma eficaz, para isso é preciso que as métricas sejam bem definidas, justificadas e formalizadas, além disso é desejável que as métricas apresentem de forma clara o que está sendo medido, descrevam rapidamente a medição sem custeio computacional alto e que o resultado do que está sendo medido não seja mudado ou sofra interferência em seu resultado caso haja a mudança de \textit{software}, plataforma ou linguagem de programação, conforme Meirelles \cite{meirelles2013monitoramento} relata em sua tese.
 
@@ -273,7 +273,7 @@ No que tange um ambiente computacional, as métricas ajudam a medir o \textit{so
 
 \section{Arquitetura Orientada a Serviços - SOA}
 
-A Arquitetura Orientada a Serviços é um estilo arquitetural que permite realizar a comunicação entre aplicações heterogêneas por meio de mensagens, como afirmam os autores Fraser, Rankine e Woodcock\cite{fraser2007service}. Na implementação e disponibilização de \textit{softwares}, comum que essas aplicações possuam estruturas e linguagens completamente distintas, pois essas aplicações independem umas das outras, mas precisam que a comunicação entre elas aconteça. Para que haja a comunicação interoperável entre as aplicações é previsto na arquitetura \acrshort{SOA} que serviços(\textit{web services}) possam ser utilizados como componentes distribuídos, que ao mesmo tempo que possam fornecer informações, mas possam também consumi-las, conforme descrição dos trabalho dos autores Sward,  Boleng e Bianco \textit{et al.}: \cite{sward2011service,bianco2011architecting}.
+A Arquitetura Orientada a Serviços é um estilo arquitetural que permite realizar a comunicação entre aplicações heterogêneas por meio de mensagens, como afirmam os autores Fraser \textit{et al.} \cite{fraser2007service}. Na implementação e disponibilização de \textit{softwares}, comum que essas aplicações possuam estruturas e linguagens completamente distintas, pois essas aplicações independem umas das outras, mas precisam que a comunicação entre elas aconteça. Para que haja a comunicação interoperável entre as aplicações é previsto na arquitetura \acrshort{SOA} que serviços(\textit{web services}) possam ser utilizados como componentes distribuídos, que ao mesmo tempo que possam fornecer informações, mas possam também consumi-las, conforme descrição dos trabalho dos autores Sward,  Boleng e Bianco \textit{et al.}: \cite{sward2011service,bianco2011architecting}.
 
 O Manifesto \acrshort{SOA} apresenta uma proposta de definição da conceituação para área. A partir do manifesto as discussões não cravam apenas conceitos, criavam orientações para guiar as organizações de maneira consistente e sustentável, de modo a agregar valor ao negócio, com maior agilidade e efetividade de custos, em alinhamento com a dinâmica das necessidades de negócio,priorizando os seguintes itens, como afirmam os autores Erl \textit{et al.} \cite{erl2009soa}.
 
@@ -401,7 +401,7 @@ O Erlangms dispõe de uma arquitetura \acrshort{SOA}, com o estilo arquitetural 
 \begin{figure}[H]
 	\begin{center}
 	\includegraphics[scale = 1.30]{img/Arquitetura_ErlangMS.png}
-		\caption{Arquitetura do trabalho Erlangms descrita por\cite{Agilar}}
+		\caption{Arquitetura do trabalho Erlangms descrita por Agilar \cite{Agilar}}
 		\label{fun:fig:Erlangms}
 	\end{center}
 \end{figure}
@@ -446,9 +446,9 @@ O trabalho de Subramanyan \textit{et al.} \cite{subramanyan2000scalable} apresen
 
 Phan \cite{phan2009cryptanalysis} relata em seu trabalho sobre o nível de segurança do protocolo e questiona sobre a falta de confidencialidade e privacidade, itens faltantes no SNMPv1 e, e descreve em seu trabalho, e dispõe de um experimento, e recomenda a utilização do SNMPv3.
 
-Com a realização da análise qualitativa, os autores Lee, Shyan e Lo Hsu \cite{lee2004design} buscaram apresentar o funcionamento do protocolo SNMP por meio de experimentos valendo-se de suas vantagens, entre elas seus principais componentes a utilização entre eles: 1) Da estação de gestão; 2) Agente de gestão; 3) Base de informações de gestão; e 4) protocolo de gestão. Eles descrevem o trabalho científico de forma conectada, concisa e objetiva, sobre as técnicas utilizadas para realização do estudo. O trabalho apresenta uma abordagem orientada à objetos, utilizada para alcançar o projeto sistemático para implementação de agentes SNMP em sistemas de monitoramento, para o gerenciamento remoto.
+Com a realização da análise qualitativa, os autores Lee \textit{et al.} \cite{lee2004design} buscaram apresentar o funcionamento do protocolo SNMP por meio de experimentos valendo-se de suas vantagens, entre elas seus principais componentes a utilização entre eles: 1) Da estação de gestão; 2) Agente de gestão; 3) Base de informações de gestão; e 4) protocolo de gestão. Eles descrevem o trabalho científico de forma conectada, concisa e objetiva, sobre as técnicas utilizadas para realização do estudo. O trabalho apresenta uma abordagem orientada à objetos, utilizada para alcançar o projeto sistemático para implementação de agentes SNMP em sistemas de monitoramento, para o gerenciamento remoto.
 
-Em seu texto Pătruţ, Bogdan e Tomozei \cite{puatruct2010agent} expõe os resultados obtidos no desenvolvimento e manutenção de aplicações distribuídas, e sistemas de monitoramento multiagente, com exemplos práticos, a fim de implementar e testar as abordagens teóricas. Os sistemas de monitoramento de agentes múltiplos trazem qualidade e eficiência em quase todas as áreas de atividade, na qual inclui pesquisa científica, educação, saúde ou defesa.
+Em seu texto Pătruţ \textit{et al.} \cite{puatruct2010agent} expõe os resultados obtidos no desenvolvimento e manutenção de aplicações distribuídas, e sistemas de monitoramento multiagente, com exemplos práticos, a fim de implementar e testar as abordagens teóricas. Os sistemas de monitoramento de agentes múltiplos trazem qualidade e eficiência em quase todas as áreas de atividade, na qual inclui pesquisa científica, educação, saúde ou defesa.
 Utilizando os conceitos sólidos da inteligência artificial e reunindo-os para os recursos infinitos dos sistemas distribuídos e da Internet, dessa forma buscando reduzir a duração do alcance dos objetivos.
 
 Com a leitura e entendimento dos trabalhos pode-se perceber uma preocupação com a utilização do monitoramento, em relação ao desempenho, mesmo quando utilizadas técnicas e tecnologias distintas, mas observa-se a importância da realização do monitoramento, visto a grande demanda de \textit{softwares} disseminados na rede mundial de computadores.
