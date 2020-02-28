@@ -48,7 +48,7 @@ Com a finalização do processo de integração e da configuração da ferrament
 
 \subsubsection{Ems-Monitor}
 
-Neste trabalho, foi realizada uma análise com a ferramenta de monitoramento Observer. Pode-se observar que o Erlangms funciona sem a utilização do módulo monitoramento, com dez porcento de utilização do \textit{Scheduler}, cinquenta \textbf{MB} de utilização de Memória e com picos de quatrocentos \textbf{B} de utilização de IO. Essa verificação é realizada em tempo real, e pode ser observada na figura \ref{fun:fig:Observer_ErlangMS_sem_SNMP}.
+Neste trabalho, foi realizada uma análise com a ferramenta de monitoramento Observer. Pode-se observar que o Erlangms sem a execução do módulo monitoramento, funciona entre cinco e dez porcento de utilização do \textit{Scheduler}, cinquenta \textbf{MB} de utilização de Memória e com picos de quatrocentos \textbf{B} de utilização de IO. Essa verificação é realizada em tempo real, e pode ser observada na figura \ref{fun:fig:Observer_ErlangMS_sem_SNMP}.
 
 \begin{figure}[H]
     \centering
@@ -57,7 +57,16 @@ Neste trabalho, foi realizada uma análise com a ferramenta de monitoramento Obs
     \label{fun:fig:Observer_ErlangMS_sem_SNMP}
 \end{figure}
 
+Com a utilização do Ems-monitor ativado no Erlangms, foi possível verificar durante a realização da análise a identificação de \textit{overhead}, no \textit{Scheduler}, Memória e IO. No funcionamento do Ems-monitor o aumento da utilização apresentou as seguintes informações:  o \textit{Scheduler} funcionando entre cinco e quinze porcento de utilização, sessenta \textbf{MB} de utilização de Memória e com aumento na intermitência que variam de vinte \textbf{KB} até cento e quarenta \textbf{KB} de utilização de IO. A análise realizada na ferramenta Observer, para acompanhar o funcionamento do Ems-Monitor pode ser visualizada na figura \ref{fun:fig:Observer_ErlangMS_com_SNMP}.  
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.33]{img/Observer_ErlangMS_com_SNMP.png}
+    \caption{Análise executada em tempo real pela ferramenta Observer com o Ems-Monitor.}
+    \label{fun:fig:Observer_ErlangMS_com_SNMP}
+\end{figure}
+
+Por fim, pode-se observar o aumento da utilização dos recuros computacionais. O \textit{Scheduler} precisou gerenciar mais processos, com o aumento de processos foi necessária a utilização de mais memória, que devido ao funcionamento em modo passivo do Ems-Monitor para o envio de \textit{TRAPs}, teve também aumento IO, pois mesmo sem o funcionamento e execução dos recursos do Erlangms, mensagens são enviadas. O \textit{overhead} gerado pelo funcionamento do Ems-Monitor não demonstrou comprometer de forma impeditiva o funcionamento do Erlangms.    
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
