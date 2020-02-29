@@ -1,6 +1,6 @@
 \label{mapeamento_sistematico}
 
-Este capítulo descreve o mapeamento sistemático, método utilizado para estruturar a pesquisa da literatura. A pesquisa possibilita identificar, avaliar e interpretar outros trabalhos científicos, além de contribuir no estudo e na resposta da questão desta pesquisa, como afirma os autores Kitchenham, Petticrew e Almeida \cite{kitchenham2007guidelines,petticrew2008systematic,de2018mapeamento}. O objetivo deste mapeamento sistemático é verificar na literatura textos correspondentes às questões definidas neste trabalho, e que possam colaborar nas respostas sobre monitoramento de sistemas distribuídos.
+Este capítulo descreve a revisão da literatura, método utilizado para estruturar a pesquisa da literatura. A pesquisa possibilita identificar, avaliar e interpretar outros trabalhos científicos, além de contribuir no estudo e na resposta da questão desta pesquisa, como afirma os autores Kitchenham \textit{et al.} \cite{kitchenham2007guidelines,petticrew2008systematic,de2018mapeamento}. O objetivo desta revisão é verificar na literatura textos correspondentes às questões definidas neste trabalho, e que possam colaborar nas respostas sobre monitoramento de sistemas distribuídos.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -12,7 +12,8 @@ Para alcançar o objetivo, foram levantadas algumas questões de pesquisa \textb
 \begin{description}
 \item[QP1)] Quais os estudos primários existentes na literatura que discutem os mecanismos de monitoramento 
 que são aplicados à sistemas distribuídos?
-\item[QP2)] Quais são as principais características relativas ao monitoramento de sistemas distribuídos são mencionadas nos estudos primários?
+\item[QP2)] Quais são as principais características relativas ao monitoramento de sistemas
+distribuídos mencionadas na literatura?
 \end{description}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -20,18 +21,20 @@ que são aplicados à sistemas distribuídos?
 \section{Estratégia de busca}
 \label{sec:stringbusca}
 
-Para identificação e busca dos trabalhos, com maior relevância e aderência ao tema abordado, e definido nas questões de pesquisa, foi criada uma \textit{string} de busca. De acordo com Keele \textit{et al.} \cite{keele2007guidelines}, a forma para criação de uma \textit{string} de busca, é feita a partir da identificação de sinônimos, abreviações. E também por meio de operadores lógicos, como por exemplo, \textit{AND} e \textit{OR} que auxiliam e permitem concatenar os termos identificados, o que possibilita a elaboração de uma \textit{string}. Para realização da pesquisa levou-se em conta os padrões e tecnologias mais comuns do mercado utilizados para o monitoramento de sistemas distribuídos, juntamente com algumas palavras chave: \textit{"Monitoring Protocol"}, \textit{"Distributed Systems"}, \textit{"Monitoring"}, "\acrshort{SOA}", "\textit{web services}" e "\acrshort{ESB}". As palavras chave foram escritas em inglês, para uma maior abrangência de trabalhos publicados em jornais e revistas internacionais. Diante da situação obteve-se a seguinte \textit{string} de busca: \textit{(("Protocol Monitoring" OR "Monitoring Systems") AND ("Distributed Systems"OR "SOA")) OR ( ("ESB" AND "Web Services" AND "REST"))}.
+Para identificação e busca dos trabalhos, com maior relevância e aderência ao tema abordado, e definido nas questões de pesquisa, foi criada uma \textit{string} de busca. De acordo com Keele \textit{et al.} \cite{keele2007guidelines}, a forma para criação de uma \textit{string} de busca, é feita a partir da identificação de sinônimos, abreviações. E também por meio de operadores lógicos, como por exemplo, \textit{AND} e \textit{OR} que auxiliam e permitem concatenar os termos identificados, o que possibilita a elaboração de uma \textit{string}. 
 
-De acordo com Kitchenham \cite{kitchenham2007guidelines}, a obtenção da \textit{string} de busca, foi iniciada a pesquisa dos trabalhos e artigos científicos, as pesquisas foram realizadas nas bases de dados digitais que indexam os principais trabalhos científicos do ramo da \acrlong{TI}, para essa atividade foi utilizado um protocolo de pesquisa para execução do mapeamento sistemático, o protocolo foi separado por etapas, uma representação protocolo de pesquisa poderá ser visualizada na figura \ref{fig:etapasRSL}, a execução das etapas proporcionaram uma maior abrangência no acesso à literatura do tema pesquisado.
+Para realização da pesquisa levou-se em conta os padrões e tecnologias mais comuns do mercado utilizados para o monitoramento de sistemas distribuídos, juntamente com algumas palavras-chave: \textit{"Monitoring Protocol"}, \textit{"Distributed Systems"}, \textit{"Monitoring"}, "\acrshort{SOA}", "\textit{web services}" e "\acrshort{ESB}". As palavras chave foram escritas em inglês, para uma maior abrangência de trabalhos publicados em jornais e revistas internacionais. Diante da situação obteve-se a seguinte \textit{string} de busca: \textit{(("Protocol Monitoring" OR "Monitoring Systems") AND ("Distributed Systems"OR "SOA")) OR ( ("ESB" AND "Web Services" AND "REST"))}.
+
+De acordo com Kitchenham \cite{kitchenham2007guidelines}, a obtenção da \textit{string} de busca, foi iniciada a pesquisa dos trabalhos e artigos científicos, as pesquisas foram realizadas nas bases de dados digitais que indexam os principais trabalhos científicos do ramo da \acrlong{TI}, para essa atividade foi utilizado um protocolo de pesquisa para execução da revisão da literatura, o protocolo foi separado por etapas, uma representação protocolo de pesquisa poderá ser visualizada na figura \ref{fig:etapasRSL}, a execução das etapas proporcionaram uma maior abrangência no acesso à literatura do tema pesquisado.
 
 \begin{figure}[!ht]
 \centering
 \includegraphics[width = 16cm, height=9cm]{img/etapas_RSL_final.jpg}
-\caption{Etapas do \acrlong{MS}}
+\caption{Etapas da Revisão da Literatura \cite{brereton2007lessons}}
 \label{fig:etapasRSL}
 \end{figure}
 
-Para continuidade das atividades definidas na estratégia de busca seguindo o protocolo de pesquisa definido, a realização das consultas nas bases será feita por meio da execução da \textit{string} de busca definida. As bases selecionadas e consultadas para revisão da literatura foram:
+Para continuidade das atividades definidas na estratégia de busca seguindo o protocolo de pesquisa definido, a realização das consultas nas bases foi feita por meio da execução da \textit{string} de busca definida. As bases selecionadas e consultadas para revisão da literatura foram:
 \begin{itemize}
 \item \acrlong{ACM} - \url{https://dl.acm.org/}
 \item \acrlong{IEEE} - \url{https://ieeexplore.ieee.org/}
@@ -44,7 +47,9 @@ Para continuidade das atividades definidas na estratégia de busca seguindo o pr
 
 \section{Critérios de Inclusão e Exclusão}
 \label{sec:cIncExc}
-Os critérios de inclusão e exclusão foram definidos para auxiliar na seleção dos trabalhos, estes critérios auxiliam na buscar por trabalhos científicos de maior relevância, e mais aderentes às questões de pesquisas definidas. Estes critérios foram utilizados em uma ferramenta de apoio que permitiu analisar os trabalhos parcialmente. E possibilitando incluir ou excluir da seleção os trabalhos a partir da leitura do titulo, resumo, introdução e conclusão dos trabalhos disponíveis, que foram obtidos durante a pesquisa nas bases de dados digitais.    
+Os critérios de inclusão e exclusão foram definidos para auxiliar na seleção dos trabalhos, estes critérios auxiliam na buscar por trabalhos científicos de maior relevância, e mais aderentes às questões de pesquisas definidas. 
+
+Estes critérios foram utilizados em uma ferramenta de apoio que permitiu analisar os trabalhos parcialmente. E possibilitando incluir ou excluir da seleção os trabalhos a partir da leitura do titulo, resumo, introdução e conclusão dos trabalhos disponíveis, que foram obtidos durante a pesquisa nas bases de dados digitais.    
 
 Os critérios de inclusão \textbf{(CI)} utilizados na seleção dos trabalhos foram:
 
@@ -60,18 +65,22 @@ Os critérios de exclusão \textbf{(CE)} utilizados na seleção dos trabalhos f
 \begin{description}
 \item[CE1)]Artigos cujo foco não seja monitoramento de serviços distribuídos, ou o monitoramento por Protocolo \acrshort{SNMP}, monitoramento em barramentos \acrshort{SOA}, ou monitoramento de \textit{web services};
 \item[CE2)] Artigos publicado como \textit{Short Paper};
-\item[CE3)] Mesmo Artigo publicado em locais diferentes.
+\item[CE3)] Artigos publicado como com baixa relevância e sem referencia com a área de Tecnologia da Informação.
 \end{description}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Extração dos Dados}
-A atividade de extração e seleção dos trabalhos foi dividida e realizada em quatro fases, a primeira fase foi a busca automática nas bases de dados digitais com a execução da \textit{string} de busca descrita na seção \ref{sec:stringbusca}, conforme o protocolo definido para busca de trabalhos científicos aderentes ao tema abordado. A segunda fase foi a realização de uma pesquisa com intenção de encontrar uma ferramenta que possibilite o registro e o gerenciamento dos trabalhos buscados, a terceira fase foi a seleção de forma manual para refinar a escolha dos trabalhos relacionados ao tema, e a quarta foi a leitura dos trabalhos seguindo os itens definidos no protocolo para extração das informações dos trabalhos selecionados. Durante a realização da extração dos dados por meio da execução da \textit{string} de busca em cada base obteve-se vários tipos de informações sobre os dados buscados, como por exemplo, o ano da publicação do trabalho, os locais de realização dos eventos, o \acrshort{DOI} dos trabalhos publicados, além do  expressivo número de trabalhos que uma base retornou e o número significativo que outra retornou, após a consulta realizada nas bases digitais como se apresenta a seguir na tabela \ref{tabelaresultaddos}.
+A atividade de extração e seleção dos trabalhos foi dividida e realizada em quatro fases, a primeira fase foi a busca automática nas bases de dados digitais com a execução da \textit{string} de busca descrita na seção \ref{sec:stringbusca}, conforme o protocolo definido para busca de trabalhos científicos aderentes ao tema abordado. A segunda fase foi a realização de uma pesquisa com intenção de encontrar uma ferramenta que possibilite o registro e o gerenciamento dos trabalhos buscados, a terceira fase foi a seleção de forma manual para refinar a escolha dos trabalhos relacionados ao tema, e a quarta foi a leitura dos trabalhos seguindo os itens definidos no protocolo para extração das informações dos trabalhos selecionados. 
 
-\begin{itemize}
-\item Fase 1: Nessa fase foi realizada a busca dos trabalhos científicos nas bases digitais \acrlong{ACM}, \acrlong{IEEE}, \acrlong{SD}, \acrlong{Scps} e \acrlong{WoS}. Os trabalhos retornados foram obtidos por meio da utilização da \textit{string} de busca descrita na seção \ref{sec:stringbusca}, que após a execução da \textit{string} como meio de filtragem para obtenção dos trabalhos em cada base, obteve-se o retorno dos trabalhos relacionados com maior relevância e os mais aderentes ao tema do projeto. A busca nas bases de dados foram possíveis por causa da definição das palavras e textos registrados na \textit{string} de busca, ocasionando o refinamento da busca dos trabalhos totalizando o número de 3.227 trabalhos publicados, que foram retornados após a pesquisa, conforme o registro na tabela \ref{tabelaresultaddos}.
+Durante a realização da extração dos dados por meio da execução da \textit{string} de busca em cada base obteve-se vários tipos de informações sobre os dados buscados, como por exemplo, o ano da publicação do trabalho, os locais de realização dos eventos, o \acrshort{DOI} dos trabalhos publicados, além do  expressivo número de trabalhos que uma base retornou e o número significativo que outra retornou, após a consulta realizada nas bases digitais.
 
-\begin{table}[!ht]
+\subsubsection{Fase 1}
+Nessa fase foi realizada a busca dos trabalhos científicos nas bases digitais \acrlong{ACM}, \acrlong{IEEE}, \acrlong{SD}, \acrlong{Scps} e \acrlong{WoS}. Os trabalhos retornados foram obtidos por meio da utilização da \textit{string} de busca descrita na seção \ref{sec:stringbusca}, que após a execução da \textit{string} como meio de filtragem para obtenção dos trabalhos em cada base, obteve-se o retorno dos trabalhos relacionados a partir das palavras ou palavras-chave definidas na \textit{string} de busca. 
+
+A busca nas bases de dados foram possíveis por causa da definição das palavras e textos registrados na \textit{string} de busca, ocasionando o refinamento por meio de filtragem de busca dos trabalhos, totalizando o número de 3.227 trabalhos publicados, que foram retornados após a pesquisa, conforme o registro na tabela \ref{tabelaresultaddos}.
+
+\begin{table}[H]
 \centering
 \caption{Trabalhos retornados por base de dados digitais}
 \label{tabelaresultaddos}
@@ -87,25 +96,118 @@ A atividade de extração e seleção dos trabalhos foi dividida e realizada em 
     \end{tabular}
 \end{table}
 
-\item Fase 2: Após a conclusão da fase 1, que foi a realização da busca dos trabalhos nas bases científicas foi detectada a necessidade de utilização de uma ferramenta que possibilitasse um melhor controle e gerenciamento dos trabalhos científicos que foram retornados das bases. A necessidade surgiu por causa do grande volume de trabalhos retornados, e que durante a realização do processo de extração poderia ocasionar a perda do conhecimento ou confusão no entendimento do problema, devido a não organização dos dados obtidos pela leitura dos trabalhos. A ideia foi identificar uma ferramenta capaz de auxiliar no registro de informações obtidas na extração de trabalhos buscados. Nesse seguimento os autores Almeida e Zamboni \textit{et al.} \cite{de2002pesquisas,zamboni2010start} descrevem, depois de uma pesquisa na literatura, conversar com professores e grupos de alunos sobre ferramentas com finalidade que compõem o processo metodológico para auxílio na extração de dados, a ferramenta selecionada para execução do trabalho foi o \acrshort{StArt}\textsuperscript{\textregistered}.  
+\subsubsection{Fase 2} Após a conclusão da fase 1, que foi a realização da busca dos trabalhos nas bases científicas foi detectada a necessidade de utilização de uma ferramenta que possibilitasse um melhor controle e gerenciamento dos trabalhos científicos que foram retornados das bases. 
 
-\item Fase 3: Após a filtragem e extração dos trabalhos das bases de dados científicas, e a seleção da ferramenta de apoio para o auxílio no processo de extração dos dados, foi feita a exportação dos metadados dos trabalhos retornados de cada base digital em formato BibTex\textsuperscript{\textregistered}, como afirma o autor Chomsky \cite{chomsky1969linguistica}, após a exportação desses dados foi realizada a importação desses dados na ferramenta \acrshort{StArt}\textsuperscript{\textregistered}. Na ferramenta foi realizada a importação e em seguida a organização por base cientifica. Durante a leitura dos títulos e resumos, a leitura das introduções e conclusões dos trabalhos importados foram executados os critérios para seleção dos trabalhos, com os tópicos de inclusão e exclusão descritos na seção \ref{sec:cIncExc}, para realização da seleção dos trabalhos para leitura final. De acordo com Petersen \textit{et al.} \cite{petersen2008systematic} a execução desse método, visa minimizar a leitura completa de trabalhos que necessariamente não tratam do assunto. Após a utilização dos critérios de inclusão e exclusão dos trabalhos, foi possível selecionar os trabalhos mais aderente ao tema do trabalho para leitura. A figura \ref{fig:fase3Criterios} representa a execução dos critérios permitindo identificar os trabalhos, que por meio da leitura completa, possam ajudar nas respostas das questões de pesquisa.  
+A necessidade surgiu por causa do grande volume de trabalhos retornados, e que durante a realização do processo de extração poderia ocasionar a perda do conhecimento ou confusão no entendimento do problema, devido a não organização dos dados obtidos pela leitura dos trabalhos. A ideia foi identificar uma ferramenta capaz de auxiliar no registro de informações obtidas na extração de trabalhos buscados. Nesse seguimento, a escolha de uma ferramenta para auxiliar no processo metodológico para na extração de dados, foi necessária e a ferramenta selecionada para execução do trabalho foi o \acrshort{StArt}\textsuperscript{\textregistered}.  
 
+\subsubsection{Fase 3} Após a filtragem e extração dos trabalhos das bases de dados científicas, e a seleção da ferramenta de apoio para o auxílio no processo de extração dos dados, foi feita a exportação dos metadados dos trabalhos retornados de cada base digital em formato BibTex\textsuperscript{\textregistered}, como afirma o autor Chomsky \cite{chomsky1969linguistica}, após a exportação desses dados foi realizada a importação desses dados na ferramenta \acrshort{StArt}\textsuperscript{\textregistered}. 
 
-\begin{figure}[!htb]
+A ferramenta possui duas etapa de funcionamento, uma para planejar e outra para executar. Na etapa de planejamento é possível a criar de um protocolo de revisão. Este protocolo é composto por um formulário onde é possível preencher: o objetivo, questões de pesquisa(principais e secundárias), palavras-chave, assim como os critérios de inclusão e exclusão. Nesta revisão da literatura, o objetivo é a verificação de mecanismos de monitoramento em barramento de serviços distribuídos. Na etapa de execução é possível a organização dos trabalhos por base cientifica, a seleção dos trabalhos e a extração dos dados dos trabalhos científicos. Neste trabalho, a importação foi organizada por base científica digital. 
+
+Após a importação e organização dos trabalhos por base, ferramenta sugere um \textit{score} de maior valor para os trabalhos com maior relevância aos itens definidos no protocolo de revisão, e um \textit{score} de menor valor para os trabalhos com menor relevância em referência ao protocolo definido. A partir da indicação do \textit{score} de menor valor e a leitura dos títulos, verificando os critério de exclusão, vários trabalhos foram excluídos da revisão da literatura. A leitura do títulos dos trabalhos com a verificação dos critérios de exclusão, durou aproximadamente cinco semanas. 
+
+Após a realizar a exclusão dos trabalhos de menor relevância para este trabalho, o próximo passo foi realizar a execução dos critérios de inclusão e exclusão, a fim de identificar os trabalhos com maior aderência os tema de pesquisa. Durante a leitura dos títulos e resumos, ou a leitura dos títulos e introduções, ou a leitura dos títulos, resumos e conclusões dos trabalhos importados, foram verificados os critérios de inclusão e exclusão para seleção dos trabalhos, com os tópicos de inclusão e exclusão descritos na seção \ref{sec:cIncExc}. 
+
+De acordo com Petersen \textit{et al.} \cite{petersen2008systematic}, a execução desse método, visa minimizar a leitura completa de trabalhos que necessariamente não tratam do assunto. Com a utilização e verificação dos critérios de inclusão e exclusão nos trabalhos, por meio da leitura dos títulos e resumos, ou a leitura dos títulos e introduções, ou a leitura dos títulos, resumos e conclusões dos trabalhos, foi possível selecionar os trabalhos mais aderente ao tema do trabalho para leitura totalizando 51 trabalhos selecionados. A figura \ref{fig:fase3Criterios} representa a execução dos critérios para identificar os trabalhos.
+%que por meio da leitura completa, possam ajudar nas respostas das questões de pesquisa.  
+
+\begin{figure}[H]
 \centering
 \includegraphics[width = 13cm, height=10cm]{img/Classificacao_FASE_3_CI_e_CE.png}
 \caption{Resultado da Fase 3 classificação (CI e CE) em porcentagem.}
 \label{fig:fase3Criterios}
 \end{figure}
 
-\item Fase 4: Após a realização da classificação dos trabalhos científicos metodologicamente permitiu-se a utilização dos critérios de inclusão e exclusão obtendo o total de 51 trabalhos selecionados, para que fosse realizada a extração dos dados destes trabalhos, em seguida foi iniciada a 4º fase que possibilitou a observação mais aprofundada nos trabalhos e a leitura completa. Com a leitura completa dos trabalhos, a ferramenta \acrshort{StArt}\textsuperscript{\textregistered} foi utilizada para continuidade do mapeamento sistemático, onde nessa fase foram incluídos nos formulários da ferramenta atributos definidos no protocolo de pesquisa, e especificamente registrados como "campos para extração dos dados", que permitiu a avaliação dos trabalhos por meio de uma a análise empírica, onde as devidas anotações e classificações de cada trabalho foi registrada na ferramenta, o que permitiu catalogar o trabalho para facilitar a recuperação dos pontos mais importantes, de uma forma mais rápida e precisa, assim como identificar os trabalhos mais relevantes e aderentes às questões de pesquisa. Após a leitura, e ainda a realização de registros e análise dos trabalhos obteve-se um refinamento na classificação, onde foi alcançada a marca de 22 trabalhos extraídos e selecionados dos 51 trabalhos que foram selecionados nessa fase. Os 22 trabalhos selecionados estão na tabela \ref{tabelaresultadosAnalise}, os trabalhos selecionados após a extração contribuíram para fundamentação teórica do tema, e assim possibilitando aprimorar o conhecimento para responder as questões de pesquisa. 
+\subsubsection{Fase 4} Após a realização da classificação dos trabalhos científicos metodologicamente permitiu-se a utilização dos critérios de inclusão e exclusão obtendo o total de 51 trabalhos selecionados. Na etapa de execução, é possível além de avaliar os \textit{scores} dos trabalhos com a possibilidade para classificar, na ferramenta, o status de seleção dos trabalhos(Aceito, Rejeitado e Duplicado) e a prioridade de leitura(Muito alta, alta, baixa e muito baixa). Neste trabalho, após a leitura dos títulos e resumos, ou a leitura dos títulos e introduções, ou a leitura dos títulos, resumos e conclusões dos 51 trabalhos selecionados, foi realizada a classificação de aceitação e prioridade de leitura. Nesse seguimento, foram obtidos 29 trabalhos aceitos, mas com prioridade de leitura baixa, por apresentarem aderência e relevância maior ao tema proposto.
 
-\end{itemize}
+Após a classificação foi iniciada a 4º fase, com 22 trabalhos aceitos e com prioridade de leitura alta, que possibilitou a observação mais aprofundada nos trabalhos com maior aderência ao tema. A partir da leitura completa dos trabalhos, a ferramenta \acrshort{StArt}\textsuperscript{\textregistered} foi utilizada para continuidade da revisão da literatura, onde nessa fase foram incluídos nos formulários da ferramenta, atributos definidos no protocolo de pesquisa, e especificamente registrados como "campos para extração dos dados", que possibilitou o registro de informações, com a leitura completa dos trabalhos, o  que permitiu posteriori à avaliação dos trabalhos por meio de uma a análise empírica, onde as devidas anotações e classificações de cada trabalho foi registrada na ferramenta, o que permitiu catalogar o trabalho para facilitar a recuperação dos pontos mais importantes, de uma forma mais rápida e precisa, assim como identificar os trabalhos mais relevantes e aderentes às questões de pesquisa. Após a leitura, e ainda a realização de registros e análise dos trabalhos obteve-se uma leitura e entendimento dos 22 trabalhos extraídos e selecionados dos 51 trabalhos que foram selecionados nessa fase. Os 51 trabalhos selecionados estão na tabela \ref{51-artigos}, e os 22 trabalhos selecionados para  realização da extração contribuíram para a revisão da literatura do trabalho, estão da tabela \ref{tabelaresultadosAnalise}. A revisão é fundamental para auxiliar e fundametar o conhecimento a fim subsidiar as respostas das questões de pesquisa. 
+
+\begin{longtable}{c|c|c|c|c|}
+\caption{Trabalhos incluídos, excluídos e selecionados.}
+\label{tab:fase-revisao-literatura}\\
+\cline{2-5}
+ & \textbf{Fase 2} & \multicolumn{3}{c|}{\textbf{Fase 3}} \\ \hline
+\endfirsthead
+%
+\endhead
+%
+\multicolumn{1}{|c|}{\textbf{Base de dados}} & \textbf{Total} & \textbf{\begin{tabular}[c]{@{}c@{}}Incluídos\\ (CI1,CI2 e CI3)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Excluídos\\ (CE1, CE2 e CE3)\end{tabular}} & \textbf{Selecionados} \\ \hline
+\multicolumn{1}{|c|}{\acrlong{ACM}} & 86 & 8 & 78 & 8 \\ \hline
+\multicolumn{1}{|c|}{\acrlong{IEEE}} & 68 & 19 & 49 & 2 \\ \hline
+\multicolumn{1}{|c|}{\acrlong{SD}} & 2.492 & 6 & 2.486 & 0 \\ \hline
+\multicolumn{1}{|c|}{\acrlong{Scps}} & 515 & 6 & 509 & 0 \\ \hline
+\multicolumn{1}{|c|}{\acrlong{WoS}} & 66 & 12 & 54 & 12 \\ \hline
+\multicolumn{1}{|c|}{\textbf{Totais}} & \textbf{‭3.227‬} & \textbf{51} & \textbf{3.176} & \textbf{22} \\ \hline
+\end{longtable}
+
+
+\begin{longtable}{|c|l|l|}
+\caption{Trabalhos selecionados.}
+\label{tab:51-artigos}\\
+\hline
+ID & \multicolumn{1}{c|}{Título} & \multicolumn{1}{c|}{Referęncia} \\ \hline
+\endfirsthead
+%
+\endhead
+%
+383 & \begin{tabular}[c]{@{}l@{}}Service Oriented \\ Architecture-based \\ Framework for \\ WBAN-enabled \\ Patient Monitoring \\ System\end{tabular} & \begin{tabular}[c]{@{}l@{}}Abousharkh, Maha and Mouftah, \\ Hussein\end{tabular} \\ \hline
+386 & \begin{tabular}[c]{@{}l@{}}An Investigation of Monitoring \\ Configurations\end{tabular} & \begin{tabular}[c]{@{}l@{}}Abdu, Hasina and Lutfiyya, Hanan L.\\  and Bauer, Michael A.\end{tabular} \\ \hline
+391 & \begin{tabular}[c]{@{}l@{}}Monitoring, Accounting and \\ Automated Decision Support for \\ the Alice Experiment Based on \\ the MonALISA Framework\end{tabular} & \begin{tabular}[c]{@{}l@{}}Cirstoiu, Catalin C. and Grigoras, \\ Costin C. and Betev, \\ Latchezar L. and Costan, \\ Alexandru A. and Legrand, \\ Iosif Charles\end{tabular} \\ \hline
+393 & \begin{tabular}[c]{@{}l@{}}Scaling a Monitoring \\ Infrastructure \\ for the Akamai Network\end{tabular} & \begin{tabular}[c]{@{}l@{}}Repantis, Thomas and Cohen, \\ Jeff and Smith, Scott and Wein, Joel\end{tabular} \\ \hline
+405 & \begin{tabular}[c]{@{}l@{}}Implementing and Operating an \\ Internet Scale Distributed \\ Application Using Service \\ Oriented Architecture Principles\\  and Cloud Computing \\ Infrastructure\end{tabular} & Sedayao, Jeff \\ \hline
+409 & \begin{tabular}[c]{@{}l@{}}A Scalable SNMP-based \\ Distibuted Monitoring System \\ for Heterogeneous Network \\ Computing\end{tabular} & \begin{tabular}[c]{@{}l@{}}Subramanyan, Rajesh and \\ Miguel-Alonso, José and \\ Fortes, José A. B.\end{tabular} \\ \hline
+411 & \begin{tabular}[c]{@{}l@{}}Monitoring Distributed \\ Systems\end{tabular} & \begin{tabular}[c]{@{}l@{}}Joyce, Jeffrey and Lomow, \\ Greg and Slind, Konrad and Unger, \\ Brian\end{tabular} \\ \hline
+413 & \begin{tabular}[c]{@{}l@{}}Monitoring Overhead in \\ Distributed Systems: \\ Visualization and Estimation \\ Techniques\end{tabular} & \begin{tabular}[c]{@{}l@{}}Abdu, Hasina and Lutfiyya, \\ Hanan and Bauer, Michael A.\end{tabular} \\ \hline
+470 & \begin{tabular}[c]{@{}l@{}}Improvements to online \\ distributed monitoring \\ systems\end{tabular} & \begin{tabular}[c]{@{}l@{}}Wang, Bo and Song, Ying and \\ Sun, Yuzhong and Liu, Jun\end{tabular} \\ \hline
+482 & \begin{tabular}[c]{@{}l@{}}A Formal Engineering \\ Approach for Control and \\ Monitoring Systems in \\ a Service-Oriented \\ Environment\end{tabular} & \begin{tabular}[c]{@{}l@{}}Nagorny, Kevin and Harrison, \\ Robert and Colombo, Armando \\ Walter andKreutz, Gerhard\end{tabular} \\ \hline
+484 & \begin{tabular}[c]{@{}l@{}}Personal Health Service \\ Framework\end{tabular} & Ghorbani, Shirin and Du, Weichang \\ \hline
+485 & \begin{tabular}[c]{@{}l@{}}JMonitor: A monitoring tool \\ for distributed systems\end{tabular} & \begin{tabular}[c]{@{}l@{}}Penteado, Mauricio G. and \\ Trevelin, Luis Carlos\end{tabular} \\ \hline
+496 & \begin{tabular}[c]{@{}l@{}}Agent Technology in \\ Monitoring Systems\end{tabular} & Patrut, Bogdan and Tomozei, Cosmin \\ \hline
+508 & \begin{tabular}[c]{@{}l@{}}Cryptanalysis of the application \\ secure alternative to SNMP \\ (APSSNMP)\end{tabular} & Phan, Raphael C. -W. \\ \hline
+509 & \begin{tabular}[c]{@{}l@{}}Profiling Node Conditions of \\ Distributed System with \\ Sequential PatternMining\end{tabular} & Hirate, Yu and Yamana, Hayato \\ \hline
+510 & \begin{tabular}[c]{@{}l@{}}SeNsIM-Web: a Service Based \\ Architecture for Sensor \\ Networks Integration\end{tabular} & \begin{tabular}[c]{@{}l@{}}Casola, Valentina and Gaglione, \\ Andrea and Mazzeo, Antonino\end{tabular} \\ \hline
+511 & \begin{tabular}[c]{@{}l@{}}A SOA-based information \\ management model for \\ Next-Generation Network\end{tabular} & \begin{tabular}[c]{@{}l@{}}Kotsopoulos, Konstantinos and \\ Lei, Pouwan and Hu, Yim Fun\end{tabular} \\ \hline
+517 & \begin{tabular}[c]{@{}l@{}}A Flexible Monitoring and \\ Notification System for \\ Distributed Resources\end{tabular} & Smith, Garry and Baker, Mark \\ \hline
+524 & \begin{tabular}[c]{@{}l@{}}Design and implementation \\ of the SNMP agents for \\ remote monitoring \\ andcontrol via UML and \\ Petri nets\end{tabular} & Lee, JS and Hsu, PL \\ \hline
+527 & \begin{tabular}[c]{@{}l@{}}Distributed mobile \\ communication base \\ station diagnosis and \\ monitoringusing \\ multi-agents\end{tabular} & \begin{tabular}[c]{@{}l@{}}Feng, JQ and Buse, DP and \\ Wu, QH and Fitch, J\end{tabular} \\ \hline
+2296 & \begin{tabular}[c]{@{}l@{}}An authentication and \\ authorization solution \\ supporting SOA-based \\ distributed systems\end{tabular} & \begin{tabular}[c]{@{}l@{}}P. Qi-rui and W. Cheng and W. Jing and \\ L. Jun and L. \\ Qing and S. Bei-en\end{tabular} \\ \hline
+2302 & \begin{tabular}[c]{@{}l@{}}Scalable Agentless \\ Cloud Network Monitoring\end{tabular} & M. Brattstrom and P. Morreale \\ \hline
+2313 & \begin{tabular}[c]{@{}l@{}}Implementation of secure \\ customized monitoring tool for\\ adapative distributed systems\end{tabular} & \begin{tabular}[c]{@{}l@{}}M. Kotari and N. N. \\ Chiplunkar and H. R. Nagesh\end{tabular} \\ \hline
+2316 & \begin{tabular}[c]{@{}l@{}}Multi-layer SOA \\ implementation \\ pattern with service \\ and data proxies for \\ distributed \\ data-intensive \\ application \\ system\end{tabular} & Takdir and A. I. Kistijantoro \\ \hline
+2320 & \begin{tabular}[c]{@{}l@{}}ABMOM for cross-platform \\ communication in SOA \\ systems\end{tabular} & \begin{tabular}[c]{@{}l@{}}N. M. Ibrahim and M. F. Hassan and \\ M. H. Abdullah\end{tabular} \\ \hline
+2326 & \begin{tabular}[c]{@{}l@{}}Reliable ESB and Distributed \\ Transactional Memory for SOA\end{tabular} & S. Yong and R. Yi-Zhi \\ \hline
+2328 & \begin{tabular}[c]{@{}l@{}}Technologies for SOA-based \\ distributed large scale process \\ monitoring and control systems\end{tabular} & \begin{tabular}[c]{@{}l@{}}F. Jammes and B. Bony and \\ P. Nappey and A. W. \\ Colombo and J. Delsing and \\ J. Eliasson and R. Kyusakov\\ and S. Karnouskos and \\ P. Stluka and M. Till\end{tabular} \\ \hline
+2335 & \begin{tabular}[c]{@{}l@{}}Agent-based intelligent \\ monitoring in large-scale \\ continuous material transport\end{tabular} & Y. Pang and G. Lodewijks \\ \hline
+2344 & Web Services Open Test Suites & N. El Ioini \\ \hline
+2351 & \begin{tabular}[c]{@{}l@{}}Researching and Designing the \\ Architecture of \\ E-government Based on SOA\end{tabular} & P. Yan and J. Guo \\ \hline
+2359 & \begin{tabular}[c]{@{}l@{}}Towards Role-Based \\ Self-healing\\ in Autonomous \\ Monitoring Systems\end{tabular} & \begin{tabular}[c]{@{}l@{}}W. Funika and P. Pegiel and \\ M. Bubak and J. Kitowski\end{tabular} \\ \hline
+2363 & \begin{tabular}[c]{@{}l@{}}Modeling Service Oriented \\ Architectures of Mobile \\ Applications by Extending \\ SoaML with Ambients\end{tabular} & N. Ali and M. A. Babar \\ \hline
+2367 & \begin{tabular}[c]{@{}l@{}}Research on Multi-tier \\ Distributed Systems Based \\ on AOP and Web Services\end{tabular} & J. Zhang and F. Meng and G. Liu \\ \hline
+2369 & \begin{tabular}[c]{@{}l@{}}Research on SOA-Based \\ Applications Based on \\ AOP and Web Services\end{tabular} & J. Zhang and F. Meng and G. Liu \\ \hline
+2408 & \begin{tabular}[c]{@{}l@{}}Monitoring distributed \\ embedded systems\end{tabular} & R. Ford \\ \hline
+2409 & Monitoring distributed systems & M. Mansouri-Samani and M. Sloman \\ \hline
+2449 & \begin{tabular}[c]{@{}l@{}}The dark side of SOA testing: \\ Towards testing contemporary \\ SOAs based on criticality \\ metrics\end{tabular} & \begin{tabular}[c]{@{}l@{}}P. Leitner and S. Schulte and \\ S. Dustdar and I. Pill and M. \\ Schulz and F. Wotawa\end{tabular} \\ \hline
+2479 & \begin{tabular}[c]{@{}l@{}}Leveraging Service Oriented \\ Architecture: A case study \\ for ocean energy information \\ management\end{tabular} & A. Bosnjak and S. Huang and J. J. Mulcahy \\ \hline
+2497 & \begin{tabular}[c]{@{}l@{}}A managerial community of \\ Web Services for management \\ of communities of Web Services\end{tabular} & \begin{tabular}[c]{@{}l@{}}A. Benharref and M. A. Serhani and \\ S. Bouktif and J. Bentahar\end{tabular} \\ \hline
+4877 & \begin{tabular}[c]{@{}l@{}}Decision guidance models \\ for microservice monitoring\end{tabular} & Haselbock, S. and Weinreich, R. \\ \hline
+4884 & \begin{tabular}[c]{@{}l@{}}Building the monitoring \\ systems for complex \\ distributed systems: \\ Problems \& solutions\end{tabular} & \begin{tabular}[c]{@{}l@{}}Korableva, O. and Kalimullina, O. \\ and Kurbanova, E.\end{tabular} \\ \hline
+5043 & \begin{tabular}[c]{@{}l@{}}Pattern detection model \\ for monitoring distributed \\ systems\end{tabular} & Dinu, C.-M. and Pop, F. and Cristea, V. \\ \hline
+5074 & \begin{tabular}[c]{@{}l@{}}Dynamic agent based \\ monitoring mechanism for \\ web services\end{tabular} & Wen, J. and Zhao, L. and He, P. \\ \hline
+5289 & \begin{tabular}[c]{@{}l@{}}A performance study of \\ monitoring and information \\ services for distributed \\ systems\end{tabular} & Zhang, X. and Freschl, J.L. and Schopf, J.M. \\ \hline
+5314 & \begin{tabular}[c]{@{}l@{}}HiFi: a new monitoring \\ architecture for distributed \\ systems management\end{tabular} & \begin{tabular}[c]{@{}l@{}}Al-Shaer, Ehab and Abdel-Wahab, \\ Hussein and Maly, Kurt\end{tabular} \\ \hline
+13835 & \begin{tabular}[c]{@{}l@{}}Goal-driven adaptive \\ monitoring of SOA \\ systems\end{tabular} & Marek Psiuk and Krzysztof Zielinski \\ \hline
+13884 & \begin{tabular}[c]{@{}l@{}}On heuristics for \\ optimal configuration of \\ hierarchical distributed \\ monitoring systems\end{tabular} & \begin{tabular}[c]{@{}l@{}}Jiannong Cao and Kang Zhang and \\ Olivier de Vel\end{tabular} \\ \hline
+13943 & \begin{tabular}[c]{@{}l@{}}2.7 - What Can Web \\ Services Bring to \\ IntegratedManagement?\end{tabular} & Aiko Pras and Jean-Philippe Martin-Flatin \\ \hline
+13952 & \begin{tabular}[c]{@{}l@{}}Transformer Fleet \\ Monitoring\end{tabular} & \begin{tabular}[c]{@{}l@{}}Tihomir JakoviÄ‡ and Ivan \\ Murat and Filip KlariÄ‡ and\\  Samir Keitoue\end{tabular} \\ \hline
+14081 & \begin{tabular}[c]{@{}l@{}}Model-based monitoring \\ and policy enforcement \\ of services\end{tabular} & \begin{tabular}[c]{@{}l@{}}Xiaoying Bai and Yongli Liu and \\ Lijun Wang and Peide Zhong\end{tabular} \\ \hline
+14128 & \begin{tabular}[c]{@{}l@{}}Web Service Diagnoser \\ Model for managing faults \\ in web services\end{tabular} & K. Jayashree and Sheila Anand \\ \hline
+\end{longtable}
+
+
 
 
 \begin{longtable}{|l|l|l|}
-\caption{Trabalhos selecionados}
+\caption{Trabalhos selecionados para leitura completa}
 \label{tabelaresultadosAnalise}
 \hline
 \endhead
@@ -129,7 +231,7 @@ A atividade de extração e seleção dos trabalhos foi dividida e realizada em 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Resultados}
-Após a realização da pesquisa dos trabalhos nas bases digitais, a seleção e extração dos trabalhos para leitura, nesta seção por meio da utilização do mapeamento sistemático será possível responder às questões de pesquisa descritas na seção \ref{questoes1e2} de forma fundamentada pelos trabalhos científicos obtidos por meio de resumos referentes às questões. As leituras dos trabalhos ampilaram o conhecimento sobre o tema, e permitiram a identificação e apresentação dos seguintes itens, para utilizá-los como base para execução do projeto, são eles:
+Após a realização da pesquisa dos trabalhos nas bases digitais, a seleção e extração dos trabalhos para leitura, nesta seção por meio da utilização da revisão da literatura será possível responder às questões de pesquisa descritas na seção \ref{questoes1e2} de forma fundamentada pelos trabalhos científicos obtidos por meio de resumos referentes às questões. As leituras dos trabalhos ampilaram o conhecimento sobre o tema, e permitiram a identificação e apresentação dos seguintes itens, para utilizá-los como base para execução do projeto, são eles:
 \begin{itemize}
 \item Monitoramento de sistemas distribuídos
 \item \textit{Web services}
@@ -173,6 +275,6 @@ A escalabilidade de sistemas distribuídos está entre as principais caracterís
 
 \section{Síntese do Capítulo}
 
-Este capítulo apresentou a execução do mapeamento sistemático para identificar nos trabalhos científicos, dados e informações relacionadas ao monitoramento de sistemas, ao protocolo de monitoramento \acrshort{SNMP} e ferramentas de monitoramento, dessa maneira conseguir ir possibilitando a fundamentação para implementação do projeto de monitoramento dos serviços do barramento Erlangms, com a utilização do protocolo \acrshort{SNMP} para integração com ferramentas de monitoramento. O protocolo \acrshort{SNMP} foi identificado como solução para implementação do projeto ,visto que o \acrshort{CPD} atualmente já utiliza, pois  possui ferramentas de monitoramento que realizam o monitoramento de \textit{softwares} e ativos de rede, por meio do protocolo. 
+Este capítulo apresentou a execução da revisão da literatura para identificar nos trabalhos científicos, dados e informações relacionadas ao monitoramento de sistemas, ao protocolo de monitoramento \acrshort{SNMP} e ferramentas de monitoramento, dessa maneira conseguir ir possibilitando a fundamentação para implementação do projeto de monitoramento dos serviços do barramento Erlangms, com a utilização do protocolo \acrshort{SNMP} para integração com ferramentas de monitoramento. O protocolo \acrshort{SNMP} foi identificado como solução para implementação do projeto ,visto que o \acrshort{CPD} atualmente já utiliza, pois  possui ferramentas de monitoramento que realizam o monitoramento de \textit{softwares} e ativos de rede, por meio do protocolo. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
