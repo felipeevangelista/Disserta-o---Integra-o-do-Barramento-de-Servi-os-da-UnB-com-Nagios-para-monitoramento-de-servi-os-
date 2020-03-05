@@ -420,6 +420,15 @@ Após análise das métricas levantadas, foi necessário realização da seleç�
 
 A escolha destas três métricas foram definidas, devido a importância do acompanhamento dos módulos mais utilizados no barramento de serviços, os registros do \textit{LOG} do barramento de serviços, que estão preparados para exportar e apresentar uma gama de informações podendo não facilitar a identificação de uma falha ou indisponibilidade dos serviços, por isso a configuração para registro das informações dos registros de \textit{LOG} na ferramenta de monitoramento foi escolhido. 
 
+\begin{figure}[H]
+	\begin{center}
+	\includegraphics[scale = 0.70]{img/Monitoramento_Recusos_Barramento.jpg}
+	\caption{Identificação dos recursos do barramento de serviços monitorados.}
+	\label{fun:fig:ResourcesEMS-monitoring}
+	\end{center}
+\end{figure}
+
+
 O motivo para escolha do registro das informações de autenticação promovidas por meio do protocolo OAuth2, foi pelo \acrshort{CPD} da \acrshort{UnB}, utilizá-lo como meio institucional de autenticação, trabalho desenvolvido pelo autor Ribeiro \cite{ribeiro2017implementaccao}, e principalmente, pela quantidade crescente de disponibilização de serviços e recursos, que devido ao crescimento dificultou o acompanhamento da autenticação. Por esse motivo buscou-se obter uma situação real de funcionamento do procedimento de autenticação e autorização, assim como a identificação de ataques, como por exemplo o ataque de negação de serviços por meio do monitoramento. 
 
 O funcionamento do \textit{Dispatcher} é essencial para o barramento de serviços, por ele passam todos os serviços executados pelo barramento de serviços, o \textit{Dispatcher} controla e gerencia o recebimento e envio de requisições que são executadas pelo barramento de serviços, por esse motivo acompanhar o seu funcionamento é muito importante, ainda mais com a possibilidade da emissão de notificações por meio de seu funcionamento normal e quando houver falha ou indisponibilidade, vale enfatizar que seleções e escolhas das métricas foram realizadas por conta do modelo para realização de monitoramento que a ferramenta de monitoramento selecionada propõe.   
