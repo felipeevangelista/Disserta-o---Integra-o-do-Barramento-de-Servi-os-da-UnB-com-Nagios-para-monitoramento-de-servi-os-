@@ -1,6 +1,6 @@
 \label{analise_monitoramento_servicos}
 
-Com realização da implementação, implantação e integração das aplicações para execução do monitoramento,é necessário a divulgação da análise e dos resultados do trabalho executado. Este Capítulo apresenta a análise realizada após a execução do Ems-Monitor.
+Com realização da implementação, implantação e integração das aplicações para execução do monitoramento, é necessário a divulgação da análise e dos resultados do trabalho executado. Este Capítulo apresenta a análise realizada após a execução do Ems-Monitor.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -8,7 +8,7 @@ Com realização da implementação, implantação e integração das aplicaçõ
 \label{analise}
 Com propósito de avaliar a execução do Ems-Monitor, foram analisados alguns requisitos das plataformas utilizadas para monitorar o Erlangms, por meio de uma ferramenta de monitoramento. Inicialmente os requisitos dos recursos computacionais das aplicações foram avaliados, tanto o requisito do barramento de serviços quanto o da ferramenta de monitoramento. 
 
-O agente de monitoramento utiliza os mesmos recuros computacionais do \textit{software} onde ele foi implantado, nesse caso o agente de monitoramento é representado pelo \textit{software} Exometer e está implantado no barramento de serviços Erlangms, os requisitos de instalação do barramento de serviços poderão ser visualizados em \cite{erlangms_gitHub}, assim como os requisitos de configuração do Exometer poderão ser visualizados em \cite{exometer_gitHub}. 
+O agente de monitoramento utiliza os mesmos recursos computacionais do \textit{software} onde ele foi implantado, nesse caso o agente de monitoramento é representado pelo \textit{software} Exometer e está implantado no barramento de serviços Erlangms, os requisitos de instalação do barramento de serviços poderão ser visualizados em \cite{erlangms_gitHub}, assim como os requisitos de configuração do Exometer poderão ser visualizados em \cite{exometer_gitHub}. 
 
 A ferramenta de monitoramento também dispõe de requisitos básicos para seu funcionamento, os requisitos do Nagios Core\textsuperscript{\textregistered} na versão quatro poderão ser visualizados no portal do Nagios\textsuperscript{\textregistered} \cite{nagios_core_configuration}, em ambos os caso os requisitos computacionais não impediram a execução do projeto e consequentemente foram executados sem gerar grandes esforços.
 
@@ -26,7 +26,7 @@ Uma importante avaliação para realização do monitoramento do barramento de s
 
 Neste trabalho a instrumentação provida pelo barramento de serviços gera informações a partir de sua execução, sendo necessário um dinamismo na criação de objetos, o Exometer com funções bem definidas é de fácil compreensão, e correspondeu às expectativas geradas a partir de sua documentação, contribuindo bastante na criação e atualização do arquivo MIB, na criação de métricas, atualização de valores e no \textit{report} dos dados coletados.  
 
-A ferramenta de monitoramento utilizada para execução do trabalho demonstrou pontos em que o dinamismo alcançado pela aplicação do agente de monitoramento não poderia ser utilizada de imediato. Após uma breve análise da ferramenta de monitoramento, percebeu-se que ela funciona a partir de módulos(\textit{plugins}) complementares, dependendo do tipo de monitoramento a ser realizado. 
+A ferramenta de monitoramento utilizada para execução do trabalho demonstrou pontos em que o dinamismo alcançado pela aplicação do agente de monitoramento não poderia ser utilizada de imediato. Após uma breve análise da ferramenta de monitoramento, percebeu-se que ela funciona a partir de módulos (\textit{plugins}) complementares, dependendo do tipo de monitoramento a ser realizado. 
 
 Nesse caso o monitoramento que foi realizado foi em modo passivo, para isso foram realizadas as configurações dos \textit{plugins} \acrshort{SNMPTT} e o SNMPTRAPD que necessitam dos \acrshort{OID}s mapeados, ou seja, para que a comunicação e transmissão dos dados do monitoramento sejam tratados como confiáveis é necessário informar de qual \textit{host} e quais objetos terão as mensagens interceptadas.
 
@@ -44,7 +44,7 @@ de acordo com realização do experimento pode-se comprovar que poderá ser util
 
 A partir da realização do experimento que possibilitou a integração das aplicações para execução do monitoramento dos recursos do barramento, no trabalho foi realizado a integração com utilização do protocolo \acrshort{SNMP} para elaborar a comunicação com entre o barramento de serviços e a ferramenta de monitoramento. 
 
-Inicialmente um dos pontos que foi muito importante para contemplar o monitoramento e se demonstrou como resultado satisfatório, foi a criação dinâmica do arquivo MIB, o arquivo MIB com estrutura inicial poderá ser visualizado no anexo \ref{mib_sem_oid}, e o arquivo MIB com os \acrshort{OID}s criados durante a execução do barramento de serviços poderá ser visualizado no anexo \ref{mib_com_oid}. 
+Inicialmente um dos pontos que foi muito importante para contemplar o monitoramento e se demonstrou como resultado satisfatório, foi a criação dinâmica do arquivo MIB, o arquivo MIB com estrutura inicial poderá ser visualizado no anexo \ref{mib_sem_oid}, e o arquivo MIB com os \acrshort{OID}s criados durante a execução do barramento de serviços pode ser visualizado no anexo \ref{mib_com_oid}. 
 
 O dinamismo para criação e atualização desse arquivo possibilita a coleta de qualquer informação ou registro mapeado que é gerado a partir da instrumentação do barramento de serviços, criando objetos identificadores para o envio de \textit{TRAPs}, isso porque as aplicações mais utilizadas no mercado já possuem arquivos MIB definidos estaticamente já apontando o que deve ser monitorado, vale ressaltar que tanto na criação quanto na atualização do arquivo criado o Erlangms não demonstrou ter perda no desempenho do se funcionamento.
 
@@ -98,7 +98,7 @@ A análise realizada na ferramenta Observer, para acompanhar o funcionamento do 
     \label{fun:fig:Observer_ErlangMS_com_SNMP}
 \end{figure}
 
-Por fim, pode-se observar o aumento da utilização dos recuros computacionais. O \textit{Scheduler} precisou gerenciar mais processos, com o aumento de processos foi necessária a utilização de mais memória, que devido ao funcionamento em modo passivo do Ems-Monitor para o envio de \textit{TRAPs}, teve também aumento IO, pois mesmo sem o funcionamento e execução dos recursos do Erlangms, mensagens são enviadas. 
+Por fim, pode-se observar o aumento da utilização dos recursos computacionais. O \textit{Scheduler} precisou gerenciar mais processos, com o aumento de processos foi necessária a utilização de mais memória, que devido ao funcionamento em modo passivo do Ems-Monitor para o envio de \textit{TRAPs}, teve também aumento IO, pois mesmo sem o funcionamento e execução dos recursos do Erlangms, mensagens são enviadas. 
 
 O \textit{overhead} gerado pelo funcionamento do Ems-Monitor não demonstrou comprometer de forma impeditiva o funcionamento do Erlangms.    
  
@@ -107,4 +107,4 @@ O \textit{overhead} gerado pelo funcionamento do Ems-Monitor não demonstrou com
 \section{Síntese do Capítulo}
 \label{sintese5}
 
-Este capítulo apresentou a avaliação da aplicações integrantes da execução do monitoramento dos recursos do barramento, a partir dessa avaliação foi possível responder com fundamentação obtida dos resultados que a solução está adequada ao ambiente computacional do \acrshort{CPD} da \acrshort{UnB}, permitindo a possibilidade de implantação após validação pelo colaboradores desse Centro, e disponibilização da próxima versão disponível,para uso exclusivo do barramento de serviços Erlangms.
+Este capítulo apresentou a avaliação das aplicações integrantes da execução do monitoramento dos recursos do barramento, a partir dessa avaliação foi possível responder com fundamentação obtida dos resultados que a solução está adequada ao ambiente computacional do \acrshort{CPD} da \acrshort{UnB}, permitindo a possibilidade de implantação após validação pelo colaboradores desse Centro, e disponibilização da próxima versão disponível, para uso exclusivo do barramento de serviços Erlangms.
