@@ -15,7 +15,9 @@ A arquitetura do Ems-Monitor tem como objetivo estabelecer a integração entre 
     \item \textbf{Agente de monitoramento} - Coletor de informações e dados de monitoramento, ele armazena informações e dados de monitoramento coletados pelo agente de monitoramento. Transmite informações e dados de monitoramento para ferramenta de monitoramento, e assim abrangindo o componente do \textbf{Banco de Dados}
 \end{itemize}
 
-Com a definição da arquitetura do Ems-Monitor e a organização de seus componentes, espera-se obter níveis baixos de dependência entre as soluções. Os componentes implementados podem ser conectados em outras aplicações. Na arquitetura definida deste trabalho o meio de comunicação entre os componentes, é feito por meio de integração, que possibilita manter um nível baixo de dependência das aplicações e a mudança de barramento de serviços ou da ferramenta de monitoramento, sem prejuízo à arquitetura e ao funcionamento do Ems-Monitor. O modelo conceitual da arquitetura pode ser visualizado na figura \ref{fun:fig:arquitetura_conceitual_monitoramento}
+Com a definição da arquitetura do Ems-Monitor e a organização de seus componentes, espera-se obter níveis baixos de dependência entre as soluções. Os componentes implementados podem ser conectados em outras aplicações. 
+
+Na arquitetura definida deste trabalho o meio de comunicação entre os componentes, é feito por meio de integração, que possibilita manter um nível baixo de dependência das aplicações e a mudança de barramento de serviços ou da ferramenta de monitoramento, sem prejuízo à arquitetura e ao funcionamento do Ems-Monitor. O modelo conceitual da arquitetura pode ser visualizado na figura \ref{fun:fig:arquitetura_conceitual_monitoramento}
 
 \begin{figure}[H]
 	\begin{center}
@@ -25,7 +27,9 @@ Com a definição da arquitetura do Ems-Monitor e a organização de seus compon
 	\end{center}
 \end{figure}
 
-Como parte da arquitetura, o barramento de serviços é o componente responsável por gerar dados e informações baseado no seu funcionamento, com suporte dessas informações que o monitoramento é realizado, outro componente definido na arquitetura é a ferramenta de monitoramento, a ferramenta de monitoramento é responsável por apresentar informações do funcionamento dos serviços monitorados a partir das informações geradas pelo barramento de serviços. Por fim, o componente agente de monitoramento é encarregado de coletar e transmitir as informações geradas pelo barramento de serviços para ferramenta de monitoramento.  
+Como parte da arquitetura, o barramento de serviços é o componente responsável por gerar dados e informações baseado no seu funcionamento. Com suporte dessas informações que o monitoramento é realizado, outro componente definido na arquitetura é a ferramenta de monitoramento, a ferramenta de monitoramento é responsável por apresentar informações do funcionamento dos serviços monitorados a partir das informações geradas pelo barramento de serviços. 
+
+Por fim, o componente agente de monitoramento é encarregado de coletar e transmitir as informações geradas pelo barramento de serviços para ferramenta de monitoramento.  
 
 Neste trabalho os componentes da arquitetura na visão de \textit{runtime}\cite{clements2002documenting} possuem as seguintes descrições:
 
@@ -114,7 +118,9 @@ Para transmitir os dados de monitoramento, foi utilizada uma abordagem que permi
 
 \vspace{10mm}
 \noindent
-A partir da definição da estrutura de monitoramento foi realizada a geração de dados, a coleta, o armazenamento e a transmissão dos dados para monitorar os recursos do barramento. O \acrshort{CPD} possui e utiliza abordagens de monitoramento para sistemas e ativos de rede da \acrshort{UnB}. As aplicações e ativos de rede já são monitorados em uma plataforma de monitoramento mantida e gerenciada pelo \acrshort{CPD}, neste trabalho Ems-Monitor foi utilizado como solução para realização da integração por meio de um protocolo de comunicação para monitoramento dos serviços, sistemas e ativos de rede na mesma plataforma mantida pelo \acrshort{CPD}, e que permitisse apresentar o funcionamento dessas aplicações ou em casos eventuais notificar sobre possíveis falhas ou problemas. 
+A partir da definição da estrutura de monitoramento foi realizada a geração de dados, a coleta, o armazenamento e a transmissão dos dados para monitorar os recursos do barramento. O \acrshort{CPD} possui e utiliza abordagens de monitoramento para sistemas e ativos de rede da \acrshort{UnB}. As aplicações e ativos de rede já são monitorados em uma plataforma de monitoramento mantida e gerenciada pelo \acrshort{CPD}. 
+
+Neste trabalho Ems-Monitor foi utilizado como solução para realização da integração por meio de um protocolo de comunicação para monitoramento dos serviços, sistemas e ativos de rede na mesma plataforma mantida pelo \acrshort{CPD}, e que permitisse apresentar o funcionamento dessas aplicações ou em casos eventuais notificar sobre possíveis falhas ou problemas. 
 
 Diante desse cenário optou-se por definir um meio de comunicação onde a ferramenta de monitoramento, que é mantida e gerenciada pelo \acrshort{CPD} da \acrshort{UnB} pudesse receber as informações, para realização do monitoramento do barramento de serviços, por meio de um protocolo, neste trabalho o protocolo utilizado para realização da comunicação, e permitir a integração das ferramentas foi o protocolo \acrshort{SNMP}. 
 
@@ -418,7 +424,7 @@ Após análise das métricas levantadas, foi necessário realização da seleç�
     \item Registros do \textit{Dispatcher}.
 \end{itemize}
 
-A escolha destas três métricas foram definidas, devido a importância do acompanhamento dos módulos mais utilizados no barramento de serviços, os registros do \textit{LOG} do barramento de serviços, que estão preparados para exportar e apresentar uma gama de informações podendo não facilitar a identificação de uma falha ou indisponibilidade dos serviços, por isso a configuração para registro das informações dos registros de \textit{LOG} na ferramenta de monitoramento foi escolhido. 
+A escolha destas métricas foi definida, devido a importância do acompanhamento dos módulos mais utilizados no barramento de serviços, os registros do \textit{LOG} do barramento de serviços, que estão preparados para exportar e apresentar uma gama de informações podendo não facilitar a identificação de uma falha ou indisponibilidade dos serviços, por isso a configuração para registro das informações dos registros de \textit{LOG} na ferramenta de monitoramento foi escolhido. 
 
 \begin{figure}[H]
 	\begin{center}

@@ -63,9 +63,9 @@ Os critérios de inclusão \textbf{(CI)} utilizados na seleção dos trabalhos f
 Os critérios de exclusão \textbf{(CE)} utilizados na seleção dos trabalhos foram:
 
 \begin{description}
-\item[CE1)] Artigos publicados com baixa pontuação de \textit{Score}\footnote{\textit{Pontuçaão fornecida pela ferramenta \acrshort{StArt}\textsuperscript{\textregistered}}};
-\item[CE2)] Artigos publicado como \textit{Short Paper};
-\item[CE3)] Artigos publicado como com baixa relevância e sem referencia com a área de Tecnologia da Informação.
+\item[CE1)] Artigos publicados com baixa relevância definidos pela pontuação de \textit{Score}\footnote{\textit{Pontuação fornecida pela ferramenta \acrshort{StArt}\textsuperscript{\textregistered}.Baixa relevância definida por \textit{Score} < 5}};
+\item[CE2)] Artigos publicados como \textit{Short Paper};
+\item[CE3)] Artigos publicados sem referencia com a área de Tecnologia da Informação.
 \item[CE4)]Artigos cujo foco não seja monitoramento de serviços distribuídos, ou o monitoramento por Protocolo \acrshort{SNMP}, monitoramento em barramentos \acrshort{SOA}, ou monitoramento de \textit{web services};
 \end{description}
 
@@ -106,45 +106,56 @@ A necessidade surgiu por causa do grande volume de trabalhos retornados, e que d
 
 A ferramenta possui duas etapa de funcionamento, uma para planejar e outra para executar. Na etapa de planejamento é possível a criar de um protocolo de revisão. Este protocolo é composto por um formulário onde é possível preencher: o objetivo, questões de pesquisa(principais e secundárias), palavras-chave, assim como os critérios de inclusão e exclusão. Nesta revisão da literatura, o objetivo é a verificação de mecanismos de monitoramento em barramento de serviços distribuídos. Na etapa de execução é possível a organização dos trabalhos por base cientifica, a seleção dos trabalhos e a extração dos dados dos trabalhos científicos. Neste trabalho, a importação foi organizada por base científica digital. 
 
-Após a importação e organização dos trabalhos por base, ferramenta sugere um \textit{score} de maior valor para os trabalhos com maior relevância aos itens definidos no protocolo de revisão, e um \textit{score} de menor valor para os trabalhos com menor relevância em referência ao protocolo definido. O \textit{score} gerado pela ferramenta, e relacionado aos trabalhos inicia em zero, que é o valor mínimo de pontuação até quarenta e um, que foi a pontuação máxima gerada após a associação do protocolo de pesquisa com os trabalhos importados. A partir da indicação do \textit{score} de menor valor e a verificação dos critérios de exclusão, vários trabalhos foram excluídos da revisão da literatura, para esta exclusão foram retirados os trabalho com \textit{score} menor que cinco. A exclusão dos trabalhos com a verificação dos critérios de exclusão, durou aproximadamente cinco semana. 
+Após a importação e organização dos trabalhos por base, ferramenta sugere um \textit{score} de maior valor para os trabalhos com maior relevância aos itens definidos no protocolo de revisão, e um \textit{score} de menor valor para os trabalhos com menor relevância em referência ao protocolo definido. O \textit{score} gerado pela ferramenta, e relacionado aos trabalhos inicia em zero, que é o valor mínimo de pontuação até quarenta e um, que foi a pontuação máxima gerada após a associação do protocolo de pesquisa com os trabalhos importados. 
 
-Após a realizar a exclusão dos trabalhos de menor relevância para este trabalho, o próximo passo foi realizar a execução dos critérios de inclusão e exclusão, a fim de identificar os trabalhos com maior aderência os tema de pesquisa. Durante a leitura dos títulos e resumos, ou a leitura dos títulos e introduções, ou a leitura dos títulos, resumos e conclusões dos trabalhos importados, foram verificados os critérios de inclusão e exclusão para seleção dos trabalhos, com os tópicos de inclusão e exclusão descritos na seção \ref{sec:cIncExc}. 
+A partir da indicação do \textit{score} de menor valor e a verificação dos critérios de exclusão, 3.176 trabalhos foram excluídos da revisão da literatura, para esta exclusão foram retirados os trabalho com \textit{score} menor que cinco. A exclusão dos trabalhos com a verificação dos critérios de exclusão, durou aproximadamente cinco semana. 
+
+Após a realizar a exclusão dos trabalhos de menor relevância para este trabalho, o próximo passo foi realizar a execução dos critérios de inclusão e exclusão, a fim de identificar os trabalhos com maior aderência os tema de pesquisa. 
+
+Durante a leitura dos títulos e resumos, ou a leitura dos títulos e introduções, ou a leitura dos títulos, resumos e conclusões dos trabalhos importados, foram verificados os critérios de inclusão e exclusão para seleção dos trabalhos, com os tópicos de inclusão e exclusão descritos na seção \ref{sec:cIncExc}. 
 
 De acordo com Petersen \textit{et al.} \cite{petersen2008systematic}, a execução desse método, visa minimizar a leitura completa de trabalhos que necessariamente não tratam do assunto. Com a utilização e verificação dos critérios de inclusão e exclusão nos trabalhos, por meio da leitura dos títulos e resumos, ou a leitura dos títulos e introduções, ou a leitura dos títulos, resumos e conclusões dos trabalhos, foi possível selecionar os trabalhos mais aderente ao tema do trabalho para leitura totalizando 51 trabalhos selecionados. A figura \ref{fig:fase3Criterios} representa a execução dos critérios para identificar os trabalhos.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width = 16cm, height=12cm]{img/Classificacao_FASE_3_CI_e_CE.jpg}
+\includegraphics[width = 14cm, height=10cm]{img/Classificacao_FASE_3_CI_e_CE.jpg}
 \caption{Resultado da Fase 3 classificação (CI e CE) em porcentagem.}
 \label{fig:fase3Criterios}
 \end{figure}
 
-\subsubsection{Fase 4} Após a realização da classificação dos trabalhos científicos metodologicamente permitiu-se a utilização dos critérios de inclusão e exclusão obtendo o total de 51 trabalhos selecionados. Na etapa de execução, é possível além de avaliar os \textit{scores} dos trabalhos com a possibilidade para classificar, na ferramenta, o status de seleção dos trabalhos(Aceito, Rejeitado e Duplicado) e a prioridade de leitura(Muito alta, alta, baixa e muito baixa). Neste trabalho, após a leitura dos títulos e resumos, ou a leitura dos títulos e introduções, ou a leitura dos títulos, resumos e conclusões dos 51 trabalhos selecionados, foi realizada a classificação de aceitação e prioridade de leitura. Nesse seguimento, foram obtidos 29 trabalhos aceitos, mas com a indicação para prioridade de leitura baixa, por apresentarem pouca aderência e relevância ao tema proposto, e 22 trabalhos aceitos com indicação de prioridade de leitura alta, por possuírem, maior relevância e aderência ao tema, para a leitura completa dos trabalhos.   
+\subsubsection{Fase 4} Após a realização da classificação dos trabalhos científicos metodologicamente permitiu-se a utilização dos critérios de inclusão e exclusão obtendo o total de 51 trabalhos selecionados. Na etapa de execução, é possível além de avaliar os \textit{scores} dos trabalhos com a possibilidade para classificar, na ferramenta, o status de seleção dos trabalhos(Aceito, Rejeitado e Duplicado) e a prioridade de leitura(Muito alta, alta, baixa e muito baixa). 
 
-Após a classificação foi iniciada a 4º fase, com 22 trabalhos aceitos e com prioridade de leitura alta, que possibilitou a observação mais aprofundada nos trabalhos com maior aderência ao tema. A partir da leitura completa dos trabalhos, a ferramenta \acrshort{StArt}\textsuperscript{\textregistered} foi utilizada para continuidade da revisão da literatura, onde nessa fase foram incluídos nos formulários da ferramenta, atributos definidos no protocolo de pesquisa, e especificamente registrados como "campos para extração dos dados", que possibilitou o registro de informações, com a leitura completa dos trabalhos, o  que permitiu posteriori à avaliação dos trabalhos por meio de uma a análise empírica, onde as devidas anotações e classificações de cada trabalho foi registrada na ferramenta, o que permitiu catalogar o trabalho para facilitar a recuperação dos pontos mais importantes, de uma forma mais rápida e precisa, assim como identificar os trabalhos mais relevantes e aderentes às questões de pesquisa. Após a leitura, e ainda a realização de registros e análise dos trabalhos obteve-se uma leitura e entendimento dos 22 trabalhos extraídos e selecionados dos 51 trabalhos que foram selecionados nessa fase. Os 51 trabalhos selecionados estão na tabela \ref{tab:51-artigos}, e os 22 trabalhos selecionados para  realização da extração contribuíram para a revisão da literatura do trabalho, estão da tabela \ref{tab:tabelaresultadosAnalise}. A revisão é fundamental para auxiliar e fundamentar o conhecimento a fim subsidiar as respostas das questões de pesquisa. 
+Neste trabalho, após a leitura dos títulos e resumos, ou a leitura dos títulos e introduções, ou a leitura dos títulos, resumos e conclusões dos 51 trabalhos selecionados, foi realizada a classificação de aceitação e prioridade de leitura. Nesse seguimento, foram obtidos 29 trabalhos aceitos, mas com a indicação para prioridade de leitura baixa, por apresentarem pouca aderência e relevância ao tema proposto, e 22 trabalhos aceitos com indicação de prioridade de leitura alta, por possuírem, maior relevância e aderência ao tema, para a leitura completa dos trabalhos.   
 
-\vspace{20mm}
+Após a classificação foi iniciada a 4º fase, com 22 trabalhos aceitos e com prioridade de leitura alta, que possibilitou a observação mais aprofundada nos trabalhos com maior aderência ao tema. 
+
+A partir da leitura completa dos trabalhos, a ferramenta \acrshort{StArt}\textsuperscript{\textregistered} foi utilizada para continuidade da revisão da literatura, onde nessa fase foram incluídos nos formulários da ferramenta, atributos definidos no protocolo de pesquisa, e especificamente registrados como "campos para extração dos dados", que possibilitou o registro de informações, com a leitura completa dos trabalhos, o  que permitiu a posteriori à avaliação dos trabalhos por meio de uma a análise empírica. 
+
+As devidas anotações e classificações de cada trabalho foi registrada na ferramenta, o que permitiu catalogar o trabalho para facilitar a recuperação dos pontos mais importantes, de uma forma mais rápida e precisa, assim como identificar os trabalhos mais relevantes e aderentes às questões de pesquisa. Após a leitura, e ainda a realização de registros e análise dos trabalhos obteve-se uma leitura e entendimento dos 22 trabalhos extraídos e selecionados dos 51 trabalhos que foram selecionados nessa fase. 
+
+\vspace{30mm}
 
 \begin{longtable}{c|c|c|c|c|c|c|}
 \caption{Trabalhos excluídos, incluídos, rejeitados e selecionados.}
 \label{tab:fase-revisao-literatura}\\
 \cline{2-7}
- & \multicolumn{6}{c|}{Base de Daoos} \\ \cline{2-7} 
+ & \multicolumn{6}{c|}{Base de Dados} \\ \cline{2-7} 
 \endfirsthead
 %
 \endhead
 %
  & Critério & \acrshort{ACM} & \acrlong{IEEE} & \acrlong{SD} & \acrlong{Scps} & \acrlong{WoS} \\ \hline
 \multicolumn{1}{|c|}{Fase 2} & Busca & 86 & 68 & 2492 & 515 & 66 \\ \hline
-\multicolumn{1}{|c|}{\multirow{5}{*}{Fase 3}} & CE1 & 37 & 9 & 1529 & 57 & 4 \\ \cline{2-7} 
-\multicolumn{1}{|c|}{} & CE2 & 9 & 7 & 325 & 41 & 14 \\ \cline{2-7} 
-\multicolumn{1}{|c|}{} & CE3 & 18 & 15 & 658 & 259 & 15 \\ \cline{2-7} 
-\multicolumn{1}{|c|}{} & CE4 & 14 & 18 & 632 & 152 & 21 \\ \cline{2-7} 
+\multicolumn{1}{|c|}{\multirow{5}{*}{Fase 3}} & CE1 & 37 & 18 & 1529 & 259 & 21 \\ \cline{2-7} 
+\multicolumn{1}{|c|}{} & CE2 & 18 & 15 & 460 & 156 & 15 \\ \cline{2-7} 
+\multicolumn{1}{|c|}{} & CE3 & 14 & 9 & 299 & 61 & 14 \\ \cline{2-7} 
+\multicolumn{1}{|c|}{} & CE4 & 9 & 7 & 198 & 33 & 4 \\ \cline{2-7} 
 \multicolumn{1}{|c|}{} & CI1, CI2, CI3 & 8 & 19 & 6 & 6 & 12 \\ \hline
 \multicolumn{1}{|c|}{\multirow{2}{*}{Fase 4}} & Rejeição & 0 & 18 & 6 & 4 & 1 \\ \cline{2-7} 
 \multicolumn{1}{|c|}{} & Seleção & 8 & 1 & 0 & 2 & 11 \\ \hline
 \end{longtable}
 
+Os 51 trabalhos selecionados estão na tabela \ref{tab:51-artigos}, e os 22 trabalhos selecionados para  realização da extração contribuíram para a revisão da literatura do trabalho, estão da tabela \ref{tab:tabelaresultadosAnalise}. A revisão é fundamental para auxiliar e fundamentar o conhecimento a fim subsidiar as respostas das questões de pesquisa. 
 
 \begin{longtable}{|c|l|l|}
 \caption{Trabalhos selecionados.}
@@ -246,7 +257,11 @@ ID & \multicolumn{1}{c|}{Título} & \multicolumn{1}{c|}{Referência} \\ \hline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Resultados}
-Após a realização da pesquisa dos trabalhos nas bases digitais, a seleção e extração dos trabalhos para leitura, nesta seção por meio da utilização da revisão da literatura será possível responder às questões de pesquisa descritas na seção \ref{questoes1e2} de forma fundamentada pelos trabalhos científicos obtidos por meio de resumos referentes às questões. As leituras dos trabalhos ampliaram o conhecimento sobre o tema, e permitiram a identificação e apresentação dos seguintes itens, para utilizá-los como base para execução do projeto, são eles:
+Após a realização da pesquisa dos trabalhos, com a maior relevância e maior aderência ao tema de pesquisa nas bases digitais, a seleção e extração dos trabalhos para leitura, nesta seção por meio da utilização da revisão da literatura. 
+
+Será possível responder às questões de pesquisa descritas na seção \ref{questoes1e2} de forma fundamentada pelos trabalhos científicos obtidos por meio de resumos referentes às questões. 
+
+As leituras dos trabalhos ampliaram o conhecimento sobre o tema, e permitiram a identificação e apresentação dos seguintes itens, para utilizá-los como base para execução do projeto, são eles:
 \begin{itemize}
 \item Monitoramento de sistemas distribuídos
 \item \textit{Web services}
@@ -259,7 +274,15 @@ Após a realização da pesquisa dos trabalhos nas bases digitais, a seleção e
 \subsubsection{QP1) Quais os estudos primários existentes na literatura que discutem os mecanismos de monitoramento que são aplicados a sistemas distribuídos?}
 
 \subsubsection{Monitoramento de Sistemas Distribuídos}
-Na seleção dos trabalhos realizou-se uma pesquisa que foi identificada a necessidade do monitoramento de sistemas distribuídos, devido à grande quantidade de  aplicações, dispositivos e \textit{web services} em funcionamento, e que normalmente não possuem acompanhamento durante o seu funcionamento. O autor Penteado \cite{penteado2012jmonitor}, descreve sobre a importância das ferramentas de monitoramento possuírem padrões, para a transferência de dados aos Agentes de monitoramento. No trabalho descrito por Cirstoiu \textit{et al.} \cite{cirstoiu2007monitoring},  sobre o monitoramento de sistemas distribuídos e da utilização das API's para comunicação de aplicativos e a preocupação com o baixo acoplamento dessas ferramentas. Em outro trabalho,  este descrito por Joyce \textit{et al.}\cite{joyce1987monitoring}, sobre a importância do monitoramento de sistemas distribuídos, e a utilização de testes de programas para verificação dos sistemas monitorados. No entanto o autor Abdu \textit{et al.} \cite{abdu1995investigation}, descreve o quanto é complexo o gerenciamento do monitoramento de sistemas distribuídos, sendo necessário a utilização de técnicas e métricas para obtenção dos resultados coletados, por conta da grande quantidade de informações geradas pelo monitoramento.  
+Na seleção dos trabalhos realizou-se uma pesquisa que foi identificada a necessidade do monitoramento de sistemas distribuídos, devido à grande quantidade de  aplicações, dispositivos e \textit{web services} em funcionamento, e que normalmente não possuem acompanhamento durante o seu funcionamento. 
+
+O autor Penteado \cite{penteado2012jmonitor}, descreve sobre a importância das ferramentas de monitoramento possuírem padrões, para a transferência de dados aos Agentes de monitoramento. 
+
+No trabalho descrito por Cirstoiu \textit{et al.} \cite{cirstoiu2007monitoring},  sobre o monitoramento de sistemas distribuídos e da utilização das API's para comunicação de aplicativos e a preocupação com o baixo acoplamento dessas ferramentas. 
+
+Em outro trabalho,  este descrito por Joyce \textit{et al.}\cite{joyce1987monitoring}, sobre a importância do monitoramento de sistemas distribuídos, e a utilização de testes de programas para verificação dos sistemas monitorados. 
+
+No entanto o autor Abdu \textit{et al.} \cite{abdu1995investigation}, descreve o quanto é complexo o gerenciamento do monitoramento de sistemas distribuídos, sendo necessário a utilização de técnicas e métricas para obtenção dos resultados coletados, por conta da grande quantidade de informações geradas pelo monitoramento.  
 
 \subsubsection{\textit{Web Services}}
 
@@ -267,14 +290,20 @@ Os autores Abousharkh \textit{et al.}, Casola \textit{et al.} e Ghorbani \textit
 
 \subsubsection{Agentes de Monitoramento}
 
-Agentes de monitoramento podem ser um dispositivo ou um software, esses podem ser utilizados para realizar a comunicação ou notificação do monitoramento de outros dispositivos ou sistemas distribuídos. O autor Smith \textit{et al.} \cite{smith2008flexible}, explica sobre a utilização e comparação de ferramentas(\textit{plugins}) que funcionam como agentes de monitoramento de sistemas distribuídos e também da arquitetura definida para o gerenciamento e acompanhamento. O autor Pătruţ \textit{et al.} \cite{puatruct2010agent}, relata sobre o experimento com informações metacognitivas que proporcionaram 12 definições para identificação de agentes inteligentes, propostas para definição de um agente ou Super agente, e como eles podem monitorar sistemas para realização de comunicação homem-máquina.
+Agentes de monitoramento podem ser um dispositivo ou um software, esses podem ser utilizados para realizar a comunicação ou notificação do monitoramento de outros dispositivos ou sistemas distribuídos. 
+
+O autor Smith \textit{et al.} \cite{smith2008flexible}, explica sobre a utilização e comparação de ferramentas(\textit{plugins}) que funcionam como agentes de monitoramento de sistemas distribuídos e também da arquitetura definida para o gerenciamento e acompanhamento. 
+
+O autor Pătruţ \textit{et al.} \cite{puatruct2010agent}, relata sobre o experimento com informações metacognitivas que proporcionaram 12 definições para identificação de agentes inteligentes, propostas para definição de um agente ou Super agente, e como eles podem monitorar sistemas para realização de comunicação homem-máquina.
 
 O autor Feng \textit{et al.} \cite{feng2002distributed} discorre em seu trabalho sobre a importância da realização de monitoramento por agentes, devido o grande numero de serviços disponíveis, e que por vários motivos que podem sofrer alguma interferir no funcionamento, e projeta a implementação de serviços com multi-agentes para fornecer desempenho na transmissão de informações do monitoramento pelos agentes.
 
 \subsubsection{Protocolo SNMP}
 \label{snmpDescription}
 
-O autor Lee \textit{et al.} \cite{lee2004design}, descreve sobre a qualidade do Protocolo \acrshort{SNMP}, seu principais componentes e utilização da estação de gestão, agente de gestão, base de informações de gestão e o protocolo de gestão e suas vantagens. Apesar  de  seu  nome,  \acrlong{SNMP},  o  \acrshort{SNMP}  é  um protocolo  relativamente  complexo  para  implementar.  Também,  o  \acrshort{SNMP}  não  é  um protocolo muito eficiente. Os autores Phan e Subramanyan \textit{et al.} \cite{phan2009cryptanalysis,subramanyan2000scalable} também relatam sobre alguns pontos fracos, como a vulnerabilidade presente no SNMPv1, desempenho e falta de escalabilidade.
+O autor Lee \textit{et al.} \cite{lee2004design}, descreve sobre a qualidade do Protocolo \acrshort{SNMP}, seu principais componentes e utilização da estação de gestão, agente de gestão, base de informações de gestão e o protocolo de gestão e suas vantagens. 
+
+Apesar  de  seu  nome,  \acrlong{SNMP},  o  \acrshort{SNMP}  é  um protocolo  relativamente  complexo  para  implementar.  Também,  o  \acrshort{SNMP}  não  é  um protocolo muito eficiente. Os autores Phan e Subramanyan \textit{et al.} \cite{phan2009cryptanalysis,subramanyan2000scalable} também relatam sobre alguns pontos fracos, como a vulnerabilidade presente no SNMPv1, desempenho e falta de escalabilidade.
 
 \subsubsection{QP2) Quais são as principais características relativas ao monitoramento de sistemas distribuídos mencionadas na literatura?}
 
@@ -284,7 +313,11 @@ O Monitoramento dos sistemas distribuídos quando implementados geram informaç�
 
 \subsubsection{Desempenho}
 
-O autor Wang \cite{wang2016improvements}, apresenta algoritmos de compactação de dados, para realização de transferência dos dados de modo otimizado, devido à grande quantidade de informações geradas durante o monitoramento dos sistemas distribuídos. Nesse trabalho foram realizados vários testes, incluído conversão de formatos, como por exemplo, arquivos XML. O autor Sedayao \cite{sedayao2008implementing}, descreve como a falta de experiencia para implementar \textit{web services} para realização de monitoramento, impactaram diretamente no desempenho da aplicação, e como adquiriram experiência para a implementação de forma correta dos serviços, tornando a aplicação robusta, e altamente distribuída. Já o autor Kotsopoulos \textit{et al.} \cite{kotsopoulos2008soa}, explica o motivo da não utilização do protocolo \acrshort{SNMP}, por conta de algumas limitações, como por exemplo, a escalabilidade e eficiência. 
+O autor Wang \cite{wang2016improvements}, apresenta algoritmos de compactação de dados, para realização de transferência dos dados de modo otimizado, devido à grande quantidade de informações geradas durante o monitoramento dos sistemas distribuídos. Nesse trabalho foram realizados vários testes, incluído conversão de formatos, como por exemplo, arquivos XML. 
+
+O autor Sedayao \cite{sedayao2008implementing}, descreve como a falta de experiência para implementar \textit{web services} para realização de monitoramento, impactaram diretamente no desempenho da aplicação, e como adquiriram experiência para a implementação de forma correta dos serviços, tornando a aplicação robusta, e altamente distribuída. 
+
+Já o autor Kotsopoulos \textit{et al.} \cite{kotsopoulos2008soa}, explica o motivo da não utilização do protocolo \acrshort{SNMP}, por conta de algumas limitações, como por exemplo, a escalabilidade e eficiência. 
 
 \subsubsection{Escalabilidade}
 
