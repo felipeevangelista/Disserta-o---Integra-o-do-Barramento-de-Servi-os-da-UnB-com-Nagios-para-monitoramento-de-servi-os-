@@ -104,6 +104,8 @@ O \textit{Observer} tem como empecilho a perda de desempenho em seu funcionament
 	\end{center}
 \end{figure}
 
+\subsubsection{Monitoramento do Barramento de Serviços pelo Ems-Monitor)}
+
 Este trabalho inclui o Ems-Monitor como uma nova forma para monitorar o barramento de serviços, esse monitoramento difere dos demais pelo modo de atuação, onde o foco é monitorar o funcionamento dos recursos que o barramento de serviços provém, desde o recurso responsável pelo registro das informações de \textit{LOG} passando pelos recursos que executam os processos de autenticação e autorização até o recurso responsável pelo recebimento e transmissão de requisições. 
 
 Para realizar o Ems-Monitor foi necessário a definição de uma abordagem que permitisse o acompanhamento do funcionamento dos recursos do barramento de serviços. 
@@ -131,8 +133,18 @@ Por fim, outro passo é a transmissão dos dados de monitoramento, a transmissã
 
 Para transmitir os dados de monitoramento, foi utilizada uma abordagem que permitiu a realização da transmissão de forma padronizada por meio de um protocolo de comunicação. A utilização de um protocolo possibilitou a realização da transmissão dos dados de monitoramento, assim como a integração com ferramentas de monitoramento que utilizam o protocolo \acrshort{SNMP} como meio de comunicação.  
 
-\vspace{10mm}
-\noindent
+A interação dos componentes do Ems-Monitor, via troca de mensagens, pode ser visualizada no diagrama de sequência, representado na figura \ref{fun:fig:ems-monitor-sequencia}, que demonstra o fluxo de criação dos dados, coleta e armazenamento dos dados e a transmissão dessas informações para a ferramenta de monitoramento. 
+
+\begin{figure}[H]
+	\begin{center}
+	\includegraphics[scale = 0.60]{img/Sequencia_Ems-Monitor.jpg}
+	\caption{Fluxo de monitoramento pelo Ems-monitor.}
+	\label{fun:fig:ems-monitor-sequencia}
+	\end{center}
+\end{figure}
+
+
+
 A partir da definição da estrutura de monitoramento foi realizada a geração de dados, a coleta, o armazenamento e a transmissão dos dados para monitorar os recursos do barramento. O \acrshort{CPD} possui e utiliza abordagens de monitoramento para sistemas e ativos de rede da \acrshort{UnB}. As aplicações e ativos de rede já são monitorados em uma plataforma de monitoramento mantida e gerenciada pelo \acrshort{CPD}. 
 
 Neste trabalho Ems-Monitor foi utilizado como solução para realização da integração por meio de um protocolo de comunicação para monitoramento dos serviços, sistemas e ativos de rede na mesma plataforma mantida pelo \acrshort{CPD}, e que permitisse apresentar o funcionamento dessas aplicações ou em casos eventuais notificar sobre possíveis falhas ou problemas. 
